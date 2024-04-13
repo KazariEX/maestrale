@@ -12,8 +12,8 @@ dependencies:
     specifier: ^0.5.1
     version: 0.5.1(vue@3.4.21)
   element-plus:
-    specifier: ^2.7.0
-    version: 2.7.0(vue@3.4.21)
+    specifier: ~2.6.3
+    version: 2.6.3(vue@3.4.21)
   lodash:
     specifier: ^4.17.21
     version: 4.17.21
@@ -26,8 +26,8 @@ dependencies:
 
 devDependencies:
   '@element-plus/nuxt':
-    specifier: 1.0.6
-    version: 1.0.6(@element-plus/icons-vue@2.3.1)(element-plus@2.7.0)
+    specifier: ^1.0.8
+    version: 1.0.8(@element-plus/icons-vue@2.3.1)(element-plus@2.6.3)
   '@nuxt/devtools':
     specifier: ^1.1.5
     version: 1.1.5(@unocss/reset@0.59.2)(floating-vue@5.2.2)(nuxt@3.11.2)(unocss@0.59.2)(vite@5.2.8)(vue@3.4.21)
@@ -476,15 +476,15 @@ packages:
     dependencies:
       vue: 3.4.21
 
-  /@element-plus/nuxt@1.0.6(@element-plus/icons-vue@2.3.1)(element-plus@2.7.0):
-    resolution: {integrity: sha512-UdZ1YD4gSpXL7vIciYVRXBHPMTq/FFfLqtWiTVA18n/65tAw75HvJE1OmvA3ZhW8tMAxhv3IGzh4zA5zdFXCFg==}
+  /@element-plus/nuxt@1.0.8(@element-plus/icons-vue@2.3.1)(element-plus@2.6.3):
+    resolution: {integrity: sha512-A8CKdk0z1t9tiw2JowZGwYwSyZZoOBXFgedSqyeAO3wmp26ZqBzKir0/5BN54mXQ06VYZZRtq3cmkpNtJOKGQA==}
     peerDependencies:
       '@element-plus/icons-vue': '>=0.2.6'
       element-plus: '>=2'
     dependencies:
       '@element-plus/icons-vue': 2.3.1(vue@3.4.21)
       '@nuxt/kit': 3.11.2
-      element-plus: 2.7.0(vue@3.4.21)
+      element-plus: 2.6.3(vue@3.4.21)
       magic-string: 0.27.0
       unplugin: 1.10.1
     transitivePeerDependencies:
@@ -3430,8 +3430,8 @@ packages:
   /electron-to-chromium@1.4.736:
     resolution: {integrity: sha512-Rer6wc3ynLelKNM4lOCg7/zPQj8tPOCB2hzD32PX9wd3hgRRi9MxEbmkFCokzcEhRVMiOVLjnL9ig9cefJ+6+Q==}
 
-  /element-plus@2.7.0(vue@3.4.21):
-    resolution: {integrity: sha512-WAiaFLavuWFxof9qwkC27jvkh9nRcNnB506g1vvJSiVaVqjCBWUFCIyJKeN11M1qcv2cS5VV5PfSLjTIkrw87A==}
+  /element-plus@2.6.3(vue@3.4.21):
+    resolution: {integrity: sha512-U4L/mr+1r+EmAUYUHrs0V/8hHMdBGP07rPymSC72LZCN4jK1UwygQYICegTQ5us4mxeqBvW6wfoEfo003fwCqw==}
     peerDependencies:
       vue: ^3.2.0
     dependencies:
