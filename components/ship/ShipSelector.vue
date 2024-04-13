@@ -137,7 +137,8 @@
     }
 
     .selector-filter {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .selector-list {
