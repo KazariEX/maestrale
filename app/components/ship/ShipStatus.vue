@@ -1,5 +1,5 @@
 <script setup>
-    import armorTable from "~/data/constraint/armor";
+    import armorTable from "~~/data/constraint/armor";
 
     const fleetStore = useFleetStore();
     const ship = storeToRefs(fleetStore).curShip;

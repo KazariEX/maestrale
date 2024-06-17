@@ -1,5 +1,5 @@
 <script setup>
-    import attributeTable from "~/data/constraint/attribute";
+    import attributeTable from "~~/data/constraint/attribute";
 
     const props = defineProps({
         title: String,

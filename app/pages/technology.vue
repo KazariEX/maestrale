@@ -1,6 +1,6 @@
 <script setup>
-    import attributeTable from "~/data/constraint/attribute";
-    import technologyTable from "~/data/constraint/technology";
+    import attributeTable from "~~/data/constraint/attribute";
+    import technologyTable from "~~/data/constraint/technology";
 
     const radioList = {
         1: "驱逐",

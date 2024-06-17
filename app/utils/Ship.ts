@@ -1,19 +1,19 @@
 import type { WritableComputedRef } from "vue";
 import { Equip } from "./Equip";
 import { SPWeapon } from "./SPWeapon";
-import ship_data_blueprint from "~/data/ShareCfg(VVVIP)/ship_data_blueprint.json";
-import ship_data_breakout from "~/data/ShareCfg(VVVIP)/ship_data_breakout.json";
-import ship_data_statistics from "~/data/ShareCfg(VVVIP)/ship_data_statistics.json";
-import ship_data_strengthen from "~/data/ShareCfg(VVVIP)/ship_data_strengthen.json";
-import ship_data_template from "~/data/ShareCfg(VVVIP)/ship_data_template.json";
-import ship_data_trans from "~/data/ShareCfg(VVVIP)/ship_data_trans.json";
-import ship_meta_breakout from "~/data/ShareCfg(VVVIP)/ship_meta_breakout.json";
-import ship_meta_repair_effect from "~/data/ShareCfg(VVVIP)/ship_meta_repair_effect.json";
-import ship_meta_repair from "~/data/ShareCfg(VVVIP)/ship_meta_repair.json";
-import ship_skin_template from "~/data/ShareCfg(VVVIP)/ship_skin_template.json";
-import ship_strengthen_blueprint from "~/data/ShareCfg(VVVIP)/ship_strengthen_blueprint.json";
-import ship_strengthen_meta from "~/data/ShareCfg(VVVIP)/ship_strengthen_meta.json";
-import transform_data_template from "~/data/ShareCfg(VVVIP)/transform_data_template.json";
+import ship_data_blueprint from "~~/data/ShareCfg(VVVIP)/ship_data_blueprint.json";
+import ship_data_breakout from "~~/data/ShareCfg(VVVIP)/ship_data_breakout.json";
+import ship_data_statistics from "~~/data/ShareCfg(VVVIP)/ship_data_statistics.json";
+import ship_data_strengthen from "~~/data/ShareCfg(VVVIP)/ship_data_strengthen.json";
+import ship_data_template from "~~/data/ShareCfg(VVVIP)/ship_data_template.json";
+import ship_data_trans from "~~/data/ShareCfg(VVVIP)/ship_data_trans.json";
+import ship_meta_breakout from "~~/data/ShareCfg(VVVIP)/ship_meta_breakout.json";
+import ship_meta_repair_effect from "~~/data/ShareCfg(VVVIP)/ship_meta_repair_effect.json";
+import ship_meta_repair from "~~/data/ShareCfg(VVVIP)/ship_meta_repair.json";
+import ship_skin_template from "~~/data/ShareCfg(VVVIP)/ship_skin_template.json";
+import ship_strengthen_blueprint from "~~/data/ShareCfg(VVVIP)/ship_strengthen_blueprint.json";
+import ship_strengthen_meta from "~~/data/ShareCfg(VVVIP)/ship_strengthen_meta.json";
+import transform_data_template from "~~/data/ShareCfg(VVVIP)/transform_data_template.json";
 
 export enum StrengthenType {
     normal,

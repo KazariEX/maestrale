@@ -1,5 +1,5 @@
 import { cloneDeep } from "lodash";
-import technologyTable from "~/data/constraint/technology";
+import technologyTable from "~~/data/constraint/technology";
 
 export const useTechnologyStore = defineStore("technology", {
     state: () => ({

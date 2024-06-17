@@ -1,7 +1,7 @@
 <script setup>
-    import favorTable from "~/data/constraint/favor";
-    import fleetTable from "~/data/constraint/fleet";
-    import breakoutTable from "~/data/constraint/breakout";
+    import favorTable from "~~/data/constraint/favor";
+    import fleetTable from "~~/data/constraint/fleet";
+    import breakoutTable from "~~/data/constraint/breakout";
 
     const props = defineProps({
         ship: Ship,

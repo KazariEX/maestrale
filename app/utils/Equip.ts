@@ -1,24 +1,27 @@
-import spweapon_data_statistics from "~/data/ShareCfg(VVVIP)/spweapon_data_statistics.json";
+import equip_data_statistics from "~~/data/ShareCfg(VVVIP)/equip_data_statistics.json";
+import equip_data_template from "~~/data/ShareCfg(VVVIP)/equip_data_template.json";
 
-export class SPWeapon {
+export class Equip {
     level: Ref<number>;
 
     private data_statistics: any[];
+    private data_template: any[];
 
     constructor(
         public id: number
     ) {
         this.data_statistics = [];
+        this.data_template = [];
         for (let i = id; i !== 0; ) {
-            const stat = spweapon_data_statistics[i];
+            const stat = equip_data_statistics[i];
+            const temp = equip_data_template[i];
             this.data_statistics.push(stat);
-
-            if (stat.next - i > 1) break;
-            i = stat.next;
+            this.data_template.push(temp);
+            i = temp.next;
         }
 
         //等级
-        this.level = ref(10);
+        this.level = ref(this.levelMax);
     }
 
     //名称
@@ -36,6 +39,11 @@ export class SPWeapon {
         return this.data_statistics[0].rarity;
     }
 
+    //最高等级
+    get levelMax() {
+        return this.data_statistics.length - 1;
+    }
+
     private statistics = computed(() => {
         return {
             ...this.data_statistics[0],
@@ -46,25 +54,24 @@ export class SPWeapon {
     //属性
     attrs = computed(() => {
         const res = {};
-        for (let i = 1; i <= 2; i++) {
+        for (let i = 1; i <= 3; i++) {
             const a = `attribute_${i}`;
             const v = `value_${i}`;
-            const vr = `value_${i}_random`;
             if (a in this.statistics.value) {
-                res[this.statistics.value[a]] = this.statistics.value[v] + this.statistics.value[vr];
+                res[this.statistics.value[a]] = Number(this.statistics.value[v]);
             }
         }
         return res;
     });
 }
 
-export function createSPWeapon(id: number) {
-    if (id % 10 !== 0 || !Reflect.has(spweapon_data_statistics, id)) {
+export function createEquip(id: number) {
+    if (id % 10 !== 0 || !Reflect.has(equip_data_template, id)) {
         return null;
     }
 
     //类型收束
     id = Number(id);
 
-    return new SPWeapon(id);
+    return new Equip(id);
 }

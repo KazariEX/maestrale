@@ -1,9 +1,9 @@
 <script setup>
-    import equipTypeTable from "~/data/constraint/equip-type";
-    import nationalityTable from "~/data/constraint/nationality";
-    import rarityTable from "~/data/constraint/rarity";
-    import equip_data_statistics from "~/data/ShareCfg(VVVIP)/equip_data_statistics.json";
-    import equip_data_template from "~/data/ShareCfg(VVVIP)/equip_data_template.json";
+    import equipTypeTable from "~~/data/constraint/equip-type";
+    import nationalityTable from "~~/data/constraint/nationality";
+    import rarityTable from "~~/data/constraint/rarity";
+    import equip_data_statistics from "~~/data/ShareCfg(VVVIP)/equip_data_statistics.json";
+    import equip_data_template from "~~/data/ShareCfg(VVVIP)/equip_data_template.json";
 
     const equipSelectorStore = useEquipSelectorStore();
 

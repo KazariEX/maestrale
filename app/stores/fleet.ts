@@ -1,4 +1,4 @@
-import { Ship } from "~/utils/Ship";
+import { Ship } from "~/app/utils/Ship";
 
 export const useFleetStore = defineStore("fleet", () => {
     //主力舰队

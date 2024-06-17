@@ -1,9 +1,9 @@
 <script setup>
-    import nationalityTable from "~/data/constraint/nationality";
-    import rarityTable from "~/data/constraint/rarity";
-    import shipTypeTable from "~/data/constraint/ship-type";
-    import ship_data_statistics from "~/data/ShareCfg(VVVIP)/ship_data_statistics.json";
-    import ship_skin_template from "~/data/ShareCfg(VVVIP)/ship_skin_template.json";
+    import nationalityTable from "~~/data/constraint/nationality";
+    import rarityTable from "~~/data/constraint/rarity";
+    import shipTypeTable from "~~/data/constraint/ship-type";
+    import ship_data_statistics from "~~/data/ShareCfg(VVVIP)/ship_data_statistics.json";
+    import ship_skin_template from "~~/data/ShareCfg(VVVIP)/ship_skin_template.json";
 
     const shipSelectorStore = useShipSelectorStore();
 

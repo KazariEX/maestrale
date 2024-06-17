@@ -1,14 +1,16 @@
-import { Ship } from "~/utils/Ship";
+import { Ship } from "~/app/utils/Ship";
 
-export const useSpweaponSelectorStore = defineStore("spweapon-selector", () => {
+export const useEquipSelectorStore = defineStore("equip-selector", () => {
     const openState = ref(false);
     const curShip = ref<Ship>();
+    const curSlot = ref(0);
     const resolve = ref();
 
-    function open(ship: Ship) {
+    function open(ship: Ship, slot: number) {
         return new Promise((res, rej) => {
             openState.value = true;
             curShip.value = ship;
+            curSlot.value = slot;
             resolve.value = res;
         });
     }
@@ -20,6 +22,7 @@ export const useSpweaponSelectorStore = defineStore("spweapon-selector", () => {
     return {
         openState,
         curShip,
+        curSlot,
         open,
         close,
         resolve

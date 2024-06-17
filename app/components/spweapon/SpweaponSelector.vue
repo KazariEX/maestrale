@@ -1,7 +1,7 @@
 <script setup>
-    import spweaponRarityTable from "~/data/constraint/spweapon-rarity";
-    import spweapon_data_statistics from "~/data/ShareCfg(VVVIP)/spweapon_data_statistics.json";
-    import spweapon_type from "~/data/ShareCfg(VVVIP)/spweapon_type.json";
+    import spweaponRarityTable from "~~/data/constraint/spweapon-rarity";
+    import spweapon_data_statistics from "~~/data/ShareCfg(VVVIP)/spweapon_data_statistics.json";
+    import spweapon_type from "~~/data/ShareCfg(VVVIP)/spweapon_type.json";
 
     const spweaponSelectorStore = useSpweaponSelectorStore();
 
