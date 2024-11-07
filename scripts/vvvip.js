@@ -1,7 +1,7 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
-const resolveData = (...args: string[]) => resolve(import.meta.dirname, "../data", ...args);
+const resolveData = (...args) => resolve(import.meta.dirname, "../data", ...args);
 
 const vvvip = {
     equip_data_statistics: {
@@ -170,20 +170,20 @@ for (const key in vvvip) {
     });
 }
 
-//属性过滤
+// 属性过滤
 async function pick({ filename, folder, props }) {
     const inputPath = resolveData(folder, filename + ".json");
     const outputPath = resolveData("ShareCfg(VVVIP)", filename + ".json");
 
     const file = await readFile(inputPath);
-    const j = JSON.parse(file.toString());
+    const json = JSON.parse(file.toString());
 
     const data = {};
-    for (const id in j) {
+    for (const id in json) {
         data[id] = {};
         for (const key of props) {
-            if (key in j[id]) {
-                data[id][key] = j[id][key];
+            if (key in json[id]) {
+                data[id][key] = json[id][key];
             }
         }
     }
