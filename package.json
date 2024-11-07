@@ -28,7 +28,7 @@
     "prepack": "pnpm run build",
     "release": "bumpp --no-push -c \"release: v%s\"",
     "test": "vitest",
-    "vvvip": "tsx scripts/vvvip.ts"
+    "vvvip": "node scripts/vvvip.js"
   },
   "dependencies": {
     "@vue/reactivity": "^3.5.12"
@@ -39,7 +39,6 @@
     "@zinkawaii/eslint-config": "^0.1.7",
     "bumpp": "^9.8.1",
     "eslint": "^9.14.0",
-    "jiti": "^2.4.0",
     "tsup": "^8.3.5",
     "vitest": "^2.1.4"
   }
