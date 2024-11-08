@@ -2456,6 +2456,124 @@
     "use_item": [],
     "weapon_ids": []
   },
+  "101521": {
+    "breakout_id": 101522,
+    "breakout_view": "获得全弹发射I/全武器效率提高2%",
+    "icon": "10001",
+    "id": 101521,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 10152,
+    "use_char_num": 1,
+    "use_gold": 500,
+    "use_item": [],
+    "weapon_ids": [
+      70041
+    ]
+  },
+  "101522": {
+    "breakout_id": 101523,
+    "breakout_view": "鱼雷底座+1/鱼雷预装填+1/全武器效率提高3%",
+    "icon": "10001",
+    "id": 101522,
+    "level": 30,
+    "pre_id": 101521,
+    "use_char": 10152,
+    "use_char_num": 1,
+    "use_gold": 1500,
+    "use_item": [],
+    "weapon_ids": [
+      108,
+      108
+    ]
+  },
+  "101523": {
+    "breakout_id": 101524,
+    "breakout_view": "全弹发射弹幕升级/全武器效率提高5%",
+    "icon": "10001",
+    "id": 101523,
+    "level": 70,
+    "pre_id": 101522,
+    "use_char": 10152,
+    "use_char_num": 2,
+    "use_gold": 2500,
+    "use_item": [],
+    "weapon_ids": [
+      70042
+    ]
+  },
+  "101524": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 101524,
+    "level": 0,
+    "pre_id": 101523,
+    "use_char": 10152,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
+  "101991": {
+    "breakout_id": 101992,
+    "breakout_view": "获得专属弹幕I/鱼雷效率提高5%",
+    "icon": "10001",
+    "id": 101991,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 10199,
+    "use_char_num": 1,
+    "use_gold": 1000,
+    "use_item": [],
+    "weapon_ids": [
+      79021
+    ]
+  },
+  "101992": {
+    "breakout_id": 101993,
+    "breakout_view": "鱼雷底座+1/鱼雷预装填+1/鱼雷效率提高10%",
+    "icon": "10001",
+    "id": 101992,
+    "level": 30,
+    "pre_id": 101991,
+    "use_char": 10199,
+    "use_char_num": 1,
+    "use_gold": 3000,
+    "use_item": [],
+    "weapon_ids": [
+      106,
+      106
+    ]
+  },
+  "101993": {
+    "breakout_id": 101994,
+    "breakout_view": "专属弹幕升级/全武器效率提高5%",
+    "icon": "10001",
+    "id": 101993,
+    "level": 70,
+    "pre_id": 101992,
+    "use_char": 10199,
+    "use_char_num": 2,
+    "use_gold": 10000,
+    "use_item": [],
+    "weapon_ids": [
+      79022
+    ]
+  },
+  "101994": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 101994,
+    "level": 0,
+    "pre_id": 101993,
+    "use_char": 10199,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
   "102011": {
     "breakout_id": 102012,
     "breakout_view": "获得全弹发射I/全武器效率提高2%",
@@ -4285,6 +4403,124 @@
     "use_item": [],
     "weapon_ids": []
   },
+  "102321": {
+    "breakout_id": 102322,
+    "breakout_view": "获得全弹发射I/主炮效率提高5%",
+    "icon": "10001",
+    "id": 102321,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 10232,
+    "use_char_num": 1,
+    "use_gold": 500,
+    "use_item": [],
+    "weapon_ids": [
+      70121
+    ]
+  },
+  "102322": {
+    "breakout_id": 102323,
+    "breakout_view": "主炮底座+1/主炮效率提高10%",
+    "icon": "10001",
+    "id": 102322,
+    "level": 30,
+    "pre_id": 102321,
+    "use_char": 10232,
+    "use_char_num": 1,
+    "use_gold": 1500,
+    "use_item": [],
+    "weapon_ids": [
+      12100,
+      12100
+    ]
+  },
+  "102323": {
+    "breakout_id": 102324,
+    "breakout_view": "全弹发射弹幕升级/主炮效率提高15%",
+    "icon": "10001",
+    "id": 102323,
+    "level": 70,
+    "pre_id": 102322,
+    "use_char": 10232,
+    "use_char_num": 2,
+    "use_gold": 2500,
+    "use_item": [],
+    "weapon_ids": [
+      70122
+    ]
+  },
+  "102324": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 102324,
+    "level": 0,
+    "pre_id": 102323,
+    "use_char": 10232,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
+  "102331": {
+    "breakout_id": 102332,
+    "breakout_view": "获得专属弹幕I/主炮效率提高5%",
+    "icon": "10001",
+    "id": 102331,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 10233,
+    "use_char_num": 1,
+    "use_gold": 1000,
+    "use_item": [],
+    "weapon_ids": [
+      80341
+    ]
+  },
+  "102332": {
+    "breakout_id": 102333,
+    "breakout_view": "主炮底座+1/主炮效率提高10%",
+    "icon": "10001",
+    "id": 102332,
+    "level": 30,
+    "pre_id": 102331,
+    "use_char": 10233,
+    "use_char_num": 1,
+    "use_gold": 3000,
+    "use_item": [],
+    "weapon_ids": [
+      12100,
+      12100
+    ]
+  },
+  "102333": {
+    "breakout_id": 102334,
+    "breakout_view": "专属弹幕升级/主炮效率提高15%",
+    "icon": "10001",
+    "id": 102333,
+    "level": 70,
+    "pre_id": 102332,
+    "use_char": 10233,
+    "use_char_num": 2,
+    "use_gold": 10000,
+    "use_item": [],
+    "weapon_ids": [
+      80342
+    ]
+  },
+  "102334": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 102334,
+    "level": 0,
+    "pre_id": 102333,
+    "use_char": 10233,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
   "103011": {
     "breakout_id": 103012,
     "breakout_view": "获得全弹发射I/主炮效率提高5%",
@@ -5406,6 +5642,65 @@
     "use_item": [],
     "weapon_ids": []
   },
+  "103281": {
+    "breakout_id": 103282,
+    "breakout_view": "获得全弹发射I/主炮效率提高5%",
+    "icon": "10001",
+    "id": 103281,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 10328,
+    "use_char_num": 1,
+    "use_gold": 1000,
+    "use_item": [],
+    "weapon_ids": [
+      70261
+    ]
+  },
+  "103282": {
+    "breakout_id": 103283,
+    "breakout_view": "主炮底座+1/主炮效率提高10%",
+    "icon": "10001",
+    "id": 103282,
+    "level": 30,
+    "pre_id": 103281,
+    "use_char": 10328,
+    "use_char_num": 1,
+    "use_gold": 3000,
+    "use_item": [],
+    "weapon_ids": [
+      13000,
+      13000
+    ]
+  },
+  "103283": {
+    "breakout_id": 103284,
+    "breakout_view": "全弹发射弹幕升级/全武器效率提高5%",
+    "icon": "10001",
+    "id": 103283,
+    "level": 70,
+    "pre_id": 103282,
+    "use_char": 10328,
+    "use_char_num": 2,
+    "use_gold": 10000,
+    "use_item": [],
+    "weapon_ids": [
+      70262
+    ]
+  },
+  "103284": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 103284,
+    "level": 0,
+    "pre_id": 103283,
+    "use_char": 10328,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
   "104011": {
     "breakout_id": 104012,
     "breakout_view": "主炮底座+1/主炮效率提高5%",
@@ -6225,6 +6520,69 @@
     "use_item": [],
     "weapon_ids": []
   },
+  "105151": {
+    "breakout_id": 105152,
+    "breakout_view": "主炮底座+1/主炮效率提高5%",
+    "icon": "10001",
+    "id": 105151,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 10515,
+    "use_char_num": 1,
+    "use_gold": 1000,
+    "use_item": [],
+    "weapon_ids": [
+      14300,
+      14300
+    ]
+  },
+  "105152": {
+    "breakout_id": 105153,
+    "breakout_view": "副炮底座+2/主炮效率提高10%",
+    "icon": "10001",
+    "id": 105152,
+    "level": 30,
+    "pre_id": 105151,
+    "use_char": 10515,
+    "use_char_num": 1,
+    "use_gold": 3000,
+    "use_item": [],
+    "weapon_ids": [
+      11200,
+      11200,
+      11200
+    ]
+  },
+  "105153": {
+    "breakout_id": 105154,
+    "breakout_view": "主炮底座+1/主炮效率提高15%",
+    "icon": "10001",
+    "id": 105153,
+    "level": 70,
+    "pre_id": 105152,
+    "use_char": 10515,
+    "use_char_num": 2,
+    "use_gold": 10000,
+    "use_item": [],
+    "weapon_ids": [
+      14300,
+      14300,
+      14300
+    ]
+  },
+  "105154": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 105154,
+    "level": 0,
+    "pre_id": 105153,
+    "use_char": 10515,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
   "105171": {
     "breakout_id": 105172,
     "breakout_view": "主炮底座+1/主炮效率提高5%",
@@ -6409,6 +6767,132 @@
     "level": 0,
     "pre_id": 105203,
     "use_char": 10520,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
+  "105211": {
+    "breakout_id": 105092,
+    "breakout_view": "主炮底座+1/主炮效率提高5%",
+    "icon": "10001",
+    "id": 105211,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 10509,
+    "use_char_num": 1,
+    "use_gold": 500,
+    "use_item": [],
+    "weapon_ids": [
+      14200,
+      14200
+    ]
+  },
+  "105212": {
+    "breakout_id": 105093,
+    "breakout_view": "副炮底座+2/主炮效率提高10%",
+    "icon": "10001",
+    "id": 105212,
+    "level": 30,
+    "pre_id": 105091,
+    "use_char": 10509,
+    "use_char_num": 1,
+    "use_gold": 1500,
+    "use_item": [],
+    "weapon_ids": [
+      11100,
+      11100,
+      11100
+    ]
+  },
+  "105213": {
+    "breakout_id": 105094,
+    "breakout_view": "主炮底座+1/主炮效率提高15%",
+    "icon": "10001",
+    "id": 105213,
+    "level": 70,
+    "pre_id": 105092,
+    "use_char": 10509,
+    "use_char_num": 2,
+    "use_gold": 2500,
+    "use_item": [],
+    "weapon_ids": [
+      14200,
+      14200,
+      14200
+    ]
+  },
+  "105214": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 105214,
+    "level": 0,
+    "pre_id": 105093,
+    "use_char": 10509,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
+  "105221": {
+    "breakout_id": 105102,
+    "breakout_view": "主炮底座+1/主炮效率提高5%",
+    "icon": "10001",
+    "id": 105221,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 10510,
+    "use_char_num": 1,
+    "use_gold": 500,
+    "use_item": [],
+    "weapon_ids": [
+      14200,
+      14200
+    ]
+  },
+  "105222": {
+    "breakout_id": 105103,
+    "breakout_view": "副炮底座+2/主炮效率提高10%",
+    "icon": "10001",
+    "id": 105222,
+    "level": 30,
+    "pre_id": 105101,
+    "use_char": 10510,
+    "use_char_num": 1,
+    "use_gold": 1500,
+    "use_item": [],
+    "weapon_ids": [
+      11100,
+      11100,
+      11100
+    ]
+  },
+  "105223": {
+    "breakout_id": 105104,
+    "breakout_view": "主炮底座+1/主炮效率提高15%",
+    "icon": "10001",
+    "id": 105223,
+    "level": 70,
+    "pre_id": 105102,
+    "use_char": 10510,
+    "use_char_num": 2,
+    "use_gold": 2500,
+    "use_item": [],
+    "weapon_ids": [
+      14200,
+      14200,
+      14200
+    ]
+  },
+  "105224": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 105224,
+    "level": 0,
+    "pre_id": 105103,
+    "use_char": 10510,
     "use_char_num": 0,
     "use_gold": 0,
     "use_item": [],
@@ -8590,6 +9074,67 @@
     "use_item": [],
     "weapon_ids": []
   },
+  "108091": {
+    "breakout_id": 108092,
+    "breakout_view": "获得全弹发射I/鱼雷效率提高5%",
+    "icon": "10001",
+    "id": 108091,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 10809,
+    "use_char_num": 1,
+    "use_gold": 500,
+    "use_item": [],
+    "weapon_ids": [
+      70311
+    ]
+  },
+  "108092": {
+    "breakout_id": 108093,
+    "breakout_view": "鱼雷底座+1/狩猎范围升级",
+    "icon": "10001",
+    "id": 108092,
+    "level": 30,
+    "pre_id": 108091,
+    "use_char": 10809,
+    "use_char_num": 1,
+    "use_gold": 1500,
+    "use_item": [],
+    "weapon_ids": [
+      140,
+      140,
+      140,
+      140
+    ]
+  },
+  "108093": {
+    "breakout_id": 108094,
+    "breakout_view": "全弹发射弹幕升级/鱼雷效率提高10%",
+    "icon": "10001",
+    "id": 108093,
+    "level": 70,
+    "pre_id": 108092,
+    "use_char": 10809,
+    "use_char_num": 2,
+    "use_gold": 2500,
+    "use_item": [],
+    "weapon_ids": [
+      70312
+    ]
+  },
+  "108094": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 108094,
+    "level": 0,
+    "pre_id": 108093,
+    "use_char": 10809,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
   "112011": {
     "breakout_id": 112012,
     "breakout_view": "团队策略-紧急维修次数+1/防空炮效率提高3%",
@@ -8939,6 +9484,68 @@
     "level": 0,
     "pre_id": 199043,
     "use_char": 19904,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
+  "199051": {
+    "breakout_id": 199052,
+    "breakout_view": "获得专属弹幕I/全武器效率提高2%/第三武器栏位可以装备水上机",
+    "icon": "10001",
+    "id": 199051,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 19905,
+    "use_char_num": 1,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": [
+      80321,
+      61101
+    ]
+  },
+  "199052": {
+    "breakout_id": 199053,
+    "breakout_view": "全武器效率提高3%",
+    "icon": "10001",
+    "id": 199052,
+    "level": 30,
+    "pre_id": 199051,
+    "use_char": 19905,
+    "use_char_num": 1,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": [
+      101,
+      108,
+      61101
+    ]
+  },
+  "199053": {
+    "breakout_id": 199054,
+    "breakout_view": "专属弹幕升级/全武器效率提高5%",
+    "icon": "10001",
+    "id": 199053,
+    "level": 70,
+    "pre_id": 199052,
+    "use_char": 19905,
+    "use_char_num": 2,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": [
+      80322,
+      61101
+    ]
+  },
+  "199054": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 199054,
+    "level": 0,
+    "pre_id": 199053,
+    "use_char": 19905,
     "use_char_num": 0,
     "use_gold": 0,
     "use_item": [],
@@ -15741,6 +16348,71 @@
     "use_item": [],
     "weapon_ids": []
   },
+  "207141": {
+    "breakout_id": 207142,
+    "breakout_view": "所有鱼雷机+1/舰载机效率提高2%",
+    "icon": "10001",
+    "id": 207141,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 20714,
+    "use_char_num": 1,
+    "use_gold": 1000,
+    "use_item": [],
+    "weapon_ids": [
+      60421,
+      54014
+    ]
+  },
+  "207142": {
+    "breakout_id": 207143,
+    "breakout_view": "机库容量+1/所有战斗机+1/舰载机效率提高3%",
+    "icon": "10001",
+    "id": 207142,
+    "level": 30,
+    "pre_id": 207141,
+    "use_char": 20714,
+    "use_char_num": 1,
+    "use_gold": 3000,
+    "use_item": [],
+    "weapon_ids": [
+      60422,
+      54014,
+      60422,
+      54014
+    ]
+  },
+  "207143": {
+    "breakout_id": 207144,
+    "breakout_view": "所有鱼雷机+1/舰载机效率提高5%/战斗机栏位可以装备轰炸机",
+    "icon": "10001",
+    "id": 207143,
+    "level": 70,
+    "pre_id": 207142,
+    "use_char": 20714,
+    "use_char_num": 2,
+    "use_gold": 10000,
+    "use_item": [],
+    "weapon_ids": [
+      60423,
+      54015,
+      60423,
+      54015
+    ]
+  },
+  "207144": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 207144,
+    "level": 0,
+    "pre_id": 207143,
+    "use_char": 20714,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
   "213011": {
     "breakout_id": 213012,
     "breakout_view": "副炮底座+1/主炮效率提高5%",
@@ -19823,6 +20495,65 @@
     "use_item": [],
     "weapon_ids": []
   },
+  "301911": {
+    "breakout_id": 301912,
+    "breakout_view": "获得全弹发射I/鱼雷效率提高5%",
+    "icon": "10001",
+    "id": 301911,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 30191,
+    "use_char_num": 1,
+    "use_gold": 500,
+    "use_item": [],
+    "weapon_ids": [
+      72056
+    ]
+  },
+  "301912": {
+    "breakout_id": 301913,
+    "breakout_view": "鱼雷底座+1/鱼雷预装填+1/鱼雷效率提高10%",
+    "icon": "10001",
+    "id": 301912,
+    "level": 30,
+    "pre_id": 301911,
+    "use_char": 30191,
+    "use_char_num": 1,
+    "use_gold": 1500,
+    "use_item": [],
+    "weapon_ids": [
+      107,
+      107
+    ]
+  },
+  "301913": {
+    "breakout_id": 301914,
+    "breakout_view": "全弹发射弹幕升级/全武器效率提高5%",
+    "icon": "10001",
+    "id": 301913,
+    "level": 70,
+    "pre_id": 301912,
+    "use_char": 30191,
+    "use_char_num": 2,
+    "use_gold": 2500,
+    "use_item": [],
+    "weapon_ids": [
+      72057
+    ]
+  },
+  "301914": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 301914,
+    "level": 0,
+    "pre_id": 301913,
+    "use_char": 30191,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
   "302011": {
     "breakout_id": 302012,
     "breakout_view": "获得全弹发射I/防空炮效率提高5%",
@@ -20700,6 +21431,184 @@
     "level": 0,
     "pre_id": 302233,
     "use_char": 30223,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
+  "302241": {
+    "breakout_id": 302242,
+    "breakout_view": "获得专属弹幕I/主炮效率提高5%",
+    "icon": "10001",
+    "id": 302241,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 30224,
+    "use_char_num": 1,
+    "use_gold": 1000,
+    "use_item": [],
+    "weapon_ids": [
+      80251
+    ]
+  },
+  "302242": {
+    "breakout_id": 302243,
+    "breakout_view": "鱼雷底座+1/鱼雷预装填+1/鱼雷效率提高10%",
+    "icon": "10001",
+    "id": 302242,
+    "level": 30,
+    "pre_id": 302241,
+    "use_char": 30224,
+    "use_char_num": 1,
+    "use_gold": 3000,
+    "use_item": [],
+    "weapon_ids": [
+      107,
+      107
+    ]
+  },
+  "302243": {
+    "breakout_id": 302244,
+    "breakout_view": "专属弹幕升级/鱼雷效率提高15%",
+    "icon": "10001",
+    "id": 302243,
+    "level": 70,
+    "pre_id": 302242,
+    "use_char": 30224,
+    "use_char_num": 2,
+    "use_gold": 10000,
+    "use_item": [],
+    "weapon_ids": [
+      80252,
+      80253
+    ]
+  },
+  "302244": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 302244,
+    "level": 0,
+    "pre_id": 302243,
+    "use_char": 30224,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
+  "302251": {
+    "breakout_id": 302252,
+    "breakout_view": "获得专属弹幕I/主炮效率提高5%",
+    "icon": "10001",
+    "id": 302251,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 30225,
+    "use_char_num": 1,
+    "use_gold": 1000,
+    "use_item": [],
+    "weapon_ids": [
+      80351
+    ]
+  },
+  "302252": {
+    "breakout_id": 302253,
+    "breakout_view": "鱼雷底座+1/鱼雷预装填+1/鱼雷效率提高10%",
+    "icon": "10001",
+    "id": 302252,
+    "level": 30,
+    "pre_id": 302251,
+    "use_char": 30225,
+    "use_char_num": 1,
+    "use_gold": 3000,
+    "use_item": [],
+    "weapon_ids": [
+      107,
+      107
+    ]
+  },
+  "302253": {
+    "breakout_id": 302254,
+    "breakout_view": "专属弹幕升级/鱼雷效率提高15%",
+    "icon": "10001",
+    "id": 302253,
+    "level": 70,
+    "pre_id": 302252,
+    "use_char": 30225,
+    "use_char_num": 2,
+    "use_gold": 10000,
+    "use_item": [],
+    "weapon_ids": [
+      80352
+    ]
+  },
+  "302254": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 302254,
+    "level": 0,
+    "pre_id": 302253,
+    "use_char": 30225,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
+  "302261": {
+    "breakout_id": 302262,
+    "breakout_view": "获得全弹发射I/主炮效率提高5%",
+    "icon": "10001",
+    "id": 302261,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 30226,
+    "use_char_num": 1,
+    "use_gold": 500,
+    "use_item": [],
+    "weapon_ids": [
+      72131
+    ]
+  },
+  "302262": {
+    "breakout_id": 302263,
+    "breakout_view": "鱼雷底座+1/鱼雷预装填+1/鱼雷效率提高10%",
+    "icon": "10001",
+    "id": 302262,
+    "level": 30,
+    "pre_id": 302261,
+    "use_char": 30226,
+    "use_char_num": 1,
+    "use_gold": 1500,
+    "use_item": [],
+    "weapon_ids": [
+      105,
+      105
+    ]
+  },
+  "302263": {
+    "breakout_id": 302264,
+    "breakout_view": "全弹发射弹幕升级/鱼雷效率提高15%",
+    "icon": "10001",
+    "id": 302263,
+    "level": 70,
+    "pre_id": 302262,
+    "use_char": 30226,
+    "use_char_num": 2,
+    "use_gold": 2500,
+    "use_item": [],
+    "weapon_ids": [
+      72132
+    ]
+  },
+  "302264": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 302264,
+    "level": 0,
+    "pre_id": 302263,
+    "use_char": 30226,
     "use_char_num": 0,
     "use_gold": 0,
     "use_item": [],
@@ -22149,6 +23058,69 @@
     "use_item": [],
     "weapon_ids": []
   },
+  "304081": {
+    "breakout_id": 304082,
+    "breakout_view": "主炮底座+1/主炮效率提高5%",
+    "icon": "10001",
+    "id": 304081,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 30408,
+    "use_char_num": 1,
+    "use_gold": 500,
+    "use_item": [],
+    "weapon_ids": [
+      34000,
+      34000
+    ]
+  },
+  "304082": {
+    "breakout_id": 304083,
+    "breakout_view": "副炮底座+2/主炮效率提高10%",
+    "icon": "10001",
+    "id": 304082,
+    "level": 30,
+    "pre_id": 304081,
+    "use_char": 30408,
+    "use_char_num": 1,
+    "use_gold": 1500,
+    "use_item": [],
+    "weapon_ids": [
+      101,
+      101,
+      101
+    ]
+  },
+  "304083": {
+    "breakout_id": 304084,
+    "breakout_view": "主炮底座+1/主炮效率提高15%",
+    "icon": "10001",
+    "id": 304083,
+    "level": 70,
+    "pre_id": 304082,
+    "use_char": 30408,
+    "use_char_num": 2,
+    "use_gold": 2500,
+    "use_item": [],
+    "weapon_ids": [
+      34000,
+      34000,
+      34000
+    ]
+  },
+  "304084": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 304084,
+    "level": 0,
+    "pre_id": 304083,
+    "use_char": 30408,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
   "305011": {
     "breakout_id": 305012,
     "breakout_view": "主炮底座+1/主炮效率提高5%",
@@ -23159,6 +24131,71 @@
     "level": 0,
     "pre_id": 306033,
     "use_char": 30603,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
+  "306041": {
+    "breakout_id": 306042,
+    "breakout_view": "所有鱼雷机+1/战斗机效率提高5%",
+    "icon": "10001",
+    "id": 306041,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 30604,
+    "use_char_num": 1,
+    "use_gold": 1000,
+    "use_item": [],
+    "weapon_ids": [
+      61103,
+      54011
+    ]
+  },
+  "306042": {
+    "breakout_id": 306043,
+    "breakout_view": "机库容量+1/所有战斗机+1/战斗机效率提高10%",
+    "icon": "10001",
+    "id": 306042,
+    "level": 30,
+    "pre_id": 306041,
+    "use_char": 30604,
+    "use_char_num": 1,
+    "use_gold": 3000,
+    "use_item": [],
+    "weapon_ids": [
+      61104,
+      54011,
+      61104,
+      54011
+    ]
+  },
+  "306043": {
+    "breakout_id": 306044,
+    "breakout_view": "所有舰载机+1/鱼雷机效率提高10%",
+    "icon": "10001",
+    "id": 306043,
+    "level": 70,
+    "pre_id": 306042,
+    "use_char": 30604,
+    "use_char_num": 2,
+    "use_gold": 10000,
+    "use_item": [],
+    "weapon_ids": [
+      61105,
+      54012,
+      61105,
+      54012
+    ]
+  },
+  "306044": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 306044,
+    "level": 0,
+    "pre_id": 306043,
+    "use_char": 30604,
     "use_char_num": 0,
     "use_gold": 0,
     "use_item": [],
@@ -24334,6 +25371,136 @@
     "use_item": [],
     "weapon_ids": []
   },
+  "307141": {
+    "breakout_id": 307142,
+    "breakout_view": "所有轰炸机+1/轰炸机效率提高5%/战斗机栏位可以装备任意类型舰载机",
+    "icon": "10001",
+    "id": 307141,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 30714,
+    "use_char_num": 1,
+    "use_gold": 500,
+    "use_item": [],
+    "weapon_ids": [
+      60561,
+      54014
+    ]
+  },
+  "307142": {
+    "breakout_id": 307143,
+    "breakout_view": "机库容量+1/所有鱼雷机+2/鱼雷机效率提高10%",
+    "icon": "10001",
+    "id": 307142,
+    "level": 30,
+    "pre_id": 307141,
+    "use_char": 30714,
+    "use_char_num": 1,
+    "use_gold": 1500,
+    "use_item": [],
+    "weapon_ids": [
+      60562,
+      54014,
+      60562,
+      54014
+    ]
+  },
+  "307143": {
+    "breakout_id": 307144,
+    "breakout_view": "所有舰载机+1/舰载机效率提高5%",
+    "icon": "10001",
+    "id": 307143,
+    "level": 70,
+    "pre_id": 307142,
+    "use_char": 30714,
+    "use_char_num": 2,
+    "use_gold": 2500,
+    "use_item": [],
+    "weapon_ids": [
+      60563,
+      54015,
+      60563,
+      54015
+    ]
+  },
+  "307144": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 307144,
+    "level": 0,
+    "pre_id": 307143,
+    "use_char": 30714,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
+  "307151": {
+    "breakout_id": 307152,
+    "breakout_view": "所有鱼雷机+1/舰载机效率提高3%/战斗机栏位可以装备轰炸机",
+    "icon": "10001",
+    "id": 307151,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 30715,
+    "use_char_num": 1,
+    "use_gold": 1500,
+    "use_item": [],
+    "weapon_ids": [
+      61111,
+      54014
+    ]
+  },
+  "307152": {
+    "breakout_id": 307153,
+    "breakout_view": "机库容量+1/所有战斗机+1/舰载机效率提高5%",
+    "icon": "10001",
+    "id": 307152,
+    "level": 30,
+    "pre_id": 307151,
+    "use_char": 30715,
+    "use_char_num": 1,
+    "use_gold": 4500,
+    "use_item": [],
+    "weapon_ids": [
+      61112,
+      54014,
+      61112,
+      54014
+    ]
+  },
+  "307153": {
+    "breakout_id": 307154,
+    "breakout_view": "所有舰载机+1/舰载机效率提高7%/轰炸机栏位可以装备鱼雷机",
+    "icon": "10001",
+    "id": 307153,
+    "level": 70,
+    "pre_id": 307152,
+    "use_char": 30715,
+    "use_char_num": 2,
+    "use_gold": 20000,
+    "use_item": [],
+    "weapon_ids": [
+      61113,
+      54015,
+      61113,
+      54015
+    ]
+  },
+  "307154": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 307154,
+    "level": 0,
+    "pre_id": 307153,
+    "use_char": 30715,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
   "308011": {
     "breakout_id": 308012,
     "breakout_view": "获得专属弹幕I/鱼雷效率提高5%",
@@ -25486,6 +26653,69 @@
     "use_item": [],
     "weapon_ids": []
   },
+  "399071": {
+    "breakout_id": 399072,
+    "breakout_view": "主炮底座+1/主炮效率提高5%",
+    "icon": "10001",
+    "id": 399071,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 39907,
+    "use_char_num": 1,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": [
+      34320,
+      34320
+    ]
+  },
+  "399072": {
+    "breakout_id": 399073,
+    "breakout_view": "副炮底座+2/主炮效率提高10%",
+    "icon": "10001",
+    "id": 399072,
+    "level": 30,
+    "pre_id": 399071,
+    "use_char": 39907,
+    "use_char_num": 1,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": [
+      101,
+      101,
+      101
+    ]
+  },
+  "399073": {
+    "breakout_id": 399074,
+    "breakout_view": "主炮底座+1/主炮效率提高15%",
+    "icon": "10001",
+    "id": 399073,
+    "level": 70,
+    "pre_id": 399072,
+    "use_char": 39907,
+    "use_char_num": 2,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": [
+      34320,
+      34320,
+      34320
+    ]
+  },
+  "399074": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 399074,
+    "level": 0,
+    "pre_id": 399073,
+    "use_char": 39907,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
   "401011": {
     "breakout_id": 401012,
     "breakout_view": "获得专属弹幕I/鱼雷效率提高5%",
@@ -26312,6 +27542,65 @@
     "use_item": [],
     "weapon_ids": []
   },
+  "401431": {
+    "breakout_id": 401432,
+    "breakout_view": "获得全弹发射I/防空炮效率提高5%",
+    "icon": "10001",
+    "id": 401431,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 40143,
+    "use_char_num": 1,
+    "use_gold": 500,
+    "use_item": [],
+    "weapon_ids": [
+      73051
+    ]
+  },
+  "401432": {
+    "breakout_id": 401433,
+    "breakout_view": "鱼雷底座+1/鱼雷预装填+1/主炮效率提高10%",
+    "icon": "10001",
+    "id": 401432,
+    "level": 30,
+    "pre_id": 401431,
+    "use_char": 40143,
+    "use_char_num": 1,
+    "use_gold": 1500,
+    "use_item": [],
+    "weapon_ids": [
+      107,
+      107
+    ]
+  },
+  "401433": {
+    "breakout_id": 401434,
+    "breakout_view": "全弹发射弹幕升级/全武器效率提高5%",
+    "icon": "10001",
+    "id": 401433,
+    "level": 70,
+    "pre_id": 401432,
+    "use_char": 40143,
+    "use_char_num": 2,
+    "use_gold": 2500,
+    "use_item": [],
+    "weapon_ids": [
+      73052
+    ]
+  },
+  "401434": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 401434,
+    "level": 0,
+    "pre_id": 401433,
+    "use_char": 40143,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
   "401461": {
     "breakout_id": 401462,
     "breakout_view": "获得专属弹幕I/防空炮效率提高5%",
@@ -26366,6 +27655,65 @@
     "level": 0,
     "pre_id": 401463,
     "use_char": 40146,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
+  "401471": {
+    "breakout_id": 401472,
+    "breakout_view": "获得专属弹幕I/防空炮效率提高5%",
+    "icon": "10001",
+    "id": 401471,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 40147,
+    "use_char_num": 1,
+    "use_gold": 1000,
+    "use_item": [],
+    "weapon_ids": [
+      80301
+    ]
+  },
+  "401472": {
+    "breakout_id": 401473,
+    "breakout_view": "鱼雷底座+1/鱼雷预装填+1/主炮效率提高10%",
+    "icon": "10001",
+    "id": 401472,
+    "level": 30,
+    "pre_id": 401471,
+    "use_char": 40147,
+    "use_char_num": 1,
+    "use_gold": 3000,
+    "use_item": [],
+    "weapon_ids": [
+      107,
+      107
+    ]
+  },
+  "401473": {
+    "breakout_id": 401474,
+    "breakout_view": "专属弹幕升级/防空炮效率提高15%",
+    "icon": "10001",
+    "id": 401473,
+    "level": 70,
+    "pre_id": 401472,
+    "use_char": 40147,
+    "use_char_num": 2,
+    "use_gold": 10000,
+    "use_item": [],
+    "weapon_ids": [
+      80302
+    ]
+  },
+  "401474": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 401474,
+    "level": 0,
+    "pre_id": 401473,
+    "use_char": 40147,
     "use_char_num": 0,
     "use_gold": 0,
     "use_item": [],
@@ -27790,6 +29138,65 @@
     "use_item": [],
     "weapon_ids": []
   },
+  "403151": {
+    "breakout_id": 403152,
+    "breakout_view": "获得专属弹幕I/全武器效率提高2%",
+    "icon": "10001",
+    "id": 403151,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 40315,
+    "use_char_num": 1,
+    "use_gold": 1000,
+    "use_item": [],
+    "weapon_ids": [
+      80231
+    ]
+  },
+  "403152": {
+    "breakout_id": 403153,
+    "breakout_view": "鱼雷底座+1/鱼雷预装填+1/全武器效率提高3%",
+    "icon": "10001",
+    "id": 403152,
+    "level": 30,
+    "pre_id": 403151,
+    "use_char": 40315,
+    "use_char_num": 1,
+    "use_gold": 3000,
+    "use_item": [],
+    "weapon_ids": [
+      106,
+      106
+    ]
+  },
+  "403153": {
+    "breakout_id": 403154,
+    "breakout_view": "专属弹幕弹幕升级/全武器效率提高5%",
+    "icon": "10001",
+    "id": 403153,
+    "level": 70,
+    "pre_id": 403152,
+    "use_char": 40315,
+    "use_char_num": 2,
+    "use_gold": 10000,
+    "use_item": [],
+    "weapon_ids": [
+      80232
+    ]
+  },
+  "403154": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 403154,
+    "level": 0,
+    "pre_id": 403153,
+    "use_char": 40315,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
   "404011": {
     "breakout_id": 404012,
     "breakout_view": "主炮底座+1/主炮效率提高5%",
@@ -28094,6 +29501,69 @@
     "level": 0,
     "pre_id": 404053,
     "use_char": 40405,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
+  "404061": {
+    "breakout_id": 404062,
+    "breakout_view": "主炮底座+1/主炮效率提高5%",
+    "icon": "10001",
+    "id": 404061,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 40406,
+    "use_char_num": 1,
+    "use_gold": 1000,
+    "use_item": [],
+    "weapon_ids": [
+      44100,
+      44100
+    ]
+  },
+  "404062": {
+    "breakout_id": 404063,
+    "breakout_view": "副炮底座+2/主炮效率提高10%",
+    "icon": "10001",
+    "id": 404062,
+    "level": 30,
+    "pre_id": 404061,
+    "use_char": 40406,
+    "use_char_num": 1,
+    "use_gold": 3000,
+    "use_item": [],
+    "weapon_ids": [
+      101,
+      101,
+      101
+    ]
+  },
+  "404063": {
+    "breakout_id": 404064,
+    "breakout_view": "主炮底座+1/主炮效率提高15%",
+    "icon": "10001",
+    "id": 404063,
+    "level": 70,
+    "pre_id": 404062,
+    "use_char": 40406,
+    "use_char_num": 2,
+    "use_gold": 10000,
+    "use_item": [],
+    "weapon_ids": [
+      44100,
+      44100,
+      44100
+    ]
+  },
+  "404064": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 404064,
+    "level": 0,
+    "pre_id": 404063,
+    "use_char": 40406,
     "use_char_num": 0,
     "use_gold": 0,
     "use_item": [],
@@ -28407,6 +29877,69 @@
     "level": 0,
     "pre_id": 405053,
     "use_char": 40505,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
+  "405061": {
+    "breakout_id": 405062,
+    "breakout_view": "主炮底座+1/主炮效率提高5%",
+    "icon": "10001",
+    "id": 405061,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 40506,
+    "use_char_num": 1,
+    "use_gold": 500,
+    "use_item": [],
+    "weapon_ids": [
+      44100,
+      44100
+    ]
+  },
+  "405062": {
+    "breakout_id": 405063,
+    "breakout_view": "副炮底座+2/主炮效率提高10%",
+    "icon": "10001",
+    "id": 405062,
+    "level": 30,
+    "pre_id": 405061,
+    "use_char": 40506,
+    "use_char_num": 1,
+    "use_gold": 1500,
+    "use_item": [],
+    "weapon_ids": [
+      101,
+      101,
+      101
+    ]
+  },
+  "405063": {
+    "breakout_id": 405064,
+    "breakout_view": "主炮底座+1/主炮效率提高15%",
+    "icon": "10001",
+    "id": 405063,
+    "level": 70,
+    "pre_id": 405062,
+    "use_char": 40506,
+    "use_char_num": 2,
+    "use_gold": 2500,
+    "use_item": [],
+    "weapon_ids": [
+      44100,
+      44100,
+      44100
+    ]
+  },
+  "405064": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 405064,
+    "level": 0,
+    "pre_id": 405063,
+    "use_char": 40506,
     "use_char_num": 0,
     "use_gold": 0,
     "use_item": [],
@@ -29529,6 +31062,67 @@
     "level": 0,
     "pre_id": 408123,
     "use_char": 40811,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
+  "408131": {
+    "breakout_id": 408132,
+    "breakout_view": "获得专属弹幕I/鱼雷效率提高5%",
+    "icon": "10001",
+    "id": 408131,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 40813,
+    "use_char_num": 1,
+    "use_gold": 500,
+    "use_item": [],
+    "weapon_ids": [
+      73611
+    ]
+  },
+  "408132": {
+    "breakout_id": 408133,
+    "breakout_view": "鱼雷底座+1/狩猎范围升级",
+    "icon": "10001",
+    "id": 408132,
+    "level": 30,
+    "pre_id": 408131,
+    "use_char": 40813,
+    "use_char_num": 1,
+    "use_gold": 1500,
+    "use_item": [],
+    "weapon_ids": [
+      140,
+      140,
+      140,
+      140
+    ]
+  },
+  "408133": {
+    "breakout_id": 408134,
+    "breakout_view": "专属弹幕升级/鱼雷效率提高10%",
+    "icon": "10001",
+    "id": 408133,
+    "level": 70,
+    "pre_id": 408132,
+    "use_char": 40813,
+    "use_char_num": 2,
+    "use_gold": 2500,
+    "use_item": [],
+    "weapon_ids": [
+      73612
+    ]
+  },
+  "408134": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 408134,
+    "level": 0,
+    "pre_id": 408133,
+    "use_char": 40813,
     "use_char_num": 0,
     "use_gold": 0,
     "use_item": [],
@@ -33442,6 +35036,67 @@
     "use_item": [],
     "weapon_ids": []
   },
+  "699021": {
+    "breakout_id": 699022,
+    "breakout_view": "获得专属弹幕I/主炮效率提高5%",
+    "icon": "10001",
+    "id": 699021,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 69902,
+    "use_char_num": 1,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": [
+      170551,
+      170553
+    ]
+  },
+  "699022": {
+    "breakout_id": 699023,
+    "breakout_view": "副炮效率提高10%",
+    "icon": "10001",
+    "id": 699022,
+    "level": 30,
+    "pre_id": 699021,
+    "use_char": 69902,
+    "use_char_num": 1,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": [
+      101,
+      101
+    ]
+  },
+  "699023": {
+    "breakout_id": 699024,
+    "breakout_view": "专属弹幕升级/全武器效率提高5%",
+    "icon": "10001",
+    "id": 699023,
+    "level": 70,
+    "pre_id": 699022,
+    "use_char": 69902,
+    "use_char_num": 2,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": [
+      170552,
+      170554
+    ]
+  },
+  "699024": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 699024,
+    "level": 0,
+    "pre_id": 699023,
+    "use_char": 69902,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
   "701021": {
     "breakout_id": 701022,
     "breakout_view": "获得全弹发射I/主炮效率提高5%",
@@ -35312,6 +36967,71 @@
     "use_item": [],
     "weapon_ids": []
   },
+  "799021": {
+    "breakout_id": 799022,
+    "breakout_view": "轰炸机效率提高5%/鱼雷机效率提高5%",
+    "icon": "10001",
+    "id": 799021,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 79902,
+    "use_char_num": 1,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": [
+      61091,
+      54014
+    ]
+  },
+  "799022": {
+    "breakout_id": 799023,
+    "breakout_view": "机库容量+1/战斗机效率提高10%",
+    "icon": "10001",
+    "id": 799022,
+    "level": 30,
+    "pre_id": 799021,
+    "use_char": 79902,
+    "use_char_num": 1,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": [
+      61092,
+      54014,
+      61092,
+      54014
+    ]
+  },
+  "799023": {
+    "breakout_id": 799024,
+    "breakout_view": "舰载机效率提高5%/轰炸机栏位可以装备任意类型舰载机",
+    "icon": "10001",
+    "id": 799023,
+    "level": 70,
+    "pre_id": 799022,
+    "use_char": 79902,
+    "use_char_num": 2,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": [
+      61093,
+      54015,
+      61093,
+      54015
+    ]
+  },
+  "799024": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 799024,
+    "level": 0,
+    "pre_id": 799023,
+    "use_char": 79902,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
   "801011": {
     "breakout_id": 801012,
     "breakout_view": "获得专属弹幕I/主炮效率提高5%",
@@ -35666,6 +37386,65 @@
     "use_item": [],
     "weapon_ids": []
   },
+  "801091": {
+    "breakout_id": 801092,
+    "breakout_view": "获得专属弹幕I/主炮效率提高5%",
+    "icon": "10001",
+    "id": 801091,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 80109,
+    "use_char_num": 1,
+    "use_gold": 500,
+    "use_item": [],
+    "weapon_ids": [
+      80241
+    ]
+  },
+  "801092": {
+    "breakout_id": 801093,
+    "breakout_view": "鱼雷底座+1/鱼雷预装填+1/鱼雷效率提高10%",
+    "icon": "10001",
+    "id": 801092,
+    "level": 30,
+    "pre_id": 801091,
+    "use_char": 80109,
+    "use_char_num": 1,
+    "use_gold": 1500,
+    "use_item": [],
+    "weapon_ids": [
+      106,
+      106
+    ]
+  },
+  "801093": {
+    "breakout_id": 801094,
+    "breakout_view": "专属弹幕升级/全武器效率提高5%",
+    "icon": "10001",
+    "id": 801093,
+    "level": 70,
+    "pre_id": 801092,
+    "use_char": 80109,
+    "use_char_num": 2,
+    "use_gold": 2500,
+    "use_item": [],
+    "weapon_ids": [
+      80242
+    ]
+  },
+  "801094": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 801094,
+    "level": 0,
+    "pre_id": 801093,
+    "use_char": 80109,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
   "802011": {
     "breakout_id": 802012,
     "breakout_view": "获得专属弹幕I/全武器效率提高2%",
@@ -35902,6 +37681,65 @@
     "use_item": [],
     "weapon_ids": []
   },
+  "803021": {
+    "breakout_id": 803022,
+    "breakout_view": "获得专属弹幕I/全武器效率提高5%",
+    "icon": "10001",
+    "id": 803021,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 80302,
+    "use_char_num": 1,
+    "use_gold": 1000,
+    "use_item": [],
+    "weapon_ids": [
+      80271
+    ]
+  },
+  "803022": {
+    "breakout_id": 803023,
+    "breakout_view": "主炮底座+1/全武器效率提高5%",
+    "icon": "10001",
+    "id": 803022,
+    "level": 30,
+    "pre_id": 803021,
+    "use_char": 80302,
+    "use_char_num": 1,
+    "use_gold": 3000,
+    "use_item": [],
+    "weapon_ids": [
+      7300,
+      7300
+    ]
+  },
+  "803023": {
+    "breakout_id": 803024,
+    "breakout_view": "专属弹幕升级/主炮效率提高15%",
+    "icon": "10001",
+    "id": 803023,
+    "level": 70,
+    "pre_id": 803022,
+    "use_char": 80302,
+    "use_char_num": 2,
+    "use_gold": 10000,
+    "use_item": [],
+    "weapon_ids": [
+      80272
+    ]
+  },
+  "803024": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 803024,
+    "level": 0,
+    "pre_id": 803023,
+    "use_char": 80302,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
   "805011": {
     "breakout_id": 805012,
     "breakout_view": "主炮预装填+1/主炮效率提高5%",
@@ -36021,6 +37859,69 @@
     "level": 0,
     "pre_id": 805023,
     "use_char": 80502,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
+  "805031": {
+    "breakout_id": 805032,
+    "breakout_view": "主炮预装填+1/主炮底座+1/主炮效率提高5%",
+    "icon": "10001",
+    "id": 805031,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 80503,
+    "use_char_num": 1,
+    "use_gold": 1500,
+    "use_item": [],
+    "weapon_ids": [
+      90400,
+      90400
+    ]
+  },
+  "805032": {
+    "breakout_id": 805033,
+    "breakout_view": "主炮装填上限+1/副炮底座+2/主炮效率提高10%",
+    "icon": "10001",
+    "id": 805032,
+    "level": 30,
+    "pre_id": 805031,
+    "use_char": 80503,
+    "use_char_num": 1,
+    "use_gold": 4500,
+    "use_item": [],
+    "weapon_ids": [
+      101,
+      101,
+      101
+    ]
+  },
+  "805033": {
+    "breakout_id": 805034,
+    "breakout_view": "主炮底座+1/主炮效率提高15%",
+    "icon": "10001",
+    "id": 805033,
+    "level": 70,
+    "pre_id": 805032,
+    "use_char": 80503,
+    "use_char_num": 2,
+    "use_gold": 20000,
+    "use_item": [],
+    "weapon_ids": [
+      90400,
+      90400,
+      90400
+    ]
+  },
+  "805034": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 805034,
+    "level": 0,
+    "pre_id": 805033,
+    "use_char": 80503,
     "use_char_num": 0,
     "use_gold": 0,
     "use_item": [],
@@ -36399,6 +38300,67 @@
     "use_item": [],
     "weapon_ids": []
   },
+  "899041": {
+    "breakout_id": 899042,
+    "breakout_view": "获得专属弹幕I/主炮效率提高5%",
+    "icon": "10001",
+    "id": 899041,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 89904,
+    "use_char_num": 1,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": [
+      80311
+    ]
+  },
+  "899042": {
+    "breakout_id": 899043,
+    "breakout_view": "鱼雷效率提高10%/主炮底座+1",
+    "icon": "10001",
+    "id": 899042,
+    "level": 30,
+    "pre_id": 899041,
+    "use_char": 89904,
+    "use_char_num": 1,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": [
+      100,
+      106,
+      100,
+      106
+    ]
+  },
+  "899043": {
+    "breakout_id": 899044,
+    "breakout_view": "专属弹幕升级/主炮效率提高10%",
+    "icon": "10001",
+    "id": 899043,
+    "level": 70,
+    "pre_id": 899042,
+    "use_char": 89904,
+    "use_char_num": 2,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": [
+      80312
+    ]
+  },
+  "899044": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 899044,
+    "level": 0,
+    "pre_id": 899043,
+    "use_char": 89904,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
   "901011": {
     "breakout_id": 901012,
     "breakout_view": "获得全弹发射I/鱼雷效率提高5%",
@@ -36635,6 +38597,183 @@
     "use_item": [],
     "weapon_ids": []
   },
+  "901051": {
+    "breakout_id": 901052,
+    "breakout_view": "获得全弹发射I/主炮效率提高5%",
+    "icon": "10001",
+    "id": 901051,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 90105,
+    "use_char_num": 1,
+    "use_gold": 500,
+    "use_item": [],
+    "weapon_ids": [
+      78021
+    ]
+  },
+  "901052": {
+    "breakout_id": 901053,
+    "breakout_view": "鱼雷底座+1/鱼雷预装填+1/鱼雷效率提高10%",
+    "icon": "10001",
+    "id": 901052,
+    "level": 30,
+    "pre_id": 901051,
+    "use_char": 90105,
+    "use_char_num": 1,
+    "use_gold": 1500,
+    "use_item": [],
+    "weapon_ids": [
+      106,
+      106
+    ]
+  },
+  "901053": {
+    "breakout_id": 901054,
+    "breakout_view": "全弹发射弹幕升级/全武器效率提高5%",
+    "icon": "10001",
+    "id": 901053,
+    "level": 70,
+    "pre_id": 901052,
+    "use_char": 90105,
+    "use_char_num": 2,
+    "use_gold": 2500,
+    "use_item": [],
+    "weapon_ids": [
+      78022
+    ]
+  },
+  "901054": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 901054,
+    "level": 0,
+    "pre_id": 901053,
+    "use_char": 90105,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
+  "901061": {
+    "breakout_id": 901062,
+    "breakout_view": "获得全弹发射I/主炮效率提高5%",
+    "icon": "10001",
+    "id": 901061,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 90106,
+    "use_char_num": 1,
+    "use_gold": 500,
+    "use_item": [],
+    "weapon_ids": [
+      78021
+    ]
+  },
+  "901062": {
+    "breakout_id": 901063,
+    "breakout_view": "鱼雷底座+1/鱼雷预装填+1/鱼雷效率提高10%",
+    "icon": "10001",
+    "id": 901062,
+    "level": 30,
+    "pre_id": 901061,
+    "use_char": 90106,
+    "use_char_num": 1,
+    "use_gold": 1500,
+    "use_item": [],
+    "weapon_ids": [
+      106,
+      106
+    ]
+  },
+  "901063": {
+    "breakout_id": 901064,
+    "breakout_view": "全弹发射弹幕升级/全武器效率提高5%",
+    "icon": "10001",
+    "id": 901063,
+    "level": 70,
+    "pre_id": 901062,
+    "use_char": 90106,
+    "use_char_num": 2,
+    "use_gold": 2500,
+    "use_item": [],
+    "weapon_ids": [
+      78022
+    ]
+  },
+  "901064": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 901064,
+    "level": 0,
+    "pre_id": 901063,
+    "use_char": 90106,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
+  "901071": {
+    "breakout_id": 901072,
+    "breakout_view": "获得专属弹幕I/主炮效率提高5%",
+    "icon": "10001",
+    "id": 901071,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 90107,
+    "use_char_num": 1,
+    "use_gold": 1500,
+    "use_item": [],
+    "weapon_ids": [
+      80261
+    ]
+  },
+  "901072": {
+    "breakout_id": 901073,
+    "breakout_view": "主炮底座+1/鱼雷预装填+1/主炮效率提高10%",
+    "icon": "10001",
+    "id": 901072,
+    "level": 30,
+    "pre_id": 901071,
+    "use_char": 90107,
+    "use_char_num": 1,
+    "use_gold": 4500,
+    "use_item": [],
+    "weapon_ids": [
+      90160,
+      90160
+    ]
+  },
+  "901073": {
+    "breakout_id": 901074,
+    "breakout_view": "专属弹幕升级/全武器效率提高5%",
+    "icon": "10001",
+    "id": 901073,
+    "level": 70,
+    "pre_id": 901072,
+    "use_char": 90107,
+    "use_char_num": 2,
+    "use_gold": 20000,
+    "use_item": [],
+    "weapon_ids": [
+      80262
+    ]
+  },
+  "901074": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 901074,
+    "level": 0,
+    "pre_id": 901073,
+    "use_char": 90107,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
   "901111": {
     "breakout_id": 901112,
     "breakout_view": "获得专属弹幕I/主炮效率提高5%",
@@ -36807,6 +38946,65 @@
     "level": 0,
     "pre_id": 901133,
     "use_char": 90113,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
+  "901141": {
+    "breakout_id": 901142,
+    "breakout_view": "获得专属弹幕I/主炮效率提高5%",
+    "icon": "10001",
+    "id": 901141,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 90114,
+    "use_char_num": 1,
+    "use_gold": 1000,
+    "use_item": [],
+    "weapon_ids": [
+      80331
+    ]
+  },
+  "901142": {
+    "breakout_id": 901143,
+    "breakout_view": "鱼雷底座+1/鱼雷预装填+1/主炮效率提高10%",
+    "icon": "10001",
+    "id": 901142,
+    "level": 30,
+    "pre_id": 901141,
+    "use_char": 90114,
+    "use_char_num": 1,
+    "use_gold": 3000,
+    "use_item": [],
+    "weapon_ids": [
+      106,
+      106
+    ]
+  },
+  "901143": {
+    "breakout_id": 901144,
+    "breakout_view": "专属弹幕升级/全武器效率提高5%",
+    "icon": "10001",
+    "id": 901143,
+    "level": 70,
+    "pre_id": 901142,
+    "use_char": 90114,
+    "use_char_num": 2,
+    "use_gold": 10000,
+    "use_item": [],
+    "weapon_ids": [
+      80332
+    ]
+  },
+  "901144": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 901144,
+    "level": 0,
+    "pre_id": 901143,
+    "use_char": 90114,
     "use_char_num": 0,
     "use_gold": 0,
     "use_item": [],
@@ -37048,6 +39246,65 @@
     "use_item": [],
     "weapon_ids": []
   },
+  "903031": {
+    "breakout_id": 903032,
+    "breakout_view": "获得全弹发射I/主炮效率提高5%",
+    "icon": "10001",
+    "id": 903031,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 90303,
+    "use_char_num": 1,
+    "use_gold": 500,
+    "use_item": [],
+    "weapon_ids": [
+      78221
+    ]
+  },
+  "903032": {
+    "breakout_id": 903033,
+    "breakout_view": "鱼雷底座+1/鱼雷预装填+1/鱼雷效率提高10%",
+    "icon": "10001",
+    "id": 903032,
+    "level": 30,
+    "pre_id": 903031,
+    "use_char": 90303,
+    "use_char_num": 1,
+    "use_gold": 1500,
+    "use_item": [],
+    "weapon_ids": [
+      106,
+      106
+    ]
+  },
+  "903033": {
+    "breakout_id": 903034,
+    "breakout_view": "全弹发射弹幕升级/鱼雷效率提高15%",
+    "icon": "10001",
+    "id": 903033,
+    "level": 70,
+    "pre_id": 903032,
+    "use_char": 90303,
+    "use_char_num": 2,
+    "use_gold": 2500,
+    "use_item": [],
+    "weapon_ids": [
+      78222
+    ]
+  },
+  "903034": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 903034,
+    "level": 0,
+    "pre_id": 903033,
+    "use_char": 90303,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
   "904011": {
     "breakout_id": 904012,
     "breakout_view": "主炮预装填+1/主炮效率提高5%",
@@ -37104,6 +39361,67 @@
     "level": 0,
     "pre_id": 904013,
     "use_char": 90401,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
+  "904021": {
+    "breakout_id": 904022,
+    "breakout_view": "主炮预装填+1/主炮效率提高5%",
+    "icon": "10001",
+    "id": 904021,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 90402,
+    "use_char_num": 1,
+    "use_gold": 1000,
+    "use_item": [],
+    "weapon_ids": [
+      90300
+    ]
+  },
+  "904022": {
+    "breakout_id": 904023,
+    "breakout_view": "副炮底座+2/主炮效率提高10%",
+    "icon": "10001",
+    "id": 904022,
+    "level": 30,
+    "pre_id": 904021,
+    "use_char": 90402,
+    "use_char_num": 1,
+    "use_gold": 3000,
+    "use_item": [],
+    "weapon_ids": [
+      101,
+      101,
+      101
+    ]
+  },
+  "904023": {
+    "breakout_id": 904024,
+    "breakout_view": "主炮底座+1/主炮效率提高15%",
+    "icon": "10001",
+    "id": 904023,
+    "level": 70,
+    "pre_id": 904022,
+    "use_char": 90402,
+    "use_char_num": 2,
+    "use_gold": 10000,
+    "use_item": [],
+    "weapon_ids": [
+      90300,
+      90300
+    ]
+  },
+  "904024": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 904024,
+    "level": 0,
+    "pre_id": 904023,
+    "use_char": 90402,
     "use_char_num": 0,
     "use_gold": 0,
     "use_item": [],
@@ -37846,6 +40164,315 @@
     "level": 0,
     "pre_id": 9600063,
     "use_char": 960006,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
+  "9600071": {
+    "breakout_id": 9600072,
+    "breakout_view": "主炮底座+1/主炮效率提高5%",
+    "icon": "10001",
+    "id": 9600071,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 960007,
+    "use_char_num": 1,
+    "use_gold": 1000,
+    "use_item": [],
+    "weapon_ids": [
+      158,
+      158
+    ]
+  },
+  "9600072": {
+    "breakout_id": 9600073,
+    "breakout_view": "副炮底座+1/主炮底座+2/主炮效率提高10%",
+    "icon": "10001",
+    "id": 9600072,
+    "level": 30,
+    "pre_id": 9600071,
+    "use_char": 960007,
+    "use_char_num": 1,
+    "use_gold": 3000,
+    "use_item": [],
+    "weapon_ids": [
+      158,
+      158,
+      158,
+      158
+    ]
+  },
+  "9600073": {
+    "breakout_id": 9600074,
+    "breakout_view": "主炮底座+2/主炮效率提高15%",
+    "icon": "10001",
+    "id": 9600073,
+    "level": 70,
+    "pre_id": 9600072,
+    "use_char": 960007,
+    "use_char_num": 2,
+    "use_gold": 10000,
+    "use_item": [],
+    "weapon_ids": [
+      158,
+      158,
+      158,
+      158,
+      158,
+      158
+    ]
+  },
+  "9600074": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 9600074,
+    "level": 0,
+    "pre_id": 9600073,
+    "use_char": 960007,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
+  "9600081": {
+    "breakout_id": 9600082,
+    "breakout_view": "获得专属弹幕I/主炮效率提高5%/航速+5",
+    "icon": "10001",
+    "id": 9600081,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 960008,
+    "use_char_num": 1,
+    "use_gold": 1000,
+    "use_item": [],
+    "weapon_ids": [
+      80371
+    ]
+  },
+  "9600082": {
+    "breakout_id": 9600083,
+    "breakout_view": "主炮效率提高10%/航速+5",
+    "icon": "10001",
+    "id": 9600082,
+    "level": 30,
+    "pre_id": 9600081,
+    "use_char": 960008,
+    "use_char_num": 1,
+    "use_gold": 3000,
+    "use_item": [],
+    "weapon_ids": [
+      3720,
+      3720
+    ]
+  },
+  "9600083": {
+    "breakout_id": 9600084,
+    "breakout_view": "专属弹幕升级/主炮效率提高10%/航速+5",
+    "icon": "10001",
+    "id": 9600083,
+    "level": 70,
+    "pre_id": 9600082,
+    "use_char": 960008,
+    "use_char_num": 2,
+    "use_gold": 10000,
+    "use_item": [],
+    "weapon_ids": [
+      80372
+    ]
+  },
+  "9600084": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 9600084,
+    "level": 0,
+    "pre_id": 9600083,
+    "use_char": 960008,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
+  "9600091": {
+    "breakout_id": 9600092,
+    "breakout_view": "获得专属弹幕I/主炮效率提高5%",
+    "icon": "10001",
+    "id": 9600091,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 960009,
+    "use_char_num": 1,
+    "use_gold": 1000,
+    "use_item": [],
+    "weapon_ids": [
+      3720,
+      80361
+    ]
+  },
+  "9600092": {
+    "breakout_id": 9600093,
+    "breakout_view": "主炮效率提高10%/狩猎范围升级",
+    "icon": "10001",
+    "id": 9600092,
+    "level": 30,
+    "pre_id": 9600091,
+    "use_char": 960009,
+    "use_char_num": 1,
+    "use_gold": 3000,
+    "use_item": [],
+    "weapon_ids": [
+      3720,
+      3720
+    ]
+  },
+  "9600093": {
+    "breakout_id": 9600094,
+    "breakout_view": "专属弹幕升级/主炮效率提高10%/主炮底座+1/狩猎范围升级",
+    "icon": "10001",
+    "id": 9600093,
+    "level": 70,
+    "pre_id": 9600092,
+    "use_char": 960009,
+    "use_char_num": 2,
+    "use_gold": 10000,
+    "use_item": [],
+    "weapon_ids": [
+      3720,
+      3720,
+      80362
+    ]
+  },
+  "9600094": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 9600094,
+    "level": 0,
+    "pre_id": 9600093,
+    "use_char": 960009,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
+  "9600101": {
+    "breakout_id": 9600102,
+    "breakout_view": "获得专属弹幕I/主炮效率提高5%/航速+8",
+    "icon": "10001",
+    "id": 9600101,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 960010,
+    "use_char_num": 1,
+    "use_gold": 500,
+    "use_item": [],
+    "weapon_ids": [
+      80391
+    ]
+  },
+  "9600102": {
+    "breakout_id": 9600103,
+    "breakout_view": "第一武器栏位底座+1/主炮效率提高10%/航速+8",
+    "icon": "10001",
+    "id": 9600102,
+    "level": 30,
+    "pre_id": 9600101,
+    "use_char": 960010,
+    "use_char_num": 1,
+    "use_gold": 1500,
+    "use_item": [],
+    "weapon_ids": [
+      3720,
+      3720
+    ]
+  },
+  "9600103": {
+    "breakout_id": 9600104,
+    "breakout_view": "专属弹幕升级/主炮效率提高10%/航速+8",
+    "icon": "10001",
+    "id": 9600103,
+    "level": 70,
+    "pre_id": 9600102,
+    "use_char": 960010,
+    "use_char_num": 2,
+    "use_gold": 2500,
+    "use_item": [],
+    "weapon_ids": [
+      80392
+    ]
+  },
+  "9600104": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 9600104,
+    "level": 0,
+    "pre_id": 9600103,
+    "use_char": 960010,
+    "use_char_num": 0,
+    "use_gold": 0,
+    "use_item": [],
+    "weapon_ids": []
+  },
+  "9600111": {
+    "breakout_id": 9600112,
+    "breakout_view": "获得专属弹幕I/主炮效率提高5%",
+    "icon": "10001",
+    "id": 9600111,
+    "level": 10,
+    "pre_id": 0,
+    "use_char": 960011,
+    "use_char_num": 1,
+    "use_gold": 500,
+    "use_item": [],
+    "weapon_ids": [
+      3720,
+      80381
+    ]
+  },
+  "9600112": {
+    "breakout_id": 9600113,
+    "breakout_view": "主炮效率提高10%/狩猎范围升级",
+    "icon": "10001",
+    "id": 9600112,
+    "level": 30,
+    "pre_id": 9600111,
+    "use_char": 960011,
+    "use_char_num": 1,
+    "use_gold": 1500,
+    "use_item": [],
+    "weapon_ids": [
+      3720,
+      3720
+    ]
+  },
+  "9600113": {
+    "breakout_id": 9600114,
+    "breakout_view": "专属弹幕升级/主炮效率提高10%/主炮底座+1/狩猎范围升级",
+    "icon": "10001",
+    "id": 9600113,
+    "level": 70,
+    "pre_id": 9600112,
+    "use_char": 960011,
+    "use_char_num": 2,
+    "use_gold": 2500,
+    "use_item": [],
+    "weapon_ids": [
+      3720,
+      3720,
+      80382
+    ]
+  },
+  "9600114": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "icon": "10001",
+    "id": 9600114,
+    "level": 0,
+    "pre_id": 9600113,
+    "use_char": 960011,
     "use_char_num": 0,
     "use_gold": 0,
     "use_item": [],
@@ -41797,8 +44424,7 @@
     "use_gold": 1500,
     "use_item": [],
     "weapon_ids": [
-      106,
-      106
+      33000
     ]
   },
   "11000073": {
@@ -41813,7 +44439,7 @@
     "use_gold": 2500,
     "use_item": [],
     "weapon_ids": [
-      106,
+      33000,
       106
     ]
   },

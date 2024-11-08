@@ -16219,6 +16219,3506 @@
     "item_num": 20,
     "repair_exp": 100
   },
+  "33101": {
+    "effect_attr": [
+      "cannon",
+      1
+    ],
+    "id": 33101,
+    "item_id": 21101,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "33102": {
+    "effect_attr": [
+      "cannon",
+      1
+    ],
+    "id": 33102,
+    "item_id": 21101,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "33103": {
+    "effect_attr": [
+      "cannon",
+      1
+    ],
+    "id": 33103,
+    "item_id": 21101,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "33104": {
+    "effect_attr": [
+      "cannon",
+      1
+    ],
+    "id": 33104,
+    "item_id": 21101,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "33105": {
+    "effect_attr": [
+      "cannon",
+      1
+    ],
+    "id": 33105,
+    "item_id": 21101,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "33106": {
+    "effect_attr": [
+      "cannon",
+      1
+    ],
+    "id": 33106,
+    "item_id": 21101,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "33107": {
+    "effect_attr": [
+      "cannon",
+      1
+    ],
+    "id": 33107,
+    "item_id": 21101,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "33108": {
+    "effect_attr": [
+      "cannon",
+      1
+    ],
+    "id": 33108,
+    "item_id": 21101,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "33109": {
+    "effect_attr": [
+      "cannon",
+      1
+    ],
+    "id": 33109,
+    "item_id": 21101,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "33110": {
+    "effect_attr": [
+      "cannon",
+      1
+    ],
+    "id": 33110,
+    "item_id": 21101,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "33111": {
+    "effect_attr": [
+      "cannon",
+      2
+    ],
+    "id": 33111,
+    "item_id": 21101,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "33112": {
+    "effect_attr": [
+      "cannon",
+      2
+    ],
+    "id": 33112,
+    "item_id": 21101,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "33113": {
+    "effect_attr": [
+      "cannon",
+      2
+    ],
+    "id": 33113,
+    "item_id": 21101,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "33114": {
+    "effect_attr": [
+      "cannon",
+      2
+    ],
+    "id": 33114,
+    "item_id": 21101,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "33115": {
+    "effect_attr": [
+      "cannon",
+      2
+    ],
+    "id": 33115,
+    "item_id": 21101,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "33116": {
+    "effect_attr": [
+      "cannon",
+      2
+    ],
+    "id": 33116,
+    "item_id": 21101,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "33117": {
+    "effect_attr": [
+      "cannon",
+      2
+    ],
+    "id": 33117,
+    "item_id": 21101,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "33118": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 33118,
+    "item_id": 21101,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "33119": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 33119,
+    "item_id": 21101,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "33120": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 33120,
+    "item_id": 21101,
+    "item_num": 20,
+    "repair_exp": 100
+  },
+  "33301": {
+    "effect_attr": [
+      "air",
+      1
+    ],
+    "id": 33301,
+    "item_id": 21111,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "33302": {
+    "effect_attr": [
+      "air",
+      3
+    ],
+    "id": 33302,
+    "item_id": 21111,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "33303": {
+    "effect_attr": [
+      "air",
+      3
+    ],
+    "id": 33303,
+    "item_id": 21111,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "33304": {
+    "effect_attr": [
+      "air",
+      3
+    ],
+    "id": 33304,
+    "item_id": 21111,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "33305": {
+    "effect_attr": [
+      "air",
+      3
+    ],
+    "id": 33305,
+    "item_id": 21111,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "33306": {
+    "effect_attr": [
+      "air",
+      3
+    ],
+    "id": 33306,
+    "item_id": 21111,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "33307": {
+    "effect_attr": [
+      "air",
+      3
+    ],
+    "id": 33307,
+    "item_id": 21111,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "33308": {
+    "effect_attr": [
+      "air",
+      4
+    ],
+    "id": 33308,
+    "item_id": 21111,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "33309": {
+    "effect_attr": [
+      "air",
+      4
+    ],
+    "id": 33309,
+    "item_id": 21111,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "33310": {
+    "effect_attr": [
+      "air",
+      4
+    ],
+    "id": 33310,
+    "item_id": 21111,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "33311": {
+    "effect_attr": [
+      "air",
+      4
+    ],
+    "id": 33311,
+    "item_id": 21111,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "33312": {
+    "effect_attr": [
+      "air",
+      4
+    ],
+    "id": 33312,
+    "item_id": 21111,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "33313": {
+    "effect_attr": [
+      "air",
+      4
+    ],
+    "id": 33313,
+    "item_id": 21111,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "33314": {
+    "effect_attr": [
+      "air",
+      4
+    ],
+    "id": 33314,
+    "item_id": 21111,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "33315": {
+    "effect_attr": [
+      "air",
+      4
+    ],
+    "id": 33315,
+    "item_id": 21111,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "33316": {
+    "effect_attr": [
+      "air",
+      4
+    ],
+    "id": 33316,
+    "item_id": 21111,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "33317": {
+    "effect_attr": [
+      "air",
+      4
+    ],
+    "id": 33317,
+    "item_id": 21111,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "33318": {
+    "effect_attr": [
+      "air",
+      4
+    ],
+    "id": 33318,
+    "item_id": 21111,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "33319": {
+    "effect_attr": [
+      "air",
+      4
+    ],
+    "id": 33319,
+    "item_id": 21111,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "33320": {
+    "effect_attr": [
+      "air",
+      4
+    ],
+    "id": 33320,
+    "item_id": 21111,
+    "item_num": 20,
+    "repair_exp": 100
+  },
+  "33401": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 33401,
+    "item_id": 21121,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "33402": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 33402,
+    "item_id": 21121,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "33403": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 33403,
+    "item_id": 21121,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "33404": {
+    "effect_attr": [
+      "reload",
+      3
+    ],
+    "id": 33404,
+    "item_id": 21121,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "33405": {
+    "effect_attr": [
+      "reload",
+      3
+    ],
+    "id": 33405,
+    "item_id": 21121,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "33406": {
+    "effect_attr": [
+      "reload",
+      4
+    ],
+    "id": 33406,
+    "item_id": 21121,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "33407": {
+    "effect_attr": [
+      "reload",
+      4
+    ],
+    "id": 33407,
+    "item_id": 21121,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "33408": {
+    "effect_attr": [
+      "reload",
+      4
+    ],
+    "id": 33408,
+    "item_id": 21121,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "33409": {
+    "effect_attr": [
+      "reload",
+      4
+    ],
+    "id": 33409,
+    "item_id": 21121,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "33410": {
+    "effect_attr": [
+      "reload",
+      4
+    ],
+    "id": 33410,
+    "item_id": 21121,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "34101": {
+    "effect_attr": [
+      "cannon",
+      1
+    ],
+    "id": 34101,
+    "item_id": 21101,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "34102": {
+    "effect_attr": [
+      "cannon",
+      1
+    ],
+    "id": 34102,
+    "item_id": 21101,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "34103": {
+    "effect_attr": [
+      "cannon",
+      1
+    ],
+    "id": 34103,
+    "item_id": 21101,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "34104": {
+    "effect_attr": [
+      "cannon",
+      1
+    ],
+    "id": 34104,
+    "item_id": 21101,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "34105": {
+    "effect_attr": [
+      "cannon",
+      1
+    ],
+    "id": 34105,
+    "item_id": 21101,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "34106": {
+    "effect_attr": [
+      "cannon",
+      1
+    ],
+    "id": 34106,
+    "item_id": 21101,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "34107": {
+    "effect_attr": [
+      "cannon",
+      1
+    ],
+    "id": 34107,
+    "item_id": 21101,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "34108": {
+    "effect_attr": [
+      "cannon",
+      2
+    ],
+    "id": 34108,
+    "item_id": 21101,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "34109": {
+    "effect_attr": [
+      "cannon",
+      2
+    ],
+    "id": 34109,
+    "item_id": 21101,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "34110": {
+    "effect_attr": [
+      "cannon",
+      2
+    ],
+    "id": 34110,
+    "item_id": 21101,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "34111": {
+    "effect_attr": [
+      "cannon",
+      2
+    ],
+    "id": 34111,
+    "item_id": 21101,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "34112": {
+    "effect_attr": [
+      "cannon",
+      2
+    ],
+    "id": 34112,
+    "item_id": 21101,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "34113": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 34113,
+    "item_id": 21101,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "34114": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 34114,
+    "item_id": 21101,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "34115": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 34115,
+    "item_id": 21101,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "34116": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 34116,
+    "item_id": 21101,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "34117": {
+    "effect_attr": [
+      "cannon",
+      4
+    ],
+    "id": 34117,
+    "item_id": 21101,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "34118": {
+    "effect_attr": [
+      "cannon",
+      4
+    ],
+    "id": 34118,
+    "item_id": 21101,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "34119": {
+    "effect_attr": [
+      "cannon",
+      4
+    ],
+    "id": 34119,
+    "item_id": 21101,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "34120": {
+    "effect_attr": [
+      "cannon",
+      4
+    ],
+    "id": 34120,
+    "item_id": 21101,
+    "item_num": 20,
+    "repair_exp": 100
+  },
+  "34201": {
+    "effect_attr": [
+      "torpedo",
+      1
+    ],
+    "id": 34201,
+    "item_id": 21131,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "34202": {
+    "effect_attr": [
+      "torpedo",
+      1
+    ],
+    "id": 34202,
+    "item_id": 21131,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "34203": {
+    "effect_attr": [
+      "torpedo",
+      1
+    ],
+    "id": 34203,
+    "item_id": 21131,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "34204": {
+    "effect_attr": [
+      "torpedo",
+      1
+    ],
+    "id": 34204,
+    "item_id": 21131,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "34205": {
+    "effect_attr": [
+      "torpedo",
+      1
+    ],
+    "id": 34205,
+    "item_id": 21131,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "34206": {
+    "effect_attr": [
+      "torpedo",
+      1
+    ],
+    "id": 34206,
+    "item_id": 21131,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "34207": {
+    "effect_attr": [
+      "torpedo",
+      2
+    ],
+    "id": 34207,
+    "item_id": 21131,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "34208": {
+    "effect_attr": [
+      "torpedo",
+      2
+    ],
+    "id": 34208,
+    "item_id": 21131,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "34209": {
+    "effect_attr": [
+      "torpedo",
+      2
+    ],
+    "id": 34209,
+    "item_id": 21131,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "34210": {
+    "effect_attr": [
+      "torpedo",
+      2
+    ],
+    "id": 34210,
+    "item_id": 21131,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "34211": {
+    "effect_attr": [
+      "torpedo",
+      2
+    ],
+    "id": 34211,
+    "item_id": 21131,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "34212": {
+    "effect_attr": [
+      "torpedo",
+      3
+    ],
+    "id": 34212,
+    "item_id": 21131,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "34213": {
+    "effect_attr": [
+      "torpedo",
+      3
+    ],
+    "id": 34213,
+    "item_id": 21131,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "34214": {
+    "effect_attr": [
+      "torpedo",
+      3
+    ],
+    "id": 34214,
+    "item_id": 21131,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "34215": {
+    "effect_attr": [
+      "torpedo",
+      3
+    ],
+    "id": 34215,
+    "item_id": 21131,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "34216": {
+    "effect_attr": [
+      "torpedo",
+      4
+    ],
+    "id": 34216,
+    "item_id": 21131,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "34217": {
+    "effect_attr": [
+      "torpedo",
+      4
+    ],
+    "id": 34217,
+    "item_id": 21131,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "34218": {
+    "effect_attr": [
+      "torpedo",
+      4
+    ],
+    "id": 34218,
+    "item_id": 21131,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "34219": {
+    "effect_attr": [
+      "torpedo",
+      4
+    ],
+    "id": 34219,
+    "item_id": 21131,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "34220": {
+    "effect_attr": [
+      "torpedo",
+      4
+    ],
+    "id": 34220,
+    "item_id": 21131,
+    "item_num": 20,
+    "repair_exp": 100
+  },
+  "34401": {
+    "effect_attr": [
+      "reload",
+      4
+    ],
+    "id": 34401,
+    "item_id": 21121,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "34402": {
+    "effect_attr": [
+      "reload",
+      5
+    ],
+    "id": 34402,
+    "item_id": 21121,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "34403": {
+    "effect_attr": [
+      "reload",
+      5
+    ],
+    "id": 34403,
+    "item_id": 21121,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "34404": {
+    "effect_attr": [
+      "reload",
+      5
+    ],
+    "id": 34404,
+    "item_id": 21121,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "34405": {
+    "effect_attr": [
+      "reload",
+      5
+    ],
+    "id": 34405,
+    "item_id": 21121,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "34406": {
+    "effect_attr": [
+      "reload",
+      5
+    ],
+    "id": 34406,
+    "item_id": 21121,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "34407": {
+    "effect_attr": [
+      "reload",
+      5
+    ],
+    "id": 34407,
+    "item_id": 21121,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "34408": {
+    "effect_attr": [
+      "reload",
+      5
+    ],
+    "id": 34408,
+    "item_id": 21121,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "34409": {
+    "effect_attr": [
+      "reload",
+      5
+    ],
+    "id": 34409,
+    "item_id": 21121,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "34410": {
+    "effect_attr": [
+      "reload",
+      5
+    ],
+    "id": 34410,
+    "item_id": 21121,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "35101": {
+    "effect_attr": [
+      "cannon",
+      1
+    ],
+    "id": 35101,
+    "item_id": 21101,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "35102": {
+    "effect_attr": [
+      "cannon",
+      1
+    ],
+    "id": 35102,
+    "item_id": 21101,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "35103": {
+    "effect_attr": [
+      "cannon",
+      1
+    ],
+    "id": 35103,
+    "item_id": 21101,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "35104": {
+    "effect_attr": [
+      "cannon",
+      1
+    ],
+    "id": 35104,
+    "item_id": 21101,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "35105": {
+    "effect_attr": [
+      "cannon",
+      1
+    ],
+    "id": 35105,
+    "item_id": 21101,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "35106": {
+    "effect_attr": [
+      "cannon",
+      1
+    ],
+    "id": 35106,
+    "item_id": 21101,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "35107": {
+    "effect_attr": [
+      "cannon",
+      1
+    ],
+    "id": 35107,
+    "item_id": 21101,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "35108": {
+    "effect_attr": [
+      "cannon",
+      1
+    ],
+    "id": 35108,
+    "item_id": 21101,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "35109": {
+    "effect_attr": [
+      "cannon",
+      1
+    ],
+    "id": 35109,
+    "item_id": 21101,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "35110": {
+    "effect_attr": [
+      "cannon",
+      1
+    ],
+    "id": 35110,
+    "item_id": 21101,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "35111": {
+    "effect_attr": [
+      "cannon",
+      1
+    ],
+    "id": 35111,
+    "item_id": 21101,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "35112": {
+    "effect_attr": [
+      "cannon",
+      1
+    ],
+    "id": 35112,
+    "item_id": 21101,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "35113": {
+    "effect_attr": [
+      "cannon",
+      1
+    ],
+    "id": 35113,
+    "item_id": 21101,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "35114": {
+    "effect_attr": [
+      "cannon",
+      1
+    ],
+    "id": 35114,
+    "item_id": 21101,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "35115": {
+    "effect_attr": [
+      "cannon",
+      1
+    ],
+    "id": 35115,
+    "item_id": 21101,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "35116": {
+    "effect_attr": [
+      "cannon",
+      2
+    ],
+    "id": 35116,
+    "item_id": 21101,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "35117": {
+    "effect_attr": [
+      "cannon",
+      2
+    ],
+    "id": 35117,
+    "item_id": 21101,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "35118": {
+    "effect_attr": [
+      "cannon",
+      2
+    ],
+    "id": 35118,
+    "item_id": 21101,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "35119": {
+    "effect_attr": [
+      "cannon",
+      2
+    ],
+    "id": 35119,
+    "item_id": 21101,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "35120": {
+    "effect_attr": [
+      "cannon",
+      2
+    ],
+    "id": 35120,
+    "item_id": 21101,
+    "item_num": 20,
+    "repair_exp": 100
+  },
+  "35121": {
+    "effect_attr": [
+      "cannon",
+      2
+    ],
+    "id": 35121,
+    "item_id": 21101,
+    "item_num": 20,
+    "repair_exp": 100
+  },
+  "35122": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 35122,
+    "item_id": 21101,
+    "item_num": 20,
+    "repair_exp": 100
+  },
+  "35123": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 35123,
+    "item_id": 21101,
+    "item_num": 20,
+    "repair_exp": 100
+  },
+  "35124": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 35124,
+    "item_id": 21101,
+    "item_num": 20,
+    "repair_exp": 100
+  },
+  "35125": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 35125,
+    "item_id": 21101,
+    "item_num": 24,
+    "repair_exp": 100
+  },
+  "35126": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 35126,
+    "item_id": 21101,
+    "item_num": 24,
+    "repair_exp": 100
+  },
+  "35127": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 35127,
+    "item_id": 21101,
+    "item_num": 24,
+    "repair_exp": 100
+  },
+  "35128": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 35128,
+    "item_id": 21101,
+    "item_num": 24,
+    "repair_exp": 100
+  },
+  "35129": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 35129,
+    "item_id": 21101,
+    "item_num": 24,
+    "repair_exp": 100
+  },
+  "35130": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 35130,
+    "item_id": 21101,
+    "item_num": 28,
+    "repair_exp": 100
+  },
+  "35401": {
+    "effect_attr": [
+      "reload",
+      1
+    ],
+    "id": 35401,
+    "item_id": 21121,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "35402": {
+    "effect_attr": [
+      "reload",
+      1
+    ],
+    "id": 35402,
+    "item_id": 21121,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "35403": {
+    "effect_attr": [
+      "reload",
+      1
+    ],
+    "id": 35403,
+    "item_id": 21121,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "35404": {
+    "effect_attr": [
+      "reload",
+      1
+    ],
+    "id": 35404,
+    "item_id": 21121,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "35405": {
+    "effect_attr": [
+      "reload",
+      1
+    ],
+    "id": 35405,
+    "item_id": 21121,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "35406": {
+    "effect_attr": [
+      "reload",
+      1
+    ],
+    "id": 35406,
+    "item_id": 21121,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "35407": {
+    "effect_attr": [
+      "reload",
+      1
+    ],
+    "id": 35407,
+    "item_id": 21121,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "35408": {
+    "effect_attr": [
+      "reload",
+      1
+    ],
+    "id": 35408,
+    "item_id": 21121,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "35409": {
+    "effect_attr": [
+      "reload",
+      3
+    ],
+    "id": 35409,
+    "item_id": 21121,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "35410": {
+    "effect_attr": [
+      "reload",
+      3
+    ],
+    "id": 35410,
+    "item_id": 21121,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "35411": {
+    "effect_attr": [
+      "reload",
+      3
+    ],
+    "id": 35411,
+    "item_id": 21121,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "35412": {
+    "effect_attr": [
+      "reload",
+      3
+    ],
+    "id": 35412,
+    "item_id": 21121,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "35413": {
+    "effect_attr": [
+      "reload",
+      3
+    ],
+    "id": 35413,
+    "item_id": 21121,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "35414": {
+    "effect_attr": [
+      "reload",
+      3
+    ],
+    "id": 35414,
+    "item_id": 21121,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "35415": {
+    "effect_attr": [
+      "reload",
+      3
+    ],
+    "id": 35415,
+    "item_id": 21121,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "35416": {
+    "effect_attr": [
+      "reload",
+      4
+    ],
+    "id": 35416,
+    "item_id": 21121,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "35417": {
+    "effect_attr": [
+      "reload",
+      4
+    ],
+    "id": 35417,
+    "item_id": 21121,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "35418": {
+    "effect_attr": [
+      "reload",
+      4
+    ],
+    "id": 35418,
+    "item_id": 21121,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "35419": {
+    "effect_attr": [
+      "reload",
+      5
+    ],
+    "id": 35419,
+    "item_id": 21121,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "35420": {
+    "effect_attr": [
+      "reload",
+      5
+    ],
+    "id": 35420,
+    "item_id": 21121,
+    "item_num": 20,
+    "repair_exp": 100
+  },
+  "36201": {
+    "effect_attr": [
+      "torpedo",
+      3
+    ],
+    "id": 36201,
+    "item_id": 21131,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "36202": {
+    "effect_attr": [
+      "torpedo",
+      3
+    ],
+    "id": 36202,
+    "item_id": 21131,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "36203": {
+    "effect_attr": [
+      "torpedo",
+      3
+    ],
+    "id": 36203,
+    "item_id": 21131,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "36204": {
+    "effect_attr": [
+      "torpedo",
+      3
+    ],
+    "id": 36204,
+    "item_id": 21131,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "36205": {
+    "effect_attr": [
+      "torpedo",
+      4
+    ],
+    "id": 36205,
+    "item_id": 21131,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "36206": {
+    "effect_attr": [
+      "torpedo",
+      4
+    ],
+    "id": 36206,
+    "item_id": 21131,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "36207": {
+    "effect_attr": [
+      "torpedo",
+      4
+    ],
+    "id": 36207,
+    "item_id": 21131,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "36208": {
+    "effect_attr": [
+      "torpedo",
+      4
+    ],
+    "id": 36208,
+    "item_id": 21131,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "36209": {
+    "effect_attr": [
+      "torpedo",
+      4
+    ],
+    "id": 36209,
+    "item_id": 21131,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "36210": {
+    "effect_attr": [
+      "torpedo",
+      4
+    ],
+    "id": 36210,
+    "item_id": 21131,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "36211": {
+    "effect_attr": [
+      "torpedo",
+      4
+    ],
+    "id": 36211,
+    "item_id": 21131,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "36212": {
+    "effect_attr": [
+      "torpedo",
+      4
+    ],
+    "id": 36212,
+    "item_id": 21131,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "36213": {
+    "effect_attr": [
+      "torpedo",
+      4
+    ],
+    "id": 36213,
+    "item_id": 21131,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "36214": {
+    "effect_attr": [
+      "torpedo",
+      4
+    ],
+    "id": 36214,
+    "item_id": 21131,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "36215": {
+    "effect_attr": [
+      "torpedo",
+      4
+    ],
+    "id": 36215,
+    "item_id": 21131,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "36216": {
+    "effect_attr": [
+      "torpedo",
+      4
+    ],
+    "id": 36216,
+    "item_id": 21131,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "36217": {
+    "effect_attr": [
+      "torpedo",
+      4
+    ],
+    "id": 36217,
+    "item_id": 21131,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "36218": {
+    "effect_attr": [
+      "torpedo",
+      4
+    ],
+    "id": 36218,
+    "item_id": 21131,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "36219": {
+    "effect_attr": [
+      "torpedo",
+      4
+    ],
+    "id": 36219,
+    "item_id": 21131,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "36220": {
+    "effect_attr": [
+      "torpedo",
+      4
+    ],
+    "id": 36220,
+    "item_id": 21131,
+    "item_num": 20,
+    "repair_exp": 100
+  },
+  "36221": {
+    "effect_attr": [
+      "torpedo",
+      4
+    ],
+    "id": 36221,
+    "item_id": 21131,
+    "item_num": 20,
+    "repair_exp": 100
+  },
+  "36222": {
+    "effect_attr": [
+      "torpedo",
+      4
+    ],
+    "id": 36222,
+    "item_id": 21131,
+    "item_num": 20,
+    "repair_exp": 100
+  },
+  "36223": {
+    "effect_attr": [
+      "torpedo",
+      4
+    ],
+    "id": 36223,
+    "item_id": 21131,
+    "item_num": 20,
+    "repair_exp": 100
+  },
+  "36224": {
+    "effect_attr": [
+      "torpedo",
+      4
+    ],
+    "id": 36224,
+    "item_id": 21131,
+    "item_num": 20,
+    "repair_exp": 100
+  },
+  "36225": {
+    "effect_attr": [
+      "torpedo",
+      4
+    ],
+    "id": 36225,
+    "item_id": 21131,
+    "item_num": 24,
+    "repair_exp": 100
+  },
+  "36226": {
+    "effect_attr": [
+      "torpedo",
+      4
+    ],
+    "id": 36226,
+    "item_id": 21131,
+    "item_num": 24,
+    "repair_exp": 100
+  },
+  "36227": {
+    "effect_attr": [
+      "torpedo",
+      4
+    ],
+    "id": 36227,
+    "item_id": 21131,
+    "item_num": 24,
+    "repair_exp": 100
+  },
+  "36228": {
+    "effect_attr": [
+      "torpedo",
+      4
+    ],
+    "id": 36228,
+    "item_id": 21131,
+    "item_num": 24,
+    "repair_exp": 100
+  },
+  "36229": {
+    "effect_attr": [
+      "torpedo",
+      4
+    ],
+    "id": 36229,
+    "item_id": 21131,
+    "item_num": 24,
+    "repair_exp": 100
+  },
+  "36230": {
+    "effect_attr": [
+      "torpedo",
+      4
+    ],
+    "id": 36230,
+    "item_id": 21131,
+    "item_num": 28,
+    "repair_exp": 100
+  },
+  "36401": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 36401,
+    "item_id": 21121,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "36402": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 36402,
+    "item_id": 21121,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "36403": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 36403,
+    "item_id": 21121,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "36404": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 36404,
+    "item_id": 21121,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "36405": {
+    "effect_attr": [
+      "reload",
+      3
+    ],
+    "id": 36405,
+    "item_id": 21121,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "36406": {
+    "effect_attr": [
+      "reload",
+      3
+    ],
+    "id": 36406,
+    "item_id": 21121,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "36407": {
+    "effect_attr": [
+      "reload",
+      3
+    ],
+    "id": 36407,
+    "item_id": 21121,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "36408": {
+    "effect_attr": [
+      "reload",
+      3
+    ],
+    "id": 36408,
+    "item_id": 21121,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "36409": {
+    "effect_attr": [
+      "reload",
+      3
+    ],
+    "id": 36409,
+    "item_id": 21121,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "36410": {
+    "effect_attr": [
+      "reload",
+      3
+    ],
+    "id": 36410,
+    "item_id": 21121,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "36411": {
+    "effect_attr": [
+      "reload",
+      3
+    ],
+    "id": 36411,
+    "item_id": 21121,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "36412": {
+    "effect_attr": [
+      "reload",
+      3
+    ],
+    "id": 36412,
+    "item_id": 21121,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "36413": {
+    "effect_attr": [
+      "reload",
+      3
+    ],
+    "id": 36413,
+    "item_id": 21121,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "36414": {
+    "effect_attr": [
+      "reload",
+      3
+    ],
+    "id": 36414,
+    "item_id": 21121,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "36415": {
+    "effect_attr": [
+      "reload",
+      3
+    ],
+    "id": 36415,
+    "item_id": 21121,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "36416": {
+    "effect_attr": [
+      "reload",
+      3
+    ],
+    "id": 36416,
+    "item_id": 21121,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "36417": {
+    "effect_attr": [
+      "reload",
+      3
+    ],
+    "id": 36417,
+    "item_id": 21121,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "36418": {
+    "effect_attr": [
+      "reload",
+      3
+    ],
+    "id": 36418,
+    "item_id": 21121,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "36419": {
+    "effect_attr": [
+      "reload",
+      3
+    ],
+    "id": 36419,
+    "item_id": 21121,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "36420": {
+    "effect_attr": [
+      "reload",
+      3
+    ],
+    "id": 36420,
+    "item_id": 21121,
+    "item_num": 20,
+    "repair_exp": 100
+  },
+  "37101": {
+    "effect_attr": [
+      "cannon",
+      2
+    ],
+    "id": 37101,
+    "item_id": 21101,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "37102": {
+    "effect_attr": [
+      "cannon",
+      2
+    ],
+    "id": 37102,
+    "item_id": 21101,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "37103": {
+    "effect_attr": [
+      "cannon",
+      2
+    ],
+    "id": 37103,
+    "item_id": 21101,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "37104": {
+    "effect_attr": [
+      "cannon",
+      2
+    ],
+    "id": 37104,
+    "item_id": 21101,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "37105": {
+    "effect_attr": [
+      "cannon",
+      2
+    ],
+    "id": 37105,
+    "item_id": 21101,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "37106": {
+    "effect_attr": [
+      "cannon",
+      2
+    ],
+    "id": 37106,
+    "item_id": 21101,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "37107": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 37107,
+    "item_id": 21101,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "37108": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 37108,
+    "item_id": 21101,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "37109": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 37109,
+    "item_id": 21101,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "37110": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 37110,
+    "item_id": 21101,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "37111": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 37111,
+    "item_id": 21101,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "37112": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 37112,
+    "item_id": 21101,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "37113": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 37113,
+    "item_id": 21101,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "37114": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 37114,
+    "item_id": 21101,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "37115": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 37115,
+    "item_id": 21101,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "37116": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 37116,
+    "item_id": 21101,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "37117": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 37117,
+    "item_id": 21101,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "37118": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 37118,
+    "item_id": 21101,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "37119": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 37119,
+    "item_id": 21101,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "37120": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 37120,
+    "item_id": 21101,
+    "item_num": 20,
+    "repair_exp": 100
+  },
+  "37121": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 37121,
+    "item_id": 21101,
+    "item_num": 20,
+    "repair_exp": 100
+  },
+  "37122": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 37122,
+    "item_id": 21101,
+    "item_num": 20,
+    "repair_exp": 100
+  },
+  "37123": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 37123,
+    "item_id": 21101,
+    "item_num": 20,
+    "repair_exp": 100
+  },
+  "37124": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 37124,
+    "item_id": 21101,
+    "item_num": 20,
+    "repair_exp": 100
+  },
+  "37125": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 37125,
+    "item_id": 21101,
+    "item_num": 24,
+    "repair_exp": 100
+  },
+  "37126": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 37126,
+    "item_id": 21101,
+    "item_num": 24,
+    "repair_exp": 100
+  },
+  "37127": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 37127,
+    "item_id": 21101,
+    "item_num": 24,
+    "repair_exp": 100
+  },
+  "37128": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 37128,
+    "item_id": 21101,
+    "item_num": 24,
+    "repair_exp": 100
+  },
+  "37129": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 37129,
+    "item_id": 21101,
+    "item_num": 24,
+    "repair_exp": 100
+  },
+  "37130": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 37130,
+    "item_id": 21101,
+    "item_num": 28,
+    "repair_exp": 100
+  },
+  "37401": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 37401,
+    "item_id": 21121,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "37402": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 37402,
+    "item_id": 21121,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "37403": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 37403,
+    "item_id": 21121,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "37404": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 37404,
+    "item_id": 21121,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "37405": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 37405,
+    "item_id": 21121,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "37406": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 37406,
+    "item_id": 21121,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "37407": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 37407,
+    "item_id": 21121,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "37408": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 37408,
+    "item_id": 21121,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "37409": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 37409,
+    "item_id": 21121,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "37410": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 37410,
+    "item_id": 21121,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "37411": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 37411,
+    "item_id": 21121,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "37412": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 37412,
+    "item_id": 21121,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "37413": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 37413,
+    "item_id": 21121,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "37414": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 37414,
+    "item_id": 21121,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "37415": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 37415,
+    "item_id": 21121,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "37416": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 37416,
+    "item_id": 21121,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "37417": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 37417,
+    "item_id": 21121,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "37418": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 37418,
+    "item_id": 21121,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "37419": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 37419,
+    "item_id": 21121,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "37420": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 37420,
+    "item_id": 21121,
+    "item_num": 20,
+    "repair_exp": 100
+  },
+  "38101": {
+    "effect_attr": [
+      "cannon",
+      2
+    ],
+    "id": 38101,
+    "item_id": 21101,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "38102": {
+    "effect_attr": [
+      "cannon",
+      2
+    ],
+    "id": 38102,
+    "item_id": 21101,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "38103": {
+    "effect_attr": [
+      "cannon",
+      2
+    ],
+    "id": 38103,
+    "item_id": 21101,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "38104": {
+    "effect_attr": [
+      "cannon",
+      2
+    ],
+    "id": 38104,
+    "item_id": 21101,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "38105": {
+    "effect_attr": [
+      "cannon",
+      2
+    ],
+    "id": 38105,
+    "item_id": 21101,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "38106": {
+    "effect_attr": [
+      "cannon",
+      2
+    ],
+    "id": 38106,
+    "item_id": 21101,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "38107": {
+    "effect_attr": [
+      "cannon",
+      2
+    ],
+    "id": 38107,
+    "item_id": 21101,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "38108": {
+    "effect_attr": [
+      "cannon",
+      2
+    ],
+    "id": 38108,
+    "item_id": 21101,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "38109": {
+    "effect_attr": [
+      "cannon",
+      2
+    ],
+    "id": 38109,
+    "item_id": 21101,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "38110": {
+    "effect_attr": [
+      "cannon",
+      2
+    ],
+    "id": 38110,
+    "item_id": 21101,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "38111": {
+    "effect_attr": [
+      "cannon",
+      2
+    ],
+    "id": 38111,
+    "item_id": 21101,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "38112": {
+    "effect_attr": [
+      "cannon",
+      2
+    ],
+    "id": 38112,
+    "item_id": 21101,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "38113": {
+    "effect_attr": [
+      "cannon",
+      2
+    ],
+    "id": 38113,
+    "item_id": 21101,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "38114": {
+    "effect_attr": [
+      "cannon",
+      2
+    ],
+    "id": 38114,
+    "item_id": 21101,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "38115": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 38115,
+    "item_id": 21101,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "38116": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 38116,
+    "item_id": 21101,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "38117": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 38117,
+    "item_id": 21101,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "38118": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 38118,
+    "item_id": 21101,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "38119": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 38119,
+    "item_id": 21101,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "38120": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 38120,
+    "item_id": 21101,
+    "item_num": 20,
+    "repair_exp": 100
+  },
+  "38121": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 38121,
+    "item_id": 21101,
+    "item_num": 20,
+    "repair_exp": 100
+  },
+  "38122": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 38122,
+    "item_id": 21101,
+    "item_num": 20,
+    "repair_exp": 100
+  },
+  "38123": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 38123,
+    "item_id": 21101,
+    "item_num": 20,
+    "repair_exp": 100
+  },
+  "38124": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 38124,
+    "item_id": 21101,
+    "item_num": 20,
+    "repair_exp": 100
+  },
+  "38125": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 38125,
+    "item_id": 21101,
+    "item_num": 24,
+    "repair_exp": 100
+  },
+  "38126": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 38126,
+    "item_id": 21101,
+    "item_num": 24,
+    "repair_exp": 100
+  },
+  "38127": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 38127,
+    "item_id": 21101,
+    "item_num": 24,
+    "repair_exp": 100
+  },
+  "38128": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 38128,
+    "item_id": 21101,
+    "item_num": 24,
+    "repair_exp": 100
+  },
+  "38129": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 38129,
+    "item_id": 21101,
+    "item_num": 24,
+    "repair_exp": 100
+  },
+  "38130": {
+    "effect_attr": [
+      "cannon",
+      3
+    ],
+    "id": 38130,
+    "item_id": 21101,
+    "item_num": 28,
+    "repair_exp": 100
+  },
+  "38401": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 38401,
+    "item_id": 21121,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "38402": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 38402,
+    "item_id": 21121,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "38403": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 38403,
+    "item_id": 21121,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "38404": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 38404,
+    "item_id": 21121,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "38405": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 38405,
+    "item_id": 21121,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "38406": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 38406,
+    "item_id": 21121,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "38407": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 38407,
+    "item_id": 21121,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "38408": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 38408,
+    "item_id": 21121,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "38409": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 38409,
+    "item_id": 21121,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "38410": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 38410,
+    "item_id": 21121,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "38411": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 38411,
+    "item_id": 21121,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "38412": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 38412,
+    "item_id": 21121,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "38413": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 38413,
+    "item_id": 21121,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "38414": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 38414,
+    "item_id": 21121,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "38415": {
+    "effect_attr": [
+      "reload",
+      3
+    ],
+    "id": 38415,
+    "item_id": 21121,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "38416": {
+    "effect_attr": [
+      "reload",
+      3
+    ],
+    "id": 38416,
+    "item_id": 21121,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "38417": {
+    "effect_attr": [
+      "reload",
+      3
+    ],
+    "id": 38417,
+    "item_id": 21121,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "38418": {
+    "effect_attr": [
+      "reload",
+      3
+    ],
+    "id": 38418,
+    "item_id": 21121,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "38419": {
+    "effect_attr": [
+      "reload",
+      3
+    ],
+    "id": 38419,
+    "item_id": 21121,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "38420": {
+    "effect_attr": [
+      "reload",
+      3
+    ],
+    "id": 38420,
+    "item_id": 21121,
+    "item_num": 20,
+    "repair_exp": 100
+  },
+  "39301": {
+    "effect_attr": [
+      "air",
+      1
+    ],
+    "id": 39301,
+    "item_id": 21111,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "39302": {
+    "effect_attr": [
+      "air",
+      1
+    ],
+    "id": 39302,
+    "item_id": 21111,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "39303": {
+    "effect_attr": [
+      "air",
+      1
+    ],
+    "id": 39303,
+    "item_id": 21111,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "39304": {
+    "effect_attr": [
+      "air",
+      1
+    ],
+    "id": 39304,
+    "item_id": 21111,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "39305": {
+    "effect_attr": [
+      "air",
+      1
+    ],
+    "id": 39305,
+    "item_id": 21111,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "39306": {
+    "effect_attr": [
+      "air",
+      1
+    ],
+    "id": 39306,
+    "item_id": 21111,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "39307": {
+    "effect_attr": [
+      "air",
+      1
+    ],
+    "id": 39307,
+    "item_id": 21111,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "39308": {
+    "effect_attr": [
+      "air",
+      1
+    ],
+    "id": 39308,
+    "item_id": 21111,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "39309": {
+    "effect_attr": [
+      "air",
+      1
+    ],
+    "id": 39309,
+    "item_id": 21111,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "39310": {
+    "effect_attr": [
+      "air",
+      1
+    ],
+    "id": 39310,
+    "item_id": 21111,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "39311": {
+    "effect_attr": [
+      "air",
+      1
+    ],
+    "id": 39311,
+    "item_id": 21111,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "39312": {
+    "effect_attr": [
+      "air",
+      1
+    ],
+    "id": 39312,
+    "item_id": 21111,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "39313": {
+    "effect_attr": [
+      "air",
+      1
+    ],
+    "id": 39313,
+    "item_id": 21111,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "39314": {
+    "effect_attr": [
+      "air",
+      2
+    ],
+    "id": 39314,
+    "item_id": 21111,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "39315": {
+    "effect_attr": [
+      "air",
+      2
+    ],
+    "id": 39315,
+    "item_id": 21111,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "39316": {
+    "effect_attr": [
+      "air",
+      2
+    ],
+    "id": 39316,
+    "item_id": 21111,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "39317": {
+    "effect_attr": [
+      "air",
+      2
+    ],
+    "id": 39317,
+    "item_id": 21111,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "39318": {
+    "effect_attr": [
+      "air",
+      2
+    ],
+    "id": 39318,
+    "item_id": 21111,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "39319": {
+    "effect_attr": [
+      "air",
+      2
+    ],
+    "id": 39319,
+    "item_id": 21111,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "39320": {
+    "effect_attr": [
+      "air",
+      2
+    ],
+    "id": 39320,
+    "item_id": 21111,
+    "item_num": 20,
+    "repair_exp": 100
+  },
+  "39321": {
+    "effect_attr": [
+      "air",
+      2
+    ],
+    "id": 39321,
+    "item_id": 21111,
+    "item_num": 20,
+    "repair_exp": 100
+  },
+  "39322": {
+    "effect_attr": [
+      "air",
+      2
+    ],
+    "id": 39322,
+    "item_id": 21111,
+    "item_num": 20,
+    "repair_exp": 100
+  },
+  "39323": {
+    "effect_attr": [
+      "air",
+      2
+    ],
+    "id": 39323,
+    "item_id": 21111,
+    "item_num": 20,
+    "repair_exp": 100
+  },
+  "39324": {
+    "effect_attr": [
+      "air",
+      3
+    ],
+    "id": 39324,
+    "item_id": 21111,
+    "item_num": 20,
+    "repair_exp": 100
+  },
+  "39325": {
+    "effect_attr": [
+      "air",
+      3
+    ],
+    "id": 39325,
+    "item_id": 21111,
+    "item_num": 24,
+    "repair_exp": 100
+  },
+  "39326": {
+    "effect_attr": [
+      "air",
+      3
+    ],
+    "id": 39326,
+    "item_id": 21111,
+    "item_num": 24,
+    "repair_exp": 100
+  },
+  "39327": {
+    "effect_attr": [
+      "air",
+      3
+    ],
+    "id": 39327,
+    "item_id": 21111,
+    "item_num": 24,
+    "repair_exp": 100
+  },
+  "39328": {
+    "effect_attr": [
+      "air",
+      3
+    ],
+    "id": 39328,
+    "item_id": 21111,
+    "item_num": 24,
+    "repair_exp": 100
+  },
+  "39329": {
+    "effect_attr": [
+      "air",
+      3
+    ],
+    "id": 39329,
+    "item_id": 21111,
+    "item_num": 24,
+    "repair_exp": 100
+  },
+  "39330": {
+    "effect_attr": [
+      "air",
+      4
+    ],
+    "id": 39330,
+    "item_id": 21111,
+    "item_num": 28,
+    "repair_exp": 100
+  },
+  "39401": {
+    "effect_attr": [
+      "reload",
+      1
+    ],
+    "id": 39401,
+    "item_id": 21121,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "39402": {
+    "effect_attr": [
+      "reload",
+      1
+    ],
+    "id": 39402,
+    "item_id": 21121,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "39403": {
+    "effect_attr": [
+      "reload",
+      1
+    ],
+    "id": 39403,
+    "item_id": 21121,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "39404": {
+    "effect_attr": [
+      "reload",
+      1
+    ],
+    "id": 39404,
+    "item_id": 21121,
+    "item_num": 4,
+    "repair_exp": 100
+  },
+  "39405": {
+    "effect_attr": [
+      "reload",
+      1
+    ],
+    "id": 39405,
+    "item_id": 21121,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "39406": {
+    "effect_attr": [
+      "reload",
+      1
+    ],
+    "id": 39406,
+    "item_id": 21121,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "39407": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 39407,
+    "item_id": 21121,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "39408": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 39408,
+    "item_id": 21121,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "39409": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 39409,
+    "item_id": 21121,
+    "item_num": 8,
+    "repair_exp": 100
+  },
+  "39410": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 39410,
+    "item_id": 21121,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "39411": {
+    "effect_attr": [
+      "reload",
+      2
+    ],
+    "id": 39411,
+    "item_id": 21121,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "39412": {
+    "effect_attr": [
+      "reload",
+      3
+    ],
+    "id": 39412,
+    "item_id": 21121,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "39413": {
+    "effect_attr": [
+      "reload",
+      3
+    ],
+    "id": 39413,
+    "item_id": 21121,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "39414": {
+    "effect_attr": [
+      "reload",
+      3
+    ],
+    "id": 39414,
+    "item_id": 21121,
+    "item_num": 12,
+    "repair_exp": 100
+  },
+  "39415": {
+    "effect_attr": [
+      "reload",
+      3
+    ],
+    "id": 39415,
+    "item_id": 21121,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "39416": {
+    "effect_attr": [
+      "reload",
+      4
+    ],
+    "id": 39416,
+    "item_id": 21121,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "39417": {
+    "effect_attr": [
+      "reload",
+      4
+    ],
+    "id": 39417,
+    "item_id": 21121,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "39418": {
+    "effect_attr": [
+      "reload",
+      4
+    ],
+    "id": 39418,
+    "item_id": 21121,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "39419": {
+    "effect_attr": [
+      "reload",
+      4
+    ],
+    "id": 39419,
+    "item_id": 21121,
+    "item_num": 16,
+    "repair_exp": 100
+  },
+  "39420": {
+    "effect_attr": [
+      "reload",
+      4
+    ],
+    "id": 39420,
+    "item_id": 21121,
+    "item_num": 20,
+    "repair_exp": 100
+  },
   "all": [
     1301,
     1302,
@@ -17841,6 +21341,356 @@
     32417,
     32418,
     32419,
-    32420
+    32420,
+    33101,
+    33102,
+    33103,
+    33104,
+    33105,
+    33106,
+    33107,
+    33108,
+    33109,
+    33110,
+    33111,
+    33112,
+    33113,
+    33114,
+    33115,
+    33116,
+    33117,
+    33118,
+    33119,
+    33120,
+    33301,
+    33302,
+    33303,
+    33304,
+    33305,
+    33306,
+    33307,
+    33308,
+    33309,
+    33310,
+    33311,
+    33312,
+    33313,
+    33314,
+    33315,
+    33316,
+    33317,
+    33318,
+    33319,
+    33320,
+    33401,
+    33402,
+    33403,
+    33404,
+    33405,
+    33406,
+    33407,
+    33408,
+    33409,
+    33410,
+    34101,
+    34102,
+    34103,
+    34104,
+    34105,
+    34106,
+    34107,
+    34108,
+    34109,
+    34110,
+    34111,
+    34112,
+    34113,
+    34114,
+    34115,
+    34116,
+    34117,
+    34118,
+    34119,
+    34120,
+    34201,
+    34202,
+    34203,
+    34204,
+    34205,
+    34206,
+    34207,
+    34208,
+    34209,
+    34210,
+    34211,
+    34212,
+    34213,
+    34214,
+    34215,
+    34216,
+    34217,
+    34218,
+    34219,
+    34220,
+    34401,
+    34402,
+    34403,
+    34404,
+    34405,
+    34406,
+    34407,
+    34408,
+    34409,
+    34410,
+    35101,
+    35102,
+    35103,
+    35104,
+    35105,
+    35106,
+    35107,
+    35108,
+    35109,
+    35110,
+    35111,
+    35112,
+    35113,
+    35114,
+    35115,
+    35116,
+    35117,
+    35118,
+    35119,
+    35120,
+    35121,
+    35122,
+    35123,
+    35124,
+    35125,
+    35126,
+    35127,
+    35128,
+    35129,
+    35130,
+    35401,
+    35402,
+    35403,
+    35404,
+    35405,
+    35406,
+    35407,
+    35408,
+    35409,
+    35410,
+    35411,
+    35412,
+    35413,
+    35414,
+    35415,
+    35416,
+    35417,
+    35418,
+    35419,
+    35420,
+    36201,
+    36202,
+    36203,
+    36204,
+    36205,
+    36206,
+    36207,
+    36208,
+    36209,
+    36210,
+    36211,
+    36212,
+    36213,
+    36214,
+    36215,
+    36216,
+    36217,
+    36218,
+    36219,
+    36220,
+    36221,
+    36222,
+    36223,
+    36224,
+    36225,
+    36226,
+    36227,
+    36228,
+    36229,
+    36230,
+    36401,
+    36402,
+    36403,
+    36404,
+    36405,
+    36406,
+    36407,
+    36408,
+    36409,
+    36410,
+    36411,
+    36412,
+    36413,
+    36414,
+    36415,
+    36416,
+    36417,
+    36418,
+    36419,
+    36420,
+    37101,
+    37102,
+    37103,
+    37104,
+    37105,
+    37106,
+    37107,
+    37108,
+    37109,
+    37110,
+    37111,
+    37112,
+    37113,
+    37114,
+    37115,
+    37116,
+    37117,
+    37118,
+    37119,
+    37120,
+    37121,
+    37122,
+    37123,
+    37124,
+    37125,
+    37126,
+    37127,
+    37128,
+    37129,
+    37130,
+    37401,
+    37402,
+    37403,
+    37404,
+    37405,
+    37406,
+    37407,
+    37408,
+    37409,
+    37410,
+    37411,
+    37412,
+    37413,
+    37414,
+    37415,
+    37416,
+    37417,
+    37418,
+    37419,
+    37420,
+    38101,
+    38102,
+    38103,
+    38104,
+    38105,
+    38106,
+    38107,
+    38108,
+    38109,
+    38110,
+    38111,
+    38112,
+    38113,
+    38114,
+    38115,
+    38116,
+    38117,
+    38118,
+    38119,
+    38120,
+    38121,
+    38122,
+    38123,
+    38124,
+    38125,
+    38126,
+    38127,
+    38128,
+    38129,
+    38130,
+    38401,
+    38402,
+    38403,
+    38404,
+    38405,
+    38406,
+    38407,
+    38408,
+    38409,
+    38410,
+    38411,
+    38412,
+    38413,
+    38414,
+    38415,
+    38416,
+    38417,
+    38418,
+    38419,
+    38420,
+    39301,
+    39302,
+    39303,
+    39304,
+    39305,
+    39306,
+    39307,
+    39308,
+    39309,
+    39310,
+    39311,
+    39312,
+    39313,
+    39314,
+    39315,
+    39316,
+    39317,
+    39318,
+    39319,
+    39320,
+    39321,
+    39322,
+    39323,
+    39324,
+    39325,
+    39326,
+    39327,
+    39328,
+    39329,
+    39330,
+    39401,
+    39402,
+    39403,
+    39404,
+    39405,
+    39406,
+    39407,
+    39408,
+    39409,
+    39410,
+    39411,
+    39412,
+    39413,
+    39414,
+    39415,
+    39416,
+    39417,
+    39418,
+    39419,
+    39420
   ]
 }

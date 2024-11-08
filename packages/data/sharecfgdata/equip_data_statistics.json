@@ -4886,6 +4886,108 @@
       486
     ]
   },
+  "491": {
+    "ammo": 3,
+    "ammo_icon": [
+      1
+    ],
+    "ammo_info": [],
+    "damage": "15 x 8",
+    "descrip": "默认装备",
+    "equip_info": [],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "1",
+    "id": 491,
+    "label": [
+      "SN",
+      "DD",
+      "MG"
+    ],
+    "name": "纳希莫夫 自带副炮",
+    "nationality": 7,
+    "part_main": [
+      1,
+      19,
+      20,
+      21
+    ],
+    "part_sub": [
+      2,
+      3,
+      4,
+      5,
+      8,
+      13,
+      18
+    ],
+    "property_rate": [],
+    "rarity": 5,
+    "skill_id": [],
+    "speciality": "<[LOCK]>",
+    "tech": 1,
+    "torpedo_ammo": 0,
+    "type": 1,
+    "value_2": 0,
+    "value_3": 0,
+    "weapon_id": [
+      491
+    ]
+  },
+  "492": {
+    "ammo": 9,
+    "ammo_icon": [],
+    "ammo_info": [
+      [
+        7,
+        9008
+      ]
+    ],
+    "attribute_2": "antisub",
+    "damage": "186 ~ 372",
+    "descrip": "说明未填写",
+    "equip_info": [
+      1,
+      2,
+      6,
+      10,
+      11,
+      12
+    ],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "1",
+    "id": 492,
+    "label": [
+      "DC"
+    ],
+    "name": "埃尔德里奇改造 自带刺猬弹（强化）",
+    "nationality": 1,
+    "part_main": [
+      1,
+      2,
+      20,
+      21
+    ],
+    "part_sub": [
+      1,
+      2,
+      20,
+      21
+    ],
+    "property_rate": [],
+    "rarity": 5,
+    "skill_id": [],
+    "speciality": "<[ASW]>",
+    "tech": 0,
+    "torpedo_ammo": 0,
+    "type": 14,
+    "value_2": 45,
+    "value_3": 0,
+    "weapon_id": [
+      492
+    ]
+  },
   "500": {
     "ammo": 10,
     "ammo_icon": [],
@@ -16769,7 +16871,7 @@
     ],
     "attribute_2": "cannon",
     "damage": "6 x 3",
-    "descrip": "说明未填写",
+    "descrip": "中型火炮，可发射多种类型弹丸，令敌人闻风丧胆。",
     "equip_info": [
       1,
       2,
@@ -16945,7 +17047,7 @@
     "ammo_info": [],
     "attribute_1": "cannon",
     "attribute_2": "reload",
-    "descrip": "说明未填写",
+    "descrip": "用它们承载力量和勇气，轰碎敌人吧！",
     "equip_info": [
       6
     ],
@@ -17067,7 +17169,7 @@
     "ammo_info": [],
     "attribute_1": "durability",
     "attribute_2": "dodge",
-    "descrip": "说明未填写",
+    "descrip": "扬帆起航，让我们征服大海！",
     "equip_info": [
       6
     ],
@@ -22654,7 +22756,7 @@
       ],
       [
         4,
-        1403
+        1404
       ],
       6,
       10,
@@ -22991,6 +23093,195 @@
     "id": 5653,
     "weapon_id": [
       5653
+    ]
+  },
+  "5660": {
+    "ammo": 5,
+    "ammo_icon": [],
+    "ammo_info": [
+      [
+        3,
+        1806
+      ]
+    ],
+    "attribute_2": "torpedo",
+    "damage": "82 x 5",
+    "descrip": "莫加多尔级装备的550mm鱼雷武器组",
+    "equip_info": [
+      1,
+      2,
+      [
+        3,
+        1806
+      ],
+      [
+        4,
+        1404
+      ],
+      6,
+      10,
+      11,
+      12
+    ],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "5660",
+    "id": 5660,
+    "label": [
+      "FFNF",
+      "ST",
+      "TP",
+      "TRI-DUO"
+    ],
+    "name": "550mm鱼雷组（三联装+双联装）",
+    "nationality": 8,
+    "part_main": [
+      1,
+      2,
+      3,
+      18,
+      20,
+      21
+    ],
+    "part_sub": [
+      1,
+      2,
+      3,
+      18,
+      20,
+      21
+    ],
+    "property_rate": [],
+    "rarity": 5,
+    "skill_id": [],
+    "speciality": "<[TRP]>",
+    "tech": 0,
+    "torpedo_ammo": 0,
+    "type": 5,
+    "value_2": 45,
+    "value_3": 0,
+    "weapon_id": [
+      5660
+    ]
+  },
+  "5661": {
+    "base": 5660,
+    "damage": "92 x 5",
+    "hidden_skill_id": [],
+    "id": 5661,
+    "weapon_id": [
+      5661
+    ]
+  },
+  "5662": {
+    "base": 5660,
+    "damage": "102 x 5",
+    "hidden_skill_id": [],
+    "id": 5662,
+    "weapon_id": [
+      5662
+    ]
+  },
+  "5663": {
+    "base": 5660,
+    "damage": "112 x 5",
+    "hidden_skill_id": [],
+    "id": 5663,
+    "weapon_id": [
+      5663
+    ]
+  },
+  "5664": {
+    "base": 5660,
+    "damage": "122 x 5",
+    "hidden_skill_id": [],
+    "id": 5664,
+    "weapon_id": [
+      5664
+    ]
+  },
+  "5665": {
+    "base": 5660,
+    "damage": "132 x 5",
+    "hidden_skill_id": [],
+    "id": 5665,
+    "weapon_id": [
+      5665
+    ]
+  },
+  "5666": {
+    "base": 5660,
+    "damage": "142 x 5",
+    "hidden_skill_id": [],
+    "id": 5666,
+    "weapon_id": [
+      5666
+    ]
+  },
+  "5667": {
+    "base": 5660,
+    "damage": "152 x 5",
+    "hidden_skill_id": [],
+    "id": 5667,
+    "weapon_id": [
+      5667
+    ]
+  },
+  "5668": {
+    "base": 5660,
+    "damage": "162 x 5",
+    "hidden_skill_id": [],
+    "id": 5668,
+    "weapon_id": [
+      5668
+    ]
+  },
+  "5669": {
+    "base": 5660,
+    "damage": "172 x 5",
+    "hidden_skill_id": [],
+    "id": 5669,
+    "weapon_id": [
+      5669
+    ]
+  },
+  "5670": {
+    "base": 5660,
+    "damage": "182 x 5",
+    "hidden_skill_id": [],
+    "id": 5670,
+    "weapon_id": [
+      5670
+    ]
+  },
+  "5671": {
+    "anti_siren": 100,
+    "base": 5660,
+    "damage": "182 x 5",
+    "hidden_skill_id": [],
+    "id": 5671,
+    "weapon_id": [
+      5671
+    ]
+  },
+  "5672": {
+    "anti_siren": 200,
+    "base": 5660,
+    "damage": "182 x 5",
+    "hidden_skill_id": [],
+    "id": 5672,
+    "weapon_id": [
+      5672
+    ]
+  },
+  "5673": {
+    "anti_siren": 300,
+    "base": 5660,
+    "damage": "182 x 5",
+    "hidden_skill_id": [],
+    "id": 5673,
+    "weapon_id": [
+      5673
     ]
   },
   "6000": {
@@ -41500,6 +41791,352 @@
       17453
     ]
   },
+  "17460": {
+    "ammo": 5,
+    "ammo_icon": [],
+    "ammo_info": [
+      [
+        6,
+        50660
+      ],
+      [
+        5,
+        59980
+      ]
+    ],
+    "attribute_2": "air",
+    "descrip": "说明未填写",
+    "equip_info": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "17460",
+    "id": 17460,
+    "label": [
+      "USS",
+      "CV",
+      "FT",
+      "HERK"
+    ],
+    "name": "试作型F8F熊猫（浮筒型）",
+    "nationality": 1,
+    "part_main": [
+      1,
+      10
+    ],
+    "part_sub": [
+      1,
+      10
+    ],
+    "property_rate": [],
+    "rarity": 5,
+    "skill_id": [
+      60610
+    ],
+    "speciality": "<[AIR]>",
+    "tech": 0,
+    "torpedo_ammo": 0,
+    "type": 12,
+    "value_2": 45,
+    "value_3": 0,
+    "weapon_id": [
+      17460,
+      81460
+    ]
+  },
+  "17461": {
+    "ammo_info": [
+      [
+        6,
+        50661
+      ],
+      [
+        5,
+        59981
+      ]
+    ],
+    "base": 17460,
+    "hidden_skill_id": [],
+    "id": 17461,
+    "skill_id": [
+      60611
+    ],
+    "weapon_id": [
+      17461,
+      81461
+    ]
+  },
+  "17462": {
+    "ammo_info": [
+      [
+        6,
+        50662
+      ],
+      [
+        5,
+        59982
+      ]
+    ],
+    "base": 17460,
+    "hidden_skill_id": [],
+    "id": 17462,
+    "skill_id": [
+      60612
+    ],
+    "weapon_id": [
+      17462,
+      81462
+    ]
+  },
+  "17463": {
+    "ammo_info": [
+      [
+        6,
+        50663
+      ],
+      [
+        5,
+        59983
+      ]
+    ],
+    "base": 17460,
+    "hidden_skill_id": [],
+    "id": 17463,
+    "skill_id": [
+      60613
+    ],
+    "weapon_id": [
+      17463,
+      81463
+    ]
+  },
+  "17464": {
+    "ammo_info": [
+      [
+        6,
+        50664
+      ],
+      [
+        5,
+        59984
+      ]
+    ],
+    "base": 17460,
+    "hidden_skill_id": [],
+    "id": 17464,
+    "skill_id": [
+      60614
+    ],
+    "weapon_id": [
+      17464,
+      81464
+    ]
+  },
+  "17465": {
+    "ammo_info": [
+      [
+        6,
+        50665
+      ],
+      [
+        5,
+        59985
+      ]
+    ],
+    "base": 17460,
+    "hidden_skill_id": [],
+    "id": 17465,
+    "skill_id": [
+      60615
+    ],
+    "weapon_id": [
+      17465,
+      81465
+    ]
+  },
+  "17466": {
+    "ammo_info": [
+      [
+        6,
+        50666
+      ],
+      [
+        5,
+        59986
+      ]
+    ],
+    "base": 17460,
+    "hidden_skill_id": [],
+    "id": 17466,
+    "skill_id": [
+      60616
+    ],
+    "weapon_id": [
+      17466,
+      81466
+    ]
+  },
+  "17467": {
+    "ammo_info": [
+      [
+        6,
+        50667
+      ],
+      [
+        5,
+        59987
+      ]
+    ],
+    "base": 17460,
+    "hidden_skill_id": [],
+    "id": 17467,
+    "skill_id": [
+      60617
+    ],
+    "weapon_id": [
+      17467,
+      81467
+    ]
+  },
+  "17468": {
+    "ammo_info": [
+      [
+        6,
+        50668
+      ],
+      [
+        5,
+        59988
+      ]
+    ],
+    "base": 17460,
+    "hidden_skill_id": [],
+    "id": 17468,
+    "skill_id": [
+      60618
+    ],
+    "weapon_id": [
+      17468,
+      81468
+    ]
+  },
+  "17469": {
+    "ammo_info": [
+      [
+        6,
+        50669
+      ],
+      [
+        5,
+        59989
+      ]
+    ],
+    "base": 17460,
+    "hidden_skill_id": [],
+    "id": 17469,
+    "skill_id": [
+      60619
+    ],
+    "weapon_id": [
+      17469,
+      81469
+    ]
+  },
+  "17470": {
+    "ammo_info": [
+      [
+        6,
+        50670
+      ],
+      [
+        5,
+        59990
+      ]
+    ],
+    "base": 17460,
+    "hidden_skill_id": [],
+    "id": 17470,
+    "skill_id": [
+      60620
+    ],
+    "weapon_id": [
+      17470,
+      81470
+    ]
+  },
+  "17471": {
+    "ammo_info": [
+      [
+        6,
+        50671
+      ],
+      [
+        5,
+        59991
+      ]
+    ],
+    "anti_siren": 100,
+    "base": 17460,
+    "hidden_skill_id": [],
+    "id": 17471,
+    "skill_id": [
+      60621
+    ],
+    "weapon_id": [
+      17471,
+      81471
+    ]
+  },
+  "17472": {
+    "ammo_info": [
+      [
+        6,
+        50672
+      ],
+      [
+        5,
+        59992
+      ]
+    ],
+    "anti_siren": 200,
+    "base": 17460,
+    "hidden_skill_id": [],
+    "id": 17472,
+    "skill_id": [
+      60622
+    ],
+    "weapon_id": [
+      17472,
+      81472
+    ]
+  },
+  "17473": {
+    "ammo_info": [
+      [
+        6,
+        50673
+      ],
+      [
+        5,
+        59993
+      ]
+    ],
+    "anti_siren": 300,
+    "base": 17460,
+    "hidden_skill_id": [],
+    "id": 17473,
+    "skill_id": [
+      60623
+    ],
+    "weapon_id": [
+      17473,
+      81473
+    ]
+  },
   "18000": {
     "ammo": 5,
     "ammo_icon": [],
@@ -48763,6 +49400,196 @@
     "id": 21613,
     "weapon_id": [
       21613
+    ]
+  },
+  "21620": {
+    "ammo": 3,
+    "ammo_icon": [
+      1
+    ],
+    "ammo_info": [
+      [
+        1,
+        1100
+      ]
+    ],
+    "attribute_2": "cannon",
+    "attribute_3": "antiaircraft",
+    "damage": "4 x 1",
+    "descrip": "说明未填写",
+    "equip_info": [
+      1,
+      2,
+      [
+        3,
+        1100
+      ],
+      [
+        4,
+        1000
+      ],
+      6,
+      10,
+      11,
+      12
+    ],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "21620",
+    "id": 21620,
+    "label": [
+      "HMS",
+      "DD",
+      "MG",
+      "CM"
+    ],
+    "name": "单装113mm高平两用炮Mark IV",
+    "nationality": 2,
+    "part_main": [
+      1,
+      19,
+      20,
+      21
+    ],
+    "part_sub": [
+      2,
+      3,
+      4,
+      5,
+      8,
+      13,
+      18
+    ],
+    "property_rate": [],
+    "rarity": 5,
+    "skill_id": [],
+    "speciality": "<[LOCK]>",
+    "tech": 0,
+    "torpedo_ammo": 0,
+    "type": 1,
+    "value_2": 25,
+    "value_3": 20,
+    "weapon_id": [
+      21620
+    ]
+  },
+  "21621": {
+    "base": 21620,
+    "hidden_skill_id": [],
+    "id": 21621,
+    "weapon_id": [
+      21621
+    ]
+  },
+  "21622": {
+    "base": 21620,
+    "damage": "5 x 1",
+    "hidden_skill_id": [],
+    "id": 21622,
+    "weapon_id": [
+      21622
+    ]
+  },
+  "21623": {
+    "base": 21620,
+    "damage": "6 x 1",
+    "hidden_skill_id": [],
+    "id": 21623,
+    "weapon_id": [
+      21623
+    ]
+  },
+  "21624": {
+    "base": 21620,
+    "damage": "7 x 1",
+    "hidden_skill_id": [],
+    "id": 21624,
+    "weapon_id": [
+      21624
+    ]
+  },
+  "21625": {
+    "base": 21620,
+    "damage": "8 x 1",
+    "hidden_skill_id": [],
+    "id": 21625,
+    "weapon_id": [
+      21625
+    ]
+  },
+  "21626": {
+    "base": 21620,
+    "damage": "9 x 1",
+    "hidden_skill_id": [],
+    "id": 21626,
+    "weapon_id": [
+      21626
+    ]
+  },
+  "21627": {
+    "base": 21620,
+    "damage": "10 x 1",
+    "hidden_skill_id": [],
+    "id": 21627,
+    "weapon_id": [
+      21627
+    ]
+  },
+  "21628": {
+    "base": 21620,
+    "damage": "11 x 1",
+    "hidden_skill_id": [],
+    "id": 21628,
+    "weapon_id": [
+      21628
+    ]
+  },
+  "21629": {
+    "base": 21620,
+    "damage": "12 x 1",
+    "hidden_skill_id": [],
+    "id": 21629,
+    "weapon_id": [
+      21629
+    ]
+  },
+  "21630": {
+    "base": 21620,
+    "damage": "13 x 1",
+    "hidden_skill_id": [],
+    "id": 21630,
+    "weapon_id": [
+      21630
+    ]
+  },
+  "21631": {
+    "anti_siren": 100,
+    "base": 21620,
+    "damage": "13 x 1",
+    "hidden_skill_id": [],
+    "id": 21631,
+    "weapon_id": [
+      21631
+    ]
+  },
+  "21632": {
+    "anti_siren": 200,
+    "base": 21620,
+    "damage": "13 x 1",
+    "hidden_skill_id": [],
+    "id": 21632,
+    "weapon_id": [
+      21632
+    ]
+  },
+  "21633": {
+    "anti_siren": 300,
+    "base": 21620,
+    "damage": "13 x 1",
+    "hidden_skill_id": [],
+    "id": 21633,
+    "weapon_id": [
+      21633
     ]
   },
   "22000": {
@@ -73557,6 +74384,180 @@
       34311
     ]
   },
+  "34320": {
+    "ammo": 1,
+    "ammo_icon": [
+      2
+    ],
+    "ammo_info": [
+      [
+        2,
+        1506
+      ]
+    ],
+    "attribute_2": "cannon",
+    "damage": "60 x 2",
+    "descrip": "说明未填写",
+    "equip_info": [
+      1,
+      2,
+      6,
+      10,
+      11,
+      12
+    ],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "34320",
+    "id": 34320,
+    "label": [
+      "IJN",
+      "BB",
+      "MG",
+      "AP"
+    ],
+    "name": "试作型双联装410mm主炮Mod.A",
+    "nationality": 3,
+    "part_main": [
+      4,
+      5,
+      10,
+      13
+    ],
+    "part_sub": [],
+    "property_rate": [],
+    "rarity": 5,
+    "skill_id": [],
+    "speciality": "<[VOL]>",
+    "tech": 0,
+    "torpedo_ammo": 0,
+    "type": 4,
+    "value_2": 45,
+    "value_3": 0,
+    "weapon_id": [
+      34320
+    ]
+  },
+  "34321": {
+    "base": 34320,
+    "damage": "70 x 2",
+    "hidden_skill_id": [],
+    "id": 34321,
+    "weapon_id": [
+      34321
+    ]
+  },
+  "34322": {
+    "base": 34320,
+    "damage": "80 x 2",
+    "hidden_skill_id": [],
+    "id": 34322,
+    "weapon_id": [
+      34322
+    ]
+  },
+  "34323": {
+    "base": 34320,
+    "damage": "88 x 2",
+    "hidden_skill_id": [],
+    "id": 34323,
+    "weapon_id": [
+      34323
+    ]
+  },
+  "34324": {
+    "base": 34320,
+    "damage": "98 x 2",
+    "hidden_skill_id": [],
+    "id": 34324,
+    "weapon_id": [
+      34324
+    ]
+  },
+  "34325": {
+    "base": 34320,
+    "damage": "108 x 2",
+    "hidden_skill_id": [],
+    "id": 34325,
+    "weapon_id": [
+      34325
+    ]
+  },
+  "34326": {
+    "base": 34320,
+    "damage": "118 x 2",
+    "hidden_skill_id": [],
+    "id": 34326,
+    "weapon_id": [
+      34326
+    ]
+  },
+  "34327": {
+    "base": 34320,
+    "damage": "128 x 2",
+    "hidden_skill_id": [],
+    "id": 34327,
+    "weapon_id": [
+      34327
+    ]
+  },
+  "34328": {
+    "base": 34320,
+    "damage": "136 x 2",
+    "hidden_skill_id": [],
+    "id": 34328,
+    "weapon_id": [
+      34328
+    ]
+  },
+  "34329": {
+    "base": 34320,
+    "damage": "146 x 2",
+    "hidden_skill_id": [],
+    "id": 34329,
+    "weapon_id": [
+      34329
+    ]
+  },
+  "34330": {
+    "base": 34320,
+    "damage": "156 x 2",
+    "hidden_skill_id": [],
+    "id": 34330,
+    "weapon_id": [
+      34330
+    ]
+  },
+  "34331": {
+    "anti_siren": 100,
+    "base": 34320,
+    "damage": "156 x 2",
+    "hidden_skill_id": [],
+    "id": 34331,
+    "weapon_id": [
+      34331
+    ]
+  },
+  "34332": {
+    "anti_siren": 200,
+    "base": 34320,
+    "damage": "156 x 2",
+    "hidden_skill_id": [],
+    "id": 34332,
+    "weapon_id": [
+      34332
+    ]
+  },
+  "34333": {
+    "anti_siren": 300,
+    "base": 34320,
+    "damage": "156 x 2",
+    "hidden_skill_id": [],
+    "id": 34333,
+    "weapon_id": [
+      34333
+    ]
+  },
   "35000": {
     "ammo": 5,
     "ammo_icon": [],
@@ -80233,6 +81234,195 @@
     "id": 36733,
     "weapon_id": [
       36733
+    ]
+  },
+  "36740": {
+    "ammo": 5,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "attribute_2": "antiaircraft",
+    "damage": "42<[WAVE]>",
+    "descrip": "说明未填写",
+    "equip_info": [
+      1,
+      2,
+      6,
+      10
+    ],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "36740",
+    "id": 36740,
+    "label": [
+      "IJN",
+      "ST",
+      "AA"
+    ],
+    "name": "80mm98式连装高炮",
+    "nationality": 3,
+    "part_main": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      10,
+      12,
+      13,
+      18,
+      19,
+      20,
+      21
+    ],
+    "part_sub": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      10,
+      12,
+      13,
+      18,
+      19,
+      20,
+      21
+    ],
+    "property_rate": [],
+    "rarity": 5,
+    "skill_id": [
+      60600
+    ],
+    "speciality": "<[SRG]>",
+    "tech": 0,
+    "torpedo_ammo": 0,
+    "type": 6,
+    "value_2": 45,
+    "value_3": 0,
+    "weapon_id": [
+      36740
+    ]
+  },
+  "36741": {
+    "base": 36740,
+    "damage": "48<[WAVE]>",
+    "hidden_skill_id": [],
+    "id": 36741,
+    "weapon_id": [
+      36741
+    ]
+  },
+  "36742": {
+    "base": 36740,
+    "damage": "54<[WAVE]>",
+    "hidden_skill_id": [],
+    "id": 36742,
+    "weapon_id": [
+      36742
+    ]
+  },
+  "36743": {
+    "base": 36740,
+    "damage": "60<[WAVE]>",
+    "hidden_skill_id": [],
+    "id": 36743,
+    "weapon_id": [
+      36743
+    ]
+  },
+  "36744": {
+    "base": 36740,
+    "damage": "66<[WAVE]>",
+    "hidden_skill_id": [],
+    "id": 36744,
+    "weapon_id": [
+      36744
+    ]
+  },
+  "36745": {
+    "base": 36740,
+    "damage": "73<[WAVE]>",
+    "hidden_skill_id": [],
+    "id": 36745,
+    "weapon_id": [
+      36745
+    ]
+  },
+  "36746": {
+    "base": 36740,
+    "damage": "80<[WAVE]>",
+    "hidden_skill_id": [],
+    "id": 36746,
+    "weapon_id": [
+      36746
+    ]
+  },
+  "36747": {
+    "base": 36740,
+    "damage": "87<[WAVE]>",
+    "hidden_skill_id": [],
+    "id": 36747,
+    "weapon_id": [
+      36747
+    ]
+  },
+  "36748": {
+    "base": 36740,
+    "damage": "93<[WAVE]>",
+    "hidden_skill_id": [],
+    "id": 36748,
+    "weapon_id": [
+      36748
+    ]
+  },
+  "36749": {
+    "base": 36740,
+    "damage": "100<[WAVE]>",
+    "hidden_skill_id": [],
+    "id": 36749,
+    "weapon_id": [
+      36749
+    ]
+  },
+  "36750": {
+    "base": 36740,
+    "damage": "107<[WAVE]>",
+    "hidden_skill_id": [],
+    "id": 36750,
+    "weapon_id": [
+      36750
+    ]
+  },
+  "36751": {
+    "anti_siren": 100,
+    "base": 36740,
+    "damage": "107<[WAVE]>",
+    "hidden_skill_id": [],
+    "id": 36751,
+    "weapon_id": [
+      36751
+    ]
+  },
+  "36752": {
+    "anti_siren": 200,
+    "base": 36740,
+    "damage": "107<[WAVE]>",
+    "hidden_skill_id": [],
+    "id": 36752,
+    "weapon_id": [
+      36752
+    ]
+  },
+  "36753": {
+    "anti_siren": 300,
+    "base": 36740,
+    "damage": "107<[WAVE]>",
+    "hidden_skill_id": [],
+    "id": 36753,
+    "weapon_id": [
+      36753
     ]
   },
   "37000": {
@@ -92738,6 +93928,167 @@
       42151
     ]
   },
+  "42160": {
+    "ammo": 1,
+    "ammo_icon": [
+      2
+    ],
+    "ammo_info": [
+      [
+        1,
+        1304
+      ]
+    ],
+    "attribute_2": "cannon",
+    "damage": "14 x 3",
+    "descrip": "",
+    "equip_info": [
+      1,
+      2,
+      [
+        3,
+        1304
+      ],
+      [
+        4,
+        1108
+      ],
+      6,
+      10,
+      11,
+      12
+    ],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "42160",
+    "id": 42160,
+    "label": [
+      "KMS",
+      "CL",
+      "MG",
+      "AP"
+    ],
+    "name": "三联装SKC25式150mm主炮改",
+    "nationality": 4,
+    "part_main": [
+      2
+    ],
+    "part_sub": [
+      5
+    ],
+    "property_rate": [],
+    "rarity": 4,
+    "skill_id": [],
+    "speciality": "<[LOCK]>",
+    "tech": 0,
+    "torpedo_ammo": 0,
+    "type": 2,
+    "value_2": 25,
+    "value_3": 0,
+    "weapon_id": [
+      42160
+    ]
+  },
+  "42161": {
+    "base": 42160,
+    "damage": "15 x 3",
+    "hidden_skill_id": [],
+    "id": 42161,
+    "weapon_id": [
+      42161
+    ]
+  },
+  "42162": {
+    "base": 42160,
+    "damage": "16 x 3",
+    "hidden_skill_id": [],
+    "id": 42162,
+    "weapon_id": [
+      42162
+    ]
+  },
+  "42163": {
+    "base": 42160,
+    "damage": "17 x 3",
+    "hidden_skill_id": [],
+    "id": 42163,
+    "weapon_id": [
+      42163
+    ]
+  },
+  "42164": {
+    "base": 42160,
+    "damage": "18 x 3",
+    "hidden_skill_id": [],
+    "id": 42164,
+    "weapon_id": [
+      42164
+    ]
+  },
+  "42165": {
+    "base": 42160,
+    "damage": "19 x 3",
+    "hidden_skill_id": [],
+    "id": 42165,
+    "weapon_id": [
+      42165
+    ]
+  },
+  "42166": {
+    "base": 42160,
+    "damage": "20 x 3",
+    "hidden_skill_id": [],
+    "id": 42166,
+    "weapon_id": [
+      42166
+    ]
+  },
+  "42167": {
+    "base": 42160,
+    "damage": "21 x 3",
+    "hidden_skill_id": [],
+    "id": 42167,
+    "weapon_id": [
+      42167
+    ]
+  },
+  "42168": {
+    "base": 42160,
+    "damage": "22 x 3",
+    "hidden_skill_id": [],
+    "id": 42168,
+    "weapon_id": [
+      42168
+    ]
+  },
+  "42169": {
+    "base": 42160,
+    "damage": "24 x 3",
+    "hidden_skill_id": [],
+    "id": 42169,
+    "weapon_id": [
+      42169
+    ]
+  },
+  "42170": {
+    "base": 42160,
+    "damage": "26 x 3",
+    "hidden_skill_id": [],
+    "id": 42170,
+    "weapon_id": [
+      42170
+    ]
+  },
+  "42171": {
+    "anti_siren": 100,
+    "base": 42160,
+    "damage": "26 x 3",
+    "hidden_skill_id": [],
+    "id": 42171,
+    "weapon_id": [
+      42171
+    ]
+  },
   "42200": {
     "ammo": 1,
     "ammo_icon": [
@@ -97169,6 +98520,195 @@
       45153
     ]
   },
+  "45160": {
+    "ammo": 4,
+    "ammo_icon": [],
+    "ammo_info": [
+      [
+        3,
+        1841
+      ]
+    ],
+    "attribute_2": "torpedo",
+    "damage": "76 x 4",
+    "descrip": "铁血研发的四联装533mm磁性鱼雷改进型，声导性能及威力获得了提升",
+    "equip_info": [
+      1,
+      2,
+      [
+        3,
+        1841
+      ],
+      [
+        4,
+        1403
+      ],
+      6,
+      10,
+      11,
+      12
+    ],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "45160",
+    "id": 45160,
+    "label": [
+      "KMS",
+      "ST",
+      "TP",
+      "QUAD"
+    ],
+    "name": "四联装533mm磁性鱼雷改",
+    "nationality": 4,
+    "part_main": [
+      1,
+      2,
+      3,
+      18,
+      20,
+      21
+    ],
+    "part_sub": [
+      1,
+      2,
+      3,
+      18,
+      20,
+      21
+    ],
+    "property_rate": [],
+    "rarity": 5,
+    "skill_id": [],
+    "speciality": "<[TRP]>",
+    "tech": 0,
+    "torpedo_ammo": 0,
+    "type": 5,
+    "value_2": 45,
+    "value_3": 0,
+    "weapon_id": [
+      45160
+    ]
+  },
+  "45161": {
+    "base": 45160,
+    "damage": "83 x 4",
+    "hidden_skill_id": [],
+    "id": 45161,
+    "weapon_id": [
+      45161
+    ]
+  },
+  "45162": {
+    "base": 45160,
+    "damage": "92 x 4",
+    "hidden_skill_id": [],
+    "id": 45162,
+    "weapon_id": [
+      45162
+    ]
+  },
+  "45163": {
+    "base": 45160,
+    "damage": "99 x 4",
+    "hidden_skill_id": [],
+    "id": 45163,
+    "weapon_id": [
+      45163
+    ]
+  },
+  "45164": {
+    "base": 45160,
+    "damage": "108 x 4",
+    "hidden_skill_id": [],
+    "id": 45164,
+    "weapon_id": [
+      45164
+    ]
+  },
+  "45165": {
+    "base": 45160,
+    "damage": "116 x 4",
+    "hidden_skill_id": [],
+    "id": 45165,
+    "weapon_id": [
+      45165
+    ]
+  },
+  "45166": {
+    "base": 45160,
+    "damage": "124 x 4",
+    "hidden_skill_id": [],
+    "id": 45166,
+    "weapon_id": [
+      45166
+    ]
+  },
+  "45167": {
+    "base": 45160,
+    "damage": "132 x 4",
+    "hidden_skill_id": [],
+    "id": 45167,
+    "weapon_id": [
+      45167
+    ]
+  },
+  "45168": {
+    "base": 45160,
+    "damage": "140 x 4",
+    "hidden_skill_id": [],
+    "id": 45168,
+    "weapon_id": [
+      45168
+    ]
+  },
+  "45169": {
+    "base": 45160,
+    "damage": "148 x 4",
+    "hidden_skill_id": [],
+    "id": 45169,
+    "weapon_id": [
+      45169
+    ]
+  },
+  "45170": {
+    "base": 45160,
+    "damage": "157 x 4",
+    "hidden_skill_id": [],
+    "id": 45170,
+    "weapon_id": [
+      45170
+    ]
+  },
+  "45171": {
+    "anti_siren": 100,
+    "base": 45160,
+    "damage": "157 x 4",
+    "hidden_skill_id": [],
+    "id": 45171,
+    "weapon_id": [
+      45171
+    ]
+  },
+  "45172": {
+    "anti_siren": 200,
+    "base": 45160,
+    "damage": "157 x 4",
+    "hidden_skill_id": [],
+    "id": 45172,
+    "weapon_id": [
+      45172
+    ]
+  },
+  "45173": {
+    "anti_siren": 300,
+    "base": 45160,
+    "damage": "157 x 4",
+    "hidden_skill_id": [],
+    "id": 45173,
+    "weapon_id": [
+      45173
+    ]
+  },
   "45200": {
     "ammo": 4,
     "ammo_icon": [],
@@ -101019,6 +102559,173 @@
     "id": 46433,
     "weapon_id": [
       46433
+    ]
+  },
+  "46440": {
+    "ammo": 5,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "attribute_2": "antiaircraft",
+    "damage": "19<[WAVE]>",
+    "descrip": "说明未填写",
+    "equip_info": [
+      1,
+      2,
+      6,
+      10
+    ],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "46440",
+    "id": 46440,
+    "label": [
+      "KMS",
+      "ST",
+      "AA"
+    ],
+    "name": "单装40mm Flak28机炮",
+    "nationality": 4,
+    "part_main": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      10,
+      12,
+      13,
+      18,
+      19,
+      20,
+      21
+    ],
+    "part_sub": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      10,
+      12,
+      13,
+      18,
+      19,
+      20,
+      21
+    ],
+    "property_rate": [],
+    "rarity": 4,
+    "skill_id": [],
+    "speciality": "<[SRG]>",
+    "tech": 0,
+    "torpedo_ammo": 0,
+    "type": 6,
+    "value_2": 25,
+    "value_3": 0,
+    "weapon_id": [
+      46440
+    ]
+  },
+  "46441": {
+    "base": 46440,
+    "damage": "22<[WAVE]>",
+    "hidden_skill_id": [],
+    "id": 46441,
+    "weapon_id": [
+      46441
+    ]
+  },
+  "46442": {
+    "base": 46440,
+    "damage": "25<[WAVE]>",
+    "hidden_skill_id": [],
+    "id": 46442,
+    "weapon_id": [
+      46442
+    ]
+  },
+  "46443": {
+    "base": 46440,
+    "damage": "28<[WAVE]>",
+    "hidden_skill_id": [],
+    "id": 46443,
+    "weapon_id": [
+      46443
+    ]
+  },
+  "46444": {
+    "base": 46440,
+    "damage": "31<[WAVE]>",
+    "hidden_skill_id": [],
+    "id": 46444,
+    "weapon_id": [
+      46444
+    ]
+  },
+  "46445": {
+    "base": 46440,
+    "damage": "34<[WAVE]>",
+    "hidden_skill_id": [],
+    "id": 46445,
+    "weapon_id": [
+      46445
+    ]
+  },
+  "46446": {
+    "base": 46440,
+    "damage": "37<[WAVE]>",
+    "hidden_skill_id": [],
+    "id": 46446,
+    "weapon_id": [
+      46446
+    ]
+  },
+  "46447": {
+    "base": 46440,
+    "damage": "40<[WAVE]>",
+    "hidden_skill_id": [],
+    "id": 46447,
+    "weapon_id": [
+      46447
+    ]
+  },
+  "46448": {
+    "base": 46440,
+    "damage": "43<[WAVE]>",
+    "hidden_skill_id": [],
+    "id": 46448,
+    "weapon_id": [
+      46448
+    ]
+  },
+  "46449": {
+    "base": 46440,
+    "damage": "46<[WAVE]>",
+    "hidden_skill_id": [],
+    "id": 46449,
+    "weapon_id": [
+      46449
+    ]
+  },
+  "46450": {
+    "base": 46440,
+    "damage": "49<[WAVE]>",
+    "hidden_skill_id": [],
+    "id": 46450,
+    "weapon_id": [
+      46450
+    ]
+  },
+  "46451": {
+    "anti_siren": 100,
+    "base": 46440,
+    "damage": "49<[WAVE]>",
+    "hidden_skill_id": [],
+    "id": 46451,
+    "weapon_id": [
+      46451
     ]
   },
   "47000": {
@@ -109148,6 +110855,185 @@
       61083
     ]
   },
+  "61091": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "descrip": "航母空袭展示用",
+    "equip_info": [],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "1",
+    "id": 61091,
+    "label": [],
+    "name": "航空攻击展示-纳希莫夫海军上将I",
+    "nationality": 0,
+    "part_main": [],
+    "part_sub": [],
+    "property_rate": [],
+    "rarity": 1,
+    "skill_id": [],
+    "speciality": "<[NA]>",
+    "tech": 1,
+    "torpedo_ammo": 0,
+    "type": 99,
+    "value_1": "0",
+    "value_2": 0,
+    "value_3": 0,
+    "weapon_id": [
+      61091
+    ]
+  },
+  "61092": {
+    "base": 61091,
+    "hidden_skill_id": [],
+    "id": 61092,
+    "name": "航空攻击展示-纳希莫夫海军上将II",
+    "weapon_id": [
+      61092
+    ]
+  },
+  "61093": {
+    "base": 61091,
+    "hidden_skill_id": [],
+    "id": 61093,
+    "name": "航空攻击展示-纳希莫夫海军上将II",
+    "weapon_id": [
+      61093
+    ]
+  },
+  "61101": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "descrip": "航母空袭展示用",
+    "equip_info": [],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "1",
+    "id": 61101,
+    "label": [],
+    "name": "航空攻击展示-哈尔福德I",
+    "nationality": 0,
+    "part_main": [],
+    "part_sub": [],
+    "property_rate": [],
+    "rarity": 1,
+    "skill_id": [],
+    "speciality": "<[NA]>",
+    "tech": 1,
+    "torpedo_ammo": 0,
+    "type": 99,
+    "value_1": "0",
+    "value_2": 0,
+    "value_3": 0,
+    "weapon_id": [
+      61101
+    ]
+  },
+  "61102": {
+    "base": 61101,
+    "id": 61102,
+    "name": "航空攻击展示-哈尔福德II",
+    "skill_id": [],
+    "weapon_id": [
+      61102
+    ]
+  },
+  "61103": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "descrip": "航母空袭展示用",
+    "equip_info": [],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "1",
+    "id": 61103,
+    "label": [],
+    "name": "航空攻击展示-瑞凤I",
+    "nationality": 0,
+    "part_main": [],
+    "part_sub": [],
+    "property_rate": [],
+    "rarity": 1,
+    "skill_id": [],
+    "speciality": "<[NA]>",
+    "tech": 1,
+    "torpedo_ammo": 0,
+    "type": 99,
+    "value_1": "0",
+    "value_2": 0,
+    "value_3": 0,
+    "weapon_id": [
+      61103
+    ]
+  },
+  "61104": {
+    "base": 61103,
+    "hidden_skill_id": [],
+    "id": 61104,
+    "name": "航空攻击展示-瑞凤II",
+    "weapon_id": [
+      61104
+    ]
+  },
+  "61105": {
+    "base": 61103,
+    "hidden_skill_id": [],
+    "id": 61105,
+    "name": "航空攻击展示-瑞凤III",
+    "weapon_id": [
+      61105
+    ]
+  },
+  "61111": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "descrip": "航母空袭展示用",
+    "equip_info": [],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "1",
+    "id": 61111,
+    "label": [],
+    "name": "航空攻击展示-天城I",
+    "nationality": 0,
+    "part_main": [],
+    "part_sub": [],
+    "property_rate": [],
+    "rarity": 1,
+    "skill_id": [],
+    "speciality": "<[NA]>",
+    "tech": 1,
+    "torpedo_ammo": 0,
+    "type": 99,
+    "value_1": "0",
+    "value_2": 0,
+    "value_3": 0,
+    "weapon_id": [
+      61111
+    ]
+  },
+  "61112": {
+    "base": 61111,
+    "hidden_skill_id": [],
+    "id": 61112,
+    "name": "航空攻击展示-天城II",
+    "weapon_id": [
+      61112
+    ]
+  },
+  "61113": {
+    "base": 61111,
+    "hidden_skill_id": [],
+    "id": 61113,
+    "name": "航空攻击展示-天城II",
+    "weapon_id": [
+      61113
+    ]
+  },
   "61501": {
     "ammo": 10,
     "ammo_icon": [],
@@ -113870,6 +115756,57 @@
     "name": "全弹发射-Type IXC型II",
     "weapon_id": [
       73512
+    ]
+  },
+  "73611": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "descrip": "技能弹幕",
+    "equip_info": [],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "1",
+    "id": 73611,
+    "label": [],
+    "name": "全弹发射-Type VIIA型I",
+    "nationality": 0,
+    "part_main": [
+      1,
+      19,
+      20,
+      21
+    ],
+    "part_sub": [
+      2,
+      3,
+      4,
+      5,
+      8,
+      13,
+      18
+    ],
+    "property_rate": [],
+    "rarity": 1,
+    "skill_id": [],
+    "speciality": "<[NA]>",
+    "tech": 1,
+    "torpedo_ammo": 0,
+    "type": 1,
+    "value_1": "0",
+    "value_2": 0,
+    "value_3": 0,
+    "weapon_id": [
+      73611
+    ]
+  },
+  "73612": {
+    "base": 73611,
+    "hidden_skill_id": [],
+    "id": 73612,
+    "name": "全弹发射-Type VIIA型II",
+    "weapon_id": [
+      73612
     ]
   },
   "74011": {
@@ -121250,12 +123187,921 @@
     ]
   },
   "80222": {
-    "base": 80101,
+    "base": 80221,
     "hidden_skill_id": [],
     "id": 80222,
     "name": "专属弹幕-吸血鬼METAII",
     "weapon_id": [
       61612
+    ]
+  },
+  "80231": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "descrip": "技能弹幕",
+    "equip_info": [],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "1",
+    "id": 80231,
+    "label": [],
+    "name": "专属弹幕-{namecode:532}I",
+    "nationality": 0,
+    "part_main": [
+      1,
+      19,
+      20,
+      21
+    ],
+    "part_sub": [
+      2,
+      3,
+      4,
+      5,
+      8,
+      13,
+      18
+    ],
+    "property_rate": [],
+    "rarity": 1,
+    "skill_id": [],
+    "speciality": "<[NA]>",
+    "tech": 1,
+    "torpedo_ammo": 0,
+    "type": 1,
+    "value_1": "0",
+    "value_2": 0,
+    "value_3": 0,
+    "weapon_id": [
+      170441
+    ]
+  },
+  "80232": {
+    "base": 80231,
+    "hidden_skill_id": [],
+    "id": 80232,
+    "name": "专属弹幕-{namecode:532}II",
+    "weapon_id": [
+      170442
+    ]
+  },
+  "80241": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "descrip": "技能弹幕",
+    "equip_info": [],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "1",
+    "id": 80241,
+    "label": [],
+    "name": "专属弹幕-鲁莽(μ兵装)I",
+    "nationality": 0,
+    "part_main": [
+      1,
+      19,
+      20,
+      21
+    ],
+    "part_sub": [
+      2,
+      3,
+      4,
+      5,
+      8,
+      13,
+      18
+    ],
+    "property_rate": [],
+    "rarity": 1,
+    "skill_id": [],
+    "speciality": "<[NA]>",
+    "tech": 1,
+    "torpedo_ammo": 0,
+    "type": 1,
+    "value_1": "0",
+    "value_2": 0,
+    "value_3": 0,
+    "weapon_id": [
+      61621
+    ]
+  },
+  "80242": {
+    "base": 80241,
+    "hidden_skill_id": [],
+    "id": 80242,
+    "name": "专属弹幕-鲁莽(μ兵装)II",
+    "weapon_id": [
+      61622
+    ]
+  },
+  "80251": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "descrip": "技能弹幕",
+    "equip_info": [],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "1",
+    "id": 80251,
+    "label": [],
+    "name": "专属弹幕-能代μI",
+    "nationality": 0,
+    "part_main": [
+      1,
+      19,
+      20,
+      21
+    ],
+    "part_sub": [
+      2,
+      3,
+      4,
+      5,
+      8,
+      13,
+      18
+    ],
+    "property_rate": [],
+    "rarity": 1,
+    "skill_id": [],
+    "speciality": "<[NA]>",
+    "tech": 1,
+    "torpedo_ammo": 0,
+    "type": 1,
+    "value_1": "0",
+    "value_2": 0,
+    "value_3": 0,
+    "weapon_id": [
+      170461
+    ]
+  },
+  "80252": {
+    "base": 80251,
+    "hidden_skill_id": [],
+    "id": 80252,
+    "name": "专属弹幕-能代μII",
+    "weapon_id": [
+      170462
+    ]
+  },
+  "80253": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "descrip": "技能弹幕",
+    "equip_info": [],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "1",
+    "id": 80253,
+    "label": [],
+    "name": "专属弹幕-能代μ鱼雷",
+    "nationality": 0,
+    "part_main": [
+      1,
+      19,
+      20,
+      21
+    ],
+    "part_sub": [
+      2,
+      3,
+      4,
+      5,
+      8,
+      13,
+      18
+    ],
+    "property_rate": [],
+    "rarity": 1,
+    "skill_id": [],
+    "speciality": "<[NA]>",
+    "tech": 1,
+    "torpedo_ammo": 0,
+    "type": 5,
+    "value_1": "0",
+    "value_2": 0,
+    "value_3": 0,
+    "weapon_id": [
+      170463
+    ]
+  },
+  "80261": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "descrip": "技能弹幕",
+    "equip_info": [],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "1",
+    "id": 80261,
+    "label": [],
+    "name": "专属弹幕-莫加多尔I",
+    "nationality": 0,
+    "part_main": [
+      1,
+      19,
+      20,
+      21
+    ],
+    "part_sub": [
+      2,
+      3,
+      4,
+      5,
+      8,
+      13,
+      18
+    ],
+    "property_rate": [],
+    "rarity": 1,
+    "skill_id": [],
+    "speciality": "<[NA]>",
+    "tech": 1,
+    "torpedo_ammo": 0,
+    "type": 1,
+    "value_1": "0",
+    "value_2": 0,
+    "value_3": 0,
+    "weapon_id": [
+      170481
+    ]
+  },
+  "80262": {
+    "base": 80261,
+    "hidden_skill_id": [],
+    "id": 80262,
+    "name": "专属弹幕-莫加多尔II",
+    "weapon_id": [
+      170482
+    ]
+  },
+  "80271": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "descrip": "技能弹幕",
+    "equip_info": [],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "1",
+    "id": 80271,
+    "label": [],
+    "name": "专属弹幕-布伦努斯I",
+    "nationality": 0,
+    "part_main": [
+      1,
+      19,
+      20,
+      21
+    ],
+    "part_sub": [
+      2,
+      3,
+      4,
+      5,
+      8,
+      13,
+      18
+    ],
+    "property_rate": [],
+    "rarity": 1,
+    "skill_id": [],
+    "speciality": "<[NA]>",
+    "tech": 1,
+    "torpedo_ammo": 0,
+    "type": 1,
+    "value_1": "0",
+    "value_2": 0,
+    "value_3": 0,
+    "weapon_id": [
+      170491
+    ]
+  },
+  "80272": {
+    "base": 80271,
+    "hidden_skill_id": [],
+    "id": 80272,
+    "name": "专属弹幕-布伦努斯II",
+    "weapon_id": [
+      170492
+    ]
+  },
+  "80281": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "descrip": "技能弹幕",
+    "equip_info": [],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "1",
+    "id": 80281,
+    "label": [],
+    "name": "专属弹幕-福煦METAI",
+    "nationality": 0,
+    "part_main": [
+      1,
+      19,
+      20,
+      21
+    ],
+    "part_sub": [
+      2,
+      3,
+      4,
+      5,
+      8,
+      13,
+      18
+    ],
+    "property_rate": [],
+    "rarity": 1,
+    "skill_id": [],
+    "speciality": "<[NA]>",
+    "tech": 1,
+    "torpedo_ammo": 0,
+    "type": 1,
+    "value_1": "0",
+    "value_2": 0,
+    "value_3": 0,
+    "weapon_id": [
+      170501
+    ]
+  },
+  "80282": {
+    "base": 80281,
+    "hidden_skill_id": [],
+    "id": 80282,
+    "name": "专属弹幕-福煦METAII",
+    "weapon_id": [
+      170502
+    ]
+  },
+  "80291": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "descrip": "技能弹幕",
+    "equip_info": [],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "1",
+    "id": 80291,
+    "label": [],
+    "name": "专属弹幕-威奇塔METAI",
+    "nationality": 0,
+    "part_main": [
+      1,
+      19,
+      20,
+      21
+    ],
+    "part_sub": [
+      2,
+      3,
+      4,
+      5,
+      8,
+      13,
+      18
+    ],
+    "property_rate": [],
+    "rarity": 1,
+    "skill_id": [],
+    "speciality": "<[NA]>",
+    "tech": 1,
+    "torpedo_ammo": 0,
+    "type": 1,
+    "value_1": "0",
+    "value_2": 0,
+    "value_3": 0,
+    "weapon_id": [
+      170511
+    ]
+  },
+  "80292": {
+    "base": 80291,
+    "hidden_skill_id": [],
+    "id": 80292,
+    "name": "专属弹幕-威奇塔METAII",
+    "weapon_id": [
+      170512
+    ]
+  },
+  "80301": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "descrip": "技能弹幕",
+    "equip_info": [],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "1",
+    "id": 80301,
+    "label": [],
+    "name": "专属弹幕-Z47I",
+    "nationality": 0,
+    "part_main": [
+      1,
+      19,
+      20,
+      21
+    ],
+    "part_sub": [
+      2,
+      3,
+      4,
+      5,
+      8,
+      13,
+      18
+    ],
+    "property_rate": [],
+    "rarity": 1,
+    "skill_id": [],
+    "speciality": "<[NA]>",
+    "tech": 1,
+    "torpedo_ammo": 0,
+    "type": 1,
+    "value_1": "0",
+    "value_2": 0,
+    "value_3": 0,
+    "weapon_id": [
+      61641
+    ]
+  },
+  "80302": {
+    "base": 80301,
+    "hidden_skill_id": [],
+    "id": 80302,
+    "name": "专属弹幕-Z47II",
+    "weapon_id": [
+      61642
+    ]
+  },
+  "80311": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "descrip": "技能弹幕",
+    "equip_info": [],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "1",
+    "id": 80311,
+    "label": [],
+    "name": "专属弹幕-贝亚德I",
+    "nationality": 0,
+    "part_main": [
+      1,
+      19,
+      20,
+      21
+    ],
+    "part_sub": [
+      2,
+      3,
+      4,
+      5,
+      8,
+      13,
+      18
+    ],
+    "property_rate": [],
+    "rarity": 1,
+    "skill_id": [],
+    "speciality": "<[NA]>",
+    "tech": 1,
+    "torpedo_ammo": 0,
+    "type": 1,
+    "value_1": "0",
+    "value_2": 0,
+    "value_3": 0,
+    "weapon_id": [
+      61651
+    ]
+  },
+  "80312": {
+    "base": 80311,
+    "hidden_skill_id": [],
+    "id": 80312,
+    "name": "专属弹幕-贝亚德II",
+    "weapon_id": [
+      61652
+    ]
+  },
+  "80321": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "descrip": "技能弹幕",
+    "equip_info": [],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "1",
+    "id": 80321,
+    "label": [],
+    "name": "专属弹幕-哈尔福德I",
+    "nationality": 0,
+    "part_main": [
+      1,
+      19,
+      20,
+      21
+    ],
+    "part_sub": [
+      2,
+      3,
+      4,
+      5,
+      8,
+      13,
+      18
+    ],
+    "property_rate": [],
+    "rarity": 1,
+    "skill_id": [],
+    "speciality": "<[NA]>",
+    "tech": 1,
+    "torpedo_ammo": 0,
+    "type": 1,
+    "value_1": "0",
+    "value_2": 0,
+    "value_3": 0,
+    "weapon_id": [
+      170541
+    ]
+  },
+  "80322": {
+    "base": 80321,
+    "hidden_skill_id": [],
+    "id": 80322,
+    "name": "专属弹幕-哈尔福德II",
+    "weapon_id": [
+      170542
+    ]
+  },
+  "80331": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "descrip": "技能弹幕",
+    "equip_info": [],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "1",
+    "id": 80331,
+    "label": [],
+    "name": "专属弹幕-果敢I",
+    "nationality": 0,
+    "part_main": [
+      1,
+      19,
+      20,
+      21
+    ],
+    "part_sub": [
+      2,
+      3,
+      4,
+      5,
+      8,
+      13,
+      18
+    ],
+    "property_rate": [],
+    "rarity": 1,
+    "skill_id": [],
+    "speciality": "<[NA]>",
+    "tech": 1,
+    "torpedo_ammo": 0,
+    "type": 1,
+    "value_1": "0",
+    "value_2": 0,
+    "value_3": 0,
+    "weapon_id": [
+      61671
+    ]
+  },
+  "80332": {
+    "base": 80331,
+    "hidden_skill_id": [],
+    "id": 80332,
+    "name": "专属弹幕-果敢II",
+    "weapon_id": [
+      61672
+    ]
+  },
+  "80341": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "descrip": "技能弹幕",
+    "equip_info": [],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "1",
+    "id": 80341,
+    "label": [],
+    "name": "专属弹幕-法戈I",
+    "nationality": 0,
+    "part_main": [
+      1,
+      19,
+      20,
+      21
+    ],
+    "part_sub": [
+      2,
+      3,
+      4,
+      5,
+      8,
+      13,
+      18
+    ],
+    "property_rate": [],
+    "rarity": 1,
+    "skill_id": [],
+    "speciality": "<[NA]>",
+    "tech": 1,
+    "torpedo_ammo": 0,
+    "type": 1,
+    "value_1": "0",
+    "value_2": 0,
+    "value_3": 0,
+    "weapon_id": [
+      170581
+    ]
+  },
+  "80342": {
+    "base": 80341,
+    "hidden_skill_id": [],
+    "id": 80342,
+    "name": "专属弹幕-法戈II",
+    "weapon_id": [
+      170582
+    ]
+  },
+  "80351": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "descrip": "技能弹幕",
+    "equip_info": [],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "1",
+    "id": 80351,
+    "label": [],
+    "name": "专属弹幕-渡良濑I",
+    "nationality": 0,
+    "part_main": [
+      1,
+      19,
+      20,
+      21
+    ],
+    "part_sub": [
+      2,
+      3,
+      4,
+      5,
+      8,
+      13,
+      18
+    ],
+    "property_rate": [],
+    "rarity": 1,
+    "skill_id": [],
+    "speciality": "<[NA]>",
+    "tech": 1,
+    "torpedo_ammo": 0,
+    "type": 1,
+    "value_1": "0",
+    "value_2": 0,
+    "value_3": 0,
+    "weapon_id": [
+      61681
+    ]
+  },
+  "80352": {
+    "base": 80351,
+    "hidden_skill_id": [],
+    "id": 80352,
+    "name": "专属弹幕-渡良濑II",
+    "weapon_id": [
+      61682
+    ]
+  },
+  "80361": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "descrip": "技能弹幕",
+    "equip_info": [],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "1",
+    "id": 80361,
+    "label": [],
+    "name": "专属弹幕-和睦I",
+    "nationality": 0,
+    "part_main": [
+      1,
+      19,
+      20,
+      21
+    ],
+    "part_sub": [
+      2,
+      3,
+      4,
+      5,
+      8,
+      13,
+      18
+    ],
+    "property_rate": [],
+    "rarity": 1,
+    "skill_id": [],
+    "speciality": "<[NA]>",
+    "tech": 1,
+    "torpedo_ammo": 0,
+    "type": 1,
+    "value_1": "0",
+    "value_2": 0,
+    "value_3": 0,
+    "weapon_id": [
+      170601
+    ]
+  },
+  "80362": {
+    "base": 80361,
+    "hidden_skill_id": [],
+    "id": 80362,
+    "name": "专属弹幕-和睦II",
+    "weapon_id": [
+      170602
+    ]
+  },
+  "80371": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "descrip": "技能弹幕",
+    "equip_info": [],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "1",
+    "id": 80371,
+    "label": [],
+    "name": "专属弹幕-幻想号I",
+    "nationality": 0,
+    "part_main": [
+      1,
+      19,
+      20,
+      21
+    ],
+    "part_sub": [
+      2,
+      3,
+      4,
+      5,
+      8,
+      13,
+      18
+    ],
+    "property_rate": [],
+    "rarity": 1,
+    "skill_id": [],
+    "speciality": "<[NA]>",
+    "tech": 1,
+    "torpedo_ammo": 0,
+    "type": 1,
+    "value_1": "0",
+    "value_2": 0,
+    "value_3": 0,
+    "weapon_id": [
+      170611
+    ]
+  },
+  "80372": {
+    "base": 80371,
+    "hidden_skill_id": [],
+    "id": 80372,
+    "name": "专属弹幕-幻想号II",
+    "weapon_id": [
+      170612
+    ]
+  },
+  "80381": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "descrip": "技能弹幕",
+    "equip_info": [],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "1",
+    "id": 80381,
+    "label": [],
+    "name": "专属弹幕-海豚I",
+    "nationality": 0,
+    "part_main": [
+      1,
+      19,
+      20,
+      21
+    ],
+    "part_sub": [
+      2,
+      3,
+      4,
+      5,
+      8,
+      13,
+      18
+    ],
+    "property_rate": [],
+    "rarity": 1,
+    "skill_id": [],
+    "speciality": "<[NA]>",
+    "tech": 1,
+    "torpedo_ammo": 0,
+    "type": 1,
+    "value_1": "0",
+    "value_2": 0,
+    "value_3": 0,
+    "weapon_id": [
+      170621
+    ]
+  },
+  "80382": {
+    "base": 80381,
+    "hidden_skill_id": [],
+    "id": 80382,
+    "name": "专属弹幕-海豚II",
+    "weapon_id": [
+      170622
+    ]
+  },
+  "80391": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "descrip": "技能弹幕",
+    "equip_info": [],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "1",
+    "id": 80391,
+    "label": [],
+    "name": "专属弹幕-朴茨茅斯冒险号I",
+    "nationality": 0,
+    "part_main": [
+      1,
+      19,
+      20,
+      21
+    ],
+    "part_sub": [
+      2,
+      3,
+      4,
+      5,
+      8,
+      13,
+      18
+    ],
+    "property_rate": [],
+    "rarity": 1,
+    "skill_id": [],
+    "speciality": "<[NA]>",
+    "tech": 1,
+    "torpedo_ammo": 0,
+    "type": 1,
+    "value_1": "0",
+    "value_2": 0,
+    "value_3": 0,
+    "weapon_id": [
+      170631
+    ]
+  },
+  "80392": {
+    "base": 80391,
+    "hidden_skill_id": [],
+    "id": 80392,
+    "name": "专属弹幕-朴茨茅斯冒险号II",
+    "weapon_id": [
+      170632
     ]
   },
   "85000": {
@@ -121702,7 +124548,7 @@
     ],
     "attribute_2": "cannon",
     "damage": "7 x 6",
-    "descrip": "说明未填写",
+    "descrip": "北方联合为恰巴耶夫级巡洋舰设计的三联装152mm舰炮",
     "equip_info": [
       1,
       2,
@@ -121815,7 +124661,7 @@
     ],
     "attribute_2": "cannon",
     "damage": "9 x 6",
-    "descrip": "说明未填写",
+    "descrip": "北方联合为恰巴耶夫级巡洋舰设计的三联装152mm舰炮",
     "equip_info": [
       1,
       2,
@@ -121965,7 +124811,7 @@
     ],
     "attribute_2": "cannon",
     "damage": "10 x 6",
-    "descrip": "说明未填写",
+    "descrip": "北方联合为恰巴耶夫级巡洋舰设计的三联装152mm舰炮",
     "equip_info": [
       1,
       2,
@@ -124929,6 +127775,531 @@
     "id": 85593,
     "weapon_id": [
       85593
+    ]
+  },
+  "85600": {
+    "ammo": 5,
+    "ammo_icon": [],
+    "ammo_info": [
+      [
+        6,
+        50680
+      ],
+      [
+        5,
+        59960
+      ]
+    ],
+    "attribute_2": "air",
+    "descrip": "",
+    "equip_info": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "85600",
+    "id": 85600,
+    "label": [
+      "SN",
+      "CV",
+      "FT",
+      "HERK"
+    ],
+    "name": "试作舰载型La-9",
+    "nationality": 7,
+    "part_main": [
+      6,
+      7
+    ],
+    "part_sub": [
+      6,
+      7
+    ],
+    "property_rate": [],
+    "rarity": 6,
+    "skill_id": [],
+    "speciality": "<[AIR]>",
+    "tech": 0,
+    "torpedo_ammo": 0,
+    "type": 7,
+    "value_2": 65,
+    "value_3": 0,
+    "weapon_id": [
+      85600
+    ]
+  },
+  "85601": {
+    "ammo_info": [
+      [
+        6,
+        50681
+      ],
+      [
+        5,
+        59961
+      ]
+    ],
+    "base": 85600,
+    "hidden_skill_id": [],
+    "id": 85601,
+    "weapon_id": [
+      85601
+    ]
+  },
+  "85602": {
+    "ammo_info": [
+      [
+        6,
+        50682
+      ],
+      [
+        5,
+        59962
+      ]
+    ],
+    "base": 85600,
+    "hidden_skill_id": [],
+    "id": 85602,
+    "weapon_id": [
+      85602
+    ]
+  },
+  "85603": {
+    "ammo_info": [
+      [
+        6,
+        50683
+      ],
+      [
+        5,
+        59963
+      ]
+    ],
+    "base": 85600,
+    "hidden_skill_id": [],
+    "id": 85603,
+    "weapon_id": [
+      85603
+    ]
+  },
+  "85604": {
+    "ammo_info": [
+      [
+        6,
+        50684
+      ],
+      [
+        5,
+        59964
+      ]
+    ],
+    "base": 85600,
+    "hidden_skill_id": [],
+    "id": 85604,
+    "weapon_id": [
+      85604
+    ]
+  },
+  "85605": {
+    "ammo_info": [
+      [
+        6,
+        50685
+      ],
+      [
+        5,
+        59965
+      ]
+    ],
+    "base": 85600,
+    "hidden_skill_id": [],
+    "id": 85605,
+    "weapon_id": [
+      85605
+    ]
+  },
+  "85606": {
+    "ammo_info": [
+      [
+        6,
+        50686
+      ],
+      [
+        5,
+        59966
+      ]
+    ],
+    "base": 85600,
+    "hidden_skill_id": [],
+    "id": 85606,
+    "weapon_id": [
+      85606
+    ]
+  },
+  "85607": {
+    "ammo_info": [
+      [
+        6,
+        50687
+      ],
+      [
+        5,
+        59967
+      ]
+    ],
+    "base": 85600,
+    "hidden_skill_id": [],
+    "id": 85607,
+    "weapon_id": [
+      85607
+    ]
+  },
+  "85608": {
+    "ammo_info": [
+      [
+        6,
+        50688
+      ],
+      [
+        5,
+        59968
+      ]
+    ],
+    "base": 85600,
+    "hidden_skill_id": [],
+    "id": 85608,
+    "weapon_id": [
+      85608
+    ]
+  },
+  "85609": {
+    "ammo_info": [
+      [
+        6,
+        50689
+      ],
+      [
+        5,
+        59969
+      ]
+    ],
+    "base": 85600,
+    "hidden_skill_id": [],
+    "id": 85609,
+    "weapon_id": [
+      85609
+    ]
+  },
+  "85610": {
+    "ammo_info": [
+      [
+        6,
+        50690
+      ],
+      [
+        5,
+        59970
+      ]
+    ],
+    "base": 85600,
+    "hidden_skill_id": [],
+    "id": 85610,
+    "weapon_id": [
+      85610
+    ]
+  },
+  "85611": {
+    "ammo_info": [
+      [
+        6,
+        50691
+      ],
+      [
+        5,
+        59971
+      ]
+    ],
+    "anti_siren": 100,
+    "base": 85600,
+    "hidden_skill_id": [],
+    "id": 85611,
+    "weapon_id": [
+      85611
+    ]
+  },
+  "85612": {
+    "ammo_info": [
+      [
+        6,
+        50692
+      ],
+      [
+        5,
+        59972
+      ]
+    ],
+    "anti_siren": 200,
+    "base": 85600,
+    "hidden_skill_id": [],
+    "id": 85612,
+    "weapon_id": [
+      85612
+    ]
+  },
+  "85613": {
+    "ammo_info": [
+      [
+        6,
+        50693
+      ],
+      [
+        5,
+        59973
+      ]
+    ],
+    "anti_siren": 300,
+    "base": 85600,
+    "hidden_skill_id": [],
+    "id": 85613,
+    "weapon_id": [
+      85613
+    ]
+  },
+  "85620": {
+    "ammo": 5,
+    "ammo_icon": [],
+    "ammo_info": [
+      [
+        4,
+        51640
+      ]
+    ],
+    "attribute_2": "air",
+    "descrip": "说明未填写",
+    "equip_info": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "85620",
+    "id": 85620,
+    "label": [
+      "SN",
+      "CV",
+      "TB"
+    ],
+    "name": "试作型VIT-2（模式调整）",
+    "nationality": 7,
+    "part_main": [
+      6,
+      7
+    ],
+    "part_sub": [
+      6,
+      7
+    ],
+    "property_rate": [],
+    "rarity": 5,
+    "skill_id": [],
+    "speciality": "<[TRP]>",
+    "tech": 0,
+    "torpedo_ammo": 0,
+    "type": 8,
+    "value_2": 45,
+    "value_3": 0,
+    "weapon_id": [
+      85620
+    ]
+  },
+  "85621": {
+    "ammo_info": [
+      [
+        4,
+        51641
+      ]
+    ],
+    "base": 85620,
+    "hidden_skill_id": [],
+    "id": 85621,
+    "weapon_id": [
+      85621
+    ]
+  },
+  "85622": {
+    "ammo_info": [
+      [
+        4,
+        51642
+      ]
+    ],
+    "base": 85620,
+    "hidden_skill_id": [],
+    "id": 85622,
+    "weapon_id": [
+      85622
+    ]
+  },
+  "85623": {
+    "ammo_info": [
+      [
+        4,
+        51643
+      ]
+    ],
+    "base": 85620,
+    "hidden_skill_id": [],
+    "id": 85623,
+    "weapon_id": [
+      85623
+    ]
+  },
+  "85624": {
+    "ammo_info": [
+      [
+        4,
+        51644
+      ]
+    ],
+    "base": 85620,
+    "hidden_skill_id": [],
+    "id": 85624,
+    "weapon_id": [
+      85624
+    ]
+  },
+  "85625": {
+    "ammo_info": [
+      [
+        4,
+        51645
+      ]
+    ],
+    "base": 85620,
+    "hidden_skill_id": [],
+    "id": 85625,
+    "weapon_id": [
+      85625
+    ]
+  },
+  "85626": {
+    "ammo_info": [
+      [
+        4,
+        51646
+      ]
+    ],
+    "base": 85620,
+    "hidden_skill_id": [],
+    "id": 85626,
+    "weapon_id": [
+      85626
+    ]
+  },
+  "85627": {
+    "ammo_info": [
+      [
+        4,
+        51647
+      ]
+    ],
+    "base": 85620,
+    "hidden_skill_id": [],
+    "id": 85627,
+    "weapon_id": [
+      85627
+    ]
+  },
+  "85628": {
+    "ammo_info": [
+      [
+        4,
+        51648
+      ]
+    ],
+    "base": 85620,
+    "hidden_skill_id": [],
+    "id": 85628,
+    "weapon_id": [
+      85628
+    ]
+  },
+  "85629": {
+    "ammo_info": [
+      [
+        4,
+        51649
+      ]
+    ],
+    "base": 85620,
+    "hidden_skill_id": [],
+    "id": 85629,
+    "weapon_id": [
+      85629
+    ]
+  },
+  "85630": {
+    "ammo_info": [
+      [
+        4,
+        51650
+      ]
+    ],
+    "base": 85620,
+    "hidden_skill_id": [],
+    "id": 85630,
+    "weapon_id": [
+      85630
+    ]
+  },
+  "85631": {
+    "ammo_info": [
+      [
+        4,
+        51651
+      ]
+    ],
+    "anti_siren": 100,
+    "base": 85620,
+    "hidden_skill_id": [],
+    "id": 85631,
+    "weapon_id": [
+      85631
+    ]
+  },
+  "85632": {
+    "ammo_info": [
+      [
+        4,
+        51652
+      ]
+    ],
+    "anti_siren": 200,
+    "base": 85620,
+    "hidden_skill_id": [],
+    "id": 85632,
+    "weapon_id": [
+      85632
+    ]
+  },
+  "85633": {
+    "ammo_info": [
+      [
+        4,
+        51653
+      ]
+    ],
+    "anti_siren": 300,
+    "base": 85620,
+    "hidden_skill_id": [],
+    "id": 85633,
+    "weapon_id": [
+      85633
     ]
   },
   "89000": {
@@ -129671,6 +133042,365 @@
     "value_1": "29",
     "value_2": 20
   },
+  "89740": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "attribute_1": "antiaircraft",
+    "attribute_2": "hit",
+    "descrip": "说明未填写",
+    "equip_info": [
+      6
+    ],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "89740",
+    "id": 89740,
+    "label": [
+      "DEV"
+    ],
+    "name": "μ兵装三期LIVE纪念票",
+    "nationality": 0,
+    "part_main": [],
+    "part_sub": [],
+    "property_rate": [],
+    "rarity": 5,
+    "skill_id": [
+      60560
+    ],
+    "speciality": "<[NA]>",
+    "tech": 0,
+    "torpedo_ammo": 0,
+    "type": 10,
+    "value_1": "14",
+    "value_2": 15,
+    "value_3": 0,
+    "weapon_id": []
+  },
+  "89741": {
+    "base": 89740,
+    "hidden_skill_id": [],
+    "id": 89741,
+    "value_1": "16",
+    "value_2": 16
+  },
+  "89742": {
+    "base": 89740,
+    "hidden_skill_id": [],
+    "id": 89742,
+    "value_1": "18",
+    "value_2": 17
+  },
+  "89743": {
+    "base": 89740,
+    "hidden_skill_id": [],
+    "id": 89743,
+    "value_1": "20",
+    "value_2": 18
+  },
+  "89744": {
+    "base": 89740,
+    "hidden_skill_id": [],
+    "id": 89744,
+    "value_1": "22",
+    "value_2": 19
+  },
+  "89745": {
+    "base": 89740,
+    "hidden_skill_id": [],
+    "id": 89745,
+    "value_1": "24",
+    "value_2": 20
+  },
+  "89746": {
+    "base": 89740,
+    "hidden_skill_id": [],
+    "id": 89746,
+    "value_1": "26",
+    "value_2": 22
+  },
+  "89747": {
+    "base": 89740,
+    "hidden_skill_id": [],
+    "id": 89747,
+    "value_1": "28",
+    "value_2": 24
+  },
+  "89748": {
+    "base": 89740,
+    "hidden_skill_id": [],
+    "id": 89748,
+    "value_1": "30",
+    "value_2": 26
+  },
+  "89749": {
+    "base": 89740,
+    "hidden_skill_id": [],
+    "id": 89749,
+    "value_1": "32",
+    "value_2": 28
+  },
+  "89750": {
+    "base": 89740,
+    "hidden_skill_id": [],
+    "id": 89750,
+    "value_1": "35",
+    "value_2": 30
+  },
+  "89751": {
+    "anti_siren": 100,
+    "base": 89740,
+    "hidden_skill_id": [],
+    "id": 89751,
+    "value_1": "38",
+    "value_2": 32
+  },
+  "89752": {
+    "anti_siren": 200,
+    "base": 89740,
+    "hidden_skill_id": [],
+    "id": 89752,
+    "value_1": "41",
+    "value_2": 34
+  },
+  "89753": {
+    "anti_siren": 300,
+    "base": 89740,
+    "hidden_skill_id": [],
+    "id": 89753,
+    "value_1": "44",
+    "value_2": 36
+  },
+  "89760": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "attribute_1": "durability",
+    "descrip": "以「Alizarin」的主题色设计，无论是现场应援，还是日常使用，都十分合适哦！",
+    "equip_info": [
+      6
+    ],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "89760",
+    "id": 89760,
+    "label": [
+      "DEV"
+    ],
+    "name": "「Alizarin」应援毛巾",
+    "nationality": 0,
+    "part_main": [],
+    "part_sub": [],
+    "property_rate": [],
+    "rarity": 5,
+    "skill_id": [
+      60570
+    ],
+    "speciality": "<[NA]>",
+    "tech": 0,
+    "torpedo_ammo": 0,
+    "type": 10,
+    "value_1": "250",
+    "value_2": 0,
+    "value_3": 0,
+    "weapon_id": []
+  },
+  "89761": {
+    "base": 89760,
+    "hidden_skill_id": [],
+    "id": 89761,
+    "value_1": "280"
+  },
+  "89762": {
+    "base": 89760,
+    "hidden_skill_id": [],
+    "id": 89762,
+    "value_1": "310"
+  },
+  "89763": {
+    "base": 89760,
+    "hidden_skill_id": [],
+    "id": 89763,
+    "value_1": "340"
+  },
+  "89764": {
+    "base": 89760,
+    "hidden_skill_id": [],
+    "id": 89764,
+    "value_1": "370"
+  },
+  "89765": {
+    "base": 89760,
+    "hidden_skill_id": [],
+    "id": 89765,
+    "value_1": "400"
+  },
+  "89766": {
+    "base": 89760,
+    "hidden_skill_id": [],
+    "id": 89766,
+    "value_1": "430"
+  },
+  "89767": {
+    "base": 89760,
+    "hidden_skill_id": [],
+    "id": 89767,
+    "value_1": "460"
+  },
+  "89768": {
+    "base": 89760,
+    "hidden_skill_id": [],
+    "id": 89768,
+    "value_1": "490"
+  },
+  "89769": {
+    "base": 89760,
+    "hidden_skill_id": [],
+    "id": 89769,
+    "value_1": "520"
+  },
+  "89770": {
+    "base": 89760,
+    "hidden_skill_id": [],
+    "id": 89770,
+    "value_1": "550"
+  },
+  "89771": {
+    "anti_siren": 100,
+    "base": 89760,
+    "hidden_skill_id": [],
+    "id": 89771,
+    "value_1": "580"
+  },
+  "89772": {
+    "anti_siren": 200,
+    "base": 89760,
+    "hidden_skill_id": [],
+    "id": 89772,
+    "value_1": "610"
+  },
+  "89773": {
+    "anti_siren": 300,
+    "base": 89760,
+    "hidden_skill_id": [],
+    "id": 89773,
+    "value_1": "640"
+  },
+  "89780": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "attribute_1": "durability",
+    "descrip": "以「Cyanidin」的主题色设计，无论是现场应援，还是日常使用，都十分合适哦",
+    "equip_info": [
+      6
+    ],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "89780",
+    "id": 89780,
+    "label": [
+      "DEV"
+    ],
+    "name": "「Cyanidin」应援毛巾",
+    "nationality": 0,
+    "part_main": [],
+    "part_sub": [],
+    "property_rate": [],
+    "rarity": 5,
+    "skill_id": [
+      60580
+    ],
+    "speciality": "<[NA]>",
+    "tech": 0,
+    "torpedo_ammo": 0,
+    "type": 10,
+    "value_1": "250",
+    "value_2": 0,
+    "value_3": 0,
+    "weapon_id": []
+  },
+  "89781": {
+    "base": 89780,
+    "hidden_skill_id": [],
+    "id": 89781,
+    "value_1": "280"
+  },
+  "89782": {
+    "base": 89780,
+    "hidden_skill_id": [],
+    "id": 89782,
+    "value_1": "310"
+  },
+  "89783": {
+    "base": 89780,
+    "hidden_skill_id": [],
+    "id": 89783,
+    "value_1": "340"
+  },
+  "89784": {
+    "base": 89780,
+    "hidden_skill_id": [],
+    "id": 89784,
+    "value_1": "370"
+  },
+  "89785": {
+    "base": 89780,
+    "hidden_skill_id": [],
+    "id": 89785,
+    "value_1": "400"
+  },
+  "89786": {
+    "base": 89780,
+    "hidden_skill_id": [],
+    "id": 89786,
+    "value_1": "430"
+  },
+  "89787": {
+    "base": 89780,
+    "hidden_skill_id": [],
+    "id": 89787,
+    "value_1": "460"
+  },
+  "89788": {
+    "base": 89780,
+    "hidden_skill_id": [],
+    "id": 89788,
+    "value_1": "490"
+  },
+  "89789": {
+    "base": 89780,
+    "hidden_skill_id": [],
+    "id": 89789,
+    "value_1": "520"
+  },
+  "89790": {
+    "base": 89780,
+    "hidden_skill_id": [],
+    "id": 89790,
+    "value_1": "550"
+  },
+  "89791": {
+    "anti_siren": 100,
+    "base": 89780,
+    "hidden_skill_id": [],
+    "id": 89791,
+    "value_1": "580"
+  },
+  "89792": {
+    "anti_siren": 200,
+    "base": 89780,
+    "hidden_skill_id": [],
+    "id": 89792,
+    "value_1": "610"
+  },
+  "89793": {
+    "anti_siren": 300,
+    "base": 89780,
+    "hidden_skill_id": [],
+    "id": 89793,
+    "value_1": "640"
+  },
   "90000": {
     "ammo": 3,
     "ammo_icon": [
@@ -130463,6 +134193,196 @@
     "id": 90153,
     "weapon_id": [
       90153
+    ]
+  },
+  "90160": {
+    "ammo": 1,
+    "ammo_icon": [
+      2
+    ],
+    "ammo_info": [
+      [
+        1,
+        2211
+      ]
+    ],
+    "attribute_2": "cannon",
+    "damage": "7 x 6",
+    "descrip": "莫加多尔级装备的双联装138.6mm主炮",
+    "equip_info": [
+      1,
+      2,
+      [
+        3,
+        2211
+      ],
+      [
+        4,
+        1024
+      ],
+      6,
+      10,
+      11,
+      12
+    ],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "50160",
+    "id": 90160,
+    "label": [
+      "FFNF",
+      "DD",
+      "MG",
+      "AP"
+    ],
+    "name": "双联装138.6mm主炮Mle1934",
+    "nationality": 8,
+    "part_main": [
+      1,
+      19,
+      20,
+      21
+    ],
+    "part_sub": [
+      2,
+      3,
+      4,
+      5,
+      8,
+      13,
+      18
+    ],
+    "property_rate": [],
+    "rarity": 6,
+    "skill_id": [],
+    "speciality": "<[LOCK]>",
+    "tech": 0,
+    "torpedo_ammo": 0,
+    "type": 1,
+    "value_2": 55,
+    "value_3": 0,
+    "weapon_id": [
+      90160
+    ]
+  },
+  "90161": {
+    "base": 90160,
+    "damage": "8 x 6",
+    "hidden_skill_id": [],
+    "id": 90161,
+    "weapon_id": [
+      90161
+    ]
+  },
+  "90162": {
+    "base": 90160,
+    "damage": "9 x 6",
+    "hidden_skill_id": [],
+    "id": 90162,
+    "weapon_id": [
+      90162
+    ]
+  },
+  "90163": {
+    "base": 90160,
+    "damage": "10 x 6",
+    "hidden_skill_id": [],
+    "id": 90163,
+    "weapon_id": [
+      90163
+    ]
+  },
+  "90164": {
+    "base": 90160,
+    "damage": "11 x 6",
+    "hidden_skill_id": [],
+    "id": 90164,
+    "weapon_id": [
+      90164
+    ]
+  },
+  "90165": {
+    "base": 90160,
+    "damage": "12 x 6",
+    "hidden_skill_id": [],
+    "id": 90165,
+    "weapon_id": [
+      90165
+    ]
+  },
+  "90166": {
+    "base": 90160,
+    "damage": "13 x 6",
+    "hidden_skill_id": [],
+    "id": 90166,
+    "weapon_id": [
+      90166
+    ]
+  },
+  "90167": {
+    "base": 90160,
+    "damage": "14 x 6",
+    "hidden_skill_id": [],
+    "id": 90167,
+    "weapon_id": [
+      90167
+    ]
+  },
+  "90168": {
+    "base": 90160,
+    "damage": "15 x 6",
+    "hidden_skill_id": [],
+    "id": 90168,
+    "weapon_id": [
+      90168
+    ]
+  },
+  "90169": {
+    "base": 90160,
+    "damage": "16 x 6",
+    "hidden_skill_id": [],
+    "id": 90169,
+    "weapon_id": [
+      90169
+    ]
+  },
+  "90170": {
+    "base": 90160,
+    "damage": "17 x 6",
+    "hidden_skill_id": [],
+    "id": 90170,
+    "weapon_id": [
+      90170
+    ]
+  },
+  "90171": {
+    "anti_siren": 100,
+    "base": 90160,
+    "damage": "17 x 6",
+    "hidden_skill_id": [],
+    "id": 90171,
+    "weapon_id": [
+      90171
+    ]
+  },
+  "90172": {
+    "anti_siren": 200,
+    "base": 90160,
+    "damage": "17 x 6",
+    "hidden_skill_id": [],
+    "id": 90172,
+    "weapon_id": [
+      90172
+    ]
+  },
+  "90173": {
+    "anti_siren": 300,
+    "base": 90160,
+    "damage": "17 x 6",
+    "hidden_skill_id": [],
+    "id": 90173,
+    "weapon_id": [
+      90173
     ]
   },
   "90200": {
@@ -135412,7 +139332,7 @@
       ]
     ],
     "attribute_2": "air",
-    "descrip": "说明未填写",
+    "descrip": "鸢尾以D.520战斗机为基础尝试研发的舰载机型",
     "equip_info": [
       6,
       7,
@@ -135680,7 +139600,7 @@
       ]
     ],
     "attribute_2": "air",
-    "descrip": "说明未填写",
+    "descrip": "鸢尾以BR.690攻击机为基础尝试研发的舰载机型，采用了双发设计",
     "equip_info": [
       6,
       7,
@@ -136028,7 +139948,7 @@
     "ammo_info": [],
     "attribute_1": "air",
     "attribute_2": "dodge",
-    "descrip": "说明未填写",
+    "descrip": "战斗天使的羽翼，象征着无畏、奉献与忠诚。",
     "equip_info": [
       6
     ],
@@ -139562,6 +143482,186 @@
       95653
     ]
   },
+  "95660": {
+    "ammo": 7,
+    "ammo_icon": [
+      4
+    ],
+    "ammo_info": [
+      [
+        1,
+        2311
+      ]
+    ],
+    "attribute_2": "cannon",
+    "damage": "23 x 3",
+    "descrip": "说明未填写",
+    "equip_info": [
+      1,
+      2,
+      [
+        3,
+        2311
+      ],
+      [
+        4,
+        1108
+      ],
+      6,
+      10,
+      11,
+      12
+    ],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "55660",
+    "id": 95660,
+    "label": [
+      "RN",
+      "CL",
+      "MG",
+      "SAP"
+    ],
+    "name": "试作型三联装152mm主炮Model1936",
+    "nationality": 6,
+    "part_main": [
+      2
+    ],
+    "part_sub": [
+      5
+    ],
+    "property_rate": [],
+    "rarity": 5,
+    "skill_id": [],
+    "speciality": "<[LOCK]>",
+    "tech": 0,
+    "torpedo_ammo": 0,
+    "type": 2,
+    "value_2": 45,
+    "value_3": 0,
+    "weapon_id": [
+      95660
+    ]
+  },
+  "95661": {
+    "base": 95660,
+    "hidden_skill_id": [],
+    "id": 95661,
+    "weapon_id": [
+      95661
+    ]
+  },
+  "95662": {
+    "base": 95660,
+    "damage": "24 x 3",
+    "hidden_skill_id": [],
+    "id": 95662,
+    "weapon_id": [
+      95662
+    ]
+  },
+  "95663": {
+    "base": 95660,
+    "damage": "25 x 3",
+    "hidden_skill_id": [],
+    "id": 95663,
+    "weapon_id": [
+      95663
+    ]
+  },
+  "95664": {
+    "base": 95660,
+    "damage": "26 x 3",
+    "hidden_skill_id": [],
+    "id": 95664,
+    "weapon_id": [
+      95664
+    ]
+  },
+  "95665": {
+    "base": 95660,
+    "damage": "27 x 3",
+    "hidden_skill_id": [],
+    "id": 95665,
+    "weapon_id": [
+      95665
+    ]
+  },
+  "95666": {
+    "base": 95660,
+    "damage": "28 x 3",
+    "hidden_skill_id": [],
+    "id": 95666,
+    "weapon_id": [
+      95666
+    ]
+  },
+  "95667": {
+    "base": 95660,
+    "damage": "29 x 3",
+    "hidden_skill_id": [],
+    "id": 95667,
+    "weapon_id": [
+      95667
+    ]
+  },
+  "95668": {
+    "base": 95660,
+    "damage": "30 x 3",
+    "hidden_skill_id": [],
+    "id": 95668,
+    "weapon_id": [
+      95668
+    ]
+  },
+  "95669": {
+    "base": 95660,
+    "damage": "31 x 3",
+    "hidden_skill_id": [],
+    "id": 95669,
+    "weapon_id": [
+      95669
+    ]
+  },
+  "95670": {
+    "base": 95660,
+    "damage": "32 x 3",
+    "hidden_skill_id": [],
+    "id": 95670,
+    "weapon_id": [
+      95670
+    ]
+  },
+  "95671": {
+    "anti_siren": 100,
+    "base": 95660,
+    "damage": "32 x 3",
+    "hidden_skill_id": [],
+    "id": 95671,
+    "weapon_id": [
+      95671
+    ]
+  },
+  "95672": {
+    "anti_siren": 200,
+    "base": 95660,
+    "damage": "32 x 3",
+    "hidden_skill_id": [],
+    "id": 95672,
+    "weapon_id": [
+      95672
+    ]
+  },
+  "95673": {
+    "anti_siren": 300,
+    "base": 95660,
+    "damage": "32 x 3",
+    "hidden_skill_id": [],
+    "id": 95673,
+    "weapon_id": [
+      95673
+    ]
+  },
   "95700": {
     "ammo": 5,
     "ammo_icon": [],
@@ -142075,6 +146175,186 @@
       96113
     ]
   },
+  "96120": {
+    "ammo": 1,
+    "ammo_icon": [
+      2
+    ],
+    "ammo_info": [
+      [
+        1,
+        1430
+      ]
+    ],
+    "attribute_2": "cannon",
+    "damage": "36 x 6",
+    "descrip": "说明未填写",
+    "equip_info": [
+      1,
+      2,
+      [
+        3,
+        1430
+      ],
+      [
+        4,
+        1214
+      ],
+      6,
+      10,
+      11,
+      12
+    ],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "56120",
+    "id": 96120,
+    "label": [
+      "RN",
+      "CA",
+      "MG",
+      "AP"
+    ],
+    "name": "试作型三联装254mm主炮Model1939",
+    "nationality": 6,
+    "part_main": [
+      3,
+      18
+    ],
+    "part_sub": [],
+    "property_rate": [],
+    "rarity": 5,
+    "skill_id": [],
+    "speciality": "<[LOCK]>",
+    "tech": 0,
+    "torpedo_ammo": 0,
+    "type": 3,
+    "value_2": 45,
+    "value_3": 0,
+    "weapon_id": [
+      96120
+    ]
+  },
+  "96121": {
+    "base": 96120,
+    "damage": "38 x 6",
+    "hidden_skill_id": [],
+    "id": 96121,
+    "weapon_id": [
+      96121
+    ]
+  },
+  "96122": {
+    "base": 96120,
+    "damage": "40 x 6",
+    "hidden_skill_id": [],
+    "id": 96122,
+    "weapon_id": [
+      96122
+    ]
+  },
+  "96123": {
+    "base": 96120,
+    "damage": "42 x 6",
+    "hidden_skill_id": [],
+    "id": 96123,
+    "weapon_id": [
+      96123
+    ]
+  },
+  "96124": {
+    "base": 96120,
+    "damage": "44 x 6",
+    "hidden_skill_id": [],
+    "id": 96124,
+    "weapon_id": [
+      96124
+    ]
+  },
+  "96125": {
+    "base": 96120,
+    "damage": "46 x 6",
+    "hidden_skill_id": [],
+    "id": 96125,
+    "weapon_id": [
+      96125
+    ]
+  },
+  "96126": {
+    "base": 96120,
+    "damage": "48 x 6",
+    "hidden_skill_id": [],
+    "id": 96126,
+    "weapon_id": [
+      96126
+    ]
+  },
+  "96127": {
+    "base": 96120,
+    "damage": "50 x 6",
+    "hidden_skill_id": [],
+    "id": 96127,
+    "weapon_id": [
+      96127
+    ]
+  },
+  "96128": {
+    "base": 96120,
+    "damage": "52 x 6",
+    "hidden_skill_id": [],
+    "id": 96128,
+    "weapon_id": [
+      96128
+    ]
+  },
+  "96129": {
+    "base": 96120,
+    "damage": "54 x 6",
+    "hidden_skill_id": [],
+    "id": 96129,
+    "weapon_id": [
+      96129
+    ]
+  },
+  "96130": {
+    "base": 96120,
+    "damage": "56 x 6",
+    "hidden_skill_id": [],
+    "id": 96130,
+    "weapon_id": [
+      96130
+    ]
+  },
+  "96131": {
+    "anti_siren": 100,
+    "base": 96120,
+    "damage": "56 x 6",
+    "hidden_skill_id": [],
+    "id": 96131,
+    "weapon_id": [
+      96131
+    ]
+  },
+  "96132": {
+    "anti_siren": 200,
+    "base": 96120,
+    "damage": "56 x 6",
+    "hidden_skill_id": [],
+    "id": 96132,
+    "weapon_id": [
+      96132
+    ]
+  },
+  "96133": {
+    "anti_siren": 300,
+    "base": 96120,
+    "damage": "56 x 6",
+    "hidden_skill_id": [],
+    "id": 96133,
+    "weapon_id": [
+      96133
+    ]
+  },
   "100000": {
     "ammo": 10,
     "ammo_icon": [],
@@ -143556,6 +147836,820 @@
     "id": 150293,
     "value_1": "640"
   },
+  "150300": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "attribute_1": "air",
+    "descrip": "一朵彼岸花，被定格在了最美的瞬间。艳丽、张扬、有毒。",
+    "equip_info": [
+      6
+    ],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "150300",
+    "id": 150300,
+    "label": [
+      "IJN",
+      "DEV"
+    ],
+    "name": "被定格的彼岸花",
+    "nationality": 3,
+    "part_main": [
+      7
+    ],
+    "part_sub": [
+      7
+    ],
+    "property_rate": [],
+    "rarity": 4,
+    "skill_id": [
+      60550
+    ],
+    "speciality": "<[NA]>",
+    "tech": 0,
+    "torpedo_ammo": 0,
+    "type": 10,
+    "value_1": "28",
+    "value_2": 0,
+    "value_3": 0,
+    "weapon_id": []
+  },
+  "150301": {
+    "base": 150300,
+    "hidden_skill_id": [],
+    "id": 150301,
+    "value_1": "32"
+  },
+  "150302": {
+    "base": 150300,
+    "hidden_skill_id": [],
+    "id": 150302,
+    "value_1": "36"
+  },
+  "150303": {
+    "base": 150300,
+    "hidden_skill_id": [],
+    "id": 150303,
+    "value_1": "40"
+  },
+  "150304": {
+    "base": 150300,
+    "hidden_skill_id": [],
+    "id": 150304,
+    "value_1": "44"
+  },
+  "150305": {
+    "base": 150300,
+    "hidden_skill_id": [],
+    "id": 150305,
+    "value_1": "49"
+  },
+  "150306": {
+    "base": 150300,
+    "hidden_skill_id": [],
+    "id": 150306,
+    "value_1": "53"
+  },
+  "150307": {
+    "base": 150300,
+    "hidden_skill_id": [],
+    "id": 150307,
+    "value_1": "57"
+  },
+  "150308": {
+    "base": 150300,
+    "hidden_skill_id": [],
+    "id": 150308,
+    "value_1": "61"
+  },
+  "150309": {
+    "base": 150300,
+    "hidden_skill_id": [],
+    "id": 150309,
+    "value_1": "65"
+  },
+  "150310": {
+    "base": 150300,
+    "hidden_skill_id": [],
+    "id": 150310,
+    "value_1": "70"
+  },
+  "150311": {
+    "anti_siren": 100,
+    "base": 150300,
+    "hidden_skill_id": [],
+    "id": 150311,
+    "value_1": "75"
+  },
+  "150320": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "attribute_1": "durability",
+    "descrip": "叮叮叮 — 咚咚咚 — 哐哐哐 — 哒哒哒 — 哔哔哔 — 啪啪啪 —",
+    "equip_info": [
+      6
+    ],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "150320",
+    "id": 150320,
+    "label": [
+      "DEV"
+    ],
+    "name": "奇怪装置「D」",
+    "nationality": 0,
+    "part_main": [],
+    "part_sub": [],
+    "property_rate": [],
+    "rarity": 4,
+    "skill_id": [
+      60590
+    ],
+    "speciality": "<[NA]>",
+    "tech": 0,
+    "torpedo_ammo": 0,
+    "type": 10,
+    "value_1": "200",
+    "value_2": 0,
+    "value_3": 0,
+    "weapon_id": []
+  },
+  "150321": {
+    "base": 150320,
+    "hidden_skill_id": [],
+    "id": 150321,
+    "value_1": "230"
+  },
+  "150322": {
+    "base": 150320,
+    "hidden_skill_id": [],
+    "id": 150322,
+    "value_1": "260"
+  },
+  "150323": {
+    "base": 150320,
+    "hidden_skill_id": [],
+    "id": 150323,
+    "value_1": "290"
+  },
+  "150324": {
+    "base": 150320,
+    "hidden_skill_id": [],
+    "id": 150324,
+    "value_1": "320"
+  },
+  "150325": {
+    "base": 150320,
+    "hidden_skill_id": [],
+    "id": 150325,
+    "value_1": "350"
+  },
+  "150326": {
+    "base": 150320,
+    "hidden_skill_id": [],
+    "id": 150326,
+    "value_1": "380"
+  },
+  "150327": {
+    "base": 150320,
+    "hidden_skill_id": [],
+    "id": 150327,
+    "value_1": "410"
+  },
+  "150328": {
+    "base": 150320,
+    "hidden_skill_id": [],
+    "id": 150328,
+    "value_1": "440"
+  },
+  "150329": {
+    "base": 150320,
+    "hidden_skill_id": [],
+    "id": 150329,
+    "value_1": "470"
+  },
+  "150330": {
+    "base": 150320,
+    "hidden_skill_id": [],
+    "id": 150330,
+    "value_1": "500"
+  },
+  "150331": {
+    "anti_siren": 100,
+    "base": 150320,
+    "hidden_skill_id": [],
+    "id": 150331,
+    "value_1": "530"
+  },
+  "150340": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "attribute_1": "durability",
+    "descrip": "由撒丁帝国和鸢尾教国联名制作的限定版纪念币，只赠送给最尊贵的客人。",
+    "equip_info": [
+      6
+    ],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "150340",
+    "id": 150340,
+    "label": [
+      "DEV"
+    ],
+    "name": "联合演习纪念币（限定版）",
+    "nationality": 0,
+    "part_main": [],
+    "part_sub": [],
+    "property_rate": [],
+    "rarity": 4,
+    "skill_id": [
+      60650
+    ],
+    "speciality": "<[NA]>",
+    "tech": 0,
+    "torpedo_ammo": 0,
+    "type": 10,
+    "value_1": "200",
+    "value_2": 0,
+    "value_3": 0,
+    "weapon_id": []
+  },
+  "150341": {
+    "base": 150340,
+    "hidden_skill_id": [],
+    "id": 150341,
+    "value_1": "230"
+  },
+  "150342": {
+    "base": 150340,
+    "hidden_skill_id": [],
+    "id": 150342,
+    "value_1": "260"
+  },
+  "150343": {
+    "base": 150340,
+    "hidden_skill_id": [],
+    "id": 150343,
+    "value_1": "290"
+  },
+  "150344": {
+    "base": 150340,
+    "hidden_skill_id": [],
+    "id": 150344,
+    "value_1": "320"
+  },
+  "150345": {
+    "base": 150340,
+    "hidden_skill_id": [],
+    "id": 150345,
+    "value_1": "350"
+  },
+  "150346": {
+    "base": 150340,
+    "hidden_skill_id": [],
+    "id": 150346,
+    "value_1": "380"
+  },
+  "150347": {
+    "base": 150340,
+    "hidden_skill_id": [],
+    "id": 150347,
+    "value_1": "410"
+  },
+  "150348": {
+    "base": 150340,
+    "hidden_skill_id": [],
+    "id": 150348,
+    "value_1": "440"
+  },
+  "150349": {
+    "base": 150340,
+    "hidden_skill_id": [],
+    "id": 150349,
+    "value_1": "470"
+  },
+  "150350": {
+    "base": 150340,
+    "hidden_skill_id": [],
+    "id": 150350,
+    "value_1": "500"
+  },
+  "150351": {
+    "anti_siren": 100,
+    "base": 150340,
+    "hidden_skill_id": [],
+    "id": 150351,
+    "value_1": "530"
+  },
+  "150360": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "attribute_1": "cannon",
+    "attribute_2": "antiaircraft",
+    "descrip": "量产型高速货运无人机，续航持久，安全可靠。",
+    "equip_info": [
+      6
+    ],
+    "equip_parameters": [],
+    "hidden_skill_id": [
+      201017
+    ],
+    "icon": "150360",
+    "id": 150360,
+    "label": [
+      "USS",
+      "DEV"
+    ],
+    "name": "速运高速无人机",
+    "nationality": 1,
+    "part_main": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      10,
+      11,
+      12,
+      13,
+      18,
+      19,
+      20,
+      21
+    ],
+    "part_sub": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      10,
+      11,
+      12,
+      13,
+      18,
+      19,
+      20,
+      21
+    ],
+    "property_rate": [],
+    "rarity": 5,
+    "skill_id": [
+      60660
+    ],
+    "speciality": "<[NA]>",
+    "tech": 0,
+    "torpedo_ammo": 0,
+    "type": 10,
+    "value_1": "15",
+    "value_2": 8,
+    "value_3": 0,
+    "weapon_id": []
+  },
+  "150361": {
+    "base": 150360,
+    "id": 150361,
+    "value_1": "16"
+  },
+  "150362": {
+    "base": 150360,
+    "id": 150362,
+    "value_1": "17",
+    "value_2": 9
+  },
+  "150363": {
+    "base": 150360,
+    "id": 150363,
+    "value_1": "18",
+    "value_2": 10
+  },
+  "150364": {
+    "base": 150360,
+    "id": 150364,
+    "value_1": "19",
+    "value_2": 11
+  },
+  "150365": {
+    "base": 150360,
+    "id": 150365,
+    "value_1": "20",
+    "value_2": 12
+  },
+  "150366": {
+    "base": 150360,
+    "id": 150366,
+    "value_1": "21",
+    "value_2": 13
+  },
+  "150367": {
+    "base": 150360,
+    "id": 150367,
+    "value_1": "22",
+    "value_2": 14
+  },
+  "150368": {
+    "base": 150360,
+    "id": 150368,
+    "value_1": "23",
+    "value_2": 16
+  },
+  "150369": {
+    "base": 150360,
+    "id": 150369,
+    "value_1": "24",
+    "value_2": 18
+  },
+  "150370": {
+    "base": 150360,
+    "id": 150370,
+    "value_1": "25",
+    "value_2": 20
+  },
+  "150371": {
+    "anti_siren": 100,
+    "base": 150360,
+    "id": 150371,
+    "value_1": "26",
+    "value_2": 22
+  },
+  "150372": {
+    "anti_siren": 200,
+    "base": 150360,
+    "id": 150372,
+    "value_1": "27",
+    "value_2": 24
+  },
+  "150373": {
+    "anti_siren": 300,
+    "base": 150360,
+    "id": 150373,
+    "value_1": "28",
+    "value_2": 26
+  },
+  "150380": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "attribute_1": "durability",
+    "attribute_2": "reload",
+    "descrip": "装载有无数珍贵货物的宝箱！",
+    "equip_info": [
+      6
+    ],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "150380",
+    "id": 150380,
+    "label": [
+      "MOT",
+      "DEV"
+    ],
+    "name": "珍贵货物箱",
+    "nationality": 96,
+    "part_main": [
+      22,
+      23,
+      24
+    ],
+    "part_sub": [
+      22,
+      23,
+      24
+    ],
+    "property_rate": [],
+    "rarity": 5,
+    "skill_id": [
+      60680
+    ],
+    "speciality": "<[NA]>",
+    "tech": 0,
+    "torpedo_ammo": 0,
+    "type": 10,
+    "value_1": "250",
+    "value_2": 3,
+    "value_3": 0,
+    "weapon_id": []
+  },
+  "150381": {
+    "base": 150380,
+    "id": 150381,
+    "value_1": "280"
+  },
+  "150382": {
+    "base": 150380,
+    "id": 150382,
+    "value_1": "310",
+    "value_2": 4
+  },
+  "150383": {
+    "base": 150380,
+    "id": 150383,
+    "value_1": "340",
+    "value_2": 5
+  },
+  "150384": {
+    "base": 150380,
+    "id": 150384,
+    "value_1": "370",
+    "value_2": 6
+  },
+  "150385": {
+    "base": 150380,
+    "id": 150385,
+    "value_1": "400",
+    "value_2": 6
+  },
+  "150386": {
+    "base": 150380,
+    "id": 150386,
+    "value_1": "430",
+    "value_2": 7
+  },
+  "150387": {
+    "base": 150380,
+    "id": 150387,
+    "value_1": "460",
+    "value_2": 8
+  },
+  "150388": {
+    "base": 150380,
+    "id": 150388,
+    "value_1": "490",
+    "value_2": 9
+  },
+  "150389": {
+    "base": 150380,
+    "id": 150389,
+    "value_1": "520",
+    "value_2": 9
+  },
+  "150390": {
+    "base": 150380,
+    "id": 150390,
+    "value_1": "550",
+    "value_2": 10
+  },
+  "150391": {
+    "anti_siren": 100,
+    "base": 150380,
+    "id": 150391,
+    "value_1": "580",
+    "value_2": 11
+  },
+  "150392": {
+    "anti_siren": 200,
+    "base": 150380,
+    "id": 150392,
+    "value_1": "610",
+    "value_2": 12
+  },
+  "150393": {
+    "anti_siren": 300,
+    "base": 150380,
+    "id": 150393,
+    "value_1": "640",
+    "value_2": 13
+  },
+  "150400": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "attribute_1": "cannon",
+    "attribute_2": "hit",
+    "descrip": "专注于人员打击的特殊炮弹，夺船必备！ ",
+    "equip_info": [
+      6
+    ],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "150400",
+    "id": 150400,
+    "label": [
+      "MOT",
+      "DEV"
+    ],
+    "name": "葡萄弹",
+    "nationality": 96,
+    "part_main": [
+      22,
+      23,
+      24
+    ],
+    "part_sub": [
+      22,
+      23,
+      24
+    ],
+    "property_rate": [],
+    "rarity": 4,
+    "skill_id": [
+      60700
+    ],
+    "speciality": "<[NA]>",
+    "tech": 0,
+    "torpedo_ammo": 0,
+    "type": 10,
+    "value_1": "14",
+    "value_2": 4,
+    "value_3": 0,
+    "weapon_id": []
+  },
+  "150401": {
+    "base": 150400,
+    "hidden_skill_id": [],
+    "id": 150401,
+    "value_1": "16",
+    "value_2": 4
+  },
+  "150402": {
+    "base": 150400,
+    "hidden_skill_id": [],
+    "id": 150402,
+    "value_1": "18",
+    "value_2": 5
+  },
+  "150403": {
+    "base": 150400,
+    "hidden_skill_id": [],
+    "id": 150403,
+    "value_1": "20",
+    "value_2": 5
+  },
+  "150404": {
+    "base": 150400,
+    "hidden_skill_id": [],
+    "id": 150404,
+    "value_1": "22",
+    "value_2": 6
+  },
+  "150405": {
+    "base": 150400,
+    "hidden_skill_id": [],
+    "id": 150405,
+    "value_1": "24",
+    "value_2": 7
+  },
+  "150406": {
+    "base": 150400,
+    "hidden_skill_id": [],
+    "id": 150406,
+    "value_1": "26",
+    "value_2": 7
+  },
+  "150407": {
+    "base": 150400,
+    "hidden_skill_id": [],
+    "id": 150407,
+    "value_1": "28",
+    "value_2": 8
+  },
+  "150408": {
+    "base": 150400,
+    "hidden_skill_id": [],
+    "id": 150408,
+    "value_1": "30",
+    "value_2": 8
+  },
+  "150409": {
+    "base": 150400,
+    "hidden_skill_id": [],
+    "id": 150409,
+    "value_1": "32",
+    "value_2": 9
+  },
+  "150410": {
+    "base": 150400,
+    "hidden_skill_id": [],
+    "id": 150410,
+    "value_1": "35",
+    "value_2": 10
+  },
+  "150411": {
+    "anti_siren": 100,
+    "base": 150400,
+    "hidden_skill_id": [],
+    "id": 150411,
+    "value_1": "38",
+    "value_2": 10
+  },
+  "150420": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "attribute_1": "durability",
+    "descrip": "描述待定",
+    "equip_info": [
+      6
+    ],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "150420",
+    "id": 150420,
+    "label": [
+      "MOT",
+      "DEV"
+    ],
+    "name": "酒饮补给品",
+    "nationality": 96,
+    "part_main": [
+      22,
+      23,
+      24
+    ],
+    "part_sub": [
+      22,
+      23,
+      24
+    ],
+    "property_rate": [],
+    "rarity": 4,
+    "skill_id": [
+      60720
+    ],
+    "speciality": "<[NA]>",
+    "tech": 0,
+    "torpedo_ammo": 0,
+    "type": 10,
+    "value_1": "200",
+    "value_2": 0,
+    "value_3": 0,
+    "weapon_id": []
+  },
+  "150421": {
+    "base": 150420,
+    "hidden_skill_id": [],
+    "id": 150421,
+    "value_1": "230"
+  },
+  "150422": {
+    "base": 150420,
+    "hidden_skill_id": [],
+    "id": 150422,
+    "value_1": "260"
+  },
+  "150423": {
+    "base": 150420,
+    "hidden_skill_id": [],
+    "id": 150423,
+    "value_1": "290"
+  },
+  "150424": {
+    "base": 150420,
+    "hidden_skill_id": [],
+    "id": 150424,
+    "value_1": "320"
+  },
+  "150425": {
+    "base": 150420,
+    "hidden_skill_id": [],
+    "id": 150425,
+    "value_1": "350"
+  },
+  "150426": {
+    "base": 150420,
+    "hidden_skill_id": [],
+    "id": 150426,
+    "value_1": "380"
+  },
+  "150427": {
+    "base": 150420,
+    "hidden_skill_id": [],
+    "id": 150427,
+    "value_1": "410"
+  },
+  "150428": {
+    "base": 150420,
+    "hidden_skill_id": [],
+    "id": 150428,
+    "value_1": "440"
+  },
+  "150429": {
+    "base": 150420,
+    "hidden_skill_id": [],
+    "id": 150429,
+    "value_1": "470"
+  },
+  "150430": {
+    "base": 150420,
+    "hidden_skill_id": [],
+    "id": 150430,
+    "value_1": "500"
+  },
+  "150431": {
+    "anti_siren": 100,
+    "base": 150420,
+    "hidden_skill_id": [],
+    "id": 150431,
+    "value_1": "530"
+  },
   "170001": {
     "ammo": 10,
     "ammo_icon": [],
@@ -144463,6 +149557,160 @@
     "name": "专属弹幕-水星纪念METAII",
     "weapon_id": [
       170412
+    ]
+  },
+  "170551": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "descrip": "技能弹幕",
+    "equip_info": [],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "1",
+    "id": 170551,
+    "label": [],
+    "name": "专属弹幕-那不勒斯I",
+    "nationality": 0,
+    "part_main": [
+      1,
+      19,
+      20,
+      21
+    ],
+    "part_sub": [
+      2,
+      3,
+      4,
+      5,
+      8,
+      13,
+      18
+    ],
+    "property_rate": [],
+    "rarity": 1,
+    "skill_id": [],
+    "speciality": "<[NA]>",
+    "tech": 1,
+    "torpedo_ammo": 0,
+    "type": 1,
+    "value_1": "0",
+    "value_2": 0,
+    "value_3": 0,
+    "weapon_id": [
+      61661
+    ]
+  },
+  "170552": {
+    "base": 170551,
+    "hidden_skill_id": [],
+    "id": 170552,
+    "name": "专属弹幕-那不勒斯II",
+    "weapon_id": [
+      61662
+    ]
+  },
+  "170553": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "descrip": "技能弹幕",
+    "equip_info": [],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "1",
+    "id": 170553,
+    "label": [],
+    "name": "专属弹幕-那不勒斯鱼雷-特殊副炮联动",
+    "nationality": 0,
+    "part_main": [
+      1,
+      19,
+      20,
+      21
+    ],
+    "part_sub": [
+      2,
+      3,
+      4,
+      5,
+      8,
+      13,
+      18
+    ],
+    "property_rate": [],
+    "rarity": 1,
+    "skill_id": [],
+    "speciality": "<[NA]>",
+    "tech": 1,
+    "torpedo_ammo": 0,
+    "type": 1,
+    "value_1": "0",
+    "value_2": 0,
+    "value_3": 0,
+    "weapon_id": [
+      170553
+    ]
+  },
+  "170554": {
+    "base": 170553,
+    "hidden_skill_id": [],
+    "id": 170554,
+    "name": "专属弹幕-那不勒斯鱼雷-特殊副炮联动II",
+    "weapon_id": [
+      170554
+    ]
+  },
+  "170571": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "descrip": "技能弹幕",
+    "equip_info": [],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "1",
+    "id": 170571,
+    "label": [],
+    "name": "构造之理-霞 I",
+    "nationality": 0,
+    "part_main": [
+      1,
+      19,
+      20,
+      21
+    ],
+    "part_sub": [
+      2,
+      3,
+      4,
+      5,
+      8,
+      13,
+      18
+    ],
+    "property_rate": [],
+    "rarity": 1,
+    "skill_id": [],
+    "speciality": "<[NA]>",
+    "tech": 1,
+    "torpedo_ammo": 0,
+    "type": 1,
+    "value_1": "0",
+    "value_2": 0,
+    "value_3": 0,
+    "weapon_id": [
+      170571
+    ]
+  },
+  "170572": {
+    "base": 170571,
+    "hidden_skill_id": [],
+    "id": 170572,
+    "name": "构造之理-霞 II",
+    "weapon_id": [
+      170572,
+      170573
     ]
   },
   "594017": {
@@ -148334,6 +153582,68 @@
     "value_3": 0,
     "weapon_id": [
       3139728
+    ]
+  },
+  "3165001": {
+    "anti_siren": 300,
+    "base": 44500,
+    "damage": "118 x 3",
+    "hidden_skill_id": [],
+    "id": 3165001,
+    "name": "【2024幼儿园活动 剧情战】小斯佩主炮",
+    "weapon_id": [
+      3165001
+    ]
+  },
+  "3217501": {
+    "ammo": 2,
+    "ammo_icon": [
+      1
+    ],
+    "ammo_info": [
+      [
+        2,
+        1351
+      ]
+    ],
+    "anti_siren": 300,
+    "attribute_2": "cannon",
+    "damage": "78 x 6",
+    "descrip": "受到神秘的力量影响的“旧式”半加农炮 ",
+    "equip_info": [
+      1,
+      2,
+      6,
+      10,
+      11,
+      12
+    ],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "150100",
+    "id": 3217501,
+    "label": [
+      "MOT",
+      "SF",
+      "MG"
+    ],
+    "name": "【2024风帆二期剧情战】我方后排加农炮",
+    "nationality": 96,
+    "part_main": [
+      24
+    ],
+    "part_sub": [],
+    "property_rate": [],
+    "rarity": 5,
+    "skill_id": [],
+    "speciality": "<[VOL]>",
+    "tech": 3,
+    "torpedo_ammo": 0,
+    "type": 4,
+    "value_2": 45,
+    "value_3": 0,
+    "weapon_id": [
+      3217501
     ]
   }
 }

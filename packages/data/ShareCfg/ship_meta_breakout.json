@@ -314,6 +314,69 @@
     "repair": 0,
     "weapon_ids": []
   },
+  "9701061": {
+    "breakout_id": 9701062,
+    "breakout_view": "习得技能【构造之理·{namecode:180}】/鱼雷效率提高5%",
+    "gold": 500,
+    "id": 9701061,
+    "item1": 21036,
+    "item1_num": 1,
+    "item2": 21001,
+    "item2_num": 0,
+    "level": 10,
+    "pre_id": 0,
+    "repair": 0,
+    "weapon_ids": [
+      170571
+    ]
+  },
+  "9701062": {
+    "breakout_id": 9701063,
+    "breakout_view": "鱼雷底座+1/鱼雷预装填+1/鱼雷效率提高10%",
+    "gold": 1500,
+    "id": 9701062,
+    "item1": 21036,
+    "item1_num": 1,
+    "item2": 21001,
+    "item2_num": 0,
+    "level": 30,
+    "pre_id": 9701061,
+    "repair": 0,
+    "weapon_ids": [
+      107,
+      107
+    ]
+  },
+  "9701063": {
+    "breakout_id": 9701064,
+    "breakout_view": "【构造之理·{namecode:180}】升级/全武器效率提高5%",
+    "gold": 2500,
+    "id": 9701063,
+    "item1": 21036,
+    "item1_num": 2,
+    "item2": 21001,
+    "item2_num": 0,
+    "level": 70,
+    "pre_id": 9701062,
+    "repair": 0,
+    "weapon_ids": [
+      170572
+    ]
+  },
+  "9701064": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "gold": 0,
+    "id": 9701064,
+    "item1": 21036,
+    "item1_num": 0,
+    "item2": 21001,
+    "item2_num": 0,
+    "level": 0,
+    "pre_id": 9701063,
+    "repair": 0,
+    "weapon_ids": []
+  },
   "9702011": {
     "breakout_id": 9702012,
     "breakout_view": "习得技能【破敌之炬·海伦娜】/主炮效率提高5%",
@@ -881,6 +944,132 @@
     "repair": 0,
     "weapon_ids": []
   },
+  "9703031": {
+    "breakout_id": 9703032,
+    "breakout_view": "习得技能【逐光之焰·福煦】/主炮效率提高5%",
+    "gold": 500,
+    "id": 9703031,
+    "item1": 21034,
+    "item1_num": 1,
+    "item2": 21001,
+    "item2_num": 0,
+    "level": 10,
+    "pre_id": 0,
+    "repair": 0,
+    "weapon_ids": [
+      80281
+    ]
+  },
+  "9703032": {
+    "breakout_id": 9703033,
+    "breakout_view": "鱼雷底座+1/鱼雷预装填+1/鱼雷效率提高10%",
+    "gold": 1500,
+    "id": 9703032,
+    "item1": 21034,
+    "item1_num": 1,
+    "item2": 21001,
+    "item2_num": 0,
+    "level": 30,
+    "pre_id": 9703031,
+    "repair": 0,
+    "weapon_ids": [
+      106,
+      106
+    ]
+  },
+  "9703033": {
+    "breakout_id": 9703034,
+    "breakout_view": "【逐光之焰·福煦】升级/鱼雷效率提高15%",
+    "gold": 2500,
+    "id": 9703033,
+    "item1": 21034,
+    "item1_num": 2,
+    "item2": 21001,
+    "item2_num": 0,
+    "level": 70,
+    "pre_id": 9703032,
+    "repair": 0,
+    "weapon_ids": [
+      80282
+    ]
+  },
+  "9703034": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "gold": 0,
+    "id": 9703034,
+    "item1": 21034,
+    "item1_num": 0,
+    "item2": 21001,
+    "item2_num": 0,
+    "level": 0,
+    "pre_id": 9703033,
+    "repair": 0,
+    "weapon_ids": []
+  },
+  "9703041": {
+    "breakout_id": 9703042,
+    "breakout_view": "习得技能【破敌之炬·威奇塔】/主炮效率提高5%",
+    "gold": 1000,
+    "id": 9703041,
+    "item1": 21035,
+    "item1_num": 1,
+    "item2": 21001,
+    "item2_num": 0,
+    "level": 10,
+    "pre_id": 0,
+    "repair": 0,
+    "weapon_ids": [
+      80291
+    ]
+  },
+  "9703042": {
+    "breakout_id": 9703043,
+    "breakout_view": "主炮底座+1/主炮效率提高10%",
+    "gold": 3000,
+    "id": 9703042,
+    "item1": 21035,
+    "item1_num": 1,
+    "item2": 21001,
+    "item2_num": 0,
+    "level": 30,
+    "pre_id": 9703041,
+    "repair": 0,
+    "weapon_ids": [
+      13000,
+      13000
+    ]
+  },
+  "9703043": {
+    "breakout_id": 9703044,
+    "breakout_view": "【破敌之炬·威奇塔】升级/全武器效率提高5%",
+    "gold": 10000,
+    "id": 9703043,
+    "item1": 21035,
+    "item1_num": 2,
+    "item2": 21001,
+    "item2_num": 0,
+    "level": 70,
+    "pre_id": 9703042,
+    "repair": 0,
+    "weapon_ids": [
+      80292
+    ]
+  },
+  "9703044": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "gold": 0,
+    "id": 9703044,
+    "item1": 21035,
+    "item1_num": 0,
+    "item2": 21001,
+    "item2_num": 0,
+    "level": 0,
+    "pre_id": 9703043,
+    "repair": 0,
+    "weapon_ids": []
+  },
   "9704011": {
     "breakout_id": 9704012,
     "breakout_view": "习得技能【逐光之焰·{namecode:434}】/主炮底座+1/主炮效率提高5%",
@@ -1142,6 +1331,73 @@
     "item2_num": 0,
     "level": 0,
     "pre_id": 9704043,
+    "repair": 0,
+    "weapon_ids": []
+  },
+  "9704051": {
+    "breakout_id": 9704052,
+    "breakout_view": "习得技能【逐光之焰·{namecode:71}】/主炮底座+1/主炮效率提高5%",
+    "gold": 1000,
+    "id": 9704051,
+    "item1": 21038,
+    "item1_num": 1,
+    "item2": 21001,
+    "item2_num": 0,
+    "level": 10,
+    "pre_id": 0,
+    "repair": 0,
+    "weapon_ids": [
+      34000,
+      34000
+    ]
+  },
+  "9704052": {
+    "breakout_id": 9704053,
+    "breakout_view": "副炮底座+2/主炮效率提高10%",
+    "gold": 3000,
+    "id": 9704052,
+    "item1": 21038,
+    "item1_num": 1,
+    "item2": 21001,
+    "item2_num": 0,
+    "level": 30,
+    "pre_id": 9704051,
+    "repair": 0,
+    "weapon_ids": [
+      101,
+      101,
+      101
+    ]
+  },
+  "9704053": {
+    "breakout_id": 9704054,
+    "breakout_view": "【逐光之焰·{namecode:71}】升级/主炮底座+1/主炮效率提高15%",
+    "gold": 10000,
+    "id": 9704053,
+    "item1": 21038,
+    "item1_num": 2,
+    "item2": 21001,
+    "item2_num": 0,
+    "level": 70,
+    "pre_id": 9704052,
+    "repair": 0,
+    "weapon_ids": [
+      34000,
+      34000,
+      34000
+    ]
+  },
+  "9704054": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "gold": 0,
+    "id": 9704054,
+    "item1": 21038,
+    "item1_num": 0,
+    "item2": 21001,
+    "item2_num": 0,
+    "level": 0,
+    "pre_id": 9704053,
     "repair": 0,
     "weapon_ids": []
   },
@@ -1479,6 +1735,73 @@
     "repair": 0,
     "weapon_ids": []
   },
+  "9705061": {
+    "breakout_id": 9705062,
+    "breakout_view": "习得技能【湮烬之核·{namecode:230}】/主炮底座+1/主炮效率提高5%",
+    "gold": 1000,
+    "id": 9705061,
+    "item1": 21037,
+    "item1_num": 1,
+    "item2": 21001,
+    "item2_num": 0,
+    "level": 10,
+    "pre_id": 0,
+    "repair": 0,
+    "weapon_ids": [
+      34100,
+      34100
+    ]
+  },
+  "9705062": {
+    "breakout_id": 9705063,
+    "breakout_view": "副炮底座+2/主炮效率提高10%",
+    "gold": 3000,
+    "id": 9705062,
+    "item1": 21037,
+    "item1_num": 1,
+    "item2": 21001,
+    "item2_num": 0,
+    "level": 30,
+    "pre_id": 9705061,
+    "repair": 0,
+    "weapon_ids": [
+      101,
+      101,
+      101
+    ]
+  },
+  "9705063": {
+    "breakout_id": 9705064,
+    "breakout_view": "【湮烬之核·{namecode:230}】升级/主炮底座+1/主炮效率提高15%",
+    "gold": 10000,
+    "id": 9705063,
+    "item1": 21037,
+    "item1_num": 2,
+    "item2": 21001,
+    "item2_num": 0,
+    "level": 70,
+    "pre_id": 9705062,
+    "repair": 0,
+    "weapon_ids": [
+      34100,
+      34100,
+      34100
+    ]
+  },
+  "9705064": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "gold": 0,
+    "id": 9705064,
+    "item1": 21037,
+    "item1_num": 0,
+    "item2": 21001,
+    "item2_num": 0,
+    "level": 0,
+    "pre_id": 9705063,
+    "repair": 0,
+    "weapon_ids": []
+  },
   "9706011": {
     "breakout_id": 9706012,
     "breakout_view": "习得技能【破敌之炬·{namecode:220}】/所有鱼雷机+1/舰载机效率提高3%",
@@ -1686,6 +2009,75 @@
     "repair": 0,
     "weapon_ids": []
   },
+  "9706041": {
+    "breakout_id": 9706042,
+    "breakout_view": "习得技能【湮烬之核·{namecode:89}】/所有战斗机+1/舰载机效率提高3%",
+    "gold": 500,
+    "id": 9706041,
+    "item1": 21039,
+    "item1_num": 1,
+    "item2": 21001,
+    "item2_num": 0,
+    "level": 10,
+    "pre_id": 0,
+    "repair": 0,
+    "weapon_ids": [
+      60181,
+      54011
+    ]
+  },
+  "9706042": {
+    "breakout_id": 9706043,
+    "breakout_view": "机库容量+1/所有鱼雷机+1/舰载机效率提高5%",
+    "gold": 1500,
+    "id": 9706042,
+    "item1": 21039,
+    "item1_num": 1,
+    "item2": 21001,
+    "item2_num": 0,
+    "level": 30,
+    "pre_id": 9706041,
+    "repair": 0,
+    "weapon_ids": [
+      60182,
+      54011,
+      60182,
+      54011
+    ]
+  },
+  "9706043": {
+    "breakout_id": 9706044,
+    "breakout_view": "【湮烬之核·{namecode:89}】升级/所有舰载机+1/主炮底座+1/舰载机效率提高7%",
+    "gold": 2500,
+    "id": 9706043,
+    "item1": 21039,
+    "item1_num": 2,
+    "item2": 21001,
+    "item2_num": 0,
+    "level": 70,
+    "pre_id": 9706042,
+    "repair": 0,
+    "weapon_ids": [
+      60183,
+      54012,
+      60183,
+      54012
+    ]
+  },
+  "9706044": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "gold": 0,
+    "id": 9706044,
+    "item1": 21039,
+    "item1_num": 0,
+    "item2": 21001,
+    "item2_num": 0,
+    "level": 0,
+    "pre_id": 9706043,
+    "repair": 0,
+    "weapon_ids": []
+  },
   "9707011": {
     "breakout_id": 9707012,
     "breakout_view": "习得技能【破敌之炬·{namecode:94}】/所有鱼雷机+1/鱼雷机效率提高5%",
@@ -1890,6 +2282,75 @@
     "item2_num": 0,
     "level": 0,
     "pre_id": 9707033,
+    "repair": 0,
+    "weapon_ids": []
+  },
+  "9707041": {
+    "breakout_id": 9707042,
+    "breakout_view": "习得技能【摇曳之火·贝亚恩】/所有舰载机+1/舰载机效率提高3%",
+    "gold": 1000,
+    "id": 9707041,
+    "item1": 21033,
+    "item1_num": 1,
+    "item2": 21001,
+    "item2_num": 0,
+    "level": 10,
+    "pre_id": 0,
+    "repair": 0,
+    "weapon_ids": [
+      60511,
+      54014
+    ]
+  },
+  "9707042": {
+    "breakout_id": 9707043,
+    "breakout_view": "机库容量+1/副武器底座+1/舰载机效率提高5%",
+    "gold": 3000,
+    "id": 9707042,
+    "item1": 21033,
+    "item1_num": 1,
+    "item2": 21001,
+    "item2_num": 0,
+    "level": 30,
+    "pre_id": 9707041,
+    "repair": 0,
+    "weapon_ids": [
+      60512,
+      54014,
+      60512,
+      54014
+    ]
+  },
+  "9707043": {
+    "breakout_id": 9707044,
+    "breakout_view": "【摇曳之火·贝亚恩】升级/所有舰载机+1/舰载机效率提高7%",
+    "gold": 10000,
+    "id": 9707043,
+    "item1": 21033,
+    "item1_num": 2,
+    "item2": 21001,
+    "item2_num": 0,
+    "level": 70,
+    "pre_id": 9707042,
+    "repair": 0,
+    "weapon_ids": [
+      60513,
+      54015,
+      60513,
+      54015
+    ]
+  },
+  "9707044": {
+    "breakout_id": 0,
+    "breakout_view": "无",
+    "gold": 0,
+    "id": 9707044,
+    "item1": 21033,
+    "item1_num": 0,
+    "item2": 21001,
+    "item2_num": 0,
+    "level": 0,
+    "pre_id": 9707043,
     "repair": 0,
     "weapon_ids": []
   },
