@@ -1,7 +1,8 @@
+import { existsSync, mkdirSync } from "node:fs";
 import { readFile, writeFile } from "node:fs/promises";
-import { resolve } from "node:path";
+import { dirname, resolve } from "node:path";
 
-const resolveData = (...args) => resolve(import.meta.dirname, "../data", ...args);
+const resolveData = (...args) => resolve(import.meta.dirname, "../packages/data", ...args);
 
 const vvvip = {
     equip_data_statistics: {
@@ -162,6 +163,11 @@ const vvvip = {
     }
 };
 
+const dir = resolveData("ShareCfg(VVVIP)");
+if (!existsSync(dir)) {
+    mkdirSync(dir);
+}
+
 for (const key in vvvip) {
     await pick({
         filename: key,
@@ -187,6 +193,5 @@ async function pick({ filename, folder, props }) {
             }
         }
     }
-
     writeFile(outputPath, JSON.stringify(data));
 }
