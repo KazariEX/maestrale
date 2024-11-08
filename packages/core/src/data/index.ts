@@ -128,6 +128,6 @@ function loadTransformDataTemplate() {
 }
 
 async function loadData<T>(name: ShareCfgName) {
-    const data = await import(`../../data/ShareCfg(VVVIP)/${name}.json`);
+    const data = await import(`../../../data/ShareCfg(VVVIP)/${name}.json`);
     return data.default as Record<string, T>;
 }

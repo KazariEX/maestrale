@@ -13,12 +13,9 @@
     "verbatimModuleSyntax": true,
     "module": "Preserve",
     "noEmit": true,
-    "strict": true,
-    "paths": {
-      "~/*": ["./*"]
-    }
+    "strict": true
   },
   "include": [
-    "./src/**/*.ts"
+    "./**/*.ts"
   ]
 }

@@ -19,7 +19,9 @@ export enum Favor {
     Stranger,
     Friendly,
     Like,
-    Love
+    Love,
+    Pledge,
+    PledgePlus
 }
 
 export enum StrengthenType {

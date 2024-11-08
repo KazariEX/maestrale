@@ -1,0 +1,32 @@
+{
+  "name": "maestrale",
+  "version": "0.0.1",
+  "description": "Maestrale Kit for Azurlane",
+  "keywords": [
+    "azurlane"
+  ],
+  "author": "KazariEX",
+  "repository": "KazariEX/maestrale",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup-node",
+    "dev": "tsup-node --watch",
+    "prepack": "pnpm run build"
+  },
+  "dependencies": {
+    "@vue/reactivity": "^3.5.12"
+  }
+}

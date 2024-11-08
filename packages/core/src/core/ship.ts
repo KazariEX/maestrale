@@ -9,9 +9,6 @@ import type { TransformDataTemplate } from "../data/types";
 import type { ITechnology } from "./technology";
 
 export class Ship {
-    level: Ref<number>;
-    favor: Ref<number>;
-
     breakout: Ref<number> | WritableComputedRef<number>;
     breakoutMax: number;
 
@@ -44,12 +41,6 @@ export class Ship {
         public id: number,
         public technology: ITechnology
     ) {
-        // 等级
-        this.level = ref(125);
-
-        // 好感
-        this.favor = ref(Favor.Love);
-
         // 最大可突破数
         this.breakoutMax = 0;
 
@@ -141,6 +132,12 @@ export class Ship {
             return this.id * 10 + this.breakout.value;
         }
     });
+
+    // 等级
+    level = ref(125);
+
+    // 好感
+    favor = ref(Favor.Love);
 
     // 名称
     name = computed(() => {
