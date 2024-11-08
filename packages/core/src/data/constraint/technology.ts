@@ -1,6 +1,6 @@
-import type { TechnologyAttributes } from "~/src/types";
+import type { TechnologyAttributes } from "../../types";
 
-export default <Record<number, TechnologyAttributes>> {
+export default <Record<string, TechnologyAttributes>> {
     1: {
         durability: 234,
         cannon: 53,

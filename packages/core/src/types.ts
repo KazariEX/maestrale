@@ -25,7 +25,7 @@ export enum Favor {
 }
 
 export enum StrengthenType {
-    Normal,
-    Blueprint,
-    Meta
+    General,
+    Meta,
+    Blueprint
 }

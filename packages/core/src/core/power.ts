@@ -34,7 +34,7 @@ export function usePower(ship: Ship) {
         return ship.equips.value.reduce((res, equip) => {
             if (equip) {
                 const [base, strengthen] = getEquipPower(equip.rarity)!;
-                res += base + strengthen * (1 + (equip.level as any));
+                res += base + strengthen * (1 + equip.level.value);
             }
             return res;
         }, 0);
@@ -43,13 +43,13 @@ export function usePower(ship: Ship) {
     // 改造技能战力
     const transPower = computed(() => {
         let res = 0;
-        if (ship.canTransform) {
+        if (ship.canTransform()) {
             for (let i = 0; i < 6; i++) {
-                const list = ship.transformTable![i];
+                const list = ship.transformTable[i];
 
                 for (const key of list) {
                     if (key) {
-                        const temp = ship.transformTemplate![key];
+                        const temp = ship.transformTemplate[key];
                         if (temp.enable.value) {
                             res += getTransPower(i)!;
                         }
