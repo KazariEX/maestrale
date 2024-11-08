@@ -1,5 +1,5 @@
 import { ref, type Ref } from "@vue/reactivity";
-import technologyTable from "~/data/constraint/technology";
+import technologyTable from "../data/constraint/technology";
 import type { Attributes, TechnologyAttributes } from "../types";
 
 export interface ITechnology {
