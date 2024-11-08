@@ -1,4 +1,4 @@
-import { computed, type ComputedRef, ref, type Ref, toRaw, watch, type WritableComputedRef } from "@vue/reactivity";
+import { computed, type ComputedRef, ref, type Ref, shallowRef, watch, type WritableComputedRef } from "@vue/reactivity";
 import { ShareCfg } from "../data";
 import { type Attributes, Favor, StrengthenType } from "../types";
 import { createAttributes, walkAttributes } from "./attributes";
@@ -8,34 +8,40 @@ import { createSPWeapon, type SPWeapon } from "./spweapon";
 import type { TransformDataTemplate } from "../data/types";
 import type { ITechnology } from "./technology";
 
-export class Ship {
-    breakout: Ref<number> | WritableComputedRef<number>;
-    breakoutMax: number;
+interface Strengthen {
+    attrs: ComputedRef<Attributes>;
+}
 
-    strengthen: ComputedRef<Attributes>;
-    strengthenAdjust?: Ref<Attributes>;
-    strengthenType: StrengthenType;
-    strengthenMax?: Attributes;
+interface StrengthenGeneral extends Strengthen {
+    type: StrengthenType.General | StrengthenType.Meta;
+    adjustAttrs: Ref<Attributes>;
+    maxAttrs: Attributes;
+}
 
-    blueprint?: Ref<number>;
-    blueprint1?: WritableComputedRef<number>;
-    blueprint2?: WritableComputedRef<number>;
-    blueprintMax1?: number;
-    blueprintMax2?: number;
-    blueprintLevel?: WritableComputedRef<number>;
+interface StrengthenBlueprint extends Strengthen {
+    type: StrengthenType.Blueprint;
+    blueprint: Ref<number>;
+    blueprint1: WritableComputedRef<number>;
+    blueprint2: WritableComputedRef<number>;
+    blueprintMax1: number;
+    blueprintMax2: number;
+    blueprintLevel: WritableComputedRef<number>;
+}
 
-    canTransform: boolean;
-    transformTable?: [number, number, number][];
-    transformTemplate?: Record<string, TransformDataTemplate & {
+interface Transformable {
+    transformTable: [number, number, number][];
+    transformTemplate: Record<string, TransformDataTemplate & {
         enable: Ref<boolean>;
         next_id: number[];
     }>;
+    isModernized: Ref<boolean>;
+    modernizedId: Ref<number>;
+}
 
-    isModernized?: Ref<boolean>;
-    modernizedId?: Ref<number>;
-
-    equips: Ref<(Equip | null)[]>;
-    spweapon: Ref<SPWeapon | null>;
+export class Ship {
+    breakout: Ref<number>;
+    breakoutMax: number;
+    strengthen: StrengthenGeneral | StrengthenBlueprint;
 
     constructor(
         public id: number,
@@ -52,63 +58,35 @@ export class Ship {
         }
 
         if (id in ShareCfg.ship_data_blueprint) {
-            const {
-                blueprintMax1,
-                blueprintMax2,
-                blueprint,
-                blueprint1,
-                blueprint2,
-                blueprintLevel,
-                strengthen,
-                breakout
-            } = useStrengthenBlueprint(this);
-
-            this.strengthenType = StrengthenType.Blueprint;
-            this.blueprintMax1 = blueprintMax1;
-            this.blueprintMax2 = blueprintMax2;
-            this.blueprint = blueprint;
-            this.blueprint1 = blueprint1;
-            this.blueprint2 = blueprint2;
-            this.blueprintLevel = blueprintLevel;
-            this.strengthen = strengthen;
+            const { breakout, ...strengthen } = useStrengthenBlueprint(this);
             this.breakout = breakout;
+            this.strengthen = {
+                type: StrengthenType.Blueprint,
+                ...strengthen
+            };
+        }
+        else if (id in ShareCfg.ship_strengthen_meta) {
+            this.breakout = ref(this.breakoutMax);
+            this.strengthen = {
+                type: StrengthenType.Meta,
+                ...useStrengthenMeta(this)
+            };
         }
         else {
-            const {
-                strengthenMax,
-                strengthenAdjust,
-                strengthen
-            } = id in ShareCfg.ship_strengthen_meta ? useStrengthenMeta(this) : useStrengthenNormal(this);
-
-            this.strengthenType = StrengthenType.Meta;
-            this.strengthenMax = strengthenMax;
-            this.strengthenAdjust = strengthenAdjust;
-            this.strengthen = strengthen;
             this.breakout = ref(this.breakoutMax);
+            this.strengthen = {
+                type: StrengthenType.General,
+                ...useStrengthenNormal(this)
+            };
         }
 
-        // 是否可改造
-        this.canTransform = id in ShareCfg.ship_data_trans;
-
-        if (this.canTransform) {
-            const {
-                transformTable,
-                transformTemplate,
-                isModernized,
-                modernizedId
-            } = useTransform(this);
-
-            this.transformTable = transformTable;
-            this.transformTemplate = transformTemplate;
-            this.isModernized = isModernized;
-            this.modernizedId = modernizedId;
+        if (this.canTransform()) {
+            Object.assign(this, useTransform(this));
         }
+    }
 
-        // 装备列表
-        this.equips = ref([]);
-
-        // 兵装
-        this.spweapon = ref(null);
+    canTransform(): this is Transformable {
+        return this.id in ShareCfg.ship_data_trans;
     }
 
     private get curStat() {
@@ -120,12 +98,12 @@ export class Ship {
     }
 
     private get curSkin() {
-        return ShareCfg.ship_skin_template[this.id * 10 + (this.isModernized?.value ? 9 : 0)];
+        return ShareCfg.ship_skin_template[this.id * 10 + (this.canTransform() && this.isModernized.value ? 9 : 0)];
     }
 
     // 当前 ID
     private curId = computed(() => {
-        if (this.isModernized?.value && this.modernizedId?.value) {
+        if (this.canTransform() && this.isModernized.value && this.modernizedId.value) {
             return this.modernizedId.value;
         }
         else {
@@ -142,7 +120,7 @@ export class Ship {
     // 名称
     name = computed(() => {
         const name = this.curStat.name;
-        if (this.isModernized?.value) {
+        if (this.canTransform() && this.isModernized.value) {
             const suffix = ".改";
             return name.replace(suffix, "") + suffix;
         }
@@ -156,7 +134,7 @@ export class Ship {
 
     // 稀有度
     rarity = computed(() => {
-        return this.curStat.rarity + (this.isModernized?.value ? 1 : 0);
+        return this.curStat.rarity + (this.canTransform() && this.isModernized.value ? 1 : 0);
     });
 
     // 舰种
@@ -187,7 +165,7 @@ export class Ship {
         return (
             this.curStat.attrs[index] +
             this.curStat.attrs_growth[index] * (this.level.value - 1) / 1000 +
-            this.strengthen.value[attrName]
+            this.strengthen.attrs.value[attrName]
         ) * favorRate +
             this.transAttrs.value[attrName];
     }
@@ -196,7 +174,7 @@ export class Ship {
     transAttrs = computed(() => {
         const attrs = createAttributes();
 
-        if (this.canTransform) {
+        if (this.canTransform()) {
             for (const key in this.transformTemplate) {
                 const temp = this.transformTemplate[key];
 
@@ -216,10 +194,10 @@ export class Ship {
     equipAttrs = computed(() => {
         const attrs = createAttributes();
 
-        for (const _equip of [...this.equips.value, this.spweapon.value]) {
-            if (!_equip) continue;
-
-            const equip = toRaw(_equip);
+        for (const equip of [...this.equips.value, this.spweapon.value]) {
+            if (!equip) {
+                continue;
+            }
             walkAttributes(equip.attrs.value, (attr, val) => {
                 attrs[attr] += val;
             });
@@ -312,6 +290,23 @@ export class Ship {
 
     // 战力
     power = usePower(this);
+
+    // 装备
+    equip1 = shallowRef<Equip | null>(null);
+    equip2 = shallowRef<Equip | null>(null);
+    equip3 = shallowRef<Equip | null>(null);
+    equip4 = shallowRef<Equip | null>(null);
+    equip5 = shallowRef<Equip | null>(null);
+    equips = computed(() => [
+        this.equip1.value,
+        this.equip2.value,
+        this.equip3.value,
+        this.equip4.value,
+        this.equip5.value
+    ]);
+
+    // 兵装
+    spweapon = shallowRef<SPWeapon | null>(null);
 }
 
 export interface CreateShipOptions {
@@ -338,10 +333,11 @@ export function createShip(id: number, options: CreateShipOptions) {
     const ship = new Ship(id, technology);
 
     // 装备
-    for (let i = 0; i < 5; i++) {
-        const id = equipIds[i];
-        ship.equips.value.push(id ? createEquip(id) : null);
-    }
+    ship.equip1.value = equipIds[0] ? createEquip(equipIds[0]) : null;
+    ship.equip2.value = equipIds[1] ? createEquip(equipIds[1]) : null;
+    ship.equip3.value = equipIds[2] ? createEquip(equipIds[2]) : null;
+    ship.equip4.value = equipIds[3] ? createEquip(equipIds[3]) : null;
+    ship.equip5.value = equipIds[4] ? createEquip(equipIds[4]) : null;
 
     // 兵装
     ship.spweapon.value = spweaponId ? createSPWeapon(spweaponId) : null;
@@ -355,9 +351,7 @@ function useStrengthenBlueprint(ship: Ship) {
     const data_strengthen = [
         ...data_blueprint.strengthen_effect,
         ...data_blueprint.fate_strengthen
-    ].map((i: number) => {
-        return (ShareCfg.ship_strengthen_blueprint)[i];
-    });
+    ].map((i) => ShareCfg.ship_strengthen_blueprint[i]);
 
     // 最大蓝图数量（常规）
     const blueprintMax1 = data_strengthen.slice(0, 30).reduce((res, item) => {
@@ -416,7 +410,7 @@ function useStrengthenBlueprint(ship: Ship) {
     });
 
     // 强化
-    const strengthen = computed(() => {
+    const attrs = computed(() => {
         const res = createAttributes();
 
         for (let i = 0; i < blueprintLevel.value; i++) {
@@ -461,7 +455,7 @@ function useStrengthenBlueprint(ship: Ship) {
         blueprint1,
         blueprint2,
         blueprintLevel,
-        strengthen,
+        attrs,
         breakout
     };
 }
@@ -477,29 +471,29 @@ function useStrengthenMeta(ship: Ship) {
     });
 
     // 满强化值
-    const strengthenMax = createAttributes();
+    const maxAttrs = createAttributes();
     for (const attr of ["cannon", "torpedo", "air", "reload"] as const) {
         const repairList = data_strengthen[`repair_${attr}`];
 
         for (const key of repairList) {
             const [attr, value] = ShareCfg.ship_meta_repair[key].effect_attr;
-            strengthenMax[attr] += value;
+            maxAttrs[attr] += value;
         }
     }
 
     // 可调节强化值
-    const strengthenAdjust = ref({ ...strengthenMax });
+    const adjustAttrs = ref({ ...maxAttrs });
 
     // 最终强化值
-    const strengthen = computed(() => {
-        const res = createAttributes(strengthenAdjust.value);
+    const attrs = computed(() => {
+        const res = createAttributes(adjustAttrs.value);
 
         let acc = 0;
         let total = 0;
-        for (const attr in res) {
-            acc += res[attr as keyof Attributes];
-            total += strengthenMax[attr as keyof Attributes];
-        }
+        walkAttributes(res, (attr) => {
+            acc += res[attr];
+            total += maxAttrs[attr];
+        });
         const rate = acc / total * 100;
 
         for (const effect of repair_effect) {
@@ -514,9 +508,9 @@ function useStrengthenMeta(ship: Ship) {
     });
 
     return {
-        strengthenMax,
-        strengthenAdjust,
-        strengthen
+        maxAttrs,
+        adjustAttrs,
+        attrs
     };
 }
 
@@ -525,7 +519,7 @@ function useStrengthenNormal(ship: Ship) {
     const data_strengthen = ShareCfg.ship_data_strengthen[ship.id];
 
     // 满强化值
-    const strengthenMax = createAttributes({
+    const maxAttrs = createAttributes({
         cannon: data_strengthen.durability[0],
         torpedo: data_strengthen.durability[1],
         air: data_strengthen.durability[3],
@@ -533,22 +527,22 @@ function useStrengthenNormal(ship: Ship) {
     });
 
     // 可调节强化值
-    const strengthenAdjust = ref({ ...strengthenMax });
+    const adjustAttrs = ref({ ...maxAttrs });
 
     // 最终强化值
-    const strengthen = computed(() => strengthenAdjust.value);
+    const attrs = computed(() => adjustAttrs.value);
 
     return {
-        strengthenMax,
-        strengthenAdjust,
-        strengthen
+        maxAttrs,
+        adjustAttrs,
+        attrs
     };
 }
 
 // 改造
 function useTransform(ship: Ship) {
-    const transformTable: Ship["transformTable"] = [];
-    const transformTemplate: Ship["transformTemplate"] = {};
+    const transformTable: Transformable["transformTable"] = [];
+    const transformTemplate: Transformable["transformTemplate"] = {};
 
     for (const item of ShareCfg.ship_data_trans[ship.id].transform_list) {
         const table = [...new Array(3)] as [number, number, number];

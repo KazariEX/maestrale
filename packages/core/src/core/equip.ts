@@ -4,10 +4,10 @@ import type { EquipDataStatistics, EquipDataTemplate } from "../data/types";
 import type { Attributes } from "../types";
 
 export class Equip {
-    level: Ref<number>;
-
     private data_statistics: EquipDataStatistics[];
     private data_template: EquipDataTemplate[];
+
+    level: Ref<number>;
 
     constructor(
         public id: number
