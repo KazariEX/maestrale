@@ -168,13 +168,11 @@ if (!existsSync(dir)) {
     mkdirSync(dir);
 }
 
-for (const key in vvvip) {
-    await pick({
-        filename: key,
-        folder: vvvip[key].folder,
-        props: vvvip[key].props
-    });
-}
+await Promise.all(Object.keys(vvvip).map((key) => pick({
+    filename: key,
+    folder: vvvip[key].folder,
+    props: vvvip[key].props
+})));
 
 // 属性过滤
 async function pick({ filename, folder, props }) {
@@ -193,5 +191,5 @@ async function pick({ filename, folder, props }) {
             }
         }
     }
-    writeFile(outputPath, JSON.stringify(data));
+    await writeFile(outputPath, JSON.stringify(data));
 }
