@@ -1,4 +1,4 @@
-import { ref, type Ref } from "@vue/reactivity";
+import { ref, type Ref } from "vue";
 import technologyTable from "../data/constraint/technology";
 import type { Attributes, TechnologyAttributes } from "../types";
 
@@ -14,7 +14,7 @@ export function useTechnology(): ITechnology {
         if (attr === "speed" || attr === "luck") {
             return 0;
         }
-        const t = getTechnolagyType(type);
+        const t = getTechnologyType(type);
         return attrs.value[t][attr] ?? 0;
     }
 
@@ -24,7 +24,7 @@ export function useTechnology(): ITechnology {
     };
 }
 
-function getTechnolagyType(type: number) {
+function getTechnologyType(type: number) {
     switch (type) {
         case 20:
         case 21:

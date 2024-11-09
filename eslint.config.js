@@ -14,8 +14,10 @@ export default antfu({
         ...zin.standard,
         ...zin.recommended,
         ...zin.stylistic,
+        ...zin.vue,
         ...zin.patch,
         "antfu/no-top-level-await": "off",
-        "no-useless-constructor": "off"
+        "no-useless-constructor": "off",
+        "vue/prefer-import-from-vue": "off"
     }
 });
