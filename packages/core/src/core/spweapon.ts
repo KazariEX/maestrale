@@ -1,7 +1,7 @@
 import { computed, ref, type Ref } from "@vue/reactivity";
 import { ShareCfg } from "../data";
 import type { SPWeaponDataStatistics } from "../data/types";
-import type { Attributes } from "../types";
+import type { Attributes } from "./attributes";
 
 export class SPWeapon {
     level: Ref<number>;

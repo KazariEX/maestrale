@@ -1,4 +1,4 @@
-import type { Attributes } from "../types";
+import type { Attributes } from "../core/attributes";
 
 export type ShareCfgName =
     | "equip_data_statistics"

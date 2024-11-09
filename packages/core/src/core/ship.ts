@@ -1,7 +1,8 @@
 import { computed, type ComputedRef, ref, type Ref, shallowRef, watch, type WritableComputedRef } from "@vue/reactivity";
 import { ShareCfg } from "../data";
-import { type Attributes, Favor, StrengthenType } from "../types";
-import { createAttributes, walkAttributes } from "./attributes";
+import { Favor, StrengthenType } from "../types";
+import { walk } from "../utils";
+import { type Attributes, createAttributes } from "./attributes";
 import { createEquip, type Equip } from "./equip";
 import { usePower } from "./power";
 import { createSPWeapon, type SPWeapon } from "./spweapon";
@@ -180,7 +181,7 @@ export class Ship {
 
                 if (temp.enable.value) {
                     for (const effect of temp.effect) {
-                        walkAttributes(effect, (attr, val) => {
+                        walk(effect, (attr, val) => {
                             attrs[attr] += val;
                         });
                     }
@@ -198,7 +199,7 @@ export class Ship {
             if (!equip) {
                 continue;
             }
-            walkAttributes(equip.attrs.value, (attr, val) => {
+            walk(equip.attrs.value, (attr, val) => {
                 attrs[attr] += val;
             });
         }
@@ -210,7 +211,7 @@ export class Ship {
         const attrs = createAttributes();
 
         if (this.breakout.value === this.breakoutMax) {
-            walkAttributes(attrs, (key) => {
+            walk(attrs, (key) => {
                 attrs[key] += this.technology.get(this.type.value, key);
             });
         }
@@ -490,7 +491,7 @@ function useStrengthenMeta(ship: Ship) {
 
         let acc = 0;
         let total = 0;
-        walkAttributes(res, (attr) => {
+        walk(res, (attr) => {
             acc += res[attr];
             total += maxAttrs[attr];
         });

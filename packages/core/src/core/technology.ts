@@ -1,5 +1,7 @@
 import { ref, type Ref } from "vue";
-import type { Attributes, TechnologyAttributes } from "../types";
+import type { Attributes } from "./attributes";
+
+export type TechnologyAttributes = Omit<Attributes, "speed" | "luck">;
 
 export interface ITechnology {
     attrs: Ref<Record<string, Record<keyof TechnologyAttributes, number>>>;
