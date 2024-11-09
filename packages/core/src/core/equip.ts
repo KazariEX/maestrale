@@ -1,7 +1,7 @@
 import { computed, ref, type Ref } from "@vue/reactivity";
 import { ShareCfg } from "../data";
 import type { EquipDataStatistics, EquipDataTemplate } from "../data/types";
-import type { Attributes } from "../types";
+import type { Attributes } from "./attributes";
 
 export class Equip {
     private data_statistics: EquipDataStatistics[];

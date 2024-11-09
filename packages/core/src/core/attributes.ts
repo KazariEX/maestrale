@@ -1,4 +1,16 @@
-import type { Attributes } from "../types";
+export interface Attributes {
+    durability: number;
+    cannon: number;
+    torpedo: number;
+    antiaircraft: number;
+    air: number;
+    reload: number;
+    hit: number;
+    dodge: number;
+    speed: number;
+    luck: number;
+    antisub: number;
+}
 
 // 创建属性对象
 export function createAttributes(options: Partial<Attributes> = {}): Attributes {
@@ -16,11 +28,4 @@ export function createAttributes(options: Partial<Attributes> = {}): Attributes 
         antisub: 0,
         ...options
     };
-}
-
-// 遍历属性对象
-export function walkAttributes(attrs: Partial<Attributes>, func: (attr: keyof Attributes, value: number) => void) {
-    for (const attr in attrs) {
-        func(attr as keyof Attributes, attrs[attr as keyof Attributes]!);
-    }
 }
