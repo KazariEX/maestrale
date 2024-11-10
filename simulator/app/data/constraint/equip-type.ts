@@ -1,4 +1,4 @@
-export default {
+export const equipTypeMap = {
     1: "驱逐炮",
     2: "轻巡炮",
     3: "重巡炮",

@@ -1,4 +1,4 @@
-export default {
+export const attributeMap = {
     durability: "耐久",
     cannon: "炮击",
     torpedo: "雷击",

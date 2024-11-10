@@ -1,4 +1,4 @@
-export default {
+export const rarityMap = {
     2: "普通",
     3: "稀有",
     4: "精锐",

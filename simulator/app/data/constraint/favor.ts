@@ -1,4 +1,4 @@
-export default {
+export const favorMap = {
     0: "失望",
     1: "陌生",
     2: "友好",
