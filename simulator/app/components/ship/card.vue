@@ -1,11 +1,17 @@
 <script lang="ts" setup>
-    import type { Ship } from "maestrale";
+    import { createShip, type Ship } from "maestrale";
     import { breakoutOptions } from "~/data/constraint/breakout";
     import { favorOptions } from "~/data/constraint/favor";
+    import type { Fleet } from "~/data/constraint/fleet";
 
+    const { fleet } = defineProps<{
+        fleet: Fleet;
+    }>();
     const ship = defineModel<Ship | null>({
         required: true
     });
+
+    const technology = useTechnology();
 
     const squareicon = computed(() => {
         return ship.value?.painting.value
@@ -16,6 +22,18 @@
     const power = computed(() => {
         return Math.floor(ship.value?.power.value ?? 0);
     });
+
+    async function select() {
+        const id = await selectShip(fleet, !!ship.value);
+        if (id === -1) {
+            ship.value = null;
+        }
+        else if (id) {
+            ship.value = createShip(id, {
+                technology
+            });
+        }
+    }
 </script>
 
 <template>
@@ -28,6 +46,7 @@
         <rarity-icon
             :rarity="ship?.rarity.value"
             :icon="squareicon"
+            @click="select"
         />
         <div v-if="ship" grid="~ content-between">
             <div flex="~ justify-between items-center" h="6.5">
