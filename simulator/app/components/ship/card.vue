@@ -24,6 +24,12 @@
         return Math.floor(ship.value?.power.value ?? 0);
     });
 
+    const limitedBreakoutOptions = computed(() => {
+        return breakoutOptions.filter(({ value }) => {
+            return value <= (ship.value?.breakoutMax ?? 0 + 1);
+        });
+    });
+
     async function select() {
         const id = await selectShip(fleet, !!ship.value);
         if (id === -1) {
@@ -82,7 +88,7 @@
                 <prime-select
                     w="24"
                     size="small"
-                    :options="breakoutOptions"
+                    :options="limitedBreakoutOptions"
                     option-label="label"
                     option-value="value"
                     v-model="ship.breakout.value"
