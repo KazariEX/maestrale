@@ -47,8 +47,8 @@
 
 <template>
     <div
-        flex="~ gap-2"
-        w="115"
+        grid="~ cols-[auto_1fr] gap-2"
+        w="121.5"
         p="2"
         b="~ solid gray op-40 rounded-1"
         outline="2 primary offset--1"
@@ -63,53 +63,59 @@
             :icon="squareicon"
             @click="select"
         />
-        <div v-if="ship" grid="~ content-between">
-            <div flex="~ justify-between items-center" h="6.5">
-                <span>
-                    <span text="gray">名称：</span>
-                    <span>{{ ship.name }}</span>
-                </span>
-                <span>
-                    <span>{{ power }}</span>
-                    <span m="l-1.5" text="gray">战力</span>
-                </span>
+        <template v-if="ship">
+            <div
+                v-if="fleetStore.infoMode === `details`"
+                grid="~ content-between"
+            >
+                <div flex="~ justify-between items-center" h="6.5">
+                    <span>
+                        <span text="gray">名称：</span>
+                        <span>{{ ship.name }}</span>
+                    </span>
+                    <span>
+                        <span>{{ power }}</span>
+                        <span m="l-1.5" text="gray">战力</span>
+                    </span>
+                </div>
+                <div flex="~ gap-2">
+                    <prime-input-number
+                        input-class="w-24 text-center"
+                        size="small"
+                        :min="1"
+                        :max="125"
+                        :allow-empty="false"
+                        show-buttons
+                        button-layout="horizontal"
+                        v-model="ship.level.value"
+                    >
+                        <template #decrementicon>
+                            <icon name="fa6-solid:chevron-left"/>
+                        </template>
+                        <template #incrementicon>
+                            <icon name="fa6-solid:chevron-right"/>
+                        </template>
+                    </prime-input-number>
+                    <prime-select
+                        flex="1"
+                        size="small"
+                        :options="limitedBreakoutOptions"
+                        option-label="label"
+                        option-value="value"
+                        v-model="ship.breakout.value"
+                    />
+                    <prime-select
+                        flex="1"
+                        size="small"
+                        :options="favorOptions"
+                        option-label="label"
+                        option-value="value"
+                        v-model="ship.favor.value"
+                    />
+                </div>
             </div>
-            <div flex="~ gap-2">
-                <prime-input-number
-                    input-class="w-24 text-center"
-                    size="small"
-                    :min="1"
-                    :max="125"
-                    :allow-empty="false"
-                    show-buttons
-                    button-layout="horizontal"
-                    v-model="ship.level.value"
-                >
-                    <template #decrementicon>
-                        <icon name="fa6-solid:chevron-left"/>
-                    </template>
-                    <template #incrementicon>
-                        <icon name="fa6-solid:chevron-right"/>
-                    </template>
-                </prime-input-number>
-                <prime-select
-                    w="24"
-                    size="small"
-                    :options="limitedBreakoutOptions"
-                    option-label="label"
-                    option-value="value"
-                    v-model="ship.breakout.value"
-                />
-                <prime-select
-                    w="24"
-                    size="small"
-                    :options="favorOptions"
-                    option-label="label"
-                    option-value="value"
-                    v-model="ship.favor.value"
-                />
-            </div>
-        </div>
+            <equip-list v-else v-model="ship"/>
+        </template>
         <div v-else flex="1" grid="~ place-items-center">
             <span font="mono bold" text="12 gray op-40">NO SHIP</span>
         </div>

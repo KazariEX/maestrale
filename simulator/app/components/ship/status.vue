@@ -13,7 +13,7 @@
     });
 
     const attrModeOptions = [
-        { label: "装备", value: "equip" },
+        { label: "装备", value: "equips" },
         { label: "科技", value: "tech" }
     ];
 </script>
