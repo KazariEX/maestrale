@@ -40,6 +40,8 @@
                 technology
             });
         }
+        await nextTick();
+        fleetStore.currentShip = ship.value;
     }
 </script>
 
@@ -49,6 +51,10 @@
         w="115"
         p="2"
         b="~ solid gray op-40 rounded-1"
+        outline="2 primary offset--1"
+        :class="{
+            [`outline`]: ship && fleetStore.currentShip === ship
+        }"
         @click="fleetStore.currentShip = ship"
     >
         <rarity-icon
