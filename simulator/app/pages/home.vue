@@ -14,12 +14,17 @@
 </script>
 
 <template>
-    <div grid="~ gap-2">
-        <ship-card fleet="main" v-model="fleetStore.main1"/>
-        <ship-card fleet="main" v-model="fleetStore.main2"/>
-        <ship-card fleet="main" v-model="fleetStore.main3"/>
-        <ship-card fleet="vanguard" v-model="fleetStore.vanguard1"/>
-        <ship-card fleet="vanguard" v-model="fleetStore.vanguard2"/>
-        <ship-card fleet="vanguard" v-model="fleetStore.vanguard3"/>
+    <div flex="~ gap-8">
+        <div grid="~ gap-2">
+            <ship-card fleet="main" v-model="fleetStore.main1"/>
+            <ship-card fleet="main" v-model="fleetStore.main2"/>
+            <ship-card fleet="main" v-model="fleetStore.main3"/>
+            <ship-card fleet="vanguard" v-model="fleetStore.vanguard1"/>
+            <ship-card fleet="vanguard" v-model="fleetStore.vanguard2"/>
+            <ship-card fleet="vanguard" v-model="fleetStore.vanguard3"/>
+        </div>
+        <div w="120">
+            <ship-status />
+        </div>
     </div>
 </template>

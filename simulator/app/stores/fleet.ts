@@ -19,6 +19,9 @@ export const useFleetStore = defineStore("fleet", () => {
         vanguard3.value
     ]);
 
+    const currentShip = shallowRef<Ship | null>(null);
+    const attrMode = ref<"equip" | "tech">("equip");
+
     return {
         main1,
         main2,
@@ -27,6 +30,8 @@ export const useFleetStore = defineStore("fleet", () => {
         vanguard1,
         vanguard2,
         vanguard3,
-        vanguard
+        vanguard,
+        currentShip,
+        attrMode
     };
 });
