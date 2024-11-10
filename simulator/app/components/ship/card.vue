@@ -58,6 +58,7 @@
         @click="fleetStore.currentShip = ship"
     >
         <rarity-icon
+            size="16"
             :rarity="ship?.rarity.value"
             :icon="squareicon"
             @click="select"

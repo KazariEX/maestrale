@@ -19,3 +19,5 @@ export const equipTypeMap = {
     20: "导弹",
     21: "防空炮(定时引信)"
 };
+
+export const equipTypeOptions = constraintToOptions(equipTypeMap);
