@@ -55,7 +55,7 @@
         <span m="l-auto r-1">
             <span>{{ value }}</span>
             <span
-                v-if="fleetStore.attrMode === `equip` && equipValue > 0"
+                v-if="fleetStore.attrMode === `equips` && equipValue > 0"
                 text="green-600"
             >+{{ equipValue }}</span>
             <span
