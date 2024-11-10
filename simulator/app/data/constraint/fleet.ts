@@ -1,4 +1,8 @@
-const table = {
+import type { ShipType } from "maestrale";
+
+export type Fleet = "main" | "vanguard" | "submarine";
+
+const table: Record<Fleet, ShipType[]> = {
     main: [
         4,
         5,
@@ -26,8 +30,6 @@ const table = {
     ]
 };
 
-export type Fleet = keyof typeof table;
-
 export const fleetMap = Object.fromEntries(
-    Object.entries(table).flatMap(([fleet, types]) => types.map((type) => [type, fleet as Fleet]))
-);
+    Object.entries(table).flatMap(([fleet, types]) => types.map((type) => [type, fleet]))
+) as Record<ShipType, Fleet>;

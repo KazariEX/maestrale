@@ -10,11 +10,12 @@
 >
     import type { Selector } from "~/components/lib-select.vue";
 
-    const { selectors, data } = defineProps<{
+    const { selectors } = defineProps<{
         title: string;
         selectors: Selector[];
         data: T[];
         canClear: boolean;
+        iconShrink?: boolean;
         isOpening?: boolean;
     }>();
     const emit = defineEmits<{
@@ -52,14 +53,13 @@
                     @click="emit(`close`, 0)"
                 />
             </header>
-            <div flex="~ gap-4" p="t-6 r-8">
+            <div grid="~ gap-4 cols-3" p="t-6 r-8">
                 <lib-select
                     v-for="{ label, id, options }, i in localSelectors"
                     :key="id"
                     :id
                     :label
                     :options
-                    flex="1"
                     v-model="localSelectors[i]!.value"
                 />
             </div>
@@ -90,7 +90,12 @@
                     :title="item.name"
                     @click="emit(`close`, item.id)"
                 >
-                    <rarity-icon :icon="item.icon" :rarity="item.rarity"/>
+                    <rarity-icon
+                        size="16"
+                        :shrink="iconShrink"
+                        :icon="item.icon"
+                        :rarity="item.rarity"
+                    />
                     <span text="3 center truncate">{{ item.name }}</span>
                 </li>
             </ul>

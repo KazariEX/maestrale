@@ -31,3 +31,9 @@
     --p-list-option-padding: 0.25rem 0.5rem;
     --p-select-dropdown-width: 2rem;
 }
+
+.p-select-label {
+    --uno: text-truncate;
+
+    padding-right: 0;
+}

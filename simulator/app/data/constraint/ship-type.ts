@@ -1,4 +1,6 @@
-export const shipTypeMap = {
+import type { ShipType } from "maestrale";
+
+export const shipTypeMap: Record<ShipType, string> = {
     1: "驱逐",
     2: "轻巡",
     3: "重巡",
