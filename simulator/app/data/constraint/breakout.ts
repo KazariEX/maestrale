@@ -1,4 +1,4 @@
-export default {
+export const breakoutMap = {
     1: "零破",
     2: "一破",
     3: "二破",

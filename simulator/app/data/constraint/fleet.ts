@@ -1,4 +1,4 @@
-export default {
+const table = {
     main: [
         4,
         5,
@@ -25,3 +25,9 @@ export default {
         22
     ]
 };
+
+export type Fleet = keyof typeof table;
+
+export const fleetMap = Object.fromEntries(
+    Object.entries(table).flatMap(([fleet, types]) => types.map((type) => [type, fleet as Fleet]))
+);

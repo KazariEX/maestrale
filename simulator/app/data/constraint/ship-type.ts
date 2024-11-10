@@ -1,4 +1,4 @@
-export default {
+export const shipTypeMap = {
     1: "驱逐",
     2: "轻巡",
     3: "重巡",

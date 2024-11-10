@@ -1,4 +1,4 @@
-export default {
+export const nationalityMap = {
     1: "白鹰",
     2: "皇家",
     3: "重樱",
