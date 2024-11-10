@@ -11,6 +11,7 @@
         required: true
     });
 
+    const fleetStore = useFleetStore();
     const technology = useTechnology();
 
     const squareicon = computed(() => {
@@ -42,6 +43,7 @@
         w="115"
         p="2"
         b="~ solid gray op-40 rounded-1"
+        @click="fleetStore.currentShip = ship"
     >
         <rarity-icon
             :rarity="ship?.rarity.value"
