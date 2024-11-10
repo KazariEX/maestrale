@@ -29,7 +29,7 @@ export interface EquipDataStatistics {
     rarity: number;
     tech: number;
     type: number;
-    value_1: number;
+    value_1: string;
     value_2: number;
     value_3: number;
     weapon_id: number[];

@@ -57,10 +57,12 @@ export class Equip {
     attrs = computed(() => {
         const res: Partial<Attributes> = {};
         for (const i of [1, 2, 3] as const) {
-            const a = `attribute_${i}` as const;
-            const v = `value_${i}` as const;
-            if (a in this.statistics.value) {
-                res[this.statistics.value[a]] = this.statistics.value[v];
+            const attrKey = `attribute_${i}` as const;
+            const valueKey = `value_${i}` as const;
+            if (attrKey in this.statistics.value) {
+                const attr = this.statistics.value[attrKey];
+                const value = Number(this.statistics.value[valueKey]);
+                res[attr] = value;
             }
         }
         return res;
