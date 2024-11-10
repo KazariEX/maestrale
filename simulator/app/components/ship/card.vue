@@ -1,0 +1,83 @@
+<script lang="ts" setup>
+    import type { Ship } from "maestrale";
+    import { breakoutOptions } from "~/data/constraint/breakout";
+    import { favorOptions } from "~/data/constraint/favor";
+
+    const ship = defineModel<Ship | null>({
+        required: true
+    });
+
+    const squareicon = computed(() => {
+        return ship.value?.painting.value
+            ? `/image/artresource/atlas/squareicon/${ship.value.painting.value}.png`
+            : "/image/artresource/ui/levelfleetselectview/blank_icon_light.png";
+    });
+
+    const power = computed(() => {
+        return Math.floor(ship.value?.power.value ?? 0);
+    });
+</script>
+
+<template>
+    <div
+        flex="~ gap-2"
+        w="115"
+        p="2"
+        b="~ solid gray op-40 rounded-1"
+    >
+        <rarity-icon
+            :rarity="ship?.rarity.value"
+            :icon="squareicon"
+        />
+        <div v-if="ship" grid="~ content-between">
+            <div flex="~ justify-between items-center" h="6.5">
+                <span>
+                    <span text="gray">名称：</span>
+                    <span>{{ ship.name }}</span>
+                </span>
+                <span>
+                    <span>{{ power }}</span>
+                    <span m="l-1.5" text="gray">战力</span>
+                </span>
+            </div>
+            <div flex="~ gap-2">
+                <prime-input-number
+                    input-class="w-24 text-center"
+                    size="small"
+                    :min="1"
+                    :max="125"
+                    :allow-empty="false"
+                    show-buttons
+                    button-layout="horizontal"
+                    v-model="ship.level.value"
+                >
+                    <template #decrementicon>
+                        <icon name="fa6-solid:chevron-left"/>
+                    </template>
+                    <template #incrementicon>
+                        <icon name="fa6-solid:chevron-right"/>
+                    </template>
+                </prime-input-number>
+                <prime-select
+                    w="24"
+                    size="small"
+                    :options="breakoutOptions"
+                    option-label="label"
+                    option-value="value"
+                    v-model="ship.breakout.value"
+                />
+                <prime-select
+                    w="24"
+                    size="small"
+                    :options="favorOptions"
+                    option-label="label"
+                    option-value="value"
+                    v-model="ship.favor.value"
+                />
+            </div>
+        </div>
+        <div v-else flex="1" grid="~ place-items-center">
+            <span font="mono bold" text="12 gray op-40">NO SHIP</span>
+        </div>
+    </div>
+</template>

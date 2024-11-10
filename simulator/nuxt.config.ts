@@ -19,6 +19,15 @@ export default defineNuxtConfig({
         compatibilityVersion: 4
     },
     ssr: false,
+    vite: {
+        css: {
+            preprocessorOptions: {
+                scss: {
+                    api: "modern-compiler"
+                }
+            }
+        }
+    },
     modules: [
         "@nuxt/icon",
         "@nuxt/image",

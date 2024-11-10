@@ -1,16 +1,33 @@
-* {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font: inherit;
+@layer primeui {
+    * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font: inherit;
+    }
+
+    *, ::before, ::after {
+        box-sizing: border-box;
+        background-size: cover;
+    }
+
+    body {
+        font-size: 14px;
+        -webkit-font-smoothing: antialiased;
+        text-size-adjust: 100%;
+    }
+
+    a {
+        cursor: pointer;
+    }
+
+    ul {
+        list-style: none;
+    }
 }
 
-*, ::before, ::after {
-    box-sizing: border-box;
-}
-
-body {
-    font-size: 16px;
-    -webkit-font-smoothing: antialiased;
-    text-size-adjust: 100%;
+:root {
+    --p-inputnumber-button-width: 2rem;
+    --p-list-option-padding: 0.25rem 0.5rem;
+    --p-select-dropdown-width: 2rem;
 }
