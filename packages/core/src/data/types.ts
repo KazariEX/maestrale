@@ -1,4 +1,5 @@
 import type { Attributes } from "../core/attributes";
+import type { Armor, EquipType, Nationality, ShipType } from "../types";
 
 export type ShareCfgName =
     | "equip_data_statistics"
@@ -25,10 +26,10 @@ export interface EquipDataStatistics {
     attribute_3: keyof Attributes;
     icon: string;
     name: string;
-    nationality: number;
+    nationality: Nationality;
     rarity: number;
     tech: number;
-    type: number;
+    type: EquipType;
     value_1: string;
     value_2: number;
     value_3: number;
@@ -38,7 +39,7 @@ export interface EquipDataStatistics {
 export interface EquipDataTemplate {
     next: number;
     prev: number;
-    ship_type_forbidden: number[];
+    ship_type_forbidden: ShipType[];
 }
 
 export interface ShipDataBlueprint {
@@ -52,15 +53,15 @@ export interface ShipDataBreakout {
 
 export interface ShipDataStatistics {
     ammo: number;
-    armor_type: number;
+    armor_type: Armor;
     attrs: number[];
     attrs_growth: number[];
     name: string;
-    nationality: number;
+    nationality: Nationality;
     oxy_max: number;
     rarity: number;
     star: number;
-    type: number;
+    type: ShipType;
 }
 
 export interface ShipDataStrengthen {
@@ -68,11 +69,11 @@ export interface ShipDataStrengthen {
 }
 
 export interface ShipDataTemplate {
-    equip_1: number[];
-    equip_2: number[];
-    equip_3: number[];
-    equip_4: number[];
-    equip_5: number[];
+    equip_1: EquipType[];
+    equip_2: EquipType[];
+    equip_3: EquipType[];
+    equip_4: EquipType[];
+    equip_5: EquipType[];
     oil_at_end: number;
     oil_at_start: number;
 }
@@ -130,7 +131,7 @@ export interface SPWeaponDataStatistics {
 }
 
 export interface SPWeaponType {
-    ship_type: number[];
+    ship_type: ShipType[];
 }
 
 export interface TransformDataTemplate {

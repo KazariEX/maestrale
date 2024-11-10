@@ -36,9 +36,19 @@ export class Equip {
         return this.data_statistics[0].icon;
     }
 
+    // 阵营
+    get nationality() {
+        return this.data_statistics[0].nationality;
+    }
+
     // 稀有度
     get rarity() {
         return this.data_statistics[0].rarity;
+    }
+
+    // 类型
+    get type() {
+        return this.data_statistics[0].type;
     }
 
     // 最高等级
