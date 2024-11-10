@@ -50,11 +50,14 @@ export class SPWeapon {
     attrs = computed(() => {
         const res: Partial<Attributes> = {};
         for (const i of [1, 2] as const) {
-            const a = `attribute_${i}` as const;
-            const v = `value_${i}` as const;
-            const vr = `value_${i}_random` as const;
-            if (a in this.statistics.value) {
-                res[this.statistics.value[a]] = this.statistics.value[v] + this.statistics.value[vr];
+            const attrKey = `attribute_${i}` as const;
+            const valueKey = `value_${i}` as const;
+            const randomValueKey = `value_${i}_random` as const;
+            if (attrKey in this.statistics.value) {
+                const attr = this.statistics.value[attrKey];
+                const value = this.statistics.value[valueKey];
+                const randomValue = this.statistics.value[randomValueKey];
+                res[attr] = value + randomValue;
             }
         }
         return res;
