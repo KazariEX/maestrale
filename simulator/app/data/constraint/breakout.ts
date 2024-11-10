@@ -4,3 +4,5 @@ export const breakoutMap = {
     3: "二破",
     4: "满破"
 };
+
+export const breakoutOptions = constraintToOptions(breakoutMap);
