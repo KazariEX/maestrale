@@ -5,3 +5,5 @@ export const rarityMap = {
     5: "超稀有",
     6: "海上传奇"
 };
+
+export const rarityOptions = constraintToOptions(rarityMap);

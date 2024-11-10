@@ -21,3 +21,5 @@ export const nationalityMap = {
     109: "Atelier Ryza",
     110: "闪乱神乐NL"
 };
+
+export const nationalityOptions = constraintToOptions(nationalityMap);

@@ -19,3 +19,5 @@ export const shipTypeMap = {
     23: "风帆V",
     24: "风帆M"
 };
+
+export const shipTypeOptions = constraintToOptions(shipTypeMap);
