@@ -1,6 +1,6 @@
 import { computed, type ComputedRef, ref, type Ref, shallowRef, watch, type WritableComputedRef } from "@vue/reactivity";
 import { ShareCfg } from "../data";
-import { Favor, StrengthenType } from "../types";
+import { type Armor, Favor, StrengthenType } from "../types";
 import { walk } from "../utils";
 import { type Attributes, createAttributes } from "./attributes";
 import { createEquip, type Equip } from "./equip";
@@ -77,7 +77,7 @@ export class Ship {
             this.breakout = ref(this.breakoutMax);
             this.strengthen = {
                 type: StrengthenType.General,
-                ...useStrengthenNormal(this)
+                ...useStrengthenGeneral(this)
             };
         }
 
@@ -131,6 +131,11 @@ export class Ship {
     // 装甲类型
     armor = computed(() => {
         return this.curStat.armor_type;
+    });
+
+    // 阵营
+    nationality = computed(() => {
+        return this.curStat.nationality;
     });
 
     // 稀有度
@@ -516,7 +521,7 @@ function useStrengthenMeta(ship: Ship) {
 }
 
 // 强化：常规
-function useStrengthenNormal(ship: Ship) {
+function useStrengthenGeneral(ship: Ship) {
     const data_strengthen = ShareCfg.ship_data_strengthen[ship.id];
 
     // 满强化值
