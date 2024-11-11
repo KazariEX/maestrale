@@ -49,5 +49,8 @@ export default defineNuxtConfig({
         options: {
             ripple: true
         }
+    },
+    icon: {
+        componentName: "iconify"
     }
 });

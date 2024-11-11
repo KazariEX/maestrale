@@ -1,6 +1,7 @@
 import { type Attributes, createTechnologyAttributes } from "maestrale";
 
 export const useTechnologyStore = defineStore("technology", () => {
+    const maxAttrs = createTechnologyAttributes();
     const attrs = ref(createTechnologyAttributes());
 
     function get(type: number, attr: keyof Attributes) {
@@ -11,6 +12,7 @@ export const useTechnologyStore = defineStore("technology", () => {
     }
 
     return {
+        maxAttrs,
         attrs,
         get
     };
@@ -19,6 +21,7 @@ export const useTechnologyStore = defineStore("technology", () => {
 export function useTechnology() {
     const technologyStore = useTechnologyStore();
     return {
+        maxAttrs: technologyStore.maxAttrs,
         attrs: storeToRefs(technologyStore).attrs,
         get: technologyStore.get
     };

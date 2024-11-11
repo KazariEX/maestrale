@@ -79,7 +79,7 @@
                     cursor="pointer"
                     @click="emit(`close`, -1)"
                 >
-                    <icon op="40" text="8" name="fa6-solid:trash-can"/>
+                    <iconify op="40" text="8" name="fa6-solid:trash-can"/>
                 </li>
                 <li
                     v-for="item in data"
