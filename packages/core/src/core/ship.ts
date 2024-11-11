@@ -1,7 +1,7 @@
 import { computed, type ComputedRef, ref, type Ref, shallowRef, watch, type WritableComputedRef } from "@vue/reactivity";
 import { ShareCfg } from "../data";
-import { type Armor, Favor, StrengthenType } from "../types";
-import { walk } from "../utils";
+import { Favor, StrengthenType } from "../types";
+import { entries } from "../utils";
 import { type Attributes, createAttributes } from "./attributes";
 import { createEquip, type Equip } from "./equip";
 import { usePower } from "./power";
@@ -29,7 +29,7 @@ interface StrengthenBlueprint extends Strengthen {
     blueprintLevel: WritableComputedRef<number>;
 }
 
-interface Transformable {
+export interface Transformable {
     transformTable: [number, number, number][];
     transformTemplate: Record<string, TransformDataTemplate & {
         enable: Ref<boolean>;
@@ -186,9 +186,9 @@ export class Ship {
 
                 if (temp.enable.value) {
                     for (const effect of temp.effect) {
-                        walk(effect, (attr, val) => {
+                        for (const [attr, val] of entries(effect)) {
                             attrs[attr] += val;
-                        });
+                        }
                     }
                 }
             }
@@ -204,9 +204,9 @@ export class Ship {
             if (!equip) {
                 continue;
             }
-            walk(equip.attrs.value, (attr, val) => {
+            for (const [attr, val] of entries(equip.attrs.value)) {
                 attrs[attr] += val;
-            });
+            }
         }
         return attrs;
     });
@@ -216,9 +216,9 @@ export class Ship {
         const attrs = createAttributes();
 
         if (this.breakout.value === this.breakoutMax) {
-            walk(attrs, (key) => {
+            for (const [key] of entries(attrs)) {
                 attrs[key] += this.technology.get(this.type.value, key);
-            });
+            }
         }
         return attrs;
     });
@@ -496,10 +496,10 @@ function useStrengthenMeta(ship: Ship) {
 
         let acc = 0;
         let total = 0;
-        walk(res, (attr) => {
+        for (const [attr] of entries(res)) {
             acc += res[attr];
             total += maxAttrs[attr];
-        });
+        }
         const rate = acc / total * 100;
 
         for (const effect of repair_effect) {

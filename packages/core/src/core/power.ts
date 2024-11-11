@@ -1,5 +1,5 @@
 import { computed } from "@vue/reactivity";
-import { walk } from "../utils";
+import { entries } from "../utils";
 import { createAttributes } from "./attributes";
 import type { Ship } from "./ship";
 
@@ -8,13 +8,13 @@ export function usePower(ship: Ship) {
     const attrsPower = computed(() => {
         const attrs = createAttributes();
 
-        walk(attrs, (key) => {
+        for (const [key] of entries(attrs)) {
             const baseAttr = Math.floor(ship[key].value);
             const equipAttr = ship.equipAttrs.value[key];
             const techAttr = ship.techAttrs.value[key];
 
             attrs[key] = baseAttr + equipAttr + techAttr;
-        });
+        }
 
         return (
             attrs.durability * 0.2 +
