@@ -26,7 +26,7 @@
 
     const limitedBreakoutOptions = computed(() => {
         return breakoutOptions.filter(({ value }) => {
-            return value <= (ship.value?.breakoutMax ?? 0 + 1);
+            return value <= (ship.value?.maxBreakout ?? 0 + 1);
         });
     });
 

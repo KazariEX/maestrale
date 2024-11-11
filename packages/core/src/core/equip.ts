@@ -23,7 +23,7 @@ export class Equip {
         }
 
         // 等级
-        this.level = ref(this.levelMax);
+        this.level = ref(this.maxLevel);
     }
 
     // 名称
@@ -52,7 +52,7 @@ export class Equip {
     }
 
     // 最高等级
-    get levelMax() {
+    get maxLevel() {
         return this.data_statistics.length - 1;
     }
 
