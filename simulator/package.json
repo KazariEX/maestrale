@@ -1,9 +1,10 @@
 {
   "private": true,
   "scripts": {
+    "build": "nuxi build",
     "dev": "nuxi dev --no-qr",
-    "generate": "nuxi generate",
-    "prepare": "nuxi prepare"
+    "prepare": "nuxi prepare",
+    "preview": "nuxi preview"
   },
   "dependencies": {
     "@primevue/themes": "^4.2.1",
