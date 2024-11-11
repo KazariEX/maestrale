@@ -16,7 +16,7 @@
         selectors: Selector[];
         data: T[];
         canClear: boolean;
-        iconShrink?: boolean;
+        iconPadding?: boolean;
         rarityMode?: UseRarityStyleOptions["mode"];
         isOpening?: boolean;
     }>();
@@ -35,8 +35,8 @@
         <div
             v-if="isOpening"
             class="dialog-picker"
-            position="fixed inset-0"
             flex="~ col gap-4"
+            position="fixed inset-0"
             w="128"
             max-w="full"
             m="l-auto"
@@ -97,7 +97,7 @@
                         :mode="rarityMode"
                         :rarity="item.rarity"
                         :icon="item.icon"
-                        :shrink="iconShrink"
+                        :padding="iconPadding"
                     />
                     <span text="3 center truncate">{{ item.name }}</span>
                 </li>

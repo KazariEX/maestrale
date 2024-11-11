@@ -28,12 +28,11 @@
     >
         <template v-if="spweapon">
             <rarity-icon
-                icon-class="size-max-11"
                 mode="spweapon"
                 :rarity="spweapon.rarity"
                 :icon="`/image/artresource/atlas/spweapon/${spweapon.icon}.png`"
                 :show-frame="false"
-                shrink
+                padding
             />
         </template>
     </div>

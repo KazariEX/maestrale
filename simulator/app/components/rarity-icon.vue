@@ -4,15 +4,13 @@
     const {
         mode = "general",
         rarity,
-        iconClass = "size-max-full",
         showFrame = true
     } = defineProps<{
         mode?: UseRarityStyleOptions["mode"];
         rarity?: number;
         icon: string;
-        iconClass?: string;
+        padding?: boolean;
         showFrame?: boolean;
-        shrink?: boolean;
     }>();
 
     const { backgroundStyle, frameStyle } = useRarityStyle(() => rarity ?? 0, {
@@ -22,15 +20,17 @@
 
 <template>
     <a
-        relative="~"
         flex="~"
+        position="relative"
         size="inherit"
+        :class="{
+            [`p-1`]: padding
+        }"
         :style="backgroundStyle"
     >
         <nuxt-img
-            :class="[iconClass, {
-                [`m-auto`]: shrink
-            }]"
+            size="full"
+            object="contain"
             :src="icon"
             loading="lazy"
         />

@@ -96,7 +96,7 @@ export function selectEquip(allowTypes: EquipType[], shipType: ShipType, canClea
             ],
             data,
             canClear,
-            iconShrink: true,
+            iconPadding: true,
             onClose(id) {
                 close();
                 resolve(id);
@@ -144,7 +144,7 @@ export function selectSPWeapon(shipId: number, shipType: ShipType, canClear: boo
             ],
             data,
             canClear,
-            iconShrink: true,
+            iconPadding: true,
             rarityMode: "spweapon",
             onClose(id) {
                 close();
