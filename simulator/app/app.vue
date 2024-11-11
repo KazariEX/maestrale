@@ -7,7 +7,7 @@
         ],
         titleTemplate: "%s %separator 西北风模拟器",
         templateParams: {
-            separator: "-"
+            separator: "/"
         }
     });
 

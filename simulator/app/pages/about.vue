@@ -1,3 +1,9 @@
+<script lang="ts" setup>
+    useHead({
+        title: "关于"
+    });
+</script>
+
 <template>
     <article max-w="142" p="x-4">
         <h2>介绍</h2>

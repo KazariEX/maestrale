@@ -2,11 +2,11 @@
     const navs = [
         {
             title: "编队",
-            icon: "fa6-solid:house",
-            to: { name: "home" }
+            icon: "fa6-solid:ship",
+            to: { name: "fleet" }
         },
         {
-            title: "科技",
+            title: "舰队科技",
             icon: "fa6-solid:sliders",
             to: { name: "technology" }
         },

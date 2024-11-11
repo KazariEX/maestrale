@@ -1,7 +1,11 @@
 <script lang="ts" setup>
     import type { ShipType } from "maestrale";
-import { attributeMap } from "~/data/constraint/attribute";
+    import { attributeMap } from "~/data/constraint/attribute";
     import { shipTypeOptions } from "~/data/constraint/ship-type";
+
+    useHead({
+        title: "舰队科技"
+    });
 
     const technology = useTechnology();
 
