@@ -10,6 +10,12 @@ declare module 'vue' {
     PrimeInputNumber: typeof import('primevue/inputnumber')['default']
     PrimeSelect: typeof import('primevue/select')['default']
     PrimeSelectButton: typeof import('primevue/selectbutton')['default']
+    PrimeSlider: typeof import('primevue/slider')['default']
+    PrimeTab: typeof import('primevue/tab')['default']
+    PrimeTabList: typeof import('primevue/tablist')['default']
+    PrimeTabPanel: typeof import('primevue/tabpanel')['default']
+    PrimeTabPanels: typeof import('primevue/tabpanels')['default']
+    PrimeTabs: typeof import('primevue/tabs')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

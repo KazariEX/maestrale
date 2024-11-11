@@ -47,6 +47,7 @@
                 :options="attrModeOptions"
                 option-label="label"
                 option-value="value"
+                :allow-empty="false"
                 v-model="fleetStore.attrMode"
             />
         </li>
