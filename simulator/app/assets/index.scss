@@ -18,10 +18,12 @@
     }
 
     a {
+        text-decoration: none;
+        color: inherit;
         cursor: pointer;
     }
 
-    ul {
+    menu, ol, ul {
         list-style: none;
     }
 }
