@@ -5,6 +5,10 @@
         alias: "/"
     });
 
+    useHead({
+        title: "编队"
+    });
+
     const fleetStore = useFleetStore();
     const technology = useTechnology();
 
