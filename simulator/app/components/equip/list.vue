@@ -5,7 +5,8 @@
         required: true
     });
 
-    const backgroundStyle = `background-image: url("/image/artresource/ui/shipinfoui/sucai_button.png")`;
+    const equipStyle = `background-image: url("/image/artresource/ui/shipinfoui/sucai_button.png")`;
+    const spweaponStyle = `background-image: url("/image/artresource/ui/shipinfoui/slot_bg.png")`;
 </script>
 
 <template>
@@ -13,14 +14,27 @@
         <li
             v-for="i in 5"
             size="16"
-            m="l--1px"
-            :style="backgroundStyle"
+            m="r--1px"
+            :style="equipStyle"
         >
             <equip-item
                 v-if="ship"
                 :allow-types="ship.equipSlotTypes.value[i - 1]!"
                 :ship-type="ship.type.value"
                 v-model="ship[`equip${i as 1 | 2 | 3 | 4 | 5}`].value"
+            />
+        </li>
+        <li
+            size="16"
+            m="l-17px"
+            p="1.5"
+            :style="spweaponStyle"
+        >
+            <spweapon-item
+                v-if="ship"
+                :ship-id="ship.id"
+                :ship-type="ship.type.value"
+                v-model="ship.spweapon.value"
             />
         </li>
     </ul>

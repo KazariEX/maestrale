@@ -9,6 +9,7 @@
     setup
 >
     import type { Selector } from "~/components/lib-select.vue";
+    import type { UseRarityStyleOptions } from "~/composables/useRarityStyle";
 
     const { selectors } = defineProps<{
         title: string;
@@ -16,6 +17,7 @@
         data: T[];
         canClear: boolean;
         iconShrink?: boolean;
+        rarityMode?: UseRarityStyleOptions["mode"];
         isOpening?: boolean;
     }>();
     const emit = defineEmits<{
@@ -92,9 +94,10 @@
                 >
                     <rarity-icon
                         size="16"
-                        :shrink="iconShrink"
-                        :icon="item.icon"
+                        :mode="rarityMode"
                         :rarity="item.rarity"
+                        :icon="item.icon"
+                        :shrink="iconShrink"
                     />
                     <span text="3 center truncate">{{ item.name }}</span>
                 </li>

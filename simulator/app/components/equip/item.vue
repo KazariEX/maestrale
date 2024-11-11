@@ -22,9 +22,10 @@
     <div size="14" m="t-0.5 l-0.5" cursor="pointer" @click="select">
         <template v-if="equip">
             <rarity-icon
-                shrink
-                :icon="`/image/artresource/atlas/equips/${equip.icon}.png`"
+                icon-class="size-max-12"
                 :rarity="equip.rarity"
+                :icon="`/image/artresource/atlas/equips/${equip.icon}.png`"
+                shrink
             />
         </template>
     </div>

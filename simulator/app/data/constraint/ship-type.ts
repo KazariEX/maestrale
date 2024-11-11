@@ -22,4 +22,4 @@ export const shipTypeMap: Record<ShipType, string> = {
     24: "风帆M"
 };
 
-export const shipTypeOptions = constraintToOptions(shipTypeMap);
+export const shipTypeOptions = resolveConstraintOptions(shipTypeMap);
