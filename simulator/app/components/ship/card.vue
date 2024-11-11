@@ -48,7 +48,6 @@
 <template>
     <div
         grid="~ cols-[auto_1fr] gap-2"
-        w="121.5"
         p="2"
         b="~ solid gray op-40 rounded-1"
         outline="2 primary offset--1"
@@ -88,14 +87,7 @@
                         show-buttons
                         button-layout="horizontal"
                         v-model="ship.level.value"
-                    >
-                        <template #decrementicon>
-                            <icon name="fa6-solid:chevron-left"/>
-                        </template>
-                        <template #incrementicon>
-                            <icon name="fa6-solid:chevron-right"/>
-                        </template>
-                    </prime-input-number>
+                    />
                     <prime-select
                         flex="1"
                         size="small"
