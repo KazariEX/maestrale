@@ -8,9 +8,12 @@
     const fleetStore = useFleetStore();
     const technology = useTechnology();
 
-    fleetStore.currentShip = fleetStore.vanguard1 = createShip(60104, {
+    const maestrale = createShip(60104, {
         technology
     });
+
+    fleetStore.vanguard1 = maestrale;
+    fleetStore.setCurrentShip(maestrale);
 
     const infoModeOptions = [
         { label: "舰船详情", value: "details" },
@@ -45,13 +48,17 @@
             <div grid="~ gap-8 content-start" w="121.5">
                 <equip-list v-model="fleetStore.currentShip"/>
                 <ship-status />
-                <prime-tabs value="strengthen">
+                <prime-tabs v-model:value="fleetStore.panelTab">
                     <prime-tab-list>
                         <prime-tab value="strengthen">强化</prime-tab>
+                        <prime-tab value="transform" :disabled="!fleetStore.currentShip?.canTransform()">改造</prime-tab>
                     </prime-tab-list>
                     <prime-tab-panels>
                         <prime-tab-panel value="strengthen">
                             <ship-strengthen />
+                        </prime-tab-panel>
+                        <prime-tab-panel value="transform">
+                            <ship-transform />
                         </prime-tab-panel>
                     </prime-tab-panels>
                 </prime-tabs>

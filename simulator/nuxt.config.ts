@@ -36,7 +36,8 @@ export default defineNuxtConfig({
         "@nuxt/image",
         "@pinia/nuxt",
         "@primevue/nuxt-module",
-        "@unocss/nuxt"
+        "@unocss/nuxt",
+        "@vueuse/nuxt"
     ],
     primevue: {
         components: {
