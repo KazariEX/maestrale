@@ -23,6 +23,9 @@ export default defineNuxtConfig({
     },
     ssr: false,
     vite: {
+        build: {
+            target: "esnext"
+        },
         css: {
             preprocessorOptions: {
                 scss: {
