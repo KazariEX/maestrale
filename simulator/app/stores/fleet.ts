@@ -25,8 +25,10 @@ export const useFleetStore = defineStore("fleet", () => {
     const panelTab = ref<"strengthen" | "transform">("strengthen");
 
     function setCurrentShip(ship: Ship | null) {
-        currentShip.value = ship;
-        panelTab.value = "strengthen";
+        if (currentShip.value !== ship) {
+            currentShip.value = ship;
+            panelTab.value = "strengthen";
+        }
     }
 
     return {
