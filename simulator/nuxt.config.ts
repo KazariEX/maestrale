@@ -8,6 +8,9 @@ export default defineNuxtConfig({
     css: [
         "~/assets/index.scss"
     ],
+    devServer: {
+        port: 2243
+    },
     devtools: {
         enabled: true
     },
