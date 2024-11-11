@@ -60,6 +60,9 @@
             size="16"
             :rarity="ship?.rarity.value"
             :icon="squareicon"
+            show-star
+            :star="ship?.star.value"
+            :max-star="ship?.maxStar.value"
             @click.stop="select"
         />
         <template v-if="ship">

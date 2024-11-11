@@ -11,6 +11,8 @@
         icon: string;
         padding?: boolean;
         showFrame?: boolean;
+        star?: number;
+        maxStar?: number;
     }>();
 
     const { backgroundStyle, frameStyle } = useRarityStyle(() => rarity ?? 0, {
@@ -36,9 +38,14 @@
         />
         <div
             v-if="showFrame"
-            absolute="~"
-            inset="0"
+            position="absolute inset-0"
             :style="frameStyle"
         ></div>
+        <rarity-star
+            v-if="star || maxStar"
+            position="absolute bottom-0.5 left-1"
+            :value="star"
+            :max="maxStar!"
+        />
     </a>
 </template>
