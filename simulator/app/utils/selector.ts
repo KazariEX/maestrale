@@ -1,10 +1,11 @@
-import { type EquipDataStatistics, type EquipType, ShareCfg, type ShipDataStatistics, type ShipType } from "maestrale";
+import { type EquipDataStatistics, type EquipType, ShareCfg, type ShipDataStatistics, type ShipType, type SPWeaponDataStatistics } from "maestrale";
 import { LibSelector } from "#components";
 import { equipTypeOptions } from "~/data/constraint/equip-type";
 import { type Fleet, fleetMap } from "~/data/constraint/fleet";
 import { nationalityOptions } from "~/data/constraint/nationality";
 import { rarityOptions } from "~/data/constraint/rarity";
 import { shipTypeOptions } from "~/data/constraint/ship-type";
+import { spweaponRarityOptions } from "~/data/constraint/spweapon-rarity";
 
 export function selectShip(fleet: Fleet, canClear: boolean) {
     const ids = new Set(
@@ -69,7 +70,7 @@ export function selectEquip(allowTypes: EquipType[], shipType: ShipType, canClea
             continue;
         }
 
-        const { rarity, type, nationality, name } = statistics;
+        const { name, icon, rarity, type, nationality } = statistics;
         if (!allowTypes.includes(type) || template.ship_type_forbidden.includes(shipType)) {
             continue;
         }
@@ -77,7 +78,7 @@ export function selectEquip(allowTypes: EquipType[], shipType: ShipType, canClea
         data.push({
             id: Number(id),
             name,
-            icon: `/image/artresource/atlas/equips/${statistics.icon}.png`,
+            icon: `/image/artresource/atlas/equips/${icon}.png`,
             rarity,
             type,
             nationality
@@ -96,6 +97,55 @@ export function selectEquip(allowTypes: EquipType[], shipType: ShipType, canClea
             data,
             canClear,
             iconShrink: true,
+            onClose(id) {
+                close();
+                resolve(id);
+            }
+        }), {
+            immediate: true
+        });
+    });
+}
+
+export function selectSPWeapon(shipId: number, shipType: ShipType, canClear: boolean) {
+    const ids = Object.entries(ShareCfg.spweapon_data_statistics)
+        .filter(([, item]) => item.name)
+        .map(([id]) => id);
+
+    const data = createSelectorData<SPWeaponDataStatistics>();
+    for (const id of ids) {
+        const statistics = ShareCfg.spweapon_data_statistics[id];
+        if (!statistics) {
+            continue;
+        }
+
+        const { name, icon, rarity, type, unique } = statistics;
+        if (
+            !ShareCfg.spweapon_type[type]?.ship_type.includes(shipType) ||
+            unique !== 0 && unique !== shipId
+        ) {
+            continue;
+        }
+
+        data.push({
+            id: Number(id),
+            name,
+            icon: `/image/artresource/atlas/spweapon/${icon}.png`,
+            rarity
+        });
+    }
+
+    return new Promise<number>((resolve) => {
+        const modalStore = useModalStore();
+        const { close } = modalStore.use(() => h(LibSelector, {
+            title: "选择兵装",
+            selectors: [
+                { label: "稀有度", id: "rarity", options: spweaponRarityOptions }
+            ],
+            data,
+            canClear,
+            iconShrink: true,
+            rarityMode: "spweapon",
             onClose(id) {
                 close();
                 resolve(id);

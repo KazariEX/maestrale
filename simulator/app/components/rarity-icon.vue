@@ -1,11 +1,23 @@
 <script lang="ts" setup>
-    const { rarity } = defineProps<{
+    import type { UseRarityStyleOptions } from "~/composables/useRarityStyle";
+
+    const {
+        mode = "general",
+        rarity,
+        iconClass = "size-max-full",
+        showFrame = true
+    } = defineProps<{
+        mode?: UseRarityStyleOptions["mode"];
         rarity?: number;
         icon: string;
+        iconClass?: string;
+        showFrame?: boolean;
         shrink?: boolean;
     }>();
 
-    const { backgroundStyle, frameStyle } = useRarityStyle(() => rarity ?? 0);
+    const { backgroundStyle, frameStyle } = useRarityStyle(() => rarity ?? 0, {
+        mode
+    });
 </script>
 
 <template>
@@ -16,13 +28,17 @@
         :style="backgroundStyle"
     >
         <nuxt-img
-            size="max-full"
-            :class="{
+            :class="[iconClass, {
                 [`m-auto`]: shrink
-            }"
+            }]"
             :src="icon"
             loading="lazy"
         />
-        <div absolute="~" inset="0" :style="frameStyle"></div>
+        <div
+            v-if="showFrame"
+            absolute="~"
+            inset="0"
+            :style="frameStyle"
+        ></div>
     </a>
 </template>
