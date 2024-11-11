@@ -3,7 +3,6 @@
   "type": "module",
   "packageManager": "pnpm@9.12.0",
   "scripts": {
-    "release": "bumpp --no-push -c \"release: v%s\"",
     "vvvip": "node scripts/vvvip.js"
   },
   "devDependencies": {
