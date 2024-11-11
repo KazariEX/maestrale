@@ -326,7 +326,7 @@ export class Ship {
 }
 
 export interface CreateShipOptions {
-    equips?: (number | null)[];
+    equips?: (Equip | number | null)[];
     spweapon?: number | null;
     technology: ITechnology;
 }
@@ -337,8 +337,8 @@ export function createShip(id: number, options: CreateShipOptions) {
     }
 
     const {
-        equips: equipIds = [],
-        spweapon: spweaponId = null,
+        equips = [],
+        spweapon = null,
         technology
     } = options;
 
@@ -349,16 +349,24 @@ export function createShip(id: number, options: CreateShipOptions) {
     const ship = new Ship(id, technology);
 
     // 装备
-    ship.equip1.value = equipIds[0] ? createEquip(equipIds[0]) : null;
-    ship.equip2.value = equipIds[1] ? createEquip(equipIds[1]) : null;
-    ship.equip3.value = equipIds[2] ? createEquip(equipIds[2]) : null;
-    ship.equip4.value = equipIds[3] ? createEquip(equipIds[3]) : null;
-    ship.equip5.value = equipIds[4] ? createEquip(equipIds[4]) : null;
+    ship.equip1.value = normalizeEquip(equips[0]);
+    ship.equip2.value = normalizeEquip(equips[1]);
+    ship.equip3.value = normalizeEquip(equips[2]);
+    ship.equip4.value = normalizeEquip(equips[3]);
+    ship.equip5.value = normalizeEquip(equips[4]);
 
     // 兵装
-    ship.spweapon.value = spweaponId ? createSPWeapon(spweaponId) : null;
+    ship.spweapon.value = normalizeSPWeapon(spweapon);
 
     return ship;
+}
+
+function normalizeEquip(equip: Equip | number | null) {
+    return typeof equip === "number" ? createEquip(equip) : equip;
+}
+
+function normalizeSPWeapon(spweapon: SPWeapon | number | null) {
+    return typeof spweapon === "number" ? createSPWeapon(spweapon) : spweapon;
 }
 
 // 强化：蓝图
