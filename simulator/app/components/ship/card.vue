@@ -109,7 +109,11 @@
             <equip-list v-else v-model="ship"/>
         </template>
         <div v-else flex="1" grid="~ place-items-center">
-            <span font="mono bold" text="12 gray op-40">NO SHIP</span>
+            <span
+                font="mono bold"
+                text="12 gray op-40"
+                select="none"
+            >NO SHIP</span>
         </div>
     </div>
 </template>
