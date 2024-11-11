@@ -41,7 +41,7 @@ export interface Transformable {
 
 export class Ship {
     breakout: Ref<number>;
-    breakoutMax: number;
+    maxBreakout: number;
     strengthen: StrengthenGeneral | StrengthenBlueprint;
 
     constructor(
@@ -49,12 +49,12 @@ export class Ship {
         public technology: ITechnology
     ) {
         // 最大可突破数
-        this.breakoutMax = 0;
+        this.maxBreakout = 0;
 
         const baseId = id * 10 + 1;
         const data_breakout = (baseId in ShareCfg.ship_meta_breakout) ? ShareCfg.ship_meta_breakout : ShareCfg.ship_data_breakout;
         for (let i = baseId; i !== 0;) {
-            this.breakoutMax++;
+            this.maxBreakout++;
             i = data_breakout[i].breakout_id;
         }
 
@@ -67,14 +67,14 @@ export class Ship {
             };
         }
         else if (id in ShareCfg.ship_strengthen_meta) {
-            this.breakout = ref(this.breakoutMax);
+            this.breakout = ref(this.maxBreakout);
             this.strengthen = {
                 type: StrengthenType.Meta,
                 ...useStrengthenMeta(this)
             };
         }
         else {
-            this.breakout = ref(this.breakoutMax);
+            this.breakout = ref(this.maxBreakout);
             this.strengthen = {
                 type: StrengthenType.General,
                 ...useStrengthenGeneral(this)
@@ -153,15 +153,14 @@ export class Ship {
         return this.curSkin.painting;
     });
 
-    // 可携带装备类型
-    equipSlotTypes = computed(() => {
-        return [
-            this.curTemp.equip_1,
-            this.curTemp.equip_2,
-            this.curTemp.equip_3,
-            this.curTemp.equip_4,
-            this.curTemp.equip_5
-        ] as const;
+    // 星级
+    star = computed(() => {
+        return this.maxStar.value - this.maxBreakout + this.breakout.value;
+    });
+
+    // 最高星级
+    maxStar = computed(() => {
+        return Math.max(4, this.rarity.value);
     });
 
     // 获取属性白值
@@ -215,7 +214,7 @@ export class Ship {
     techAttrs = computed(() => {
         const attrs = createAttributes();
 
-        if (this.breakout.value === this.breakoutMax) {
+        if (this.breakout.value === this.maxBreakout) {
             for (const [key] of entries(attrs)) {
                 attrs[key] += this.technology.get(this.type.value, key);
             }
@@ -296,6 +295,17 @@ export class Ship {
 
     // 战力
     power = usePower(this);
+
+    // 可携带装备类型
+    equipSlotTypes = computed(() => {
+        return [
+            this.curTemp.equip_1,
+            this.curTemp.equip_2,
+            this.curTemp.equip_3,
+            this.curTemp.equip_4,
+            this.curTemp.equip_5
+        ] as const;
+    });
 
     // 装备
     equip1 = shallowRef<Equip | null>(null);
