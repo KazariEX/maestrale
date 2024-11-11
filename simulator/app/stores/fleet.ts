@@ -22,6 +22,12 @@ export const useFleetStore = defineStore("fleet", () => {
     const currentShip = shallowRef<Ship | null>(null);
     const attrMode = ref<"equips" | "tech">("equips");
     const infoMode = ref<"details" | "equips">("details");
+    const panelTab = ref<"strengthen" | "transform">("strengthen");
+
+    function setCurrentShip(ship: Ship | null) {
+        currentShip.value = ship;
+        panelTab.value = "strengthen";
+    }
 
     return {
         main1,
@@ -34,6 +40,8 @@ export const useFleetStore = defineStore("fleet", () => {
         vanguard,
         currentShip,
         attrMode,
-        infoMode
+        infoMode,
+        panelTab,
+        setCurrentShip
     };
 });

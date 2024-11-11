@@ -41,7 +41,7 @@
             });
         }
         await nextTick();
-        fleetStore.currentShip = ship.value;
+        fleetStore.setCurrentShip(ship.value);
     }
 </script>
 
@@ -54,7 +54,7 @@
         :class="{
             [`outline`]: ship && fleetStore.currentShip === ship
         }"
-        @click="fleetStore.currentShip = ship"
+        @click="fleetStore.setCurrentShip(ship)"
     >
         <rarity-icon
             size="16"
