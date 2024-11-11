@@ -11,13 +11,11 @@
         }
     });
 
-    const { status } = useLazyAsyncData(() => {
-        return ShareCfg.load();
-    });
+    await ShareCfg.load();
 </script>
 
 <template>
     <nuxt-layout>
-        <nuxt-page v-if="status === `success`"/>
+        <nuxt-page />
     </nuxt-layout>
 </template>
