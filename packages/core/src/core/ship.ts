@@ -34,8 +34,8 @@ export interface TransformMatrixTemplate extends TransformDataTemplate {
     next_id: number[];
 }
 
-export interface Transformable {
-    transformMatrix: [
+export interface Transform {
+    matrix: [
         TransformMatrixTemplate[],
         TransformMatrixTemplate[],
         TransformMatrixTemplate[]
@@ -48,6 +48,7 @@ export class Ship {
     breakout: Ref<number>;
     maxBreakout: number;
     strengthen: StrengthenGeneral | StrengthenBlueprint;
+    transform?: Transform;
 
     constructor(
         public id: number,
@@ -86,13 +87,9 @@ export class Ship {
             };
         }
 
-        if (this.canTransform()) {
-            Object.assign(this, useTransform(this));
+        if (id in ShareCfg.ship_data_trans) {
+            this.transform = useTransform(this);
         }
-    }
-
-    canTransform(): this is Transformable {
-        return this.id in ShareCfg.ship_data_trans;
     }
 
     private get curStat() {
@@ -104,17 +101,14 @@ export class Ship {
     }
 
     private get curSkin() {
-        return ShareCfg.ship_skin_template[this.id * 10 + (this.canTransform() && this.isModernized.value ? 9 : 0)];
+        return ShareCfg.ship_skin_template[this.id * 10 + (this.transform?.isModernized.value ? 9 : 0)];
     }
 
     // 当前 ID
     private curId = computed(() => {
-        if (this.canTransform() && this.isModernized.value && this.modernizedId.value) {
-            return this.modernizedId.value;
-        }
-        else {
-            return this.id * 10 + this.breakout.value;
-        }
+        return this.transform?.isModernized.value
+            && this.transform?.modernizedId.value
+            || this.id * 10 + this.breakout.value;
     });
 
     // 等级
@@ -126,7 +120,7 @@ export class Ship {
     // 名称
     name = computed(() => {
         const name = this.curStat.name;
-        if (this.canTransform() && this.isModernized.value) {
+        if (this.transform?.isModernized.value) {
             const suffix = ".改";
             return name.replace(suffix, "") + suffix;
         }
@@ -145,7 +139,7 @@ export class Ship {
 
     // 稀有度
     rarity = computed(() => {
-        return this.curStat.rarity + (this.canTransform() && this.isModernized.value ? 1 : 0);
+        return this.curStat.rarity + (this.transform?.isModernized.value ? 1 : 0);
     });
 
     // 舰种
@@ -184,14 +178,12 @@ export class Ship {
     transAttrs = computed(() => {
         const attrs = createAttributes();
 
-        if (this.canTransform()) {
-            const templates = this.transformMatrix.flat(2);
-            for (const template of templates) {
-                if (template.enable.value) {
-                    for (const effect of template.effect) {
-                        for (const [attr, val] of entries(effect)) {
-                            attrs[attr] += val;
-                        }
+        const templates = this.transform?.matrix.flat(2) ?? [];
+        for (const template of templates) {
+            if (template.enable.value) {
+                for (const effect of template.effect) {
+                    for (const [attr, val] of entries(effect)) {
+                        attrs[attr] += val;
                     }
                 }
             }
@@ -572,8 +564,8 @@ function useStrengthenGeneral(ship: Ship) {
 function useTransform(ship: Ship) {
     const templates: Record<string, TransformMatrixTemplate> = {};
 
-    const transformMatrix = ShareCfg.ship_data_trans[ship.id].transform_list.map((item) => {
-        const column: Transformable["transformMatrix"][number] = [[], [], []];
+    const matrix = ShareCfg.ship_data_trans[ship.id].transform_list.map((item) => {
+        const column: Transform["matrix"][number] = [[], [], []];
 
         for (const [index, id] of item) {
             const template = {
@@ -644,7 +636,7 @@ function useTransform(ship: Ship) {
     }
 
     return {
-        transformMatrix,
+        matrix,
         isModernized,
         modernizedId
     };

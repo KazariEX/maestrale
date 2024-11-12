@@ -5,10 +5,10 @@
 
 <template>
     <ul
-        v-if="ship?.canTransform()"
+        v-if="ship?.transform"
         grid="~ rows-3 cols-6 gap-1"
     >
-        <template v-for="rows, col in ship.transformMatrix">
+        <template v-for="rows, col in ship.transform.matrix">
             <ship-transform-item
                 v-for="templates, row in rows"
                 :style="{ gridRowStart: row + 1, gridColumnStart: col + 1 }"
