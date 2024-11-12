@@ -48,7 +48,7 @@
                 p="r-4"
             >
                 <h2 text="4 gray-600">{{ title }}</h2>
-                <icon
+                <iconify
                     text="5 gray hover:primary"
                     cursor="pointer"
                     name="fa6-solid:xmark"
@@ -67,7 +67,7 @@
             </div>
             <ul
                 class="[scrollbar-gutter:stable]"
-                grid="~ gap-4 cols-6 justify-items-center"
+                grid="~ cols-[repeat(auto-fill,minmax(64px,1fr))] gap-4"
                 overflow="y-auto"
                 p="r-4 b-4"
             >

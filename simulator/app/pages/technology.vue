@@ -23,6 +23,7 @@
 
 <template>
     <prime-select-button
+        flex="wrap justify-center gap-row-2"
         size="small"
         :options
         option-label="label"

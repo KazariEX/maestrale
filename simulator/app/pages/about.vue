@@ -5,7 +5,7 @@
 </script>
 
 <template>
-    <article max-w="142" p="x-4">
+    <article max-w="142">
         <h2>介绍</h2>
         <p>西北风模拟器（<nuxt-link to="https://github.com/KazariEX/maestrale" target="_blank">Maestrale Simulator</nuxt-link>），主要用于模拟碧蓝航线中<mark>舰船面板属性的计算</mark>、<mark>编队配置</mark>等。可调整舰船的等级、突破等级、好感、强化值、改造进度等所有参与白值运算的数值，可携带装备与兵装，可自由调整舰队科技提供的属性值，并实时计算舰船的最终面板。</p>
         <h2>特性</h2>

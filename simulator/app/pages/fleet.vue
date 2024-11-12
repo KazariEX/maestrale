@@ -26,7 +26,7 @@
             :allow-empty="false"
             v-model="fleetStore.infoMode"
         />
-        <div flex="~ gap-8">
+        <div flex="~ gap-8 lt-lg:col">
             <div grid="~ gap-8" w="121.5">
                 <div grid="~ gap-2">
                     <ship-card fleet="main" v-model="fleetStore.main1"/>
