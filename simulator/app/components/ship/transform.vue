@@ -10,9 +10,9 @@
     >
         <template v-for="rows, col in ship.transform.matrix">
             <ship-transform-item
-                v-for="templates, row in rows"
+                v-for="_, row in rows"
                 :style="{ gridRowStart: row + 1, gridColumnStart: col + 1 }"
-                :templates
+                v-model="rows[row]!"
             />
         </template>
     </ul>
