@@ -327,7 +327,7 @@ export class Ship {
 
 export interface CreateShipOptions {
     equips?: (Equip | number | null)[];
-    spweapon?: number | null;
+    spweapon?: SPWeapon | number | null;
     technology: ITechnology;
 }
 
@@ -349,6 +349,7 @@ export function createShip(id: number, options: CreateShipOptions) {
     const ship = new Ship(id, technology);
 
     // 装备
+    equips.push(...Array.from({ length: 5 - equips.length }, () => null));
     ship.equip1.value = normalizeEquip(equips[0]);
     ship.equip2.value = normalizeEquip(equips[1]);
     ship.equip3.value = normalizeEquip(equips[2]);
