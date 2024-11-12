@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-    import { createShip } from "maestrale";
-
     definePageMeta({
         alias: "/"
     });
@@ -10,14 +8,6 @@
     });
 
     const fleetStore = useFleetStore();
-    const technology = useTechnology();
-
-    const maestrale = createShip(60104, {
-        technology
-    });
-
-    fleetStore.vanguard1 = maestrale;
-    fleetStore.setCurrentShip(maestrale);
 
     const infoModeOptions = [
         { label: "舰船详情", value: "details" },
