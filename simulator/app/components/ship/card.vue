@@ -20,10 +20,6 @@
             : "/image/artresource/ui/levelfleetselectview/blank_icon_light.png";
     });
 
-    const power = computed(() => {
-        return Math.floor(ship.value?.power.value ?? 0);
-    });
-
     const limitedBreakoutOptions = computed(() => {
         return breakoutOptions.filter(({ value }) => {
             return value <= (ship.value?.maxBreakout ?? 0 + 1);
@@ -77,7 +73,7 @@
                         <span>{{ ship.name }}</span>
                     </span>
                     <span>
-                        <span>{{ power }}</span>
+                        <span>{{ ship.power }}</span>
                         <span m="l-1.5" text="gray">战力</span>
                     </span>
                 </div>
