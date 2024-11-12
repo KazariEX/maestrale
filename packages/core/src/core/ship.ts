@@ -29,12 +29,17 @@ interface StrengthenBlueprint extends Strengthen {
     blueprintLevel: WritableComputedRef<number>;
 }
 
+export interface TransformMatrixTemplate extends TransformDataTemplate {
+    enable: Ref<boolean>;
+    next_id: number[];
+}
+
 export interface Transformable {
-    transformTable: [number, number, number][];
-    transformTemplate: Record<string, TransformDataTemplate & {
-        enable: Ref<boolean>;
-        next_id: number[];
-    }>;
+    transformMatrix: [
+        TransformMatrixTemplate[],
+        TransformMatrixTemplate[],
+        TransformMatrixTemplate[]
+    ][];
     isModernized: Ref<boolean>;
     modernizedId: Ref<number>;
 }
@@ -180,11 +185,10 @@ export class Ship {
         const attrs = createAttributes();
 
         if (this.canTransform()) {
-            for (const key in this.transformTemplate) {
-                const temp = this.transformTemplate[key];
-
-                if (temp.enable.value) {
-                    for (const effect of temp.effect) {
+            const templates = this.transformMatrix.flat(2);
+            for (const template of templates) {
+                if (template.enable.value) {
+                    for (const effect of template.effect) {
                         for (const [attr, val] of entries(effect)) {
                             attrs[attr] += val;
                         }
@@ -566,64 +570,81 @@ function useStrengthenGeneral(ship: Ship) {
 
 // 改造
 function useTransform(ship: Ship) {
-    const transformTable: Transformable["transformTable"] = [];
-    const transformTemplate: Transformable["transformTemplate"] = {};
+    const templates: Record<string, TransformMatrixTemplate> = {};
 
-    for (const item of ShareCfg.ship_data_trans[ship.id].transform_list) {
-        const table = [...new Array(3)] as [number, number, number];
+    const transformMatrix = ShareCfg.ship_data_trans[ship.id].transform_list.map((item) => {
+        const column: Transformable["transformMatrix"][number] = [[], [], []];
 
-        for (const [index, key] of item) {
-            transformTemplate[key] = {
-                ...ShareCfg.transform_data_template[key],
+        for (const [index, id] of item) {
+            const template = {
+                ...ShareCfg.transform_data_template[id],
                 enable: ref(true),
                 next_id: []
             };
-            table[index - 2] = key;
+            templates[id] = template;
+            column[index - 2].push(template);
         }
-        transformTable.push(table);
-    }
+        return column;
+    });
 
     // 添加后继节点
-    Object.entries(transformTemplate).forEach(([key, temp]) => {
-        for (const i of temp.condition_id) {
-            transformTemplate[i].next_id.push(Number(key));
+    for (const [key, template] of entries(templates)) {
+        const stack: [number, TransformMatrixTemplate][] = [
+            [Number(key), template]
+        ];
+
+        while (stack.length) {
+            const [id, { condition_id }] = stack.pop()!;
+            for (const prevId of condition_id) {
+                const prev = templates[prevId];
+                if (prev.edit_trans.includes(id)) {
+                    stack.push([id, prev]);
+                }
+                else {
+                    prev.next_id.push(id);
+                }
+            }
         }
-    });
+    }
 
     const isModernized = ref(false);
     const modernizedId = ref<number>(null!);
 
     // 链式监听
-    for (const key in transformTemplate) {
-        const temp = transformTemplate[key];
-        watch(temp.enable, (value) => {
+    for (const [, template] of entries(templates)) {
+        watch(template.enable, (value) => {
             if (value) {
-                for (const i of temp.condition_id) {
-                    transformTemplate[i].enable.value = true;
-                }
+                updateTemplates(template.condition_id, true);
+                updateTemplates(template.edit_trans, false);
             }
-            else {
-                for (const i of temp.next_id) {
-                    transformTemplate[i].enable.value = false;
-                }
+            else if (!template.edit_trans.length) {
+                updateTemplates(template.next_id, false);
+            }
+            else if (template.condition_id.every((id) => templates[id].enable.value)) {
+                updateTemplates(template.edit_trans, true);
             }
 
-            if (temp.name === "近代化改造") {
+            if (template.name === "近代化改造") {
                 isModernized.value = value;
             }
 
-            const ship_id = temp.ship_id[0];
-            if (ship_id?.length > 0) {
-                modernizedId.value = ship_id[value ? 1 : 0];
+            if (template.ship_id.length) {
+                const [from, to] = template.ship_id[0];
+                modernizedId.value = value ? to : from;
             }
         }, {
             immediate: true
         });
     }
 
+    function updateTemplates(ids: number[], value: boolean) {
+        for (const id of ids) {
+            templates[id].enable.value = value;
+        }
+    }
+
     return {
-        transformTable,
-        transformTemplate,
+        transformMatrix,
         isModernized,
         modernizedId
     };

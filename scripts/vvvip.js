@@ -155,6 +155,7 @@ const vvvip = {
         folder: "ShareCfg",
         props: [
             "condition_id",
+            "edit_trans",
             "effect",
             "icon",
             "name",

@@ -8,11 +8,11 @@
         v-if="ship?.canTransform()"
         grid="~ rows-3 cols-6 gap-1"
     >
-        <template v-for="rows, col in ship.transformTable">
+        <template v-for="rows, col in ship.transformMatrix">
             <ship-transform-item
-                v-for="id, row in rows"
+                v-for="templates, row in rows"
                 :style="{ gridRowStart: row + 1, gridColumnStart: col + 1 }"
-                v-model="ship.transformTemplate[id]"
+                :templates
             />
         </template>
     </ul>

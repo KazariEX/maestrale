@@ -1,7 +1,15 @@
 <script lang="ts" setup>
-    import type { Transformable } from "maestrale";
+    import type { TransformMatrixTemplate } from "maestrale";
 
-    const template = defineModel<Transformable["transformTemplate"][string]>();
+    const { templates } = defineProps<{
+        templates: TransformMatrixTemplate[];
+    }>();
+
+    const template = computed(() => {
+        return templates.some(({ edit_trans }) => edit_trans.length)
+            && templates.find(({ enable }) => enable.value)
+            || templates[0];
+    });
 
     const toggleEnabled = template.value && useToggle(template.value.enable);
 </script>
