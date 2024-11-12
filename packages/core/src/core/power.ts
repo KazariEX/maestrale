@@ -60,7 +60,7 @@ export function usePower(ship: Ship) {
 
     // 综合战力
     const power = computed(() => {
-        return (
+        return Math.floor(
             attrsPower.value +
             equipPower.value +
             transPower.value
