@@ -4,9 +4,9 @@ import type { SPWeaponDataStatistics } from "../data/types";
 import type { Attributes } from "./attributes";
 
 export class SPWeapon {
-    level: Ref<number>;
-
     private data_statistics: SPWeaponDataStatistics[];
+
+    level: Ref<number>;
 
     constructor(
         public id: number
@@ -21,8 +21,15 @@ export class SPWeapon {
         }
 
         // 等级
-        this.level = ref(10);
+        this.level = ref(this.maxLevel);
     }
+
+    private curStat = computed(() => {
+        return {
+            ...this.data_statistics[0],
+            ...this.data_statistics[this.level.value]
+        };
+    });
 
     // 名称
     get name() {
@@ -39,12 +46,10 @@ export class SPWeapon {
         return this.data_statistics[0].rarity;
     }
 
-    private statistics = computed(() => {
-        return {
-            ...this.data_statistics[0],
-            ...this.data_statistics[this.level.value]
-        };
-    });
+    // 最高等级
+    get maxLevel() {
+        return this.data_statistics.length - 1;
+    }
 
     // 属性
     attrs = computed(() => {
@@ -53,10 +58,10 @@ export class SPWeapon {
             const attrKey = `attribute_${i}` as const;
             const valueKey = `value_${i}` as const;
             const randomValueKey = `value_${i}_random` as const;
-            if (attrKey in this.statistics.value) {
-                const attr = this.statistics.value[attrKey];
-                const value = this.statistics.value[valueKey];
-                const randomValue = this.statistics.value[randomValueKey];
+            if (attrKey in this.curStat.value) {
+                const attr = this.curStat.value[attrKey];
+                const value = this.curStat.value[valueKey];
+                const randomValue = this.curStat.value[randomValueKey];
                 res[attr] = value + randomValue;
             }
         }
