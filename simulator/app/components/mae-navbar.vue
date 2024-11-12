@@ -21,13 +21,14 @@
 <template>
     <nav
         position="fixed inset-x-0 bottom-0"
-        grid="~ cols-3 items-center"
+        grid="~ cols-3"
         h="16"
         shadow="black lg"
+        bg="white"
     >
         <nuxt-link
             v-for="{ title, icon, to } in navs"
-            grid="~ place-items-center gap-1"
+            flex="~ col justify-center items-center gap-1"
             class="[&.router-link-active]-text-primary"
             :to
         >
