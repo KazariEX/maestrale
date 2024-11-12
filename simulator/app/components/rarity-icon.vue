@@ -42,10 +42,10 @@
             :style="frameStyle"
         ></div>
         <rarity-star
-            v-if="star || maxStar"
+            v-if="star"
             position="absolute bottom-0.5 left-1"
             :value="star"
-            :max="maxStar!"
+            :max="maxStar ?? star!"
         />
     </a>
 </template>
