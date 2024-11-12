@@ -136,6 +136,7 @@ export interface SPWeaponType {
 
 export interface TransformDataTemplate {
     condition_id: number[];
+    edit_trans: number[];
     effect: Record<keyof Attributes, number>[];
     icon: string;
     name: string;
