@@ -55,7 +55,7 @@
                 <prime-tabs v-model:value="fleetStore.panelTab">
                     <prime-tab-list>
                         <prime-tab value="strengthen">强化</prime-tab>
-                        <prime-tab value="transform" :disabled="!fleetStore.currentShip?.canTransform()">改造</prime-tab>
+                        <prime-tab value="transform" :disabled="!fleetStore.currentShip?.transform">改造</prime-tab>
                     </prime-tab-list>
                     <prime-tab-panels>
                         <prime-tab-panel value="strengthen">

@@ -44,9 +44,9 @@ export function usePower(ship: Ship) {
     // 改造技能战力
     const transPower = computed(() => {
         let res = 0;
-        if (ship.canTransform()) {
+        if (ship.transform) {
             for (let i = 0; i < 6; i++) {
-                for (const templates of ship.transformMatrix[i]) {
+                for (const templates of ship.transform.matrix[i]) {
                     for (const { enable } of templates) {
                         if (enable.value) {
                             res += getTransPower(i)!;
