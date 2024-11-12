@@ -26,6 +26,13 @@ export class Equip {
         this.level = ref(this.maxLevel);
     }
 
+    private curStat = computed(() => {
+        return {
+            ...this.data_statistics[0],
+            ...this.data_statistics[this.level.value]
+        };
+    });
+
     // 名称
     get name() {
         return this.data_statistics[0].name;
@@ -56,22 +63,15 @@ export class Equip {
         return this.data_statistics.length - 1;
     }
 
-    private statistics = computed(() => {
-        return {
-            ...this.data_statistics[0],
-            ...this.data_statistics[this.level.value]
-        };
-    });
-
     // 属性
     attrs = computed(() => {
         const res: Partial<Attributes> = {};
         for (const i of [1, 2, 3] as const) {
             const attrKey = `attribute_${i}` as const;
             const valueKey = `value_${i}` as const;
-            if (attrKey in this.statistics.value) {
-                const attr = this.statistics.value[attrKey];
-                const value = Number(this.statistics.value[valueKey]);
+            if (attrKey in this.curStat.value) {
+                const attr = this.curStat.value[attrKey];
+                const value = Number(this.curStat.value[valueKey]);
                 res[attr] = value;
             }
         }
