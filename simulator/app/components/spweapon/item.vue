@@ -11,6 +11,7 @@
         if (spweapon.value) {
             const level = spweapon.value.level.value + (event.deltaY < 0 ? 1 : -1);
             spweapon.value.level.value = Math.max(0, Math.min(spweapon.value.maxLevel, level));
+            event.preventDefault();
         }
     }
 
