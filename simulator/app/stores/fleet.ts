@@ -1,63 +1,128 @@
 import { createShip, deserialize, serialize, type Ship } from "maestrale";
+import type { ShallowRef, UnwrapRef } from "vue";
+
+interface Fleet {
+    name: string;
+}
+
+type FleetShip = ShallowRef<Ship | null>;
+
+interface SurfaceFleet extends Fleet {
+    main1: FleetShip;
+    main2: FleetShip;
+    main3: FleetShip;
+    vanguard1: FleetShip;
+    vanguard2: FleetShip;
+    vanguard3: FleetShip;
+}
+
+interface SubmarineFleet extends Fleet {
+    submarine1: FleetShip;
+    submarine2: FleetShip;
+    submarine3: FleetShip;
+}
 
 export const useFleetStore = defineStore("fleet", () => {
-    const main1 = shallowRef<Ship | null>(null);
-    const main2 = shallowRef<Ship | null>(null);
-    const main3 = shallowRef<Ship | null>(null);
-    const main = computed(() => [
-        main1.value,
-        main2.value,
-        main3.value
-    ] as const);
-
-    const vanguard1 = shallowRef<Ship | null>(null);
-    const vanguard2 = shallowRef<Ship | null>(null);
-    const vanguard3 = shallowRef<Ship | null>(null);
-    const vanguard = computed(() => [
-        vanguard1.value,
-        vanguard2.value,
-        vanguard3.value
-    ] as const);
+    const surfaceFleets = ref<SurfaceFleet[]>([]);
+    const submarineFleets = ref<SubmarineFleet[]>([]);
 
     const technology = useTechnology();
     const storage = useLocalStorage("fleet", "");
+
+    const currentSurfaceIdx = ref(0);
+    const currentSurfaceFleet = computed(() => {
+        return surfaceFleets.value[currentSurfaceIdx.value]!;
+    });
+
+    const currentSubmarineIdx = ref(0);
+    const currentSubmarineFleet = computed(() => {
+        return submarineFleets.value[currentSubmarineIdx.value]!;
+    });
 
     try {
         const res = deserialize(storage.value, {
             technology
         }) as {
-            main: typeof main.value;
-            vanguard: typeof vanguard.value;
+            surfaceFleets: UnwrapRef<SurfaceFleet[]>;
+            submarineFleets: UnwrapRef<SubmarineFleet[]>;
         };
 
-        main1.value = res.main[0];
-        main2.value = res.main[1];
-        main3.value = res.main[2];
+        for (const raw of res.surfaceFleets) {
+            addSurfaceFleet(raw.name, [
+                raw.main1,
+                raw.main2,
+                raw.main3,
+                raw.vanguard1,
+                raw.vanguard2,
+                raw.vanguard3
+            ]);
+        }
 
-        vanguard1.value = res.vanguard[0];
-        vanguard2.value = res.vanguard[1];
-        vanguard3.value = res.vanguard[2];
+        for (const raw of res.submarineFleets) {
+            addSubmarineFleet(raw.name, [
+                raw.submarine1,
+                raw.submarine2,
+                raw.submarine3
+            ]);
+        }
     }
     catch {
-        main2.value = createShip(60501, {
-            technology
-        });
-        vanguard1.value = createShip(60104, {
-            technology
-        });
-        vanguard2.value = createShip(60105, {
-            technology
-        });
+        addSurfaceFleet("初始编队", [
+            null,
+            60501,
+            null,
+            60104,
+            60105,
+            null
+        ]);
+        addSubmarineFleet("初始编队", [
+            null,
+            null,
+            null
+        ]);
     }
 
-    watchImmediate([main, vanguard], () => {
+    watchImmediate([surfaceFleets, submarineFleets], () => {
         storage.value = serialize({
-            main: main.value,
-            vanguard: vanguard.value
+            surfaceFleets: surfaceFleets.value,
+            submarineFleets: submarineFleets.value
         });
     }, {
         deep: true
     });
+
+    function addSurfaceFleet(name: string = "新编队", ids: (Ship | number | null)[] = []) {
+        surfaceFleets.value.push({
+            name,
+            main1: createShallowShip(ids[0]),
+            main2: createShallowShip(ids[1]),
+            main3: createShallowShip(ids[2]),
+            vanguard1: createShallowShip(ids[3]),
+            vanguard2: createShallowShip(ids[4]),
+            vanguard3: createShallowShip(ids[5])
+        } as any);
+        currentSurfaceIdx.value = surfaceFleets.value.length - 1;
+    }
+
+    function removeSurfaceFleet() {
+        surfaceFleets.value.splice(currentSurfaceIdx.value, 1);
+        currentSurfaceIdx.value = Math.min(currentSurfaceIdx.value, surfaceFleets.value.length - 1);
+    }
+
+    function addSubmarineFleet(name: string = "新编队", ids: (Ship | number | null)[] = []) {
+        submarineFleets.value.push({
+            name,
+            submarine1: createShallowShip(ids[0]),
+            submarine2: createShallowShip(ids[1]),
+            submarine3: createShallowShip(ids[2])
+        } as any);
+        currentSubmarineIdx.value = submarineFleets.value.length - 1;
+    }
+
+    function removeSubmarineFleet() {
+        submarineFleets.value.splice(currentSubmarineIdx.value, 1);
+        currentSubmarineIdx.value = Math.max(0, currentSubmarineIdx.value - 1);
+    }
 
     const currentShip = shallowRef<Ship | null>(null);
     const attrMode = ref<"equips" | "tech">("equips");
@@ -72,18 +137,26 @@ export const useFleetStore = defineStore("fleet", () => {
     }
 
     return {
-        main1,
-        main2,
-        main3,
-        main,
-        vanguard1,
-        vanguard2,
-        vanguard3,
-        vanguard,
+        surfaceFleets,
+        submarineFleets,
+        currentSurfaceIdx,
+        currentSurfaceFleet,
+        currentSubmarineIdx,
+        currentSubmarineFleet,
         currentShip,
         attrMode,
         infoMode,
         panelTab,
+        addSurfaceFleet,
+        removeSurfaceFleet,
+        addSubmarineFleet,
+        removeSubmarineFleet,
         setCurrentShip
     };
 });
+
+function createShallowShip(id: Ship | number | null | undefined) {
+    const technology = useTechnology();
+    const ship = typeof id === "number" ? createShip(id, { technology }) : id;
+    return shallowRef(ship ?? null);
+}

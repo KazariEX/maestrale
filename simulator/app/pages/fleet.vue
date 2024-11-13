@@ -27,17 +27,9 @@
             v-model="fleetStore.infoMode"
         />
         <div flex="~ gap-8 lt-lg:col">
-            <div grid="~ gap-8" w="121.5">
-                <div grid="~ gap-2">
-                    <ship-card fleet="main" v-model="fleetStore.main1"/>
-                    <ship-card fleet="main" v-model="fleetStore.main2"/>
-                    <ship-card fleet="main" v-model="fleetStore.main3"/>
-                </div>
-                <div grid="~ gap-2">
-                    <ship-card fleet="vanguard" v-model="fleetStore.vanguard1"/>
-                    <ship-card fleet="vanguard" v-model="fleetStore.vanguard2"/>
-                    <ship-card fleet="vanguard" v-model="fleetStore.vanguard3"/>
-                </div>
+            <div grid="~ gap-4" w="121.5">
+                <fleet-surface />
+                <fleet-submarine />
             </div>
             <div grid="~ gap-8 content-start" w="121.5">
                 <equip-list v-model="fleetStore.currentShip"/>
