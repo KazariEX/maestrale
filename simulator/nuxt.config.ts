@@ -38,6 +38,7 @@ export default defineNuxtConfig({
         "@nuxt/icon",
         "@nuxt/image",
         "@pinia/nuxt",
+        "@pinia-plugin-persistedstate/nuxt",
         "@primevue/nuxt-module",
         "@unocss/nuxt",
         "@vueuse/nuxt"

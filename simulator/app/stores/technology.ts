@@ -16,6 +16,8 @@ export const useTechnologyStore = defineStore("technology", () => {
         attrs,
         get
     };
+}, {
+    persist: true
 });
 
 export function useTechnology() {

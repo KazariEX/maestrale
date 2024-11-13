@@ -18,6 +18,7 @@
     "@nuxt/devtools": "^1.6.0",
     "@nuxt/icon": "^1.7.0",
     "@nuxt/image": "^1.8.1",
+    "@pinia-plugin-persistedstate/nuxt": "^1.2.1",
     "@pinia/nuxt": "^0.7.0",
     "@primevue/nuxt-module": "^4.2.1",
     "@unocss/nuxt": "^0.64.0",

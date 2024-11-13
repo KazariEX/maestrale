@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-    import { createShip, ShareCfg } from "maestrale";
+    import { ShareCfg } from "maestrale";
 
     useHead({
         link: [
@@ -12,16 +12,6 @@
     });
 
     await ShareCfg.load();
-
-    const fleetStore = useFleetStore();
-    const technology = useTechnology();
-
-    const maestrale = createShip(60104, {
-        technology
-    });
-
-    fleetStore.vanguard1 = maestrale;
-    fleetStore.setCurrentShip(maestrale);
 </script>
 
 <template>
