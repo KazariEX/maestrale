@@ -11,6 +11,7 @@
         if (equip.value) {
             const level = equip.value.level.value + (event.deltaY < 0 ? 1 : -1);
             equip.value.level.value = Math.max(0, Math.min(equip.value.maxLevel, level));
+            event.preventDefault();
         }
     }
 
