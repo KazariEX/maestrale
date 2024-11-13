@@ -7,6 +7,8 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    PrimeButton: typeof import('primevue/button')['default']
+    PrimeForm: typeof import('@primevue/forms/form')['default']
     PrimeInputNumber: typeof import('primevue/inputnumber')['default']
     PrimeSelect: typeof import('primevue/select')['default']
     PrimeSelectButton: typeof import('primevue/selectbutton')['default']
