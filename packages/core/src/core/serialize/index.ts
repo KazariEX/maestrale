@@ -5,7 +5,7 @@ import { createSPWeapon, SPWeapon } from "../spweapon";
 import { createClone } from "./clone";
 import type { ITechnology } from "../technology";
 
-const [serializeShip, deserializeShip] = createSerialize("ship", {
+const [serializeShip, deserializeShip] = createConstructSerializer("ship", {
     paths: [
         "id",
         "level",
@@ -28,7 +28,7 @@ const [serializeShip, deserializeShip] = createSerialize("ship", {
     }
 });
 
-const [serializeEquip, deserializeEquip] = createSerialize("equip", {
+const [serializeEquip, deserializeEquip] = createConstructSerializer("equip", {
     paths: [
         "id",
         "level"
@@ -38,7 +38,7 @@ const [serializeEquip, deserializeEquip] = createSerialize("equip", {
     }
 });
 
-const [serializeSPWeapon, deserializeSPWeapon] = createSerialize("spweapon", {
+const [serializeSPWeapon, deserializeSPWeapon] = createConstructSerializer("spweapon", {
     paths: [
         "id",
         "level"
@@ -53,14 +53,15 @@ interface SerializeContext {
     track: (name: string, source: object, raw: object) => string;
 }
 
-export function serialize(source: object) {
+export function createSerializer() {
     const internalKeys = new WeakMap<object, string>();
+    const serialized = new Set<object>();
     const mapping: Record<string, object> = {};
     let curId = 0;
 
     const ctx: SerializeContext = {
         resolve(source) {
-            if (source && internalKeys.has(source)) {
+            if (source && serialized.has(source)) {
                 return internalKeys.get(source)!;
             }
             if (source instanceof Ship) {
@@ -75,10 +76,19 @@ export function serialize(source: object) {
             return source;
         },
         track(name, source, raw) {
-            const id = curId++;
+            serialized.add(source);
+            let id: number;
+            let key: string;
+            if (!internalKeys.has(source)) {
+                id = curId++;
+                key = resolveInternalKey(id, name);
+                internalKeys.set(source, key);
+            }
+            else {
+                key = internalKeys.get(source)!;
+                id = parseInternalKey(key).id;
+            }
             mapping[id] = raw;
-            const key = resolveInternalKey(id, name);
-            internalKeys.set(source, key);
             return key;
         }
     };
@@ -91,10 +101,15 @@ export function serialize(source: object) {
         ]
     });
 
-    return JSON.stringify({
-        raw: clone(source),
-        mapping
-    });
+    function serialize(source: object) {
+        serialized.clear();
+        return JSON.stringify(clone(source));
+    }
+
+    return {
+        mapping,
+        serialize
+    };
 }
 
 interface DeserializeOptions {
@@ -106,12 +121,7 @@ interface DeserializeContext {
     track: (id: number, name: string, source: object) => object;
 }
 
-export function deserialize(serialized: string, options: DeserializeOptions) {
-    const { raw, mapping } = JSON.parse(serialized) as {
-        raw: unknown;
-        mapping: Record<string, object>;
-    };
-
+export function createDeserializer(mapping: Record<string, object>, options: DeserializeOptions) {
     const sources: Record<string, object> = {};
 
     const ctx: DeserializeContext = {
@@ -148,15 +158,21 @@ export function deserialize(serialized: string, options: DeserializeOptions) {
         ]
     });
 
-    return clone(raw);
+    function deserialize(data: string) {
+        return clone(JSON.parse(data));
+    }
+
+    return {
+        deserialize
+    };
 }
 
-interface CreateSerializeOptions {
+interface ConstructSerializeOptions {
     paths: string[];
     initialize: (options: DeserializeOptions, raw: Record<string, any>) => any;
 }
 
-function createSerialize(name: string, options: CreateSerializeOptions) {
+function createConstructSerializer(name: string, options: ConstructSerializeOptions) {
     const {
         paths,
         initialize
@@ -168,6 +184,8 @@ function createSerialize(name: string, options: CreateSerializeOptions) {
         const normalizedPaths = parsedPaths.flatMap((path) => [...normalizePath(source, path)]);
 
         const raw: Record<string, unknown> = {};
+        const key = ctx.track(name, source, raw);
+
         for (const path of normalizedPaths) {
             let srcObj: any = source;
             let rawObj: any = raw;
@@ -189,7 +207,7 @@ function createSerialize(name: string, options: CreateSerializeOptions) {
                 }
             }
         }
-        return ctx.track(name, source, raw);
+        return key;
     }
 
     function deserialize(options: DeserializeOptions, ctx: DeserializeContext, raw: object, id: number) {
