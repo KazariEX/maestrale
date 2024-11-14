@@ -20,15 +20,20 @@
 
 <template>
     <nav
-        position="fixed inset-x-0 bottom-0"
-        grid="~ cols-3"
-        h="16"
-        shadow="black lg"
+        position="fixed"
+        lg:position="inset-y-0 left-0"
+        lt-lg:position="inset-x-0 bottom-0"
+        flex="~ col justify-center lt-lg:row"
+        w="lg:18"
+        h="lt-lg:16"
+        b="solid gray op-25 lg:r lt-lg:t"
         bg="white"
     >
         <nuxt-link
             v-for="{ title, icon, to } in navs"
-            flex="~ col justify-center items-center gap-1"
+            v-ripple
+            flex="~ col justify-center items-center gap-1 lt-lg:1"
+            p="lg:y-6"
             class="[&.router-link-active]-text-primary"
             :to
         >
