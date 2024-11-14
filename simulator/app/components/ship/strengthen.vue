@@ -10,7 +10,7 @@
 
 <template>
     <ul grid="~ gap-4">
-        <template v-if="ship?.strengthen.type === StrengthenType.General">
+        <template v-if="ship?.strengthen.type === StrengthenType.General || ship?.strengthen.type === StrengthenType.Meta">
             <ship-strengthen-item
                 v-for="attr in attrs"
                 :label="attributeMap[attr]"
