@@ -8,12 +8,12 @@
     }"
     setup
 >
-    import type { Selector } from "~/components/lib-select.vue";
+    import type { Filter } from "~/components/lib-filter.vue";
     import type { UseRarityStyleOptions } from "~/composables/useRarityStyle";
 
     const { selectors } = defineProps<{
         title: string;
-        selectors: Selector[];
+        selectors: Filter[];
         data: T[];
         canClear: boolean;
         iconPadding?: boolean;
@@ -34,7 +34,7 @@
     <transition>
         <div
             v-if="isOpening"
-            class="dialog-picker"
+            class="lib-selector"
             flex="~ col gap-4"
             position="fixed inset-0"
             w="128"
@@ -56,7 +56,7 @@
                 />
             </header>
             <div grid="~ gap-4 cols-3" p="t-6 r-8">
-                <lib-select
+                <lib-filter
                     v-for="{ label, id, options }, i in localSelectors"
                     :key="id"
                     :id
@@ -107,7 +107,7 @@
 </template>
 
 <style lang="scss">
-    .dialog-picker {
+    .lib-selector {
         &:where(.v-enter-active, .v-leave-active) {
             transition: all 0.4s;
         }

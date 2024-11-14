@@ -1,7 +1,5 @@
 <script lang="ts" setup>
-    import { FloatLabel } from "primevue";
-
-    export interface Selector {
+    export interface Filter {
         label: string;
         id: string;
         options: {
@@ -10,7 +8,7 @@
         }[];
     }
 
-    const { options } = defineProps<Selector>();
+    const { options } = defineProps<Filter>();
     const modelValue = defineModel<number>();
 
     const fullOptions = computed(() => {
@@ -22,16 +20,16 @@
 </script>
 
 <template>
-    <float-label>
+    <prime-float-label>
         <prime-select
             w="full"
-            :input-id="`picker_${id}`"
+            :input-id="`filter_${id}`"
             :options="fullOptions"
             option-label="label"
             option-value="value"
             :default-value="-1"
             v-model="modelValue"
         />
-        <label :for="`picker_${id}`">{{ label }}</label>
-    </float-label>
+        <label :for="`filter_${id}`">{{ label }}</label>
+    </prime-float-label>
 </template>

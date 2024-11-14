@@ -19,6 +19,16 @@
         }));
     });
 
+    async function modifyName() {
+        const newName = await requireInput({
+            title: "输入名称",
+            defaultValue: model.value.currentFleet.name
+        });
+        if (newName) {
+            model.value.currentFleet.name = newName;
+        }
+    }
+
     async function removeFleet() {
         if (await requireConfirm(`是否删除编队：${model.value.currentFleet.name}？`)) {
             model.value.remove();
@@ -41,6 +51,12 @@
                     v-model="model.currentIdx"
                 />
             </prime-float-label>
+            <prime-button
+                size="small"
+                severity="help"
+                variant="outlined"
+                @click="modifyName"
+            >修改名称</prime-button>
             <prime-button
                 size="small"
                 severity="info"
