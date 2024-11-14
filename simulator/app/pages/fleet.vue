@@ -31,7 +31,12 @@
                 <fleet-surface />
                 <fleet-submarine />
             </div>
-            <div grid="~ gap-8 content-start" w="121.5">
+            <div
+                grid="~ gap-8 content-start"
+                position="sticky top-8"
+                w="121.5"
+                h="fit"
+            >
                 <equip-list v-model="fleetStore.currentShip"/>
                 <ship-status />
                 <prime-tabs v-model:value="fleetStore.panelTab">
