@@ -83,9 +83,5 @@ export function createEquip(id: number) {
     if (id % 10 !== 0 || !(id in ShareCfg.equip_data_template)) {
         return null;
     }
-
-    // 类型收束
-    id = Number(id);
-
     return new Equip(id);
 }
