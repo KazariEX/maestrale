@@ -1,5 +1,5 @@
 import { type EquipDataStatistics, type EquipType, ShareCfg, type ShipDataStatistics, type ShipType, type SPWeaponDataStatistics } from "maestrale";
-import { LibSelector } from "#components";
+import { DialogSelector } from "#components";
 import { equipTypeOptions } from "~/data/constraint/equip-type";
 import { type Fleet, fleetMap } from "~/data/constraint/fleet";
 import { nationalityOptions } from "~/data/constraint/nationality";
@@ -38,7 +38,7 @@ export function selectShip(fleet: Fleet, canClear: boolean) {
 
     return new Promise<number>((resolve) => {
         const modalStore = useModalStore();
-        const { close } = modalStore.use(() => h(LibSelector, {
+        const { close } = modalStore.use(() => h(DialogSelector, {
             title: "选择舰船",
             selectors: [
                 { label: "稀有度", id: "rarity", options: rarityOptions },
@@ -87,7 +87,7 @@ export function selectEquip(allowTypes: EquipType[], shipType: ShipType, canClea
 
     return new Promise<number>((resolve) => {
         const modalStore = useModalStore();
-        const { close } = modalStore.use(() => h(LibSelector, {
+        const { close } = modalStore.use(() => h(DialogSelector, {
             title: "选择装备",
             selectors: [
                 { label: "稀有度", id: "rarity", options: rarityOptions },
@@ -137,7 +137,7 @@ export function selectSPWeapon(shipId: number, shipType: ShipType, canClear: boo
 
     return new Promise<number>((resolve) => {
         const modalStore = useModalStore();
-        const { close } = modalStore.use(() => h(LibSelector, {
+        const { close } = modalStore.use(() => h(DialogSelector, {
             title: "选择兵装",
             selectors: [
                 { label: "稀有度", id: "rarity", options: spweaponRarityOptions }
