@@ -21,7 +21,7 @@
 
     async function modifyName() {
         const newName = await requireInput({
-            title: "输入名称",
+            title: "修改名称",
             defaultValue: model.value.currentFleet.name
         });
         if (newName) {
