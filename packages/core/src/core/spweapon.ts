@@ -73,9 +73,5 @@ export function createSPWeapon(id: number) {
     if (id % 10 !== 0 || !(id in ShareCfg.spweapon_data_statistics)) {
         return null;
     }
-
-    // 类型收束
-    id = Number(id);
-
     return new SPWeapon(id);
 }

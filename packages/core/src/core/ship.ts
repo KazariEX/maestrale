@@ -338,9 +338,6 @@ export function createShip(id: number, options: CreateShipOptions) {
         technology
     } = options;
 
-    // 类型收束
-    id = Number(id);
-
     // 舰船
     const ship = new Ship(id, technology);
 
