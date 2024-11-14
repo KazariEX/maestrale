@@ -1,8 +1,9 @@
 <template>
     <main
         w="fit"
-        m="x-auto"
-        p="t-8 x-4 b-24"
+        m="x-auto y-8"
+        p="r-4 l-22"
+        lt-lg:p="b-16 l-4"
     >
         <slot></slot>
     </main>
