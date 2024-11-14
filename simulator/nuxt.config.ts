@@ -15,7 +15,6 @@ export default defineNuxtConfig({
         enabled: true
     },
     experimental: {
-        viewTransition: true,
         typedPages: true
     },
     future: {
