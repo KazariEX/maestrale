@@ -6,6 +6,12 @@
     const emit = defineEmits<{
         close: [];
     }>();
+
+    useEventListener("keyup", (event) => {
+        if (event.key === "Escape") {
+            emit("close");
+        }
+    });
 </script>
 
 <template>
