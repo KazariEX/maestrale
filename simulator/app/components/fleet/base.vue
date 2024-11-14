@@ -1,44 +1,60 @@
-<script lang="ts" setup>
-    defineProps<{
-        options: {
-            label: string;
-            value: number;
-        }[];
-        removeDisabled: boolean;
+<script lang="ts" generic="T extends { name: string }" setup>
+    const { label } = defineProps<{
+        label: string;
     }>();
-    const currentIdx = defineModel<number>({
+    const model = defineModel<{
+        fleets: T[];
+        currentIdx: number;
+        currentFleet: T;
+        add: () => void;
+        remove: () => void;
+    }>({
         required: true
     });
-    const emit = defineEmits<{
-        add: [];
-        remove: [];
-    }>();
+
+    const options = computed(() => {
+        return model.value.fleets.map(({ name }, i) => ({
+            label: name,
+            value: i
+        }));
+    });
+
+    async function removeFleet() {
+        if (await requireConfirm(`是否删除编队：${model.value.currentFleet.name}？`)) {
+            model.value.remove();
+        }
+    }
 </script>
 
 <template>
-    <form flex="~ gap-2">
-        <prime-select
-            flex="1"
-            size="small"
-            :options
-            option-label="label"
-            option-value="value"
-            :allow-empty="false"
-            v-model="currentIdx"
-        />
-        <prime-button
-            size="small"
-            severity="info"
-            variant="outlined"
-            @click="emit(`add`)"
-        >添加编队</prime-button>
-        <prime-button
-            size="small"
-            severity="danger"
-            variant="outlined"
-            :disabled="removeDisabled"
-            @click="emit(`remove`)"
-        >删除编队</prime-button>
-    </form>
-    <slot></slot>
+    <div grid="~ gap-4">
+        <form flex="~ gap-2">
+            <prime-float-label flex="1">
+                <label>{{ label }}</label>
+                <prime-select
+                    w="full"
+                    size="small"
+                    :options
+                    option-label="label"
+                    option-value="value"
+                    :allow-empty="false"
+                    v-model="model.currentIdx"
+                />
+            </prime-float-label>
+            <prime-button
+                size="small"
+                severity="info"
+                variant="outlined"
+                @click="model.add()"
+            >添加编队</prime-button>
+            <prime-button
+                size="small"
+                severity="danger"
+                variant="outlined"
+                :disabled="model.fleets.length <= 1"
+                @click="removeFleet"
+            >删除编队</prime-button>
+        </form>
+        <slot :fleet="model.currentFleet"></slot>
+    </div>
 </template>
