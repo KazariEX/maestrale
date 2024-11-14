@@ -1,4 +1,4 @@
-import { createShip, deserialize, serialize, type Ship } from "maestrale";
+import { createShip, type Ship } from "maestrale";
 import type { Raw } from "vue";
 
 interface Fleet {
@@ -23,73 +23,18 @@ interface SubmarineFleet extends Fleet {
 }
 
 export const useFleetStore = defineStore("fleet", () => {
-    const surface = useFleet<SurfaceFleet>([
-        "main1",
-        "main2",
-        "main3",
-        "vanguard1",
-        "vanguard2",
-        "vanguard3"
-    ]);
-    const submarine = useFleet<SubmarineFleet>([
-        "submarine1",
-        "submarine2",
-        "submarine3"
-    ]);
-
-    const technology = useTechnology();
-    const storage = useLocalStorage("fleet", "");
-
-    try {
-        const res = deserialize(storage.value, {
-            technology
-        }) as {
-            surfaceFleets: SurfaceFleet[];
-            submarineFleets: SubmarineFleet[];
-        };
-
-        for (const raw of res.surfaceFleets) {
-            surface.add(raw.name, [
-                raw.main1,
-                raw.main2,
-                raw.main3,
-                raw.vanguard1,
-                raw.vanguard2,
-                raw.vanguard3
-            ]);
-        }
-
-        for (const raw of res.submarineFleets) {
-            submarine.add(raw.name, [
-                raw.submarine1,
-                raw.submarine2,
-                raw.submarine3
-            ]);
-        }
-    }
-    catch {
-        surface.add("初始编队", [
-            null,
-            60501,
-            null,
-            60104,
-            60105,
-            null
-        ]);
-        submarine.add("初始编队", [
-            null,
-            null,
-            null
-        ]);
-    }
-
-    watchImmediate([surface.fleets, submarine.fleets], () => {
-        storage.value = serialize({
-            surfaceFleets: surface.fleets,
-            submarineFleets: submarine.fleets
-        });
-    }, {
-        deep: true
+    const surface = useFleets<SurfaceFleet>("surface-fleets", {
+        main1: null,
+        main2: 60501,
+        main3: null,
+        vanguard1: 60104,
+        vanguard2: 60105,
+        vanguard3: null
+    });
+    const submarine = useFleets<SubmarineFleet>("submarine-fleets", {
+        submarine1: null,
+        submarine2: null,
+        submarine3: null
     });
 
     const currentShip = shallowRef<Ship | null>(null);
@@ -115,12 +60,32 @@ export const useFleetStore = defineStore("fleet", () => {
     };
 });
 
-function useFleet<T>(keys: (keyof T)[]) {
+function useFleets<T extends Fleet>(
+    key: string,
+    schema: Record<Exclude<keyof T, keyof Fleet>, number | null>
+) {
+    const keys = Object.keys(schema);
+    const serializeStore = useSerializeStore();
     const technology = useTechnology();
 
     const fleets = shallowReactive<T[]>([]);
     const currentIdx = ref(0);
     const currentFleet = computed(() => fleets[currentIdx.value]!);
+
+    watchDeep(fleets, () => {
+        serializeStore.serialize(key, fleets);
+    });
+
+    try {
+        const localFleets = serializeStore.deserialize(key) as T[];
+
+        for (const fleet of localFleets) {
+            add(fleet.name, keys.map((key) => Reflect.get(fleet, key) as Ship));
+        }
+    }
+    catch {
+        add("初始编队", Object.values(schema));
+    }
 
     function add(name: string = "新编队", ids: (Ship | number | null)[] = []) {
         const fleet = shallowReactive({
