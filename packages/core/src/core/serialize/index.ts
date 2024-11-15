@@ -5,7 +5,14 @@ import { createSPWeapon, SPWeapon } from "../spweapon";
 import { createClone } from "./clone";
 import type { ITechnology } from "../technology";
 
-const [serializeShip, deserializeShip] = createConstructSerializer("ship", {
+type ConstructRegistration = {
+    name: string;
+    structure: any;
+} & ReturnType<typeof register>;
+
+const registry: ConstructRegistration[] = [];
+
+register("ship", Ship, {
     paths: [
         "id",
         "level",
@@ -28,7 +35,7 @@ const [serializeShip, deserializeShip] = createConstructSerializer("ship", {
     }
 });
 
-const [serializeEquip, deserializeEquip] = createConstructSerializer("equip", {
+register("equip", Equip, {
     paths: [
         "id",
         "level"
@@ -38,7 +45,7 @@ const [serializeEquip, deserializeEquip] = createConstructSerializer("equip", {
     }
 });
 
-const [serializeSPWeapon, deserializeSPWeapon] = createConstructSerializer("spweapon", {
+register("spweapon", SPWeapon, {
     paths: [
         "id",
         "level"
@@ -48,131 +55,12 @@ const [serializeSPWeapon, deserializeSPWeapon] = createConstructSerializer("spwe
     }
 });
 
-interface SerializeContext {
-    resolve: (source: unknown) => unknown;
-    track: (name: string, source: object, raw: object) => string;
-}
-
-export function createSerializer() {
-    const internalKeys = new WeakMap<object, string>();
-    const serialized = new Set<object>();
-    const mapping: Record<string, object> = {};
-    let curId = 0;
-
-    const ctx: SerializeContext = {
-        resolve(source) {
-            if (source && serialized.has(source)) {
-                return internalKeys.get(source)!;
-            }
-            if (source instanceof Ship) {
-                return serializeShip(ctx, source);
-            }
-            if (source instanceof Equip) {
-                return serializeEquip(ctx, source);
-            }
-            if (source instanceof SPWeapon) {
-                return serializeSPWeapon(ctx, source);
-            }
-            return source;
-        },
-        track(name, source, raw) {
-            serialized.add(source);
-            let id: number;
-            let key: string;
-            if (!internalKeys.has(source)) {
-                id = curId++;
-                key = resolveInternalKey(id, name);
-                internalKeys.set(source, key);
-            }
-            else {
-                key = internalKeys.get(source)!;
-                id = parseInternalKey(key).id;
-            }
-            mapping[id] = raw;
-            return key;
-        }
-    };
-
-    const clone = createClone({
-        handlers: [
-            [Ship, (ship) => serializeShip(ctx, ship)],
-            [Equip, (equip) => serializeEquip(ctx, equip)],
-            [SPWeapon, (spweapon) => serializeSPWeapon(ctx, spweapon)]
-        ]
-    });
-
-    function serialize(source: object) {
-        serialized.clear();
-        return JSON.stringify(clone(source));
-    }
-
-    return {
-        mapping,
-        serialize
-    };
-}
-
-interface DeserializeOptions {
-    technology: ITechnology;
-}
-
-interface DeserializeContext {
-    resolve: (raw: unknown) => unknown;
-    track: (id: number, name: string, source: object) => object;
-}
-
-export function createDeserializer(mapping: Record<string, object>, options: DeserializeOptions) {
-    const sources: Record<string, object> = {};
-
-    const ctx: DeserializeContext = {
-        resolve(raw) {
-            if (typeof raw !== "string") {
-                return raw;
-            }
-            if (raw in sources) {
-                return sources[raw];
-            }
-            try {
-                const { name, id } = parseInternalKey(raw);
-                const obj = mapping[id];
-                switch (name) {
-                    case "ship": return deserializeShip(options, ctx, obj, id);
-                    case "equip": return deserializeEquip(options, ctx, obj, id);
-                    case "spweapon": return deserializeSPWeapon(options, ctx, obj, id);
-                }
-            }
-            catch {
-                return raw;
-            }
-        },
-        track(id, name, source) {
-            const key = resolveInternalKey(id, name);
-            sources[key] = source;
-            return source;
-        }
-    };
-
-    const clone = createClone({
-        handlers: [
-            [String, ctx.resolve]
-        ]
-    });
-
-    function deserialize(data: string) {
-        return clone(JSON.parse(data));
-    }
-
-    return {
-        deserialize
-    };
-}
-
-interface ConstructSerializeOptions {
+interface RegisterConstructOptions {
     paths: string[];
     initialize: (options: DeserializeOptions, raw: Record<string, any>) => any;
 }
 
-function createConstructSerializer(name: string, options: ConstructSerializeOptions) {
+function register(name: string, structure: any, options: RegisterConstructOptions) {
     const {
         paths,
         initialize
@@ -241,7 +129,127 @@ function createConstructSerializer(name: string, options: ConstructSerializeOpti
         return key;
     }
 
-    return [serialize, deserialize] as const;
+    registry.push({
+        name,
+        structure,
+        serialize,
+        deserialize
+    });
+
+    return {
+        serialize,
+        deserialize
+    };
+}
+
+interface SerializeContext {
+    resolve: (source: unknown) => unknown;
+    track: (name: string, source: object, raw: object) => string;
+}
+
+export function createSerializer() {
+    const internalKeys = new WeakMap<object, string>();
+    const serialized = new Set<object>();
+    const mapping: Record<string, object> = {};
+    let curId = 0;
+
+    const ctx: SerializeContext = {
+        resolve(source) {
+            if (source && serialized.has(source)) {
+                return internalKeys.get(source)!;
+            }
+            for (const reg of registry) {
+                if (source instanceof reg.structure) {
+                    return reg.serialize(ctx, source as any);
+                }
+            }
+            return source;
+        },
+        track(name, source, raw) {
+            serialized.add(source);
+            let id: number;
+            let key: string;
+            if (!internalKeys.has(source)) {
+                id = curId++;
+                key = resolveInternalKey(id, name);
+                internalKeys.set(source, key);
+            }
+            else {
+                key = internalKeys.get(source)!;
+                id = parseInternalKey(key).id;
+            }
+            mapping[id] = raw;
+            return key;
+        }
+    };
+
+    const clone = createClone({
+        handlers: registry.map(
+            (reg) => [reg.structure, (obj) => reg.serialize(ctx, obj)]
+        )
+    });
+
+    function serialize(source: object) {
+        serialized.clear();
+        return JSON.stringify(clone(source));
+    }
+
+    return {
+        mapping,
+        serialize
+    };
+}
+
+interface DeserializeOptions {
+    technology: ITechnology;
+}
+
+interface DeserializeContext {
+    resolve: (raw: unknown) => unknown;
+    track: (id: number, name: string, source: object) => object;
+}
+
+export function createDeserializer(mapping: Record<string, object>, options: DeserializeOptions) {
+    const sources: Record<string, object> = {};
+
+    const ctx: DeserializeContext = {
+        resolve(raw) {
+            if (typeof raw !== "string") {
+                return raw;
+            }
+            if (raw in sources) {
+                return sources[raw];
+            }
+            try {
+                const { name, id } = parseInternalKey(raw);
+                const obj = mapping[id];
+                const { deserialize } = registry.find((r) => r.name === name)!;
+                return deserialize(options, ctx, obj, id);
+            }
+            catch {
+                return raw;
+            }
+        },
+        track(id, name, source) {
+            const key = resolveInternalKey(id, name);
+            sources[key] = source;
+            return source;
+        }
+    };
+
+    const clone = createClone({
+        handlers: [
+            [String, ctx.resolve]
+        ]
+    });
+
+    function deserialize(data: string) {
+        return clone(JSON.parse(data));
+    }
+
+    return {
+        deserialize
+    };
 }
 
 function* normalizePath(obj: any, path: string[]): Generator<string[]> {
