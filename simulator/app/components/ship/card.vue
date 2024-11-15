@@ -41,6 +41,15 @@
         await nextTick();
         fleetStore.setCurrentShip(ship.value);
     }
+
+    function clickIcon() {
+        if (ship.value !== null) {
+            fleetStore.setCurrentShip(ship.value);
+        }
+        else {
+            select();
+        }
+    }
 </script>
 
 <template>
@@ -52,7 +61,6 @@
         :class="{
             [`outline`]: ship && fleetStore.currentShip === ship
         }"
-        @click="fleetStore.setCurrentShip(ship)"
     >
         <rarity-icon
             size="16"
@@ -60,7 +68,7 @@
             :icon="squareicon"
             :star="ship?.star.value"
             :max-star="ship?.maxStar.value"
-            @click.stop="select"
+            @click.stop="clickIcon"
         />
         <template v-if="ship">
             <div
@@ -79,7 +87,7 @@
                 </div>
                 <div flex="~ gap-2">
                     <prime-input-number
-                        input-class="w-24 text-center"
+                        input-class="w-18 text-center"
                         size="small"
                         :min="1"
                         :max="125"
@@ -104,6 +112,12 @@
                         option-value="value"
                         v-model="ship.favor.value"
                     />
+                    <prime-button
+                        size="small"
+                        severity="help"
+                        variant="outlined"
+                        @click="select"
+                    >更换</prime-button>
                 </div>
             </div>
             <equip-list v-else v-model="ship"/>
