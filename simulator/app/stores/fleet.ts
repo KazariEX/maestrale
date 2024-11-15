@@ -1,40 +1,41 @@
 import { createShip, type Ship } from "maestrale";
-import type { Raw } from "vue";
 
-interface Fleet {
+export interface BaseFleet {
     name: string;
 }
 
-type FleetShip = Raw<Ship | null>;
-
-interface SurfaceFleet extends Fleet {
-    main1: FleetShip;
-    main2: FleetShip;
-    main3: FleetShip;
-    vanguard1: FleetShip;
-    vanguard2: FleetShip;
-    vanguard3: FleetShip;
+interface SurfaceFleet extends BaseFleet {
+    main1: Ship | null;
+    main2: Ship | null;
+    main3: Ship | null;
+    vanguard1: Ship | null;
+    vanguard2: Ship | null;
+    vanguard3: Ship | null;
 }
 
-interface SubmarineFleet extends Fleet {
-    submarine1: FleetShip;
-    submarine2: FleetShip;
-    submarine3: FleetShip;
+interface SubmarineFleet extends BaseFleet {
+    submarine1: Ship | null;
+    submarine2: Ship | null;
+    submarine3: Ship | null;
 }
 
 export const useFleetStore = defineStore("fleet", () => {
-    const surface = useFleets<SurfaceFleet>("surface-fleets", {
-        main1: null,
-        main2: 60501,
-        main3: null,
-        vanguard1: 60104,
-        vanguard2: 60105,
-        vanguard3: null
+    const surface = useSerializableFleets<SurfaceFleet>("surface-fleets", {
+        schema: {
+            main1: null,
+            main2: 60501,
+            main3: null,
+            vanguard1: 60104,
+            vanguard2: 60105,
+            vanguard3: null
+        }
     });
-    const submarine = useFleets<SubmarineFleet>("submarine-fleets", {
-        submarine1: null,
-        submarine2: null,
-        submarine3: null
+    const submarine = useSerializableFleets<SubmarineFleet>("submarine-fleets", {
+        schema: {
+            submarine1: null,
+            submarine2: null,
+            submarine3: null
+        }
     });
 
     const currentShip = shallowRef<Ship | null>(null);
@@ -60,11 +61,26 @@ export const useFleetStore = defineStore("fleet", () => {
     };
 });
 
-function useFleets<T extends Fleet>(
+export type SerializableFleets<T extends BaseFleet> = ReturnType<typeof useSerializableFleets<T>>;
+
+interface UseSerializableFleetsOptions<T> {
+    initialName?: string;
+    defaultName?: string;
+    schema: Partial<Record<keyof T, number | null>>;
+}
+
+function useSerializableFleets<T extends BaseFleet>(
     key: string,
-    schema: Record<Exclude<keyof T, keyof Fleet>, number | null>
+    options: UseSerializableFleetsOptions<T>
 ) {
+    const {
+        initialName = "初始编队",
+        defaultName = "新编队",
+        schema
+    } = options;
+
     const keys = Object.keys(schema);
+
     const serializeStore = useSerializeStore();
     const technology = useTechnology();
 
@@ -78,20 +94,19 @@ function useFleets<T extends Fleet>(
 
     try {
         const localFleets = serializeStore.deserialize(key) as T[];
-
         for (const fleet of localFleets) {
-            add(fleet.name, keys.map((key) => Reflect.get(fleet, key) as Ship));
+            add(defaultName, keys.map((key) => Reflect.get(fleet, key) as Ship));
         }
     }
     catch {
-        add("初始编队", Object.values(schema));
+        add(initialName, Object.values(schema));
     }
 
-    function add(name: string = "新编队", ids: (Ship | number | null)[] = []) {
+    function add(name = defaultName, values: (Ship | number | null)[] = []) {
         const fleet = shallowReactive({
             name,
             ...Object.fromEntries(
-                keys.map((key, i) => [key, createShallowShip(ids[i])])
+                keys.map((key, i) => [key, normalizeShip(values[i])])
             )
         });
         fleets.push(fleet as any);
@@ -103,8 +118,8 @@ function useFleets<T extends Fleet>(
         currentIdx.value = Math.min(currentIdx.value, fleets.length - 1);
     }
 
-    function createShallowShip(id: Ship | number | null | undefined) {
-        const ship = typeof id === "number" ? createShip(id, { technology }) : id;
+    function normalizeShip(value: Ship | number | null | undefined) {
+        const ship = typeof value === "number" ? createShip(value, { technology }) : value;
         return ship ?? null;
     }
 

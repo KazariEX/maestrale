@@ -9,7 +9,7 @@
     setup
 >
     import type { Filter } from "~/components/lib-filter.vue";
-    import type { UseRarityStyleOptions } from "~/composables/useRarityStyle";
+    import type { RarityIconProps } from "~/components/rarity-icon.vue";
 
     const { selectors } = defineProps<{
         title: string;
@@ -17,7 +17,7 @@
         data: T[];
         canClear: boolean;
         iconPadding?: boolean;
-        rarityMode?: UseRarityStyleOptions["mode"];
+        rarityMode?: RarityIconProps["mode"];
         isOpening?: boolean;
     }>();
     const emit = defineEmits<{
@@ -75,11 +75,11 @@
                     v-if="canClear"
                     grid="~ place-items-center"
                     size="16"
-                    b="~ solid gray op-40"
+                    b="2 dashed gray op-40 rounded-md"
                     cursor="pointer"
                     @click="emit(`close`, -1)"
                 >
-                    <iconify op="40" text="8" name="fa6-solid:trash-can"/>
+                    <iconify text="8 gray op-60" name="fa6-solid:trash-can"/>
                 </li>
                 <li
                     v-for="item in data"
@@ -89,6 +89,7 @@
                     :key="item.id"
                     grid="~ gap-0.5"
                     w="16"
+                    cursor="pointer"
                     :title="item.name"
                     @click="emit(`close`, item.id)"
                 >
