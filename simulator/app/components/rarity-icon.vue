@@ -1,23 +1,31 @@
 <script lang="ts" setup>
-    import type { UseRarityStyleOptions } from "~/composables/useRarityStyle";
-
-    const {
-        mode = "general",
-        rarity,
-        showFrame = true
-    } = defineProps<{
-        mode?: UseRarityStyleOptions["mode"];
+    export interface RarityIconProps {
+        mode?: "general" | "spweapon";
         rarity?: number;
         icon: string;
         padding?: boolean;
         showFrame?: boolean;
         star?: number;
         maxStar?: number;
-    }>();
+    }
 
-    const { backgroundStyle, frameStyle } = useRarityStyle(() => rarity ?? 0, {
-        mode
+    const {
+        mode = "general",
+        rarity,
+        showFrame = true
+    } = defineProps<RarityIconProps>();
+
+    const order = computed(() => {
+        return Math.max(2, rarity ?? 0) - (mode === "general" ? 1 : 0);
     });
+
+    const backgroundStyle = computed(() => ({
+        backgroundImage: `url(/image/artresource/atlas/weaponframes/bg${order.value}.png)`
+    }));
+
+    const frameStyle = computed(() => ({
+        backgroundImage: `url(/image/artresource/atlas/weaponframes/frame_${order.value}.png)`
+    }));
 </script>
 
 <template>

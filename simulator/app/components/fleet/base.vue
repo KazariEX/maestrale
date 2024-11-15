@@ -1,14 +1,11 @@
-<script lang="ts" generic="T extends { name: string }" setup>
+<script lang="ts" generic="T extends BaseFleet" setup>
+    import type { UnwrapRef } from "vue";
+    import type { SerializableFleets } from "~/stores/fleet";
+
     const { label } = defineProps<{
         label: string;
     }>();
-    const model = defineModel<{
-        fleets: T[];
-        currentIdx: number;
-        currentFleet: T;
-        add: () => void;
-        remove: () => void;
-    }>({
+    const model = defineModel<UnwrapRef<SerializableFleets<T>>>({
         required: true
     });
 
