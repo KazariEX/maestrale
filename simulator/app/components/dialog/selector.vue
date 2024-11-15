@@ -47,9 +47,9 @@
                 flex="~ justify-between items-center"
                 p="r-4"
             >
-                <h2 text="4 gray-600">{{ title }}</h2>
+                <h2 text="4 slate-600">{{ title }}</h2>
                 <iconify
-                    text="5 gray hover:primary"
+                    text="5 slate hover:primary"
                     cursor="pointer"
                     name="fa6-solid:xmark"
                     @click="emit(`close`, 0)"
@@ -75,11 +75,11 @@
                     v-if="canClear"
                     grid="~ place-items-center"
                     size="16"
-                    b="2 dashed gray op-40 rounded-md"
+                    b="2 dashed slate op-40 rounded-md"
                     cursor="pointer"
                     @click="emit(`close`, -1)"
                 >
-                    <iconify text="8 gray op-60" name="fa6-solid:trash-can"/>
+                    <iconify text="8 slate op-60" name="fa6-solid:trash-can"/>
                 </li>
                 <li
                     v-for="item in data"

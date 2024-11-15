@@ -17,7 +17,7 @@
         v-if="template"
         grid="~ gap-1"
         p="1"
-        b="~ solid gray op-40"
+        b="~ solid slate op-40"
         cursor="pointer"
         :class="{
             [`op-50`]: !template.enable.value

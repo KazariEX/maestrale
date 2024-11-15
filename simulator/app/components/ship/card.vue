@@ -56,7 +56,7 @@
     <div
         grid="~ cols-[auto_1fr] gap-2"
         p="2"
-        b="~ solid gray op-40 rounded-1"
+        b="~ solid slate op-40 rounded-1"
         outline="2 primary offset--1"
         :class="{
             [`outline`]: ship && fleetStore.currentShip === ship
@@ -77,12 +77,12 @@
             >
                 <div flex="~ justify-between items-center" h="6.5">
                     <span>
-                        <span text="gray">名称：</span>
+                        <span text="slate">名称：</span>
                         <span>{{ ship.name }}</span>
                     </span>
                     <span>
                         <span>{{ ship.power }}</span>
-                        <span m="l-1.5" text="gray">战力</span>
+                        <span m="l-1.5" text="slate">战力</span>
                     </span>
                 </div>
                 <div flex="~ gap-2">
@@ -125,7 +125,7 @@
         <div v-else flex="1" grid="~ place-items-center">
             <span
                 font="mono bold"
-                text="12 gray op-40"
+                text="12 slate op-40"
                 select="none"
             >NO SHIP</span>
         </div>
