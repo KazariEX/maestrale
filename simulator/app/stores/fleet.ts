@@ -95,7 +95,7 @@ function useSerializableFleets<T extends BaseFleet>(
     try {
         const localFleets = serializeStore.deserialize(key) as T[];
         for (const fleet of localFleets) {
-            add(defaultName, keys.map((key) => Reflect.get(fleet, key) as Ship));
+            add(fleet.name, keys.map((key) => Reflect.get(fleet, key) as Ship));
         }
     }
     catch {
