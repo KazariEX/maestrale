@@ -214,6 +214,8 @@ function createConstructSerializer(name: string, options: ConstructSerializeOpti
         const source = initialize(options, raw);
         const normalizedPaths = parsedPaths.flatMap((path) => [...normalizePath(source, path)]);
 
+        const key = ctx.track(id, name, source);
+
         for (const path of normalizedPaths) {
             let srcObj: any = source;
             let rawObj: any = raw;
@@ -236,7 +238,7 @@ function createConstructSerializer(name: string, options: ConstructSerializeOpti
                 srcObj = srcObj[key];
             }
         }
-        return ctx.track(id, name, source);
+        return key;
     }
 
     return [serialize, deserialize] as const;
