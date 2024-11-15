@@ -41,13 +41,13 @@
     <li
         flex="~ gap-1"
         h="7"
-        bg="gray op-33"
+        bg="slate op-33"
         leading="7"
     >
         <i
             flex="~ justify-center"
             w="7"
-            bg="gray op-80"
+            bg="slate op-80"
         >
             <nuxt-img w="6" max-h="7" m="y-auto" :src/>
         </i>

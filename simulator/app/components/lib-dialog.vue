@@ -27,9 +27,9 @@
             bg="white"
         >
             <header flex="~ justify-between">
-                <h2 text="4 gray-600">{{ title }}</h2>
+                <h2 text="4 slate-600">{{ title }}</h2>
                 <iconify
-                    text="5 gray hover:primary"
+                    text="5 slate hover:primary"
                     cursor="pointer"
                     name="fa6-solid:xmark"
                     @click="emit(`close`)"

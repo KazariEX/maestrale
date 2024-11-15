@@ -24,7 +24,7 @@
     }
 
     a {
-        --uno: "underline underline-gray underline-op-40 underline-dashed underline-offset-4";
+        --uno: "underline underline-slate underline-op-40 underline-dashed underline-offset-4";
 
         &:hover {
             --uno: "text-primary";
