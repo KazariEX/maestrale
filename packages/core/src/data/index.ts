@@ -1,4 +1,6 @@
 import type {
+    CommanderAbilityTemplate,
+    CommanderDataTemplate,
     EquipDataStatistics,
     EquipDataTemplate,
     ShareCfgName,
@@ -22,6 +24,8 @@ import type {
 export const ShareCfg = {
     async load() {
         const datas = await Promise.all([
+            loadData<CommanderAbilityTemplate>("commander_ability_template"),
+            loadData<CommanderDataTemplate>("commander_data_template"),
             loadData<EquipDataStatistics>("equip_data_statistics"),
             loadData<EquipDataTemplate>("equip_data_template"),
             loadData<ShipDataBlueprint>("ship_data_blueprint"),
@@ -51,6 +55,8 @@ export const ShareCfg = {
     }
 } as {
     load: () => Promise<void>;
+    commander_ability_template: Record<string, CommanderAbilityTemplate>;
+    commander_data_template: Record<string, CommanderDataTemplate>;
     equip_data_statistics: Record<string, EquipDataStatistics>;
     equip_data_template: Record<string, EquipDataTemplate>;
     ship_data_blueprint: Record<string, ShipDataBlueprint>;

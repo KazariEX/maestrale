@@ -164,7 +164,9 @@ export class Ship {
 
     // 获取属性白值
     private getAttr(index: number, attrName: keyof Attributes) {
-        const favorRate = ["speed", "luck"].includes(attrName) ? 1 : getFavorRate(this.favor.value);
+        const favorRate = 1 + (
+            ["speed", "luck"].includes(attrName) ? 0 : getFavorRate(this.favor.value)
+        );
 
         return (
             this.curStat.attrs[index] +
@@ -642,11 +644,11 @@ function useTransform(ship: Ship) {
 // 获取好感加成
 function getFavorRate(favor: number) {
     switch (favor) {
-        case 2: return 1.01;
-        case 3: return 1.03;
-        case 4: return 1.06;
-        case 5: return 1.09;
-        case 6: return 1.12;
-        default: return 1;
+        case 2: return 0.01;
+        case 3: return 0.03;
+        case 4: return 0.06;
+        case 5: return 0.09;
+        case 6: return 0.12;
+        default: return 0;
     }
 }
