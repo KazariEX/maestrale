@@ -1,4 +1,5 @@
 import { isRef, toRaw, toValue } from "@vue/reactivity";
+import { Commander, CommanderAbility, createCommander, createCommanderAbility } from "../commander";
 import { createEquip, Equip } from "../equip";
 import { createShip, Ship } from "../ship";
 import { createSPWeapon, SPWeapon } from "../spweapon";
@@ -55,6 +56,27 @@ register("spweapon", SPWeapon, {
     }
 });
 
+register("commander", Commander, {
+    paths: [
+        "id",
+        "level",
+        "name",
+        "abilities[]"
+    ],
+    initialize(_, raw) {
+        return createCommander(raw.id);
+    }
+});
+
+register("commander-ability", CommanderAbility, {
+    paths: [
+        "id"
+    ],
+    initialize(_, raw) {
+        return createCommanderAbility(raw.id);
+    }
+});
+
 interface RegisterConstructOptions {
     paths: string[];
     initialize: (options: DeserializeOptions, raw: Record<string, any>) => any;
@@ -100,7 +122,7 @@ function register(name: string, structure: any, options: RegisterConstructOption
 
     function deserialize(options: DeserializeOptions, ctx: DeserializeContext, raw: object, id: number) {
         const source = initialize(options, raw);
-        const normalizedPaths = parsedPaths.flatMap((path) => [...normalizePath(source, path)]);
+        const normalizedPaths = parsedPaths.flatMap((path) => [...normalizePath(raw, path)]);
 
         const key = ctx.track(id, name, source);
 
@@ -266,6 +288,9 @@ function* normalizePath(obj: any, path: string[]): Generator<string[]> {
         }
     }
     else {
+        if (path[1] === "[]" && !obj[key]?.length) {
+            return;
+        }
         for (const res of normalizePath(obj[key], path.slice(1))) {
             yield [key, ...res];
         }
@@ -277,7 +302,7 @@ function resolveInternalKey(id: number, name: string) {
 }
 
 function parseInternalKey(key: string) {
-    const match = key.match(/^id\((?<name>\w+)\):(?<id>\d+)$/);
+    const match = key.match(/^id\((?<name>[-\w]+)\):(?<id>\d+)$/);
     if (!match) {
         throw 0;
     }

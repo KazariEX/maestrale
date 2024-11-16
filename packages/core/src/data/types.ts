@@ -2,6 +2,8 @@ import type { Attributes } from "../core/attributes";
 import type { Armor, EquipType, Nationality, ShipType } from "../types";
 
 export type ShareCfgName =
+    | "commander_ability_template"
+    | "commander_data_template"
     | "equip_data_statistics"
     | "equip_data_template"
     | "ship_data_blueprint"
@@ -19,6 +21,24 @@ export type ShareCfgName =
     | "spweapon_data_statistics"
     | "spweapon_type"
     | "transform_data_template";
+
+export interface CommanderAbilityTemplate {
+    desc: string;
+    icon: string;
+    name: string;
+    worth: number;
+}
+
+export interface CommanderDataTemplate {
+    command_value: number;
+    max_level: number;
+    name: string;
+    nationality: Nationality;
+    painting: string;
+    rarity: number;
+    support_value: number;
+    tactic_value: number;
+}
 
 export interface EquipDataStatistics {
     attribute_1: keyof Attributes;
