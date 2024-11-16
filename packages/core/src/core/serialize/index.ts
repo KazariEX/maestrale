@@ -106,7 +106,7 @@ function register(name: string, structure: any, options: RegisterConstructOption
 
                 srcObj = srcObj[key];
                 if (nextKey !== void 0) {
-                    rawObj = rawObj[key] ??= /\d+/.test(nextKey) ? [] : {};
+                    rawObj = rawObj[key] ??= {};
                 }
                 else if (srcObj === void 0) {
                     break;
@@ -272,22 +272,20 @@ export function createSerializer(options: CreateSerializerOptions) {
 }
 
 function* normalizePath(obj: any, path: string[]): Generator<string[]> {
-    if (obj === void 0 || !path.length) {
-        yield [];
-        return;
-    }
     const key = path[0];
-    if (key === "[]") {
-        for (let j = 0; j < obj.length; j++) {
-            for (const res of normalizePath(obj[j], path.slice(1))) {
-                yield [j.toString(), ...res];
+    if (obj === void 0 || !path.length) {
+        if (key !== "[]") {
+            yield [];
+        }
+    }
+    else if (key === "[]") {
+        for (const [key, value] of Object.entries(obj)) {
+            for (const res of normalizePath(value, path.slice(1))) {
+                yield [key, ...res];
             }
         }
     }
     else {
-        if (path[1] === "[]" && !obj[key]?.length) {
-            return;
-        }
         for (const res of normalizePath(obj[key], path.slice(1))) {
             yield [key, ...res];
         }
