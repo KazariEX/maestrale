@@ -26,14 +26,15 @@
             b="rounded-xl"
             bg="white"
         >
-            <header flex="~ justify-between">
+            <header grid="~ cols-[1fr_auto]">
                 <h2 text="4 slate-600">{{ title }}</h2>
-                <iconify
-                    text="5 slate hover:primary"
-                    cursor="pointer"
-                    name="fa6-solid:xmark"
+                <button
+                    size="5"
+                    text="5 slate @hover:primary"
                     @click="emit(`close`)"
-                />
+                >
+                    <iconify name="fa6-solid:xmark"/>
+                </button>
             </header>
             <slot></slot>
         </div>

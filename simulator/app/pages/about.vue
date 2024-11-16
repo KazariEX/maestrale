@@ -30,8 +30,4 @@
             --uno: "text-primary";
         }
     }
-
-    mark {
-        --uno: "bg-transparent text-primary";
-    }
 </style>

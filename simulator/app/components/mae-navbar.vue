@@ -11,6 +11,11 @@
             to: { name: "technology" }
         },
         {
+            title: "指挥喵",
+            icon: "fa6-solid:n",
+            to: { name: "catlodge" }
+        },
+        {
             title: "关于",
             icon: "fa6-solid:circle-info",
             to: { name: "about" }
