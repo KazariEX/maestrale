@@ -5,6 +5,28 @@ import { dirname, resolve } from "node:path";
 const resolveData = (...args) => resolve(import.meta.dirname, "../packages/data", ...args);
 
 const vvvip = {
+    commander_ability_template: {
+        folder: "ShareCfg",
+        props: [
+            "desc",
+            "icon",
+            "name",
+            "worth"
+        ]
+    },
+    commander_data_template: {
+        folder: "ShareCfg",
+        props: [
+            "command_value",
+            "max_level",
+            "name",
+            "nationality",
+            "painting",
+            "rarity",
+            "support_value",
+            "tactic_value"
+        ]
+    },
     equip_data_statistics: {
         folder: "sharecfgdata",
         props: [
@@ -185,6 +207,9 @@ async function pick({ filename, folder, props }) {
 
     const data = {};
     for (const id in json) {
+        if (id === "all") {
+            continue;
+        }
         data[id] = {};
         for (const key of props) {
             if (key in json[id]) {
