@@ -171,8 +171,8 @@ interface SerializeContext {
 
 export function createSerializer() {
     const internalKeys = new WeakMap<object, string>();
-    const serialized = new Set<object>();
     const mapping: Record<string, object> = {};
+    let serialized: WeakSet<object>;
     let curId = 0;
 
     const ctx: SerializeContext = {
@@ -212,7 +212,7 @@ export function createSerializer() {
     });
 
     function serialize(source: object) {
-        serialized.clear();
+        serialized = new WeakSet();
         return JSON.stringify(clone(source));
     }
 
