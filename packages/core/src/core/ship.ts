@@ -121,8 +121,10 @@ export class Ship {
     name = computed(() => {
         const name = this.curStat.name;
         if (this.transform?.isModernized.value) {
-            const suffix = ".改";
-            return name.replace(suffix, "") + suffix;
+            const suffixes = [".改", "·改"];
+            return (
+                name.endsWith(suffixes[0]) || name.endsWith(suffixes[1]) ? name.slice(0, -2) : name
+            ) + suffixes[0];
         }
         else return name;
     });
