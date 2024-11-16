@@ -8,6 +8,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     PrimeButton: typeof import('primevue/button')['default']
+    PrimeFieldset: typeof import('primevue/fieldset')['default']
     PrimeFloatLabel: typeof import('primevue/floatlabel')['default']
     PrimeForm: typeof import('@primevue/forms/form')['default']
     PrimeInputNumber: typeof import('primevue/inputnumber')['default']

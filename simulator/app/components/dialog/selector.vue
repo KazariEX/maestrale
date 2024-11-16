@@ -15,9 +15,9 @@
         title: string;
         selectors: Filter[];
         data: T[];
-        canClear: boolean;
+        canClear?: boolean;
         iconPadding?: boolean;
-        rarityMode?: RarityIconProps["mode"];
+        rarityMode?: RarityIconProps["mode"] | "commander";
         isOpening?: boolean;
     }>();
     const emit = defineEmits<{
@@ -44,18 +44,19 @@
             bg="white"
         >
             <header
-                flex="~ justify-between items-center"
+                grid="~ cols-[1fr_auto]"
                 p="r-4"
             >
                 <h2 text="4 slate-600">{{ title }}</h2>
-                <iconify
-                    text="5 slate hover:primary"
-                    cursor="pointer"
-                    name="fa6-solid:xmark"
+                <button
+                    size="5"
+                    text="5 slate @hover:primary"
                     @click="emit(`close`, 0)"
-                />
+                >
+                    <iconify name="fa6-solid:xmark"/>
+                </button>
             </header>
-            <div grid="~ gap-4 cols-3" p="t-6 r-8">
+            <div grid="~ gap-4 cols-[repeat(auto-fit,minmax(0,1fr))]" p="t-6 r-8">
                 <lib-filter
                     v-for="{ label, id, options }, i in localSelectors"
                     :key="id"
@@ -87,13 +88,15 @@
                         return value === -1 || value === item[id];
                     })"
                     :key="item.id"
-                    grid="~ gap-0.5"
+                    grid="~ justify-center gap-0.5"
                     w="16"
                     cursor="pointer"
                     :title="item.name"
                     @click="emit(`close`, item.id)"
                 >
+                    <commander-icon v-if="rarityMode === `commander`" :icon="item.icon"/>
                     <rarity-icon
+                        v-else
                         size="16"
                         :mode="rarityMode"
                         :rarity="item.rarity"

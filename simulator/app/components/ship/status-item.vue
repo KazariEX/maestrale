@@ -45,11 +45,11 @@
         leading="7"
     >
         <i
-            flex="~ justify-center"
+            grid="~ place-items-center"
             w="7"
             bg="slate op-80"
         >
-            <nuxt-img w="6" max-h="7" m="y-auto" :src/>
+            <nuxt-img w="6" max-h="7" :src/>
         </i>
         <span>{{ label ?? (attr ? attributeMap[attr] : "") }}</span>
         <span m="l-auto r-1">

@@ -11,6 +11,10 @@
         background-size: cover;
     }
 
+    html {
+        scroll-behavior: smooth;
+    }
+
     body {
         overflow-x: auto;
         font-size: 14px;
@@ -26,6 +30,12 @@
 
     button {
         background-color: initial;
+        cursor: pointer;
+    }
+
+    mark {
+        background-color: transparent;
+        color: var(--p-primary-color);
     }
 
     menu, ol, ul {
