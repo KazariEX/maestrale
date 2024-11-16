@@ -1,4 +1,4 @@
-import { type EquipDataStatistics, type EquipType, ShareCfg, type ShipDataStatistics, type ShipType, type SPWeaponDataStatistics } from "maestrale";
+import { type CommanderDataTemplate, type EquipDataStatistics, type EquipType, ShareCfg, type ShipDataStatistics, type ShipType, type SPWeaponDataStatistics } from "maestrale";
 import { DialogSelector } from "#components";
 import { equipTypeOptions } from "~/data/constraint/equip-type";
 import { type Fleet, fleetMap } from "~/data/constraint/fleet";
@@ -146,6 +146,46 @@ export function selectSPWeapon(shipId: number, shipType: ShipType, canClear: boo
             canClear,
             iconPadding: true,
             rarityMode: "spweapon",
+            onClose(id) {
+                close();
+                resolve(id);
+            }
+        }), {
+            immediate: true
+        });
+    });
+}
+
+export function selectCommander() {
+    const ids = Object.keys(ShareCfg.commander_data_template);
+
+    const data = createSelectorData<CommanderDataTemplate>();
+    for (const id of ids) {
+        const template = ShareCfg.commander_data_template[id];
+        if (!template) {
+            continue;
+        }
+
+        const { name, painting, rarity, nationality } = template;
+        data.push({
+            id: Number(id),
+            name,
+            icon: `/image/artresource/atlas/commandericon/${painting}.png`,
+            rarity,
+            nationality
+        });
+    }
+
+    return new Promise<number>((resolve) => {
+        const modalStore = useModalStore();
+        const { close } = modalStore.use(() => h(DialogSelector, {
+            title: "选择指挥喵",
+            selectors: [
+                { label: "稀有度", id: "rarity", options: rarityOptions },
+                { label: "阵营", id: "nationality", options: nationalityOptions }
+            ],
+            data,
+            rarityMode: "commander",
             onClose(id) {
                 close();
                 resolve(id);
