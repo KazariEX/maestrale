@@ -181,87 +181,88 @@ export interface CreateSerializerOptions {
 
 export function createSerializer(options: CreateSerializerOptions) {
     const internalKeys = new WeakMap<object, string>();
-    const sources: Record<string, object> = {};
     const mapping = options.mapping ?? {};
-    let serialized: WeakSet<object>;
     let curId = 0;
 
-    const serializeContext: SerializeContext = {
-        resolve(source) {
-            if (source && serialized.has(source)) {
-                return internalKeys.get(source)!;
-            }
-            for (const reg of registry) {
-                if (source instanceof reg.structure) {
-                    return reg.serialize(serializeContext, source as any);
-                }
-            }
-            return source;
-        },
-        track(name, source, raw) {
-            serialized.add(source);
-            let id: number;
-            let key: string;
-            if (!internalKeys.has(source)) {
-                id = curId++;
-                key = resolveInternalKey(id, name);
-                internalKeys.set(source, key);
-            }
-            else {
-                key = internalKeys.get(source)!;
-                id = parseInternalKey(key).id;
-            }
-            mapping[id] = raw;
-            return key;
-        }
-    };
-
-    const serializeClone = createClone({
-        handlers: registry.map(
-            (reg) => [reg.structure, (obj) => reg.serialize(serializeContext, obj)]
-        )
-    });
-
     function serialize(source: object) {
-        serialized = new WeakSet();
+        const serialized = new WeakSet();
+
+        const ctx: SerializeContext = {
+            resolve(source) {
+                if (source && serialized.has(source)) {
+                    return internalKeys.get(source)!;
+                }
+                for (const reg of registry) {
+                    if (source instanceof reg.structure) {
+                        return reg.serialize(ctx, source as any);
+                    }
+                }
+                return source;
+            },
+            track(name, source, raw) {
+                serialized.add(source);
+                let id: number;
+                let key: string;
+                if (!internalKeys.has(source)) {
+                    id = curId++;
+                    key = resolveInternalKey(id, name);
+                    internalKeys.set(source, key);
+                }
+                else {
+                    key = internalKeys.get(source)!;
+                    id = parseInternalKey(key).id;
+                }
+                mapping[id] = raw;
+                return key;
+            }
+        };
+
+        const clone = createClone({
+            handlers: registry.map(
+                (reg) => [reg.structure, (obj) => reg.serialize(ctx, obj)]
+            )
+        });
+
         curId = Number(Object.keys(mapping).at(-1) ?? -1) + 1;
-        return JSON.stringify(serializeClone(source));
+        return JSON.stringify(clone(source));
     }
 
-    const deserializeContext: DeserializeContext = {
-        resolve(raw) {
-            if (typeof raw !== "string") {
-                return raw;
-            }
-            try {
-                const { name, id } = parseInternalKey(raw);
-                if (id in sources) {
-                    return sources[id];
-                }
-                const obj = mapping[id];
-                const { deserialize } = registry.find((r) => r.name === name)!;
-                return deserialize(options, deserializeContext, obj, id);
-            }
-            catch {
-                return raw;
-            }
-        },
-        track(id, name, source) {
-            const key = resolveInternalKey(id, name);
-            sources[id] = source;
-            internalKeys.set(source, key);
-            return source;
-        }
-    };
-
-    const deserializeClone = createClone({
-        handlers: [
-            [String, deserializeContext.resolve]
-        ]
-    });
-
     function deserialize(data: string) {
-        return deserializeClone(JSON.parse(data));
+        const sources: Record<number, unknown> = {};
+
+        const ctx: DeserializeContext = {
+            resolve(raw) {
+                if (typeof raw !== "string") {
+                    return raw;
+                }
+                try {
+                    const { name, id } = parseInternalKey(raw);
+                    if (id in sources) {
+                        return sources[id];
+                    }
+                    const obj = mapping[id];
+                    const { deserialize } = registry.find((r) => r.name === name)!;
+                    return deserialize(options, ctx, obj, id);
+                }
+                catch {
+                    return raw;
+                }
+            },
+            track(id, name, source) {
+                const key = resolveInternalKey(id, name);
+                internalKeys.set(source, key);
+                sources[id] = source;
+                return source;
+            }
+        };
+
+        const clone = createClone({
+            handlers: [
+                [String, (raw) => ctx.resolve(raw)]
+            ]
+        });
+
+        return clone(JSON.parse(data));
     }
 
     return {
