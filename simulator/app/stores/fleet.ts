@@ -1,26 +1,8 @@
-import { createShip, type Ship } from "maestrale";
-
-export interface BaseFleet {
-    name: string;
-}
-
-interface SurfaceFleet extends BaseFleet {
-    main1: Ship | null;
-    main2: Ship | null;
-    main3: Ship | null;
-    vanguard1: Ship | null;
-    vanguard2: Ship | null;
-    vanguard3: Ship | null;
-}
-
-interface SubmarineFleet extends BaseFleet {
-    submarine1: Ship | null;
-    submarine2: Ship | null;
-    submarine3: Ship | null;
-}
+import { createFleet, createShip, type Fleet, type Ship, type SubmarineFleet, type SurfaceFleet } from "maestrale";
+import type { ShallowRef } from "vue";
 
 export const useFleetStore = defineStore("fleet", () => {
-    const surface = useSerializableFleets<SurfaceFleet>("surface-fleets", {
+    const surface = useSerializableFleets<SurfaceFleet>("surface", {
         schema: {
             main1: null,
             main2: 60501,
@@ -30,7 +12,7 @@ export const useFleetStore = defineStore("fleet", () => {
             vanguard3: null
         }
     });
-    const submarine = useSerializableFleets<SubmarineFleet>("submarine-fleets", {
+    const submarine = useSerializableFleets<SubmarineFleet>("submarine", {
         schema: {
             submarine1: null,
             submarine2: null,
@@ -64,7 +46,7 @@ export const useFleetStore = defineStore("fleet", () => {
     };
 });
 
-export type SerializableFleets<T extends BaseFleet> = ReturnType<typeof useSerializableFleets<T>>;
+export type SerializableFleets<T extends Fleet> = ReturnType<typeof useSerializableFleets<T>>;
 
 interface UseSerializableFleetsOptions<T> {
     initialName?: string;
@@ -72,17 +54,17 @@ interface UseSerializableFleetsOptions<T> {
     schema: Partial<Record<keyof T, number | null>>;
 }
 
-function useSerializableFleets<T extends BaseFleet>(
-    key: string,
+function useSerializableFleets<T extends Fleet>(
+    type: "surface" | "submarine",
     options: UseSerializableFleetsOptions<T>
 ) {
     const {
         initialName = "初始编队",
-        defaultName = "新编队",
+        defaultName,
         schema
     } = options;
 
-    const keys = Object.keys(schema);
+    const storageKey = type + "-fleets";
 
     const serializeStore = useSerializeStore();
     const technology = useTechnology();
@@ -96,22 +78,19 @@ function useSerializableFleets<T extends BaseFleet>(
     });
 
     try {
-        const localFleets = serializeStore.deserialize(key) as T[];
-        for (const fleet of localFleets) {
-            add(fleet.name, keys.map((key) => Reflect.get(fleet, key) as Ship));
-        }
+        const localFleets = serializeStore.deserialize(storageKey) as T[];
+        fleets.push(...localFleets);
     }
     catch {
-        add(initialName, Object.values(schema));
+        add(initialName, schema);
     }
 
-    function add(name = defaultName, values: (Ship | number | null)[] = []) {
-        const fleet = shallowReactive({
-            name,
-            ...Object.fromEntries(
-                keys.map((key, i) => [key, normalizeShip(values[i])])
-            )
-        });
+    function add(name = defaultName, schema: typeof options.schema = {}) {
+        const fleet = createFleet(type, name);
+        for (const key in schema) {
+            const shipRef = Reflect.get(fleet, key) as ShallowRef<Ship | null>;
+            shipRef.value = normalizeShip(schema[key]);
+        }
         fleets.push(fleet as any);
         currentIdx.value = fleets.length - 1;
     }
