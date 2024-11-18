@@ -2,10 +2,10 @@
     import { createShip, type Ship } from "maestrale";
     import { breakoutOptions } from "~/data/constraint/breakout";
     import { favorOptions } from "~/data/constraint/favor";
-    import type { Fleet } from "~/data/constraint/fleet";
+    import type { FleetType } from "~/data/constraint/fleet";
 
     const { fleet } = defineProps<{
-        fleet: Fleet;
+        fleet: FleetType;
     }>();
     const ship = defineModel<Ship | null>({
         required: true

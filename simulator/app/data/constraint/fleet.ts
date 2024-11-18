@@ -1,8 +1,8 @@
 import type { ShipType } from "maestrale";
 
-export type Fleet = "main" | "vanguard" | "submarine";
+export type FleetType = "main" | "vanguard" | "submarine";
 
-const table: Record<Fleet, ShipType[]> = {
+const table: Record<FleetType, ShipType[]> = {
     main: [
         4,
         5,
@@ -32,4 +32,4 @@ const table: Record<Fleet, ShipType[]> = {
 
 export const fleetMap = Object.fromEntries(
     Object.entries(table).flatMap(([fleet, types]) => types.map((type) => [type, fleet]))
-) as Record<ShipType, Fleet>;
+) as Record<ShipType, FleetType>;
