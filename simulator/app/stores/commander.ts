@@ -5,8 +5,11 @@ export const useCommanderStore = defineStore("commander", () => {
 
     const serializeStore = useSerializeStore();
 
-    watchDeep(commanders, () => {
+    watchDebounced(commanders, () => {
         serializeStore.serialize("commanders", commanders);
+    }, {
+        debounce: 1000,
+        deep: true
     });
 
     try {
