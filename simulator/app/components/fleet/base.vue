@@ -1,4 +1,5 @@
-<script lang="ts" generic="T extends BaseFleet" setup>
+<script lang="ts" generic="T extends Fleet" setup>
+    import type { Fleet } from "maestrale";
     import type { UnwrapRef } from "vue";
     import type { SerializableFleets } from "~/stores/fleet";
 
@@ -19,10 +20,10 @@
     async function modifyName() {
         const newName = await requireInput({
             title: "修改名称",
-            defaultValue: model.value.currentFleet.name
+            defaultValue: model.value.currentFleet.name.value
         });
         if (newName) {
-            model.value.currentFleet.name = newName;
+            model.value.currentFleet.name.value = newName;
         }
     }
 

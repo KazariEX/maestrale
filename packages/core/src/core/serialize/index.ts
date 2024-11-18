@@ -1,6 +1,7 @@
 import { isRef, toRaw, toValue } from "@vue/reactivity";
 import { Commander, CommanderAbility, createCommander, createCommanderAbility } from "../commander";
 import { createEquip, Equip } from "../equip";
+import { createFleet, SubmarineFleet, SurfaceFleet } from "../fleet";
 import { createShip, Ship } from "../ship";
 import { createSPWeapon, SPWeapon } from "../spweapon";
 import { createClone } from "./clone";
@@ -12,6 +13,33 @@ type ConstructRegistration = {
 } & ReturnType<typeof register>;
 
 const registry: ConstructRegistration[] = [];
+
+register("surface-fleet", SurfaceFleet, {
+    paths: [
+        "name",
+        "main1",
+        "main2",
+        "main3",
+        "vanguard1",
+        "vanguard2",
+        "vanguard3"
+    ],
+    initialize(_, raw) {
+        return createFleet("surface", raw.name);
+    }
+});
+
+register("submarine-fleet", SubmarineFleet, {
+    paths: [
+        "name",
+        "submarine1",
+        "submarine2",
+        "submarine3"
+    ],
+    initialize(_, raw) {
+        return createFleet("submarine", raw.name);
+    }
+});
 
 register("ship", Ship, {
     paths: [
