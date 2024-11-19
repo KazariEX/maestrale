@@ -28,6 +28,6 @@
     "release": "bumpp --no-push -c \"release: v%s\""
   },
   "dependencies": {
-    "@vue/reactivity": "^3.5.12"
+    "@vue/reactivity": "^3.5.13"
   }
 }

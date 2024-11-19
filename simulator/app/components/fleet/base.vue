@@ -28,7 +28,7 @@
     }
 
     async function removeFleet() {
-        if (await requireConfirm(`是否删除编队：${model.value.currentFleet.name}？`)) {
+        if (await requireConfirm(`是否删除编队：${model.value.currentFleet.name.value}？`)) {
             model.value.remove();
         }
     }

@@ -6,6 +6,7 @@
 
     const { fleet } = defineProps<{
         fleet: FleetType;
+        role: string;
     }>();
     const ship = defineModel<Ship | null>({
         required: true
@@ -53,7 +54,7 @@
 </script>
 
 <template>
-    <div
+    <li
         grid="~ cols-[auto_1fr] gap-2"
         p="2"
         b="~ solid slate op-40 rounded-1"
@@ -63,6 +64,7 @@
         }"
     >
         <rarity-icon
+            class="ship-icon"
             size="16"
             :rarity="ship?.rarity.value"
             :icon="squareicon"
@@ -77,7 +79,7 @@
             >
                 <div flex="~ justify-between items-center" h="6.5">
                     <span>
-                        <span text="slate">名称：</span>
+                        <span text="slate">{{ role }}：</span>
                         <span>{{ ship.name }}</span>
                     </span>
                     <span>
@@ -129,5 +131,5 @@
                 select="none"
             >NO SHIP</span>
         </div>
-    </div>
+    </li>
 </template>
