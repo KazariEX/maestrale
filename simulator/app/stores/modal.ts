@@ -1,3 +1,4 @@
+import { promiseTimeout } from "@vueuse/core";
 import type { Raw } from "vue";
 
 interface ModalContext {
@@ -53,7 +54,7 @@ export const useModalStore = defineStore("modal", () => {
 
         async function close() {
             isOpening.value = false;
-            await delay(duration);
+            await promiseTimeout(duration);
 
             const i = indexOf();
             if (i !== -1) {

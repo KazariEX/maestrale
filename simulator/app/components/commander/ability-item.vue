@@ -38,7 +38,7 @@
             size="11.5"
         >
             <nuxt-img
-                v-if="ability !== void 0"
+                v-if="ability"
                 size="inherit"
                 :src="`/image/artresource/atlas/commandertalenticon/${ability.icon}.png`"
             />
@@ -70,7 +70,7 @@
                 </template>
             </prime-select>
         </a>
-        <div v-if="ability !== void 0" grid="~" p="t-0.5">
+        <div v-if="ability" grid="~ items-center" p="t-0.5">
             <button
                 position="absolute top-2 right-2"
                 size="4"
@@ -80,7 +80,7 @@
                 <iconify name="fa6-solid:xmark"/>
             </button>
             <span>{{ ability.name }}</span>
-            <p text="3 slate-600 truncate" v-html="desc"></p>
+            <p leading="6" text="3 slate-600 truncate" v-html="desc"></p>
         </div>
         <div
             v-else

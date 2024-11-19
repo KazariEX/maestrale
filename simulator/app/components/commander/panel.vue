@@ -6,7 +6,7 @@
     } = storeToRefs(commanderStore);
 
     async function remove() {
-        if (await requireConfirm(`真的要把${commander.value!.name.value}当猫粮喂了吗？`)) {
+        if (await requireConfirm(`是否删除指挥喵：${commander.value!.name.value}？`)) {
             commanderStore.remove(index.value!);
         }
     }
