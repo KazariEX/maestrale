@@ -58,6 +58,7 @@
                 option-label="label"
                 option-value="value"
                 :virtual-scroller-options="{ itemSize: 40 }"
+                :model-value="ability?.id"
                 @update:model-value="update"
             >
                 <template #option="{ option }">
