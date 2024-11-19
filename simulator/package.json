@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "^1.6.0",
-    "@nuxt/icon": "^1.8.0",
+    "@nuxt/icon": "^1.8.1",
     "@nuxt/image": "^1.8.1",
     "@pinia-plugin-persistedstate/nuxt": "^1.2.1",
     "@pinia/nuxt": "^0.7.0",

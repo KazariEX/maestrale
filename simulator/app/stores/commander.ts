@@ -5,12 +5,7 @@ export const useCommanderStore = defineStore("commander", () => {
 
     const serializeStore = useSerializeStore();
 
-    watchDebounced(commanders, () => {
-        serializeStore.serialize("commanders", commanders);
-    }, {
-        debounce: 1000,
-        deep: true
-    });
+    serializeStore.use("commanders", commanders);
 
     try {
         const localCommanders = serializeStore.deserialize("commanders") as Commander[];

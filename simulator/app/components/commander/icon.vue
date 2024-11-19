@@ -1,9 +1,21 @@
 <script lang="ts" setup>
-    defineProps<{
-        icon: string;
+    const { icon } = defineProps<{
+        icon?: string;
     }>();
+
+    const src = computed(() => {
+        return icon ?? "/image/artresource/ui/commanderui/commandroomui/icon_bg.png";
+    });
 </script>
 
 <template>
-    <nuxt-img h="16" m="x-auto" :src="icon"/>
+    <nuxt-img
+        :class="{
+            [`h-16`]: icon,
+            [`size-14 p-2 my-1`]: !icon
+        }"
+        m="x-auto"
+        cursor="pointer"
+        :src
+    />
 </template>

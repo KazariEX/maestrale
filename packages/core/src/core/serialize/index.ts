@@ -17,6 +17,9 @@ const registry: ConstructRegistration[] = [];
 register("surface-fleet", SurfaceFleet, {
     paths: [
         "name",
+        "commander1",
+        "commander2",
+        "commander3",
         "main1",
         "main2",
         "main3",
@@ -32,6 +35,9 @@ register("surface-fleet", SurfaceFleet, {
 register("submarine-fleet", SubmarineFleet, {
     paths: [
         "name",
+        "commander1",
+        "commander2",
+        "commander3",
         "submarine1",
         "submarine2",
         "submarine3"

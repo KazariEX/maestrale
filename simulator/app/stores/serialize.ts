@@ -9,6 +9,15 @@ export const useSerializeStore = defineStore("serialize", () => {
         mapping: mapping.value
     });
 
+    function use(key: string, source: object) {
+        watchDebounced(source, (value) => {
+            serialize(key, value);
+        }, {
+            deep: true,
+            debounce: 1000
+        });
+    }
+
     function serialize(key: string, source: object) {
         const data = serializer.serialize(source);
         mapping.value = serializer.mapping;
@@ -20,8 +29,14 @@ export const useSerializeStore = defineStore("serialize", () => {
         return data && serializer.deserialize(data);
     }
 
+    function cleanup() {
+        serializer.cleanup();
+    }
+
     return {
+        use,
         serialize,
-        deserialize
+        deserialize,
+        cleanup
     };
 });
