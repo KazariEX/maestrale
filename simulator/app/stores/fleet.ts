@@ -73,12 +73,7 @@ function useSerializableFleets<T extends Fleet>(
     const currentIdx = ref(0);
     const currentFleet = computed(() => fleets[currentIdx.value]!);
 
-    watchDebounced(fleets, () => {
-        serializeStore.serialize(storageKey, fleets);
-    }, {
-        debounce: 1000,
-        deep: true
-    });
+    serializeStore.use(storageKey, fleets);
 
     try {
         const localFleets = serializeStore.deserialize(storageKey) as T[];

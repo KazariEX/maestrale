@@ -69,8 +69,8 @@ importers:
         specifier: ^1.6.0
         version: 1.6.0(rollup@4.27.3)(vite@5.4.11(@types/node@22.9.0)(sass@1.80.6)(terser@5.36.0))(vue@3.5.13(typescript@5.6.2))
       '@nuxt/icon':
-        specifier: ^1.8.0
-        version: 1.8.0(magicast@0.3.5)(rollup@4.27.3)(vite@5.4.11(@types/node@22.9.0)(sass@1.80.6)(terser@5.36.0))(vue@3.5.13(typescript@5.6.2))
+        specifier: ^1.8.1
+        version: 1.8.1(magicast@0.3.5)(rollup@4.27.3)(vite@5.4.11(@types/node@22.9.0)(sass@1.80.6)(terser@5.36.0))(vue@3.5.13(typescript@5.6.2))
       '@nuxt/image':
         specifier: ^1.8.1
         version: 1.8.1(ioredis@5.4.1)(magicast@0.3.5)(rollup@4.27.3)
@@ -958,8 +958,8 @@ packages:
     peerDependencies:
       vite: '*'
 
-  '@nuxt/icon@1.8.0':
-    resolution: {integrity: sha512-ot3LqZzkKBdjZuSfVNmHJqOHJbSFX1zGDxZcQ1V5yreXWBUakSl5p0jz+jARSYlhezMk/lABJ7R7vTT50S5NZw==}
+  '@nuxt/icon@1.8.1':
+    resolution: {integrity: sha512-8xetBz9GMBY18AMPBhOdrdufGMGJtdzY1Eixs1T8bQO39gkvYClh6ZcHUFoGxbU2Za6gQ2XH/U8mrz5VMbO3Wg==}
 
   '@nuxt/image@1.8.1':
     resolution: {integrity: sha512-qNj7OCNsoGcutGOo1R2PYp4tQ/6uD77aSakyDoVAmLSRJBmhFTnT2+gIqVD95JMmkSHgYhmSX4gGxnaQK/t1cw==}
@@ -6114,7 +6114,7 @@ snapshots:
       - utf-8-validate
       - vue
 
-  '@nuxt/icon@1.8.0(magicast@0.3.5)(rollup@4.27.3)(vite@5.4.11(@types/node@22.9.0)(sass@1.80.6)(terser@5.36.0))(vue@3.5.13(typescript@5.6.2))':
+  '@nuxt/icon@1.8.1(magicast@0.3.5)(rollup@4.27.3)(vite@5.4.11(@types/node@22.9.0)(sass@1.80.6)(terser@5.36.0))(vue@3.5.13(typescript@5.6.2))':
     dependencies:
       '@iconify/collections': 1.0.484
       '@iconify/types': 2.0.0

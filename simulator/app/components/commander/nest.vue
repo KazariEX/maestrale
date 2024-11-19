@@ -16,14 +16,8 @@
 <template>
     <ul grid="~ cols-[repeat(4,80px)] gap-2" h="fit">
         <commander-item v-for="_, i in commanders" :index="i"/>
-        <li grid="~" @click="select">
-            <nuxt-img
-                size="14"
-                p="2"
-                m="x-auto t-2"
-                cursor="pointer"
-                src="/image/artresource/ui/commanderui/commandroomui/icon_bg.png"
-            />
+        <li grid="~" p="y-1">
+            <commander-icon @click="select"/>
         </li>
     </ul>
 </template>

@@ -36,39 +36,46 @@
 
 <template>
     <div grid="~ gap-4">
-        <form flex="~ gap-2">
-            <prime-float-label flex="1">
-                <label>{{ label }}</label>
-                <prime-select
-                    w="full"
+        <div grid="~ cols-[1fr_auto] gap-2">
+            <form grid="~ rows-2 cols-3 gap-2">
+                <prime-float-label grid="col-start-1 col-end-4" flex="1">
+                    <label>{{ label }}</label>
+                    <prime-select
+                        w="full"
+                        size="small"
+                        :options
+                        option-label="label"
+                        option-value="value"
+                        :allow-empty="false"
+                        v-model="model.currentIdx"
+                    />
+                </prime-float-label>
+                <prime-button
                     size="small"
-                    :options
-                    option-label="label"
-                    option-value="value"
-                    :allow-empty="false"
-                    v-model="model.currentIdx"
-                />
-            </prime-float-label>
-            <prime-button
-                size="small"
-                severity="help"
-                variant="outlined"
-                @click="modifyName"
-            >修改名称</prime-button>
-            <prime-button
-                size="small"
-                severity="info"
-                variant="outlined"
-                @click="model.add()"
-            >添加编队</prime-button>
-            <prime-button
-                size="small"
-                severity="danger"
-                variant="outlined"
-                :disabled="model.fleets.length <= 1"
-                @click="removeFleet"
-            >删除编队</prime-button>
-        </form>
+                    severity="help"
+                    variant="outlined"
+                    @click="modifyName"
+                >修改名称</prime-button>
+                <prime-button
+                    size="small"
+                    severity="info"
+                    variant="outlined"
+                    @click="model.add()"
+                >添加编队</prime-button>
+                <prime-button
+                    size="small"
+                    severity="danger"
+                    variant="outlined"
+                    :disabled="model.fleets.length <= 1"
+                    @click="removeFleet"
+                >删除编队</prime-button>
+            </form>
+            <ul grid="~ cols-3 items-center gap-1">
+                <fleet-commander :fleet="model.currentFleet" v-model="model.currentFleet.commander1.value"/>
+                <fleet-commander :fleet="model.currentFleet" v-model="model.currentFleet.commander2.value"/>
+                <fleet-commander :fleet="model.currentFleet" v-model="model.currentFleet.commander3.value"/>
+            </ul>
+        </div>
         <slot></slot>
     </div>
 </template>
