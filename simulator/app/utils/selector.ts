@@ -196,6 +196,45 @@ export function selectCommander() {
     });
 }
 
+export function selectNestCommander(excludes: number[], canClear: boolean) {
+    const commanderStore = useCommanderStore();
+    const { commanders } = storeToRefs(commanderStore);
+
+    const data = createSelectorData();
+    for (let i = 0; i < commanders.value.length; i++) {
+        if (excludes.includes(i)) {
+            continue;
+        }
+        const { name, painting, rarity } = commanders.value[i]!;
+        data.push({
+            id: i,
+            name: name.value,
+            icon: `/image/artresource/atlas/commandericon/${painting}.png`,
+            rarity: rarity
+        });
+    }
+
+    return new Promise<number>((resolve) => {
+        const modalStore = useModalStore();
+        const { close } = modalStore.use(() => h(DialogSelector, {
+            title: "选择指挥喵",
+            selectors: [
+                { label: "稀有度", id: "rarity", options: rarityOptions },
+                { label: "阵营", id: "nationality", options: nationalityOptions }
+            ],
+            data,
+            canClear,
+            rarityMode: "commander",
+            onClose(i) {
+                close();
+                resolve(i);
+            }
+        }), {
+            immediate: true
+        });
+    });
+}
+
 function createSelectorData<T>(): (Partial<T> & {
     id: number;
     name: string;
