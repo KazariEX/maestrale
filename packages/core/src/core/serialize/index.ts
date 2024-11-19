@@ -210,6 +210,7 @@ export interface CreateSerializerOptions {
 export function createSerializer(options: CreateSerializerOptions) {
     const internalKeys = new WeakMap<object, string>();
     const mapping = options.mapping ?? {};
+    let sources: Record<number, unknown> = {};
     let curId = 0;
 
     function serialize(source: object) {
@@ -256,8 +257,6 @@ export function createSerializer(options: CreateSerializerOptions) {
     }
 
     function deserialize(data: string) {
-        const sources: Record<number, unknown> = {};
-
         const ctx: DeserializeContext = {
             resolve(raw) {
                 if (typeof raw !== "string") {
@@ -293,10 +292,16 @@ export function createSerializer(options: CreateSerializerOptions) {
         return clone(JSON.parse(data));
     }
 
+    // TODO: 对 mapping 进行死数据修剪
+    function cleanup() {
+        sources = {};
+    }
+
     return {
         mapping,
         serialize,
-        deserialize
+        deserialize,
+        cleanup
     };
 }
 
