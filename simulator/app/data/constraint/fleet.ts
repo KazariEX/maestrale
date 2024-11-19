@@ -30,6 +30,6 @@ const table: Record<FleetType, ShipType[]> = {
     ]
 };
 
-export const fleetMap = Object.fromEntries(
+export const fleetTypeMap = Object.fromEntries(
     Object.entries(table).flatMap(([fleet, types]) => types.map((type) => [type, fleet]))
 ) as Record<ShipType, FleetType>;

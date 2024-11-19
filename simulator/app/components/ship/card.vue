@@ -4,8 +4,8 @@
     import { favorOptions } from "~/data/constraint/favor";
     import type { FleetType } from "~/data/constraint/fleet";
 
-    const { fleet } = defineProps<{
-        fleet: FleetType;
+    const { fleetType } = defineProps<{
+        fleetType: FleetType;
         role: string;
     }>();
     const ship = defineModel<Ship | null>({
@@ -28,7 +28,7 @@
     });
 
     async function select() {
-        const id = await selectShip(fleet, !!ship.value);
+        const id = await selectShip(fleetType, !!ship.value);
         if (id === -1) {
             ship.value = null;
         }

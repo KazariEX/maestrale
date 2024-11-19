@@ -3,9 +3,8 @@
 </script>
 
 <template>
-    <fleet-base v-slot="{ fleet }" label="水面编队" v-model="fleetStore.surface">
+    <fleet-base label="水面编队" v-model="fleetStore.surface">
         <fleet-group
-            :fleet
             type="main"
             :items="[
                 {
@@ -21,9 +20,9 @@
                     role: `僚舰`
                 }
             ]"
+            v-model="fleetStore.surface.currentFleet"
         />
         <fleet-group
-            :fleet
             type="vanguard"
             :items="[
                 {
@@ -39,6 +38,7 @@
                     role: `尾舰`
                 }
             ]"
+            v-model="fleetStore.surface.currentFleet"
         />
     </fleet-base>
 </template>

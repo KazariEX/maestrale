@@ -1,7 +1,7 @@
 import { type CommanderDataTemplate, type EquipDataStatistics, type EquipType, ShareCfg, type ShipDataStatistics, type ShipType, type SPWeaponDataStatistics } from "maestrale";
 import { DialogSelector } from "#components";
 import { equipTypeOptions } from "~/data/constraint/equip-type";
-import { fleetMap, type FleetType } from "~/data/constraint/fleet";
+import { type FleetType, fleetTypeMap } from "~/data/constraint/fleet";
 import { nationalityOptions } from "~/data/constraint/nationality";
 import { rarityOptions } from "~/data/constraint/rarity";
 import { shipTypeOptions } from "~/data/constraint/ship-type";
@@ -22,7 +22,7 @@ export function selectShip(fleetType: FleetType, canClear: boolean) {
         }
 
         const { rarity, type, nationality, name } = statistics;
-        if (fleetMap[type] !== fleetType) {
+        if (fleetTypeMap[type] !== fleetType) {
             continue;
         }
 
