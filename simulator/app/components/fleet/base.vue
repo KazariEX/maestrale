@@ -69,6 +69,6 @@
                 @click="removeFleet"
             >删除编队</prime-button>
         </form>
-        <slot :fleet="model.currentFleet"></slot>
+        <slot></slot>
     </div>
 </template>

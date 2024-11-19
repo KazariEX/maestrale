@@ -4,49 +4,57 @@
     import type { ShallowRef } from "vue";
     import type { FleetType } from "~/data/constraint/fleet";
 
-    const { fleet, items } = defineProps<{
-        fleet: T;
+    const { items } = defineProps<{
         type: FleetType;
         items: {
             key: keyof T;
             role: string;
         }[];
     }>();
+    const fleet = defineModel<T>({
+        required: true
+    });
 
     const draggableItems = shallowRef(items);
 
     function change() {
         const entries = draggableItems.value.map(({ key }, i) => [
             items[i]!.key,
-            getShipRef(fleet, key).value
+            getShipRef(key).value
         ] as const);
 
         for (const [key, ship] of entries) {
-            const shipRef = getShipRef(fleet, key);
+            const shipRef = getShipRef(key);
             shipRef.value = ship;
         }
         draggableItems.value = items;
     }
 
-    function getShipRef(fleet: T, key: keyof T) {
-        return fleet[key] as ShallowRef<Ship | null>;
+    function getShipRef(key: keyof T) {
+        return fleet.value[key] as ShallowRef<Ship | null>;
     }
 </script>
 
 <template>
     <vue-draggable
-        grid="~ gap-2"
-        tag="ul"
         handle=".ship-icon"
+        target=".fleet-group"
+        :animation="150"
         v-model="draggableItems"
         @end="change"
     >
-        <ship-card
-            v-for="{ key, role } in items"
-            :key
-            :fleet="type"
-            :role
-            v-model="getShipRef(fleet, key).value"
-        />
+        <transition-group
+            class="fleet-group"
+            grid="~ gap-2"
+            tag="ul"
+        >
+            <ship-card
+                v-for="{ key, role } in items"
+                :key
+                :fleet-type="type"
+                :role
+                v-model="getShipRef(key).value"
+            />
+        </transition-group>
     </vue-draggable>
 </template>

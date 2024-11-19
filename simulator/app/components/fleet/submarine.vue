@@ -3,9 +3,8 @@
 </script>
 
 <template>
-    <fleet-base v-slot="{ fleet }" label="潜艇编队" v-model="fleetStore.submarine">
+    <fleet-base label="潜艇编队" v-model="fleetStore.submarine">
         <fleet-group
-            :fleet
             type="submarine"
             :items="[
                 {
@@ -21,6 +20,7 @@
                     role: `僚舰`
                 }
             ]"
+            v-model="fleetStore.submarine.currentFleet"
         />
     </fleet-base>
 </template>
