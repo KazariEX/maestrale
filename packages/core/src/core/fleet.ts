@@ -1,4 +1,5 @@
-import { computed, type ComputedRef, ref, type Ref, shallowRef } from "@vue/reactivity";
+import { computed, type ComputedRef, ref, type Ref, shallowRef, watch } from "@vue/reactivity";
+import { ShipFleetKey } from "../utils";
 import type { Commander } from "./commander";
 import type { Ship } from "./ship";
 
@@ -25,6 +26,13 @@ export abstract class Fleet {
 }
 
 export class SurfaceFleet extends Fleet {
+    constructor(
+        name: string
+    ) {
+        super(name);
+        track(this);
+    }
+
     ships = computed(() => [
         this.main1.value,
         this.main2.value,
@@ -46,6 +54,13 @@ export class SurfaceFleet extends Fleet {
 }
 
 export class SubmarineFleet extends Fleet {
+    constructor(
+        name: string
+    ) {
+        super(name);
+        track(this);
+    }
+
     ships = computed(() => [
         this.submarine1.value,
         this.submarine2.value,
@@ -65,4 +80,22 @@ export function createFleet(type: "surface" | "submarine", name: string = "æ–°ç¼
         case "submarine":
             return new SubmarineFleet(name);
     }
+}
+
+function track<T extends Fleet>(fleet: T) {
+    watch(fleet.ships, (newVal: (Ship | null)[], oldVal: (Ship | null)[]) => {
+        for (let i = 0; i < newVal.length; i++) {
+            const oldShip = oldVal[i];
+            const newShip = newVal[i];
+            if (oldShip === newShip) {
+                continue;
+            }
+            if (oldShip) {
+                oldShip[ShipFleetKey].value = null;
+            }
+            if (newShip) {
+                newShip[ShipFleetKey].value = fleet;
+            }
+        }
+    });
 }
