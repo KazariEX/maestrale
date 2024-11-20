@@ -2,6 +2,7 @@ import type { Attributes } from "../core/attributes";
 import type { Armor, EquipType, Nationality, ShipType } from "../types";
 
 export type ShareCfgName =
+    | "attribute_info_by_type"
     | "commander_ability_template"
     | "commander_data_template"
     | "equip_data_statistics"
@@ -22,7 +23,18 @@ export type ShareCfgName =
     | "spweapon_type"
     | "transform_data_template";
 
+export interface AttributeInfoByType {
+    name: keyof Attributes;
+}
+
 export interface CommanderAbilityTemplate {
+    add: [
+        number,
+        Nationality[],
+        ShipType[],
+        number,
+        number
+    ][];
     desc: string;
     icon: string;
     name: string;

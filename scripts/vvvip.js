@@ -5,9 +5,16 @@ import { dirname, resolve } from "node:path";
 const resolveData = (...args) => resolve(import.meta.dirname, "../packages/data", ...args);
 
 const vvvip = {
+    attribute_info_by_type: {
+        folder: "ShareCfg",
+        props: [
+            "name"
+        ]
+    },
     commander_ability_template: {
         folder: "ShareCfg",
         props: [
+            "add",
             "desc",
             "icon",
             "name",

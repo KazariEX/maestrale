@@ -1,4 +1,5 @@
 import type {
+    AttributeInfoByType,
     CommanderAbilityTemplate,
     CommanderDataTemplate,
     EquipDataStatistics,
@@ -24,6 +25,7 @@ import type {
 export const ShareCfg = {
     async load() {
         const datas = await Promise.all([
+            loadData<AttributeInfoByType>("attribute_info_by_type"),
             loadData<CommanderAbilityTemplate>("commander_ability_template"),
             loadData<CommanderDataTemplate>("commander_data_template"),
             loadData<EquipDataStatistics>("equip_data_statistics"),
@@ -55,6 +57,7 @@ export const ShareCfg = {
     }
 } as {
     load: () => Promise<void>;
+    attribute_info_by_type: Record<string, AttributeInfoByType>;
     commander_ability_template: Record<string, CommanderAbilityTemplate>;
     commander_data_template: Record<string, CommanderDataTemplate>;
     equip_data_statistics: Record<string, EquipDataStatistics>;
