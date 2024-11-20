@@ -23,6 +23,7 @@
     <prime-float-label>
         <prime-select
             w="full"
+            size="small"
             :input-id="`filter_${id}`"
             :options="fullOptions"
             option-label="label"

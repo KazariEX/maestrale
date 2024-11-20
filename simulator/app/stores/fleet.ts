@@ -21,7 +21,7 @@ export const useFleetStore = defineStore("fleet", () => {
     });
 
     const currentShip = shallowRef<Ship | null>(null);
-    const attrMode = ref<"equips" | "tech">("equips");
+    const attrMode = ref<"equips" | "tech" | "commanders">("equips");
     const infoMode = ref<"details" | "equips">("details");
     const panelTab = ref<"strengthen" | "transform">("strengthen");
 
