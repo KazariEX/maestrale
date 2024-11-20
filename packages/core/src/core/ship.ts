@@ -1,7 +1,7 @@
 import { computed, type ComputedRef, ref, type Ref, shallowRef, watch, type WritableComputedRef } from "@vue/reactivity";
 import { ShareCfg } from "../data";
 import { Favor, StrengthenType } from "../types";
-import { entries, ShipFleetKey } from "../utils";
+import { entries, nonNullable, ShipFleetKey } from "../utils";
 import { type Attributes, createAttributes } from "./attributes";
 import { createEquip, type Equip } from "./equip";
 import { usePower } from "./power";
@@ -219,6 +219,27 @@ export class Ship {
             for (const [key] of entries(attrs)) {
                 attrs[key] += this.technology.get(this.type.value, key);
             }
+        }
+        return attrs;
+    });
+
+    // 获取指挥喵总属性
+    commanderAttrs = computed(() => {
+        const attrs = createAttributes();
+
+        const commanders = this.fleet.value?.commanders.value.filter(nonNullable) ?? [];
+        const effects = commanders
+            .flatMap((commander) => commander.abilities)
+            .flatMap((ability) => ability.effects)
+            .filter((effect) => (
+                effect.type === 1 &&
+                (!effect.nationalities.length || effect.nationalities.includes(this.nationality.value)) &&
+                (!effect.shipTypes.length || effect.shipTypes.includes(this.type.value))
+            ));
+
+        for (const effect of effects) {
+            const key = ShareCfg.attribute_info_by_type[effect.key].name;
+            attrs[key] += effect.value;
         }
         return attrs;
     });
