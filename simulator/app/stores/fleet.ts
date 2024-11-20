@@ -64,7 +64,7 @@ function useSerializableFleets<T extends Fleet>(
         schema
     } = options;
 
-    const storageKey = type + "-fleets";
+    const storageKey = `${type}-fleets` as const;
 
     const serializeStore = useSerializeStore();
     const technology = useTechnology();
