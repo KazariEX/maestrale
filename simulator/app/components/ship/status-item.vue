@@ -35,6 +35,14 @@
                 ? technologyStore.get(ship.value.type.value, attr as keyof Attributes)
                 : 0;
     });
+
+    const commanderValue = computed(() => {
+        return ship.value
+            && attr
+            && !["ammo", "oil", "oxy_max"].includes(attr)
+                ? ship.value.commanderAttrs.value[attr as keyof Attributes]
+                : 0;
+    });
 </script>
 
 <template>
@@ -61,8 +69,11 @@
             <span
                 v-else-if="fleetStore.attrMode === `tech` && techValue > 0"
                 text="orange-500"
-            >+{{ techValue }}
-            </span>
+            >+{{ techValue }}</span>
+            <span
+                v-else-if="fleetStore.attrMode === `commanders` && commanderValue > 0"
+                text="purple-500"
+            >+{{ commanderValue }}</span>
         </span>
     </li>
 </template>
