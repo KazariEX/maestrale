@@ -112,13 +112,31 @@ function getCoefficient(attr: keyof Attributes) {
     }
 }
 
+export interface CommanderAbilityEffect {
+    type: number;
+    nationalities: number[];
+    shipTypes: number[];
+    key: number;
+    value: number;
+}
+
 export class CommanderAbility {
     private data_template: CommanderAbilityTemplate;
+
+    effects: CommanderAbilityEffect[];
 
     constructor(
         public id: number
     ) {
         this.data_template = ShareCfg.commander_ability_template[id];
+
+        this.effects = this.data_template.add.map(([type, nationalities, shipTypes, key, value]) => ({
+            type,
+            nationalities,
+            shipTypes,
+            key,
+            value
+        }));
     }
 
     // 名称
