@@ -9,7 +9,13 @@ export const useSerializeStore = defineStore("serialize", () => {
         mapping: mapping.value
     });
 
-    function use(key: string, source: object) {
+    const storageKeys = [
+        "commanders",
+        "surface-fleets",
+        "submarine-fleets"
+    ] as const;
+
+    function use(key: (typeof storageKeys)[number], source: object) {
         watchDebounced(source, (value) => {
             serialize(key, value);
         }, {
@@ -19,18 +25,20 @@ export const useSerializeStore = defineStore("serialize", () => {
     }
 
     function serialize(key: string, source: object) {
-        const data = serializer.serialize(source);
+        const raw = serializer.serialize(source);
         mapping.value = serializer.mapping;
-        localStorage.setItem(key, data);
+        localStorage.setItem(key, JSON.stringify(raw));
     }
 
     function deserialize(key: string) {
         const data = localStorage.getItem(key);
-        return data && serializer.deserialize(data);
+        return data && serializer.deserialize(JSON.parse(data));
     }
 
     function cleanup() {
-        serializer.cleanup();
+        const raw = storageKeys.map((key) => JSON.parse(localStorage.getItem(key) ?? ""));
+        serializer.cleanup(raw);
+        mapping.value = serializer.mapping;
     }
 
     return {

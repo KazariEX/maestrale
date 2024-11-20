@@ -257,10 +257,10 @@ export function createSerializer(options: CreateSerializerOptions) {
         });
 
         curId = Number(Object.keys(mapping).at(-1) ?? -1) + 1;
-        return JSON.stringify(clone(source));
+        return clone(source);
     }
 
-    function deserialize(data: string) {
+    function deserialize(raw: unknown) {
         const ctx: DeserializeContext = {
             resolve(raw) {
                 if (typeof raw !== "string") {
@@ -293,12 +293,41 @@ export function createSerializer(options: CreateSerializerOptions) {
             ]
         });
 
-        return clone(JSON.parse(data));
+        return clone(raw);
     }
 
-    // TODO: 对 mapping 进行死数据修剪
-    function cleanup() {
+    function cleanup(raw: unknown) {
         sources = {};
+
+        const ids = new Set(Object.keys(mapping).map(Number));
+        for (const id of traverse(raw)) {
+            ids.delete(id);
+        }
+
+        for (const id of ids) {
+            delete mapping[id];
+        }
+
+        function* traverse(raw: unknown): Generator<number> {
+            if (typeof raw === "string") {
+                try {
+                    const { id } = parseInternalKey(raw);
+                    yield id;
+                    yield* traverse(mapping[id]);
+                }
+                catch {}
+            }
+            else if (Array.isArray(raw)) {
+                for (const item of raw) {
+                    yield* traverse(item);
+                }
+            }
+            else if (typeof raw === "object" && raw !== null) {
+                for (const value of Object.values(raw)) {
+                    yield* traverse(value);
+                }
+            }
+        }
     }
 
     return {
