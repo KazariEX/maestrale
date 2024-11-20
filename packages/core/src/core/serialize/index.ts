@@ -19,7 +19,6 @@ register("surface-fleet", SurfaceFleet, {
         "name",
         "commander1",
         "commander2",
-        "commander3",
         "main1",
         "main2",
         "main3",
@@ -37,7 +36,6 @@ register("submarine-fleet", SubmarineFleet, {
         "name",
         "commander1",
         "commander2",
-        "commander3",
         "submarine1",
         "submarine2",
         "submarine3"

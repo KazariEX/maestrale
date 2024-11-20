@@ -17,11 +17,9 @@ export abstract class Fleet {
     // 指挥喵
     commander1 = shallowRef<Commander | null>(null);
     commander2 = shallowRef<Commander | null>(null);
-    commander3 = shallowRef<Commander | null>(null);
     commanders = computed(() => [
         this.commander1.value,
-        this.commander2.value,
-        this.commander3.value
+        this.commander2.value
     ]);
 }
 

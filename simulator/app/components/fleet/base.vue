@@ -36,7 +36,7 @@
 
 <template>
     <div grid="~ gap-4">
-        <div grid="~ cols-[1fr_auto] gap-2">
+        <div grid="~ cols-[1fr_auto] gap-4">
             <form grid="~ rows-2 cols-3 gap-2">
                 <prime-float-label grid="col-start-1 col-end-4" flex="1">
                     <label>{{ label }}</label>
@@ -70,10 +70,9 @@
                     @click="removeFleet"
                 >删除编队</prime-button>
             </form>
-            <ul grid="~ cols-3 items-center gap-1">
+            <ul grid="~ cols-2 items-center gap-1">
                 <fleet-commander :fleet="model.currentFleet" v-model="model.currentFleet.commander1.value"/>
                 <fleet-commander :fleet="model.currentFleet" v-model="model.currentFleet.commander2.value"/>
-                <fleet-commander :fleet="model.currentFleet" v-model="model.currentFleet.commander3.value"/>
             </ul>
         </div>
         <slot></slot>
