@@ -1,12 +1,13 @@
 import { computed, type ComputedRef, ref, type Ref, shallowRef, watch, type WritableComputedRef } from "@vue/reactivity";
 import { ShareCfg } from "../data";
 import { Favor, StrengthenType } from "../types";
-import { entries } from "../utils";
+import { entries, ShipFleetKey } from "../utils";
 import { type Attributes, createAttributes } from "./attributes";
 import { createEquip, type Equip } from "./equip";
 import { usePower } from "./power";
 import { createSPWeapon, type SPWeapon } from "./spweapon";
 import type { TransformDataTemplate } from "../data/types";
+import type { Fleet } from "./fleet";
 import type { ITechnology } from "./technology";
 
 interface Strengthen {
@@ -323,6 +324,10 @@ export class Ship {
 
     // 兵装
     spweapon = shallowRef<SPWeapon | null>(null);
+
+    // 所在编队
+    [ShipFleetKey] = shallowRef<Fleet | null>(null);
+    fleet = computed(() => this[ShipFleetKey].value);
 }
 
 export interface CreateShipOptions {
