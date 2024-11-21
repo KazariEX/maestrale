@@ -6,7 +6,7 @@ import { type Attributes, createAttributes } from "./attributes";
 import { createEquip, type Equip } from "./equip";
 import { usePower } from "./power";
 import { createSPWeapon, type SPWeapon } from "./spweapon";
-import type { TransformDataTemplate } from "../data/types";
+import type { SC } from "../data/types";
 import type { Fleet } from "./fleet";
 import type { ITechnology } from "./technology";
 
@@ -30,7 +30,7 @@ interface StrengthenBlueprint extends Strengthen {
     blueprintLevel: WritableComputedRef<number>;
 }
 
-export interface TransformMatrixTemplate extends TransformDataTemplate {
+export interface TransformMatrixTemplate extends SC.TransformDataTemplate {
     enable: Ref<boolean>;
     next_id: number[];
 }

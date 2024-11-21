@@ -2,10 +2,10 @@ import { computed, ref, type Ref, shallowReactive } from "@vue/reactivity";
 import { ShareCfg } from "../data";
 import { entries } from "../utils";
 import { type Attributes, createAttributes } from "./attributes";
-import type { CommanderAbilityTemplate, CommanderDataTemplate } from "../data/types";
+import type { SC } from "../data/types";
 
 export class Commander {
-    private data_template: CommanderDataTemplate;
+    private data_template: SC.CommanderDataTemplate;
 
     level: Ref<number>;
     name: Ref<string>;
@@ -121,7 +121,7 @@ export interface CommanderAbilityEffect {
 }
 
 export class CommanderAbility {
-    private data_template: CommanderAbilityTemplate;
+    private data_template: SC.CommanderAbilityTemplate;
 
     effects: CommanderAbilityEffect[];
 

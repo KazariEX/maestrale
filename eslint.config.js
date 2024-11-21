@@ -18,6 +18,7 @@ export default antfu({
         ...zin.patch,
         "antfu/no-top-level-await": "off",
         "no-useless-constructor": "off",
+        "ts/no-namespace": "off",
         "vue/prefer-import-from-vue": "off"
     }
 });
