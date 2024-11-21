@@ -1,4 +1,4 @@
-import { ref, type Ref } from "vue";
+import { ref, type Ref } from "@vue/reactivity";
 import type { Attributes } from "./attributes";
 
 export type TechnologyAttributes = Omit<Attributes, "speed" | "luck">;
