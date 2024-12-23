@@ -1,23 +1,23 @@
 {
   "name": "maestrale",
+  "type": "module",
   "version": "0.0.4",
   "description": "Maestrale Kit for Azurlane",
+  "author": "KazariEX",
+  "license": "MIT",
+  "repository": "KazariEX/maestrale",
   "keywords": [
     "azurlane"
   ],
-  "author": "KazariEX",
-  "repository": "KazariEX/maestrale",
-  "license": "MIT",
-  "type": "module",
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
     }
   },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
