@@ -1,10 +1,10 @@
-import { type Attributes, createTechnologyAttributes } from "maestrale";
+import { type Attributes, createTechnologyAttributes, type ShipType } from "maestrale";
 
 export const useTechnologyStore = defineStore("technology", () => {
     const maxAttrs = createTechnologyAttributes();
     const attrs = ref(createTechnologyAttributes());
 
-    function get(type: number, attr: keyof Attributes) {
+    function get(type: ShipType, attr: keyof Attributes) {
         if (attr === "speed" || attr === "luck") {
             return 0;
         }
