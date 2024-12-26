@@ -1,6 +1,7 @@
 import { existsSync, mkdirSync } from "node:fs";
 import { readFile, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
+import consola from "consola";
 
 const resolveData = (...args) => resolve(import.meta.dirname, "../packages/data", ...args);
 
@@ -193,36 +194,66 @@ const vvvip = {
     }
 };
 
-const dir = resolveData("ShareCfg(VVVIP)");
-if (!existsSync(dir)) {
-    mkdirSync(dir);
+if (process.argv.includes("--update")) {
+    try {
+        const { ProxyAgent, setGlobalDispatcher } = await import("undici");
+        const dispatcher = new ProxyAgent({ uri: new URL(process.env.HTTPS_PROXY).toString() });
+        setGlobalDispatcher(dispatcher);
+    }
+    catch {}
+
+    const baseUrl = "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneData/refs/heads/main/CN/";
+    await Promise.all(Object.entries(vvvip).map(([filename, { folder }]) => {
+        const uri = `${folder}/${filename}.json`;
+        const { href } = new URL(uri, baseUrl);
+
+        return fetch(href)
+        .then(async (res) => {
+            if (res.status !== 200) {
+                throw 0;
+            }
+            const text = await res.text();
+            const inputPath = resolveData(uri);
+            await writeFile(inputPath, text);
+            consola.success(`Fetch "${uri}"`);
+        })
+        .catch(() => {
+            consola.error(`Failed to fetch "${uri}"`);
+        });
+    }));
 }
+else {
+    const dir = resolveData("ShareCfg(VVVIP)");
+    if (!existsSync(dir)) {
+        mkdirSync(dir);
+    }
 
-await Promise.all(Object.keys(vvvip).map((key) => pick({
-    filename: key,
-    folder: vvvip[key].folder,
-    props: vvvip[key].props
-})));
+    await Promise.all(Object.entries(vvvip).map(([key, { folder, props }]) => pick({
+        filename: key,
+        folder,
+        props
+    })));
 
-// 属性过滤
-async function pick({ filename, folder, props }) {
-    const inputPath = resolveData(folder, filename + ".json");
-    const outputPath = resolveData("ShareCfg(VVVIP)", filename + ".json");
+    // 属性过滤
+    async function pick({ filename, folder, props }) {
+        const inputPath = resolveData(folder, filename + ".json");
+        const outputPath = resolveData("ShareCfg(VVVIP)", filename + ".json");
 
-    const file = await readFile(inputPath);
-    const json = JSON.parse(file.toString());
+        const file = await readFile(inputPath);
+        const json = JSON.parse(file.toString());
 
-    const data = {};
-    for (const id in json) {
-        if (id === "all") {
-            continue;
-        }
-        data[id] = {};
-        for (const key of props) {
-            if (key in json[id]) {
-                data[id][key] = json[id][key];
+        const data = {};
+        for (const id in json) {
+            if (id === "all") {
+                continue;
+            }
+            data[id] = {};
+            for (const key of props) {
+                if (key in json[id]) {
+                    data[id][key] = json[id][key];
+                }
             }
         }
+        await writeFile(outputPath, JSON.stringify(data));
     }
-    await writeFile(outputPath, JSON.stringify(data));
 }
