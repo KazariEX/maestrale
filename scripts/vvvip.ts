@@ -1,11 +1,17 @@
 import { existsSync, mkdirSync } from "node:fs";
 import { readFile, writeFile } from "node:fs/promises";
-import { dirname, resolve } from "node:path";
+import { resolve } from "node:path";
 import consola from "consola";
+import { updateTechnology } from "./technology";
 
-const resolveData = (...args) => resolve(import.meta.dirname, "../packages/data", ...args);
+const resolveData = (...args: string[]) => resolve(import.meta.dirname, "../packages/data", ...args);
 
-const vvvip = {
+interface VVVIP {
+    folder: string;
+    props: string[];
+}
+
+const vvvip: Record<string, VVVIP> = {
     attribute_info_by_type: {
         folder: "ShareCfg",
         props: [
@@ -60,6 +66,14 @@ const vvvip = {
             "prev",
             "ship_type_forbidden"
         ]
+    },
+    fleet_tech_ship_template: {
+        folder: "ShareCfg",
+        props: []
+    },
+    fleet_tech_template: {
+        folder: "ShareCfg",
+        props: []
     },
     ship_data_blueprint: {
         folder: "ShareCfg",
@@ -197,7 +211,7 @@ const vvvip = {
 if (process.argv.includes("--update")) {
     try {
         const { ProxyAgent, setGlobalDispatcher } = await import("undici");
-        const dispatcher = new ProxyAgent({ uri: new URL(process.env.HTTPS_PROXY).toString() });
+        const dispatcher = new ProxyAgent({ uri: new URL(process.env.HTTPS_PROXY!).toString() });
         setGlobalDispatcher(dispatcher);
     }
     catch {}
@@ -243,6 +257,9 @@ if (process.argv.includes("--update")) {
             consola.error(`Failed to fetch "${uri}"`);
         }
     }));
+
+    //舰队科技
+    await updateTechnology();
 }
 else {
     const dir = resolveData("ShareCfg(VVVIP)");
@@ -250,21 +267,24 @@ else {
         mkdirSync(dir);
     }
 
-    await Promise.all(Object.entries(vvvip).map(([key, { folder, props }]) => pick({
-        filename: key,
+    await Promise.all(Object.entries(vvvip).map(([key, { folder, props }]) => pick(key, {
         folder,
         props
     })));
 
     // 属性过滤
-    async function pick({ filename, folder, props }) {
+    async function pick(filename: string, { folder, props }: VVVIP) {
+        if (!props.length) {
+            return;
+        }
+
         const inputPath = resolveData(folder, filename + ".json");
         const outputPath = resolveData("ShareCfg(VVVIP)", filename + ".json");
 
         const file = await readFile(inputPath);
         const json = JSON.parse(file.toString());
 
-        const data = {};
+        const data: Record<string, Record<string, unknown>> = {};
         for (const id in json) {
             if (id === "all") {
                 continue;

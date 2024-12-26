@@ -1,7 +1,7 @@
 import { existsSync } from "node:fs";
 import { join, resolve } from "node:path";
 import consola from "consola";
-import { createEquip, createShip, createSPWeapon, ShareCfg, useTechnology } from "../packages/core/dist/index.js";
+import { createEquip, createShip, createSPWeapon, ShareCfg, useTechnology } from "maestrale";
 
 const baseDir = resolve(import.meta.dirname, "../simulator/public/image/artresource/atlas");
 

@@ -30,7 +30,6 @@ jobs:
         uses: EndBug/add-and-commit@v9
         with:
           message: "chore(data): 更新游戏数据"
-          add: "packages/data"
           default_author: github_actions
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
