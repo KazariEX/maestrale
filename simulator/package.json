@@ -7,24 +7,25 @@
     "preview": "nuxi preview"
   },
   "dependencies": {
-    "@primevue/themes": "^4.2.2",
-    "@vueuse/core": "^11.2.0",
-    "pinia": "^2.2.6",
-    "primevue": "^4.2.2",
+    "@primevue/themes": "^4.2.5",
+    "@vueuse/core": "^12.2.0",
+    "pinia": "^2.3.0",
+    "pinia-plugin-persistedstate": "^4.2.0",
+    "primevue": "^4.2.5",
     "vue": "^3.5.13",
     "vue-draggable-plus": "^0.6.0",
-    "vue-router": "^4.4.5"
+    "vue-router": "^4.5.0"
   },
   "devDependencies": {
-    "@nuxt/devtools": "^1.6.0",
-    "@nuxt/icon": "^1.8.1",
+    "@nuxt/devtools": "^1.6.4",
+    "@nuxt/icon": "^1.10.3",
     "@nuxt/image": "^1.8.1",
-    "@pinia-plugin-persistedstate/nuxt": "^1.2.1",
-    "@pinia/nuxt": "^0.7.0",
-    "@primevue/nuxt-module": "^4.2.2",
-    "@unocss/nuxt": "^0.64.1",
-    "@vueuse/nuxt": "^11.2.0",
-    "nuxt": "^3.14.159",
-    "unocss": "^0.64.1"
+    "@pinia/nuxt": "^0.9.0",
+    "@primevue/nuxt-module": "^4.2.5",
+    "@unocss/nuxt": "^0.65.3",
+    "@vueuse/nuxt": "^12.2.0",
+    "nuxt": "^3.15.0",
+    "sass": "^1.83.0",
+    "unocss": "^0.65.3"
   }
 }

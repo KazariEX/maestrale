@@ -1,18 +1,18 @@
 {
-  "private": true,
   "type": "module",
+  "private": true,
   "packageManager": "pnpm@9.12.0",
   "scripts": {
     "vvvip": "node scripts/vvvip.js"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^3.9.2",
-    "@types/node": "^22.9.0",
-    "@zinkawaii/eslint-config": "^0.1.7",
-    "@zinkawaii/stylelint-config": "^0.1.5",
-    "bumpp": "^9.8.1",
-    "eslint": "^9.15.0",
-    "stylelint": "^16.10.0",
+    "@antfu/eslint-config": "^3.12.1",
+    "@types/node": "^22.10.2",
+    "@zinkawaii/eslint-config": "^0.1.9",
+    "@zinkawaii/stylelint-config": "^0.2.2",
+    "bumpp": "^9.9.2",
+    "eslint": "^9.17.0",
+    "stylelint": "^16.12.0",
     "tsup": "^8.3.5"
   }
 }
