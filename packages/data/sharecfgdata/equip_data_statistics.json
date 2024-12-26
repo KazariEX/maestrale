@@ -111104,6 +111104,53 @@
       61113
     ]
   },
+  "61121": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "descrip": "航母空袭展示用",
+    "equip_info": [],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "1",
+    "id": 61121,
+    "label": [],
+    "name": "航空攻击展示-弗里茨·鲁梅I",
+    "nationality": 0,
+    "part_main": [],
+    "part_sub": [],
+    "property_rate": [],
+    "rarity": 1,
+    "skill_id": [],
+    "speciality": "<[NA]>",
+    "tech": 1,
+    "torpedo_ammo": 0,
+    "type": 99,
+    "value_1": "0",
+    "value_2": 0,
+    "value_3": 0,
+    "weapon_id": [
+      61121
+    ]
+  },
+  "61122": {
+    "base": 61121,
+    "hidden_skill_id": [],
+    "id": 61122,
+    "name": "航空攻击展示-弗里茨·鲁梅II",
+    "weapon_id": [
+      61122
+    ]
+  },
+  "61123": {
+    "base": 61121,
+    "hidden_skill_id": [],
+    "id": 61123,
+    "name": "航空攻击展示-弗里茨·鲁梅II",
+    "weapon_id": [
+      61123
+    ]
+  },
   "61501": {
     "ammo": 10,
     "ammo_icon": [],
@@ -124172,6 +124219,108 @@
     "name": "专属弹幕-朴茨茅斯冒险号II",
     "weapon_id": [
       170632
+    ]
+  },
+  "80401": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "descrip": "技能弹幕",
+    "equip_info": [],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "1",
+    "id": 80401,
+    "label": [],
+    "name": "专属弹幕-希佩尔METAI",
+    "nationality": 0,
+    "part_main": [
+      1,
+      19,
+      20,
+      21
+    ],
+    "part_sub": [
+      2,
+      3,
+      4,
+      5,
+      8,
+      13,
+      18
+    ],
+    "property_rate": [],
+    "rarity": 1,
+    "skill_id": [],
+    "speciality": "<[NA]>",
+    "tech": 1,
+    "torpedo_ammo": 0,
+    "type": 1,
+    "value_1": "0",
+    "value_2": 0,
+    "value_3": 0,
+    "weapon_id": [
+      61701
+    ]
+  },
+  "80402": {
+    "base": 80401,
+    "hidden_skill_id": [],
+    "id": 80402,
+    "name": "专属弹幕-希佩尔METAII",
+    "weapon_id": [
+      61702
+    ]
+  },
+  "80411": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "descrip": "技能弹幕",
+    "equip_info": [],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "1",
+    "id": 80411,
+    "label": [],
+    "name": "专属弹幕-杜伊斯堡I",
+    "nationality": 0,
+    "part_main": [
+      1,
+      19,
+      20,
+      21
+    ],
+    "part_sub": [
+      2,
+      3,
+      4,
+      5,
+      8,
+      13,
+      18
+    ],
+    "property_rate": [],
+    "rarity": 1,
+    "skill_id": [],
+    "speciality": "<[NA]>",
+    "tech": 1,
+    "torpedo_ammo": 0,
+    "type": 1,
+    "value_1": "0",
+    "value_2": 0,
+    "value_3": 0,
+    "weapon_id": [
+      61711
+    ]
+  },
+  "80412": {
+    "base": 80411,
+    "hidden_skill_id": [],
+    "id": 80412,
+    "name": "专属弹幕-杜伊斯堡II",
+    "weapon_id": [
+      61712
     ]
   },
   "85000": {
@@ -149544,6 +149693,107 @@
     "id": 150573,
     "value_1": "640"
   },
+  "150580": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "attribute_1": "durability",
+    "descrip": "孟菲斯随身携带的手帕，名字是自己努力绣上去的。",
+    "equip_info": [
+      6
+    ],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "150580",
+    "id": 150580,
+    "label": [
+      "DEV"
+    ],
+    "name": "孟菲斯之蓝",
+    "nationality": 1,
+    "part_main": [],
+    "part_sub": [],
+    "property_rate": [],
+    "rarity": 4,
+    "skill_id": [
+      60800
+    ],
+    "speciality": "<[NA]>",
+    "tech": 0,
+    "torpedo_ammo": 0,
+    "type": 10,
+    "value_1": "200",
+    "value_2": 0,
+    "value_3": 0,
+    "weapon_id": []
+  },
+  "150581": {
+    "base": 150580,
+    "hidden_skill_id": [],
+    "id": 150581,
+    "value_1": "230"
+  },
+  "150582": {
+    "base": 150580,
+    "hidden_skill_id": [],
+    "id": 150582,
+    "value_1": "260"
+  },
+  "150583": {
+    "base": 150580,
+    "hidden_skill_id": [],
+    "id": 150583,
+    "value_1": "290"
+  },
+  "150584": {
+    "base": 150580,
+    "hidden_skill_id": [],
+    "id": 150584,
+    "value_1": "320"
+  },
+  "150585": {
+    "base": 150580,
+    "hidden_skill_id": [],
+    "id": 150585,
+    "value_1": "350"
+  },
+  "150586": {
+    "base": 150580,
+    "hidden_skill_id": [],
+    "id": 150586,
+    "value_1": "380"
+  },
+  "150587": {
+    "base": 150580,
+    "hidden_skill_id": [],
+    "id": 150587,
+    "value_1": "410"
+  },
+  "150588": {
+    "base": 150580,
+    "hidden_skill_id": [],
+    "id": 150588,
+    "value_1": "440"
+  },
+  "150589": {
+    "base": 150580,
+    "hidden_skill_id": [],
+    "id": 150589,
+    "value_1": "470"
+  },
+  "150590": {
+    "base": 150580,
+    "hidden_skill_id": [],
+    "id": 150590,
+    "value_1": "500"
+  },
+  "150591": {
+    "anti_siren": 100,
+    "base": 150580,
+    "hidden_skill_id": [],
+    "id": 150591,
+    "value_1": "530"
+  },
   "170001": {
     "ammo": 10,
     "ammo_icon": [],
@@ -150606,6 +150856,85 @@
       170572,
       170573
     ]
+  },
+  "170651": {
+    "ammo": 10,
+    "ammo_icon": [],
+    "ammo_info": [],
+    "descrip": "技能弹幕",
+    "equip_info": [],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "1",
+    "id": 170651,
+    "label": [],
+    "name": "专属弹幕-z52I",
+    "nationality": 0,
+    "part_main": [
+      1,
+      19,
+      20,
+      21
+    ],
+    "part_sub": [
+      2,
+      3,
+      4,
+      5,
+      8,
+      13,
+      18
+    ],
+    "property_rate": [],
+    "rarity": 1,
+    "skill_id": [],
+    "speciality": "<[NA]>",
+    "tech": 1,
+    "torpedo_ammo": 0,
+    "type": 1,
+    "value_1": "0",
+    "value_2": 0,
+    "value_3": 0,
+    "weapon_id": [
+      170651
+    ]
+  },
+  "170652": {
+    "base": 170651,
+    "hidden_skill_id": [],
+    "id": 170652,
+    "name": "专属弹幕-z52II",
+    "weapon_id": [
+      170652
+    ]
+  },
+  "180000": {
+    "ammo": 3,
+    "ammo_icon": [
+      1
+    ],
+    "ammo_info": [],
+    "descrip": "默认装备",
+    "equip_info": [],
+    "equip_parameters": [],
+    "hidden_skill_id": [],
+    "icon": "1",
+    "id": 180000,
+    "label": [],
+    "name": "弗里茨副炮",
+    "nationality": 4,
+    "part_main": [],
+    "part_sub": [],
+    "property_rate": [],
+    "rarity": 1,
+    "skill_id": [],
+    "speciality": "<[LOCK]>",
+    "tech": 1,
+    "torpedo_ammo": 0,
+    "type": 3,
+    "value_2": 0,
+    "value_3": 0,
+    "weapon_id": []
   },
   "594017": {
     "ammo": 2,
