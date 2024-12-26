@@ -202,24 +202,45 @@ if (process.argv.includes("--update")) {
     }
     catch {}
 
-    const baseUrl = "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneData/refs/heads/main/CN/";
-    await Promise.all(Object.entries(vvvip).map(([filename, { folder }]) => {
-        const uri = `${folder}/${filename}.json`;
-        const { href } = new URL(uri, baseUrl);
+    const baseUrl = "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneData/refs/heads/main/";
 
-        return fetch(href)
-        .then(async (res) => {
+    //版本号
+    try {
+        const uri = "versions/CN.txt";
+        const { href } = new URL(uri, baseUrl);
+        const res = await fetch(href);
+        if (res.status !== 200) {
+            throw 0;
+        }
+        const version = await res.text();
+
+        const path = resolveData("package.json");
+        await writeFile(path, `{\n  "version": "${version}",\n  "private": true\n}`);
+        consola.success(`Fetch version "${version}"`);
+    }
+    catch {
+        consola.error("Failed to fetch version");
+        process.exit();
+    }
+
+    //数据
+    await Promise.all(Object.entries(vvvip).map(async ([filename, { folder }]) => {
+        try {
+            const uri = `${folder}/${filename}.json`;
+            const { href } = new URL(uri, baseUrl + "CN/");
+            const res = await fetch(href);
             if (res.status !== 200) {
                 throw 0;
             }
-            const text = await res.text();
-            const inputPath = resolveData(uri);
-            await writeFile(inputPath, text);
+            const data = await res.text();
+
+            const path = resolveData(uri);
+            await writeFile(path, data);
             consola.success(`Fetch "${uri}"`);
-        })
-        .catch(() => {
+        }
+        catch {
             consola.error(`Failed to fetch "${uri}"`);
-        });
+        }
     }));
 }
 else {
