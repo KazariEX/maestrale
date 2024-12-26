@@ -225,9 +225,10 @@ if (process.argv.includes("--update")) {
 
     //数据
     await Promise.all(Object.entries(vvvip).map(async ([filename, { folder }]) => {
+        const uri = `${folder}/${filename}.json`;
+        const { href } = new URL(uri, baseUrl + "CN/");
+
         try {
-            const uri = `${folder}/${filename}.json`;
-            const { href } = new URL(uri, baseUrl + "CN/");
             const res = await fetch(href);
             if (res.status !== 200) {
                 throw 0;

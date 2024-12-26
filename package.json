@@ -3,6 +3,7 @@
   "private": true,
   "packageManager": "pnpm@9.12.0",
   "scripts": {
+    "resource:check": "node scripts/resource.js",
     "vvvip": "node scripts/vvvip.js",
     "vvvip:update": "pnpm run vvvip --update"
   },
