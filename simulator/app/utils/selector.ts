@@ -1,4 +1,4 @@
-import { type CommanderDataTemplate, type EquipDataStatistics, type EquipType, ShareCfg, type ShipDataStatistics, type ShipType, type SPWeaponDataStatistics } from "maestrale";
+import { type EquipType, ShareCfg, type ShipType } from "maestrale";
 import { DialogSelector } from "#components";
 import { equipTypeOptions } from "~/data/constraint/equip-type";
 import { type FleetType, fleetTypeMap } from "~/data/constraint/fleet";
@@ -14,7 +14,7 @@ export function selectShip(fleetType: FleetType, canClear: boolean) {
         .filter((id) => !id.startsWith("900"))
     );
 
-    const data = createSelectorData<ShipDataStatistics>();
+    const data = createSelectorData<ShareCfg.ShipDataStatistics>();
     for (const id of ids) {
         const statistics = ShareCfg.ship_data_statistics[id + "1"];
         if (!statistics) {
@@ -62,7 +62,7 @@ export function selectEquip(allowTypes: EquipType[], shipType: ShipType, canClea
         .filter(([, item]) => item.prev === 0)
         .map(([id]) => id);
 
-    const data = createSelectorData<EquipDataStatistics>();
+    const data = createSelectorData<ShareCfg.EquipDataStatistics>();
     for (const id of ids) {
         const statistics = ShareCfg.equip_data_statistics[id];
         const template = ShareCfg.equip_data_template[id];
@@ -112,7 +112,7 @@ export function selectSPWeapon(shipId: number, shipType: ShipType, canClear: boo
         .filter(([, item]) => item.name)
         .map(([id]) => id);
 
-    const data = createSelectorData<SPWeaponDataStatistics>();
+    const data = createSelectorData<ShareCfg.SPWeaponDataStatistics>();
     for (const id of ids) {
         const statistics = ShareCfg.spweapon_data_statistics[id];
         if (!statistics) {
@@ -159,7 +159,7 @@ export function selectSPWeapon(shipId: number, shipType: ShipType, canClear: boo
 export function selectCommander() {
     const ids = Object.keys(ShareCfg.commander_data_template);
 
-    const data = createSelectorData<CommanderDataTemplate>();
+    const data = createSelectorData<ShareCfg.CommanderDataTemplate>();
     for (const id of ids) {
         const template = ShareCfg.commander_data_template[id];
         if (!template) {

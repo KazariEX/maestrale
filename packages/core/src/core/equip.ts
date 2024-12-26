@@ -1,11 +1,10 @@
 import { computed, ref, type Ref } from "@vue/reactivity";
 import { ShareCfg } from "../data";
-import type { SC } from "../data/types";
 import type { Attributes } from "./attributes";
 
 export class Equip {
-    private data_statistics: SC.EquipDataStatistics[];
-    private data_template: SC.EquipDataTemplate[];
+    private data_statistics: ShareCfg.EquipDataStatistics[];
+    private data_template: ShareCfg.EquipDataTemplate[];
 
     level: Ref<number>;
 

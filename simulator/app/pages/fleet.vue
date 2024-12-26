@@ -13,6 +13,12 @@
         { label: "舰船详情", value: "details" },
         { label: "装备列表", value: "equips" }
     ];
+
+    defineExpose<{
+        foo: number;
+    }>({
+        foo: 1
+    });
 </script>
 
 <template>

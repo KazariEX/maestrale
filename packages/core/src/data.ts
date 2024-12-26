@@ -1,7 +1,69 @@
-import type { Attributes } from "../core/attributes";
-import type { Armor, EquipType, Nationality, ShipType } from "../types";
+import type { Attributes } from "./core/attributes";
+import type { Armor, EquipType, Nationality, ShipType } from "./types";
 
-export namespace SC {
+async function loadData(name: string) {
+    const data = await import(`../../data/ShareCfg(VVVIP)/${name}.json`);
+    return [
+        name,
+        data.default
+    ] as const;
+}
+
+export namespace ShareCfg {
+    export async function load() {
+        const datas = await Promise.all([
+            loadData("attribute_info_by_type"),
+            loadData("commander_ability_template"),
+            loadData("commander_data_template"),
+            loadData("equip_data_statistics"),
+            loadData("equip_data_template"),
+            loadData("ship_data_blueprint"),
+            loadData("ship_data_breakout"),
+            loadData("ship_data_statistics"),
+            loadData("ship_data_strengthen"),
+            loadData("ship_data_template"),
+            loadData("ship_data_trans"),
+            loadData("ship_meta_breakout"),
+            loadData("ship_meta_repair"),
+            loadData("ship_meta_repair_effect"),
+            loadData("ship_skin_template"),
+            loadData("ship_strengthen_blueprint"),
+            loadData("ship_strengthen_meta"),
+            loadData("spweapon_data_statistics"),
+            loadData("spweapon_type"),
+            loadData("transform_data_template")
+        ]);
+        for (const [name, data] of datas) {
+            Object.defineProperty(ShareCfg, name, {
+                value: data,
+                configurable: false,
+                enumerable: true,
+                writable: false
+            });
+        }
+    }
+
+    export declare const attribute_info_by_type: Record<string, AttributeInfoByType>;
+    export declare const commander_ability_template: Record<string, CommanderAbilityTemplate>;
+    export declare const commander_data_template: Record<string, CommanderDataTemplate>;
+    export declare const equip_data_statistics: Record<string, EquipDataStatistics>;
+    export declare const equip_data_template: Record<string, EquipDataTemplate>;
+    export declare const ship_data_blueprint: Record<string, ShipDataBlueprint>;
+    export declare const ship_data_breakout: Record<string, ShipDataBreakout>;
+    export declare const ship_data_statistics: Record<string, ShipDataStatistics>;
+    export declare const ship_data_strengthen: Record<string, ShipDataStrengthen>;
+    export declare const ship_data_template: Record<string, ShipDataTemplate>;
+    export declare const ship_data_trans: Record<string, ShipDataTrans>;
+    export declare const ship_meta_breakout: Record<string, ShipMetaBreakout>;
+    export declare const ship_meta_repair: Record<string, ShipMetaRepair>;
+    export declare const ship_meta_repair_effect: Record<string, ShipMetaRepairEffect>;
+    export declare const ship_skin_template: Record<string, ShipSkinTemplate>;
+    export declare const ship_strengthen_blueprint: Record<string, ShipStrengthenBlueprint>;
+    export declare const ship_strengthen_meta: Record<string, ShipStrengthenMeta>;
+    export declare const spweapon_data_statistics: Record<string, SPWeaponDataStatistics>;
+    export declare const spweapon_type: Record<string, SPWeaponType>;
+    export declare const transform_data_template: Record<string, TransformDataTemplate>;
+
     export interface AttributeInfoByType {
         name: keyof Attributes;
     }
