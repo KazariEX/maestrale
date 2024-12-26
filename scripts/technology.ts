@@ -60,11 +60,19 @@ async function calcTotalAttributes() {
         update(item.add_get_shiptype, item.add_get_attr, item.add_get_value);
         update(item.add_level_shiptype, item.add_level_attr, item.add_level_value);
     }
-    for (const { add } of Object.entries(fleet_tech_template).filter(([key]) => key.endsWith("9")).map(([, value]) => value)) {
-        for (const [types, attr, value] of add) {
+
+    const keys = Object.keys(fleet_tech_template);
+    for (let i = 0; i < keys.length; i++) {
+        const key = Number(keys[i]);
+        const nextKey = Number(keys[i + 1] ?? Infinity);
+        if (Math.floor(nextKey / 1000) <= Math.floor(key / 1000)) {
+            continue;
+        }
+        for (const [types, attr, value] of fleet_tech_template[key].add) {
             update(types, attr, value);
         }
     }
+
     return attributes;
 
     async function loadData<T>(path: string) {
