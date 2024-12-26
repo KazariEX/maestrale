@@ -1,17 +1,18 @@
 import { ref, type Ref } from "@vue/reactivity";
+import type { ShipType } from "../types";
 import type { Attributes } from "./attributes";
 
 export type TechnologyAttributes = Omit<Attributes, "speed" | "luck">;
 
 export interface ITechnology {
-    attrs: Ref<Record<string, Record<keyof TechnologyAttributes, number>>>;
-    get: (type: number, attr: keyof Attributes) => number;
+    attrs: Ref<Record<ShipType, TechnologyAttributes>>;
+    get: (type: ShipType, attr: keyof Attributes) => number;
 }
 
 export function useTechnology(): ITechnology {
     const attrs = ref(createTechnologyAttributes());
 
-    function get(type: number, attr: keyof Attributes) {
+    function get(type: ShipType, attr: keyof Attributes) {
         if (attr === "speed" || attr === "luck") {
             return 0;
         }
@@ -24,7 +25,7 @@ export function useTechnology(): ITechnology {
     };
 }
 
-export function createTechnologyAttributes(): Record<string, TechnologyAttributes> {
+export function createTechnologyAttributes(): Record<ShipType, TechnologyAttributes> {
     return {
         1: {
             durability: 234,
