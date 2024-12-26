@@ -8,6 +8,4 @@ export * from "./core/spweapon";
 export * from "./core/technology";
 
 export * from "./data";
-export * from "./data/types";
-
 export * from "./types";
