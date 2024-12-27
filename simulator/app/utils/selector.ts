@@ -29,7 +29,7 @@ export function selectShip(fleetType: FleetType, canClear: boolean) {
         data.push({
             id: Number(id),
             name,
-            icon: `/image/artresource/atlas/squareicon/${ShareCfg.ship_skin_template[`${id}0`]?.painting}.png`,
+            icon: `/assets/artresource/atlas/squareicon/${ShareCfg.ship_skin_template[`${id}0`]?.painting}.png`,
             rarity,
             type,
             nationality
@@ -78,7 +78,7 @@ export function selectEquip(allowTypes: EquipType[], shipType: ShipType, canClea
         data.push({
             id: Number(id),
             name,
-            icon: `/image/artresource/atlas/equips/${icon}.png`,
+            icon: `/assets/artresource/atlas/equips/${icon}.png`,
             rarity,
             type,
             nationality
@@ -130,7 +130,7 @@ export function selectSPWeapon(shipId: number, shipType: ShipType, canClear: boo
         data.push({
             id: Number(id),
             name,
-            icon: `/image/artresource/atlas/spweapon/${icon}.png`,
+            icon: `/assets/artresource/atlas/spweapon/${icon}.png`,
             rarity
         });
     }
@@ -170,7 +170,7 @@ export function selectCommander() {
         data.push({
             id: Number(id),
             name,
-            icon: `/image/artresource/atlas/commandericon/${painting}.png`,
+            icon: `/assets/artresource/atlas/commandericon/${painting}.png`,
             rarity,
             nationality
         });
@@ -209,7 +209,7 @@ export function selectNestCommander(excludes: number[], canClear: boolean) {
         data.push({
             id: i,
             name: name.value,
-            icon: `/image/artresource/atlas/commandericon/${painting}.png`,
+            icon: `/assets/artresource/atlas/commandericon/${painting}.png`,
             rarity: rarity
         });
     }

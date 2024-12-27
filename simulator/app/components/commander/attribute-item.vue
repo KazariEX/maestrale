@@ -19,7 +19,7 @@
         p="1"
         b-b="~ solid slate op-25"
     >
-        <nuxt-img w="6" :src="`/image/prefab/variantplatform/${attr}.png`"/>
+        <nuxt-img w="6" :src="`/assets/prefab/variantplatform/${attr}.png`"/>
         <span>{{ attributeMap[attr] }}</span>
         <span m="l-auto">+{{ displayValue }}%</span>
     </li>

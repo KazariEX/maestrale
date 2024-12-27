@@ -39,7 +39,7 @@
                 b="rounded-full"
                 mode="spweapon"
                 :rarity="spweapon.rarity"
-                :icon="`/image/artresource/atlas/spweapon/${spweapon.icon}.png`"
+                :icon="`/assets/artresource/atlas/spweapon/${spweapon.icon}.png`"
                 :show-frame="false"
                 padding
             />

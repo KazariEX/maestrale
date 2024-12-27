@@ -3,7 +3,7 @@ import { join, resolve } from "node:path";
 import consola from "consola";
 import { createEquip, createShip, createSPWeapon, ShareCfg, useTechnology } from "maestrale";
 
-const baseDir = resolve(import.meta.dirname, "../simulator/public/image/artresource/atlas");
+const baseDir = resolve(import.meta.dirname, "../simulator/public/assets/artresource/atlas");
 
 const technology = useTechnology();
 

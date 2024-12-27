@@ -14,7 +14,7 @@
 
     const icon = computed(() => {
         return commander.value
-            ? `/image/artresource/atlas/commandericon/${commander.value.painting}.png`
+            ? `/assets/artresource/atlas/commandericon/${commander.value.painting}.png`
             : void 0;
     });
 

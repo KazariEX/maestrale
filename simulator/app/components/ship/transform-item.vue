@@ -24,7 +24,7 @@
         }"
         @click="template.enable.value = !template.enable.value"
     >
-        <nuxt-img size="7" m="auto" :src="`/image/artresource/atlas/modicon/${template.icon}.png`"/>
+        <nuxt-img size="7" m="auto" :src="`/assets/artresource/atlas/modicon/${template.icon}.png`"/>
         <span text="3 center truncate">{{ template.name }}</span>
     </li>
 </template>
