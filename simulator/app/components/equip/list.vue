@@ -5,8 +5,8 @@
         required: true
     });
 
-    const equipStyle = `background-image: url("/image/artresource/ui/shipinfoui/sucai_button.png")`;
-    const spweaponStyle = `background-image: url("/image/artresource/ui/shipinfoui/slot_bg.png")`;
+    const equipStyle = `background-image: url("/assets/artresource/ui/shipinfoui/sucai_button.png")`;
+    const spweaponStyle = `background-image: url("/assets/artresource/ui/shipinfoui/slot_bg.png")`;
 </script>
 
 <template>

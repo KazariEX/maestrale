@@ -38,7 +38,7 @@
         <template v-if="equip">
             <rarity-icon
                 :rarity="equip.rarity"
-                :icon="`/image/artresource/atlas/equips/${equip.icon}.png`"
+                :icon="`/assets/artresource/atlas/equips/${equip.icon}.png`"
                 padding
             />
             <label

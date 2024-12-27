@@ -8,7 +8,7 @@
         .filter(([id]) => !invalidIds.includes(Number(id)))
         .map(([id, { name, icon }]) => ({
             label: name,
-            icon: `/image/artresource/atlas/commandertalenticon/${icon}.png`,
+            icon: `/assets/artresource/atlas/commandertalenticon/${icon}.png`,
             value: Number(id)
         }));
 
@@ -40,7 +40,7 @@
             <nuxt-img
                 v-if="ability"
                 size="inherit"
-                :src="`/image/artresource/atlas/commandertalenticon/${ability.icon}.png`"
+                :src="`/assets/artresource/atlas/commandertalenticon/${ability.icon}.png`"
             />
             <div
                 v-else

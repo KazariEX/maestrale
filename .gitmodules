@@ -1,0 +1,3 @@
+[submodule "simulator/public/assets"]
+	path = simulator/public/assets
+	url = https://github.com/KazariEX/maestrale-assets

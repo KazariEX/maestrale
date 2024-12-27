@@ -20,11 +20,11 @@
     });
 
     const backgroundStyle = computed(() => ({
-        backgroundImage: `url(/image/artresource/atlas/weaponframes/bg${order.value}.png)`
+        backgroundImage: `url(/assets/artresource/atlas/weaponframes/bg${order.value}.png)`
     }));
 
     const frameStyle = computed(() => ({
-        backgroundImage: `url(/image/artresource/atlas/weaponframes/frame_${order.value}.png)`
+        backgroundImage: `url(/assets/artresource/atlas/weaponframes/frame_${order.value}.png)`
     }));
 </script>
 

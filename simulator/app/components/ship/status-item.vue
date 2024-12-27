@@ -13,7 +13,7 @@
     const { currentShip: ship } = storeToRefs(fleetStore);
 
     const src = computed(() => {
-        return `/image/prefab/variantplatform/${icon ?? attr}.png`;
+        return `/assets/prefab/variantplatform/${icon ?? attr}.png`;
     });
 
     const value = computed(() => {

@@ -17,8 +17,8 @@
 
     const squareicon = computed(() => {
         return ship.value?.painting.value
-            ? `/image/artresource/atlas/squareicon/${ship.value.painting.value}.png`
-            : "/image/artresource/ui/levelfleetselectview/blank_icon_light.png";
+            ? `/assets/artresource/atlas/squareicon/${ship.value.painting.value}.png`
+            : "/assets/artresource/ui/levelfleetselectview/blank_icon_light.png";
     });
 
     const limitedBreakoutOptions = computed(() => {

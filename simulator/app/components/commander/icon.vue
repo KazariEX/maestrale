@@ -4,7 +4,7 @@
     }>();
 
     const src = computed(() => {
-        return icon ?? "/image/artresource/ui/commanderui/commandroomui/icon_bg.png";
+        return icon ?? "/assets/artresource/ui/commanderui/commandroomui/icon_bg.png";
     });
 </script>
 
