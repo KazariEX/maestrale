@@ -1,12 +1,13 @@
 <script lang="ts" setup>
     import { createShip, Nationality, type Ship } from "maestrale";
     import { breakoutOptions } from "~/data/constraint/breakout";
-    import { favorOptions } from "~/data/constraint/favor";
+    import { favorMap, favorOptions } from "~/data/constraint/favor";
     import type { FleetType } from "~/data/constraint/fleet";
 
     const { fleetType } = defineProps<{
         fleetType: FleetType;
         role: string;
+        order: number;
     }>();
     const ship = defineModel<Ship | null>({
         required: true
@@ -63,16 +64,47 @@
             [`outline`]: ship && fleetStore.currentShip === ship
         }"
     >
-        <rarity-icon
-            class="ship-icon"
+        <div
+            position="relative"
             size="16"
-            :rarity="ship?.rarity.value"
-            :icon="squareicon"
-            :star="ship?.star.value"
-            :max-star="ship?.maxStar.value"
-            :is-meta="ship?.nationality.value === Nationality.META"
+            text="3 white"
             @click.stop="clickIcon"
-        />
+        >
+            <rarity-icon
+                class="ship-icon"
+                :rarity="ship?.rarity.value"
+                :icon="squareicon"
+                :star="ship?.star.value"
+                :max-star="ship?.maxStar.value"
+                :is-meta="ship?.nationality.value === Nationality.META"
+            />
+            <template v-if="ship && fleetStore.infoMode === `equips`">
+                <span
+                    class="ship-level"
+                    position="absolute bottom-4 left-1px"
+                    p="l-1 r-2"
+                    bg="black op-50"
+                    font="mono bold"
+                    pointer-events="none"
+                >{{ ship.level }}</span>
+                <span
+                    class="ship-order"
+                    grid="~ place-items-end"
+                    position="absolute right-1px bottom-1px"
+                    p="r-0.5"
+                    size="5"
+                    bg="black op-50"
+                    font="mono bold"
+                    pointer-events="none"
+                >{{ order }}</span>
+                <span
+                    position="absolute top-0 right-0"
+                    p="r-0.75"
+                    text-shadow="md color-black"
+                    pointer-events="none"
+                >{{ favorMap[ship.favor.value] }}</span>
+            </template>
+        </div>
         <template v-if="ship">
             <div
                 v-if="fleetStore.infoMode === `details`"
@@ -134,3 +166,25 @@
         </div>
     </li>
 </template>
+
+<style lang="scss">
+    .ship-level {
+        clip-path:
+            polygon(
+                0% 0%,
+                calc(100% - 7px) 0%,
+                100% 50%,
+                calc(100% - 7px) 100%,
+                0 100%
+            );
+    }
+
+    .ship-order {
+        clip-path:
+            polygon(
+                100% 0%,
+                100% 100%,
+                0% 100%
+            );
+    }
+</style>

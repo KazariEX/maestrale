@@ -9,6 +9,7 @@
         items: {
             key: keyof T;
             role: string;
+            order: number;
         }[];
     }>();
     const fleet = defineModel<T>({
@@ -49,10 +50,11 @@
             tag="ul"
         >
             <ship-card
-                v-for="{ key, role } in items"
+                v-for="{ key, role, order } in items"
                 :key
                 :fleet-type="type"
                 :role
+                :order
                 v-model="getShipRef(key).value"
             />
         </transition-group>
