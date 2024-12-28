@@ -217,6 +217,41 @@ if (process.argv.includes("--update")) {
     catch {}
 
     const baseUrl = "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneData/refs/heads/main/";
+    let isDataChanged = false;
+
+    //数据
+    await Promise.all(Object.entries(vvvip).map(async ([filename, { folder }]) => {
+        const uri = `${folder}/${filename}.json`;
+        const { href } = new URL(uri, baseUrl + "CN/");
+
+        try {
+            const res = await fetch(href);
+            if (res.status !== 200) {
+                throw 0;
+            }
+            const data = await res.text();
+
+            const path = resolveData(uri);
+            try {
+                const file = await readFile(path);
+                isDataChanged ||= file.toString() !== data;
+            }
+            catch {
+                isDataChanged = true;
+            }
+
+            await writeFile(path, data);
+            consola.success(`Fetch "${uri}"`);
+        }
+        catch (err) {
+            consola.error(`Failed to fetch "${uri}"`);
+            throw err;
+        }
+    }));
+
+    if (!isDataChanged) {
+        process.exit(0);
+    }
 
     //版本号
     try {
@@ -232,31 +267,10 @@ if (process.argv.includes("--update")) {
         await writeFile(path, `{\n  "version": "${version}",\n  "private": true\n}`);
         consola.success(`Fetch version "${version}"`);
     }
-    catch {
+    catch (err) {
         consola.error("Failed to fetch version");
-        process.exit();
+        throw err;
     }
-
-    //数据
-    await Promise.all(Object.entries(vvvip).map(async ([filename, { folder }]) => {
-        const uri = `${folder}/${filename}.json`;
-        const { href } = new URL(uri, baseUrl + "CN/");
-
-        try {
-            const res = await fetch(href);
-            if (res.status !== 200) {
-                throw 0;
-            }
-            const data = await res.text();
-
-            const path = resolveData(uri);
-            await writeFile(path, data);
-            consola.success(`Fetch "${uri}"`);
-        }
-        catch {
-            consola.error(`Failed to fetch "${uri}"`);
-        }
-    }));
 
     //舰队科技
     await updateTechnology();
