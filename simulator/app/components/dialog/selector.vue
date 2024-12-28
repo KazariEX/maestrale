@@ -8,6 +8,7 @@
     }"
     setup
 >
+    import { Nationality } from "maestrale";
     import type { Filter } from "~/components/lib-filter.vue";
     import type { RarityIconProps } from "~/components/rarity-icon.vue";
 
@@ -111,6 +112,7 @@
                         :rarity="item.rarity"
                         :icon="item.icon"
                         :padding="iconPadding"
+                        :is-meta="item.nationality === Nationality.META"
                     />
                     <span text="3 center truncate">{{ item.name }}</span>
                 </li>
