@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-    import { createShip, type Ship } from "maestrale";
+    import { createShip, Nationality, type Ship } from "maestrale";
     import { breakoutOptions } from "~/data/constraint/breakout";
     import { favorOptions } from "~/data/constraint/favor";
     import type { FleetType } from "~/data/constraint/fleet";
@@ -70,6 +70,7 @@
             :icon="squareicon"
             :star="ship?.star.value"
             :max-star="ship?.maxStar.value"
+            :is-meta="ship?.nationality.value === Nationality.META"
             @click.stop="clickIcon"
         />
         <template v-if="ship">

@@ -7,12 +7,14 @@
         showFrame?: boolean;
         star?: number;
         maxStar?: number;
+        isMeta?: boolean;
     }
 
     const {
         mode = "general",
         rarity,
-        showFrame = true
+        showFrame = true,
+        isMeta = false
     } = defineProps<RarityIconProps>();
 
     const order = computed(() => {
@@ -20,7 +22,7 @@
     });
 
     const backgroundStyle = computed(() => ({
-        backgroundImage: `url(/assets/artresource/atlas/weaponframes/bg${order.value}.png)`
+        backgroundImage: `url(/assets/artresource/atlas/weaponframes/bg${isMeta ? "1" : ""}${order.value}.png)`
     }));
 
     const frameStyle = computed(() => ({
