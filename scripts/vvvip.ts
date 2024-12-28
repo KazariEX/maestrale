@@ -1,4 +1,3 @@
-import { existsSync, mkdirSync } from "node:fs";
 import { readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import consola from "consola";
@@ -219,7 +218,7 @@ if (process.argv.includes("--update")) {
     const baseUrl = "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneData/refs/heads/main/";
     let isDataChanged = false;
 
-    //数据
+    // 数据
     await Promise.all(Object.entries(vvvip).map(async ([filename, { folder }]) => {
         const uri = `${folder}/${filename}.json`;
         const { href } = new URL(uri, baseUrl + "CN/");
@@ -253,7 +252,7 @@ if (process.argv.includes("--update")) {
         process.exit(0);
     }
 
-    //版本号
+    // 版本号
     try {
         const uri = "versions/CN.txt";
         const { href } = new URL(uri, baseUrl);
@@ -272,15 +271,10 @@ if (process.argv.includes("--update")) {
         throw err;
     }
 
-    //舰队科技
+    // 舰队科技
     await updateTechnology();
 }
 else {
-    const dir = resolveData("ShareCfg(VVVIP)");
-    if (!existsSync(dir)) {
-        mkdirSync(dir);
-    }
-
     await Promise.all(Object.entries(vvvip).map(([key, { folder, props }]) => pick(key, {
         folder,
         props
