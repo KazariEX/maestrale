@@ -11,9 +11,10 @@
     import type { Filter } from "~/components/lib-filter.vue";
     import type { RarityIconProps } from "~/components/rarity-icon.vue";
 
-    const { selectors } = defineProps<{
+    const { selectors, sortKey = "rarity", data } = defineProps<{
         title: string;
         selectors: Filter[];
+        sortKey?: string;
         data: T[];
         canClear?: boolean;
         iconPadding?: boolean;
@@ -23,6 +24,14 @@
     const emit = defineEmits<{
         close: [id: number];
     }>();
+
+    const sortedData = computed(() => {
+        return [...data].sort((a, b) => {
+            const bVal = b[sortKey] as number;
+            const aVal = a[sortKey] as number;
+            return bVal - aVal;
+        });
+    });
 
     const localSelectors = ref(selectors.map((selector) => ({
         ...selector,
@@ -83,7 +92,7 @@
                     <iconify text="8 slate op-60" name="fa6-solid:trash-can"/>
                 </li>
                 <li
-                    v-for="item in data"
+                    v-for="item in sortedData"
                     v-show="localSelectors.every(({ id, value }) => {
                         return value === -1 || value === item[id];
                     })"
