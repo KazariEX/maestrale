@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-    import { createShip, Nationality, type Ship } from "maestrale";
+    import { createShip, type Ship } from "maestrale";
     import { breakoutOptions } from "~/data/constraint/breakout";
-    import { favorMap, favorOptions } from "~/data/constraint/favor";
+    import { favorOptions } from "~/data/constraint/favor";
     import type { FleetType } from "~/data/constraint/fleet";
 
     const { fleetType } = defineProps<{
@@ -15,12 +15,6 @@
 
     const fleetStore = useFleetStore();
     const technology = useTechnology();
-
-    const squareicon = computed(() => {
-        return ship.value?.painting.value
-            ? `/assets/artresource/atlas/squareicon/${ship.value.painting.value}.png`
-            : "/assets/artresource/ui/levelfleetselectview/blank_icon_light.png";
-    });
 
     const limitedBreakoutOptions = computed(() => {
         return breakoutOptions.filter(({ value }) => {
@@ -45,11 +39,18 @@
     }
 
     function clickIcon() {
-        if (ship.value !== null) {
-            fleetStore.setCurrentShip(ship.value);
+        if (ship.value === null || fleetStore.infoMode === "equips" && ship.value === fleetStore.currentShip) {
+            select();
         }
         else {
-            select();
+            fleetStore.setCurrentShip(ship.value);
+        }
+    }
+
+    function rightClickIcon(event: MouseEvent) {
+        if (ship.value === fleetStore.currentShip) {
+            fleetStore.setCurrentShip(null);
+            event.preventDefault();
         }
     }
 </script>
@@ -64,47 +65,12 @@
             [`outline`]: ship && fleetStore.currentShip === ship
         }"
     >
-        <div
-            position="relative"
-            size="16"
-            text="3 white"
+        <ship-icon
+            :order
+            v-model="ship"
             @click.stop="clickIcon"
-        >
-            <rarity-icon
-                class="ship-icon"
-                :rarity="ship?.rarity.value"
-                :icon="squareicon"
-                :star="ship?.star.value"
-                :max-star="ship?.maxStar.value"
-                :is-meta="ship?.nationality.value === Nationality.META"
-            />
-            <template v-if="ship && fleetStore.infoMode === `equips`">
-                <span
-                    class="ship-level"
-                    position="absolute bottom-4 left-1px"
-                    p="l-1 r-2"
-                    bg="black op-50"
-                    font="mono bold"
-                    pointer-events="none"
-                >{{ ship.level }}</span>
-                <span
-                    class="ship-order"
-                    grid="~ place-items-end"
-                    position="absolute right-1px bottom-1px"
-                    p="r-0.5"
-                    size="5"
-                    bg="black op-50"
-                    font="mono bold"
-                    pointer-events="none"
-                >{{ order }}</span>
-                <span
-                    position="absolute top-0 right-0"
-                    p="r-0.75"
-                    text-shadow="md color-black"
-                    pointer-events="none"
-                >{{ favorMap[ship.favor.value] }}</span>
-            </template>
-        </div>
+            @contextmenu="rightClickIcon"
+        />
         <template v-if="ship">
             <div
                 v-if="fleetStore.infoMode === `details`"
@@ -166,25 +132,3 @@
         </div>
     </li>
 </template>
-
-<style lang="scss">
-    .ship-level {
-        clip-path:
-            polygon(
-                0% 0%,
-                calc(100% - 7px) 0%,
-                100% 50%,
-                calc(100% - 7px) 100%,
-                0 100%
-            );
-    }
-
-    .ship-order {
-        clip-path:
-            polygon(
-                100% 0%,
-                100% 100%,
-                0% 100%
-            );
-    }
-</style>
