@@ -8,12 +8,12 @@
             type="submarine"
             :items="[
                 {
-                    key: `submarine1`,
+                    key: `submarine2`,
                     role: `僚舰`,
                     order: 2
                 },
                 {
-                    key: `submarine2`,
+                    key: `submarine1`,
                     role: `旗舰`,
                     order: 1
                 },
