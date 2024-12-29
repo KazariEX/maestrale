@@ -1,15 +1,15 @@
-<script lang="ts" setup>
-    export interface Filter {
+<script lang="ts" setup generic="T">
+    export interface Filter<T = unknown> {
         label: string;
         id: string;
         options: {
             label: string;
-            value: number;
+            value: T;
         }[];
     }
 
-    const { options } = defineProps<Filter>();
-    const modelValue = defineModel<number>();
+    const { options } = defineProps<Filter<T>>();
+    const modelValue = defineModel<T>();
 
     const fullOptions = computed(() => {
         return [
@@ -24,6 +24,7 @@
         <prime-select
             w="full"
             size="small"
+            :disabled="!options.length"
             :input-id="`filter_${id}`"
             :options="fullOptions"
             option-label="label"

@@ -12,10 +12,14 @@
     import type { Filter } from "~/components/lib-filter.vue";
     import type { RarityIconProps } from "~/components/rarity-icon.vue";
 
-    const { selectors, sortKey = "rarity", data } = defineProps<{
+    interface SpecialFilter {
+        label: string;
+        exec: (item: T) => unknown;
+    }
+
+    const { selectors, data } = defineProps<{
         title: string;
-        selectors: Filter[];
-        sortKey?: string;
+        selectors: (Filter | SpecialFilter)[];
         data: T[];
         canClear?: boolean;
         iconPadding?: boolean;
@@ -27,17 +31,39 @@
     }>();
 
     const sortedData = computed(() => {
-        return [...data].sort((a, b) => {
-            const bVal = b[sortKey] as number;
-            const aVal = a[sortKey] as number;
-            return bVal - aVal;
-        });
+        return [...data].sort((a, b) => b.rarity - a.rarity);
     });
 
-    const localSelectors = ref(selectors.map((selector) => ({
-        ...selector,
-        value: -1
-    })));
+    const filterWord = ref("");
+
+    const localSelectors = ref(
+        selectors
+            .filter((selector) => "id" in selector)
+            .map((selector) => ({
+                ...selector,
+                value: -1
+            }))
+    );
+
+    const additionalSelector = ref({
+        options: selectors
+            .filter((selector) => "exec" in selector)
+            .map((selector) => ({
+                ...selector,
+                value: selector.label
+            })),
+        value: ""
+    });
+
+    function filterItem(item: T) {
+        return (!filterWord.value || item.name.includes(filterWord.value))
+            && localSelectors.value.every(({ id, value }) => {
+                return value === -1 || value === item[id];
+            })
+            && additionalSelector.value.options.every(({ exec, value }) => {
+                return value !== additionalSelector.value.value || exec(item);
+            });
+    }
 </script>
 
 <template>
@@ -66,7 +92,7 @@
                     <iconify name="fa6-solid:xmark"/>
                 </button>
             </header>
-            <div grid="~ gap-4 cols-[repeat(auto-fit,minmax(0,1fr))]" p="t-6 r-8">
+            <div grid="~ gap-row-8 gap-col-4 rows-2 cols-3" p="t-6 r-8">
                 <lib-filter
                     v-for="{ label, id, options }, i in localSelectors"
                     :key="id"
@@ -74,6 +100,17 @@
                     :label
                     :options
                     v-model="localSelectors[i]!.value"
+                />
+                <prime-float-label grid="row-start-2 col-span-2">
+                    <prime-input-text w="full" size="small" v-model.trim="filterWord"/>
+                    <label>名称</label>
+                </prime-float-label>
+                <lib-filter
+                    id="additional"
+                    grid="row-start-2"
+                    label="附加索引"
+                    :options="additionalSelector.options"
+                    v-model="additionalSelector.value"
                 />
             </div>
             <ul
@@ -94,9 +131,7 @@
                 </li>
                 <li
                     v-for="item in sortedData"
-                    v-show="localSelectors.every(({ id, value }) => {
-                        return value === -1 || value === item[id];
-                    })"
+                    v-show="filterItem(item)"
                     :key="item.id"
                     grid="~ justify-center gap-0.5"
                     w="16"
