@@ -9,7 +9,6 @@
     }>();
 
     const fleetStore = useFleetStore();
-    const technologyStore = useTechnologyStore();
     const { currentShip: ship } = storeToRefs(fleetStore);
 
     const src = computed(() => {
@@ -21,28 +20,26 @@
     });
 
     const equipValue = computed(() => {
-        return ship.value
-            && attr
-            && !["ammo", "oil", "oxy_max"].includes(attr)
-                ? ship.value.equipAttrs.value[attr as keyof Attributes]
-                : 0;
+        return isGeneralAttr(attr)
+            && ship.value?.equipAttrs.value[attr]
+            || 0;
     });
 
     const techValue = computed(() => {
-        return ship.value?.breakout.value === 4
-            && attr
-            && !["ammo", "luck", "speed", "oil", "oxy_max"].includes(attr)
-                ? technologyStore.get(ship.value.type.value, attr as keyof Attributes)
-                : 0;
+        return isGeneralAttr(attr)
+            && ship.value?.techAttrs.value[attr]
+            || 0;
     });
 
     const commanderValue = computed(() => {
-        return ship.value
-            && attr
-            && !["ammo", "oil", "oxy_max"].includes(attr)
-                ? ship.value.commanderAttrs.value[attr as keyof Attributes]
-                : 0;
+        return isGeneralAttr(attr)
+            && ship.value?.commanderAttrs.value[attr]
+            || 0;
     });
+
+    function isGeneralAttr(attr: string | undefined): attr is keyof Attributes {
+        return attr !== void 0 && !["ammo", "oil", "oxy_max"].includes(attr);
+    }
 </script>
 
 <template>
