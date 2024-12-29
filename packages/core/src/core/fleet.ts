@@ -88,7 +88,7 @@ function track<T extends Fleet>(fleet: T) {
             if (oldShip === newShip) {
                 continue;
             }
-            if (oldShip) {
+            if (oldShip && !fleet.ships.value.includes(oldShip)) {
                 oldShip[ShipFleetKey].value = null;
             }
             if (newShip) {
