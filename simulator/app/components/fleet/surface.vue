@@ -8,12 +8,12 @@
             type="main"
             :items="[
                 {
-                    key: `main1`,
+                    key: `main2`,
                     role: `僚舰`,
                     order: 2
                 },
                 {
-                    key: `main2`,
+                    key: `main1`,
                     role: `旗舰`,
                     order: 1
                 },
