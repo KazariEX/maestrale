@@ -14,7 +14,9 @@ export function selectShip(fleetType: FleetType, canClear: boolean) {
         .filter((id) => !id.startsWith("900"))
     );
 
-    const data = createSelectorData<ShareCfg.ShipDataStatistics>();
+    const data = createSelectorData<ShareCfg.ShipDataStatistics, {
+        canTransform: boolean;
+    }>();
     for (const id of ids) {
         const statistics = ShareCfg.ship_data_statistics[id + "1"];
         if (!statistics) {
@@ -32,7 +34,8 @@ export function selectShip(fleetType: FleetType, canClear: boolean) {
             icon: `/assets/artresource/atlas/squareicon/${ShareCfg.ship_skin_template[`${id}0`]?.painting}.png`,
             rarity,
             type,
-            nationality
+            nationality,
+            canTransform: id in ShareCfg.ship_data_trans
         });
     }
 
@@ -43,7 +46,8 @@ export function selectShip(fleetType: FleetType, canClear: boolean) {
             selectors: [
                 { label: "稀有度", id: "rarity", options: rarityOptions },
                 { label: "舰种", id: "type", options: shipTypeOptions },
-                { label: "阵营", id: "nationality", options: nationalityOptions }
+                { label: "阵营", id: "nationality", options: nationalityOptions },
+                { label: "可改造", exec: (item) => item.canTransform }
             ],
             data,
             canClear,
@@ -235,7 +239,7 @@ export function selectNestCommander(excludes: number[], canClear: boolean) {
     });
 }
 
-function createSelectorData<T>(): (Partial<T> & {
+function createSelectorData<T, R = unknown>(): (Partial<T> & R & {
     id: number;
     name: string;
     icon: string;
