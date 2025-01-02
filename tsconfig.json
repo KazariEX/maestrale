@@ -4,14 +4,15 @@
     "lib": [
       "ESNext"
     ],
-    "moduleDetection": "force",
-    "module": "Preserve",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "allowJs": true,
     "strict": true,
+    "noImplicitOverride": true,
+    "noUnusedLocals": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "isolatedModules": true,
     "verbatimModuleSyntax": true,
     "skipLibCheck": true
   },

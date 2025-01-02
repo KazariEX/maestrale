@@ -3,7 +3,7 @@
   "private": true,
   "packageManager": "pnpm@9.12.0",
   "scripts": {
-    "resource:check": "tsx scripts/resource.ts",
+    "assets:check": "tsx scripts/assets.ts",
     "vvvip": "tsx scripts/vvvip.ts",
     "vvvip:update": "pnpm run vvvip --update"
   },
