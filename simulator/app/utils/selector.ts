@@ -1,4 +1,4 @@
-import { type EquipType, ShareCfg, type ShipType } from "maestrale";
+import { type Commander, type EquipType, ShareCfg, type ShipType } from "maestrale";
 import { DialogSelector } from "#components";
 import { equipTypeOptions } from "~/data/constraint/equip-type";
 import { type FleetType, fleetTypeMap } from "~/data/constraint/fleet";
@@ -197,16 +197,18 @@ export function selectCommander() {
     });
 }
 
-export function selectNestCommander(excludes: number[], canClear: boolean) {
+export function selectNestCommander(current: Commander | null, party: Commander[]) {
     const commanderStore = useCommanderStore();
     const { commanders } = storeToRefs(commanderStore);
+    const excludes = getExcludeItems(current, party, commanders.value);
 
     const data = createSelectorData();
     for (let i = 0; i < commanders.value.length; i++) {
-        if (excludes.includes(i)) {
+        const commander = commanders.value[i]!;
+        if (excludes.has(commander)) {
             continue;
         }
-        const { name, painting, rarity } = commanders.value[i]!;
+        const { name, painting, rarity } = commander;
         data.push({
             id: i,
             name: name.value,
@@ -224,7 +226,7 @@ export function selectNestCommander(excludes: number[], canClear: boolean) {
                 { label: "阵营", id: "nationality", options: nationalityOptions }
             ],
             data,
-            canClear,
+            canClear: !!current,
             rarityMode: "commander",
             onClose(i) {
                 close();
@@ -243,4 +245,13 @@ function createSelectorData<T>(): (Partial<T> & {
     rarity: number;
 })[] {
     return [];
+}
+
+function getExcludeItems<T extends { id: number }>(currentItem: T | null, withinItems: T[], allItems: T[]) {
+    const ids = withinItems.map((item) => item.id).filter((id) => id !== currentItem?.id);
+    const excludes = new Set<T>(allItems.filter((item) => ids.includes(item.id)));
+    if (currentItem) {
+        excludes.add(currentItem);
+    }
+    return excludes;
 }
