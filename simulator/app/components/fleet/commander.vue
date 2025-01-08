@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+    import { nonNullable } from "maestrale/utils";
     import type { Commander, Fleet } from "maestrale";
 
     const { fleet } = defineProps<{
@@ -23,11 +24,10 @@
     });
 
     async function select() {
-        const excludes = fleet.commanders.value.map(
-            (commander) => (commander ? commanders.value.indexOf(commander) : -1)
+        const i = await selectNestCommander(
+            commander.value,
+            fleet.commanders.value.filter(nonNullable)
         );
-
-        const i = await selectNestCommander(excludes, !!commander.value);
         if (i === -1) {
             commander.value = null;
         }
