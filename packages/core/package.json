@@ -28,6 +28,7 @@
     "release": "bumpp --no-push -c \"release: v%s\""
   },
   "dependencies": {
+    "@maestrale/data": "workspace:^",
     "@vue/reactivity": "^3.5.13"
   }
 }
