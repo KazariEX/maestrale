@@ -1,5 +1,5 @@
+import { ShareCfg } from "@maestrale/data";
 import { computed, ref, type Ref } from "@vue/reactivity";
-import { ShareCfg } from "../data";
 import type { Attributes } from "./attributes";
 
 export class SPWeapon {

@@ -1,5 +1,5 @@
+import { ShareCfg } from "@maestrale/data";
 import { computed, ref, type Ref, shallowReactive } from "@vue/reactivity";
-import { ShareCfg } from "../data";
 import { entries } from "../utils";
 import { type Attributes, createAttributes } from "./attributes";
 

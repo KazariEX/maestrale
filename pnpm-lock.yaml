@@ -47,11 +47,18 @@ importers:
 
   packages/core:
     dependencies:
+      '@maestrale/data':
+        specifier: workspace:*
+        version: link:../data
       '@vue/reactivity':
         specifier: ^3.5.13
         version: 3.5.13
 
-  packages/data: {}
+  packages/data:
+    dependencies:
+      maestrale:
+        specifier: workspace:^
+        version: link:../core
 
   simulator:
     dependencies:

@@ -7,5 +7,6 @@ export * from "./core/ship";
 export * from "./core/spweapon";
 export * from "./core/technology";
 
-export * from "./data";
 export * from "./types";
+
+export * from "@maestrale/data";

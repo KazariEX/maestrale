@@ -1,8 +1,7 @@
-import type { Attributes } from "./core/attributes";
-import type { Armor, EquipType, Nationality, ShipType } from "./types";
+import type { Armor, Attributes, EquipType, Nationality, ShipType } from "maestrale";
 
 async function loadData(name: string) {
-    const data = await import(`../../data/ShareCfg(VVVIP)/${name}.json`);
+    const data = await import(`../ShareCfg(VVVIP)/${name}.json`);
     return [
         name,
         data.default
