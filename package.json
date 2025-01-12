@@ -8,17 +8,17 @@
     "vvvip:update": "pnpm run vvvip --update"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^3.12.1",
-    "@ast-grep/napi": "^0.32.2",
-    "@types/node": "^22.10.2",
+    "@antfu/eslint-config": "^3.13.0",
+    "@ast-grep/napi": "^0.33.0",
+    "@types/node": "^22.10.5",
     "@zinkawaii/eslint-config": "^0.1.9",
     "@zinkawaii/stylelint-config": "^0.2.2",
-    "bumpp": "^9.9.2",
-    "consola": "^3.3.1",
-    "eslint": "^9.17.0",
+    "bumpp": "^9.10.0",
+    "consola": "^3.3.3",
+    "eslint": "^9.18.0",
     "stylelint": "^16.12.0",
     "tsup": "^8.3.5",
     "tsx": "^4.19.2",
-    "undici": "^7.2.0"
+    "undici": "^7.2.1"
   }
 }
