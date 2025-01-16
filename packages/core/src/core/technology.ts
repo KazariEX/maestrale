@@ -28,9 +28,9 @@ export function useTechnology(): ITechnology {
 export function createTechnologyAttributes(): Record<ShipType, TechnologyAttributes> {
     return {
         1: {
-            durability: 256,
+            durability: 258,
             cannon: 62,
-            torpedo: 42,
+            torpedo: 44,
             antiaircraft: 39,
             air: 0,
             reload: 27,
@@ -45,24 +45,24 @@ export function createTechnologyAttributes(): Record<ShipType, TechnologyAttribu
             return this[1];
         },
         2: {
-            durability: 91,
+            durability: 92,
             cannon: 59,
             torpedo: 36,
             antiaircraft: 38,
             air: 0,
             reload: 26,
-            hit: 22,
+            hit: 23,
             dodge: 5,
             antisub: 22
         },
         3: {
-            durability: 128,
+            durability: 129,
             cannon: 56,
             torpedo: 37,
             antiaircraft: 13,
             air: 0,
             reload: 16,
-            hit: 7,
+            hit: 8,
             dodge: 4,
             antisub: 0
         },
