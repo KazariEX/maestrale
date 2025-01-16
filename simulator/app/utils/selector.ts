@@ -10,7 +10,7 @@ import { spweaponRarityOptions } from "~/data/constraint/spweapon-rarity";
 export function selectShip(fleetType: FleetType, canClear: boolean) {
     const ids = new Set(
         Object.keys(ShareCfg.ship_data_statistics)
-        .map((id) => id.slice(0, id.length - 1))
+        .map((id) => id.slice(0, -1))
         .filter((id) => !id.startsWith("900"))
     );
 
