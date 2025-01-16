@@ -263,7 +263,8 @@ if (process.argv.includes("--update")) {
         const version = await res.text();
 
         const path = resolveData("package.json");
-        await writeFile(path, `{\n  "version": "${version}",\n  "private": true\n}`);
+        const file = await readFile(path);
+        await writeFile(path, file.toString().replace(/"version": ".+"/, `"version": "${version}"`));
         consola.success(`Fetch version "${version}"`);
     }
     catch (err) {

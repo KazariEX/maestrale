@@ -1,4 +1,28 @@
 {
+  "name": "@maestrale/data",
+  "type": "module",
   "version": "8.2.275",
-  "private": true
+  "author": "KazariEX",
+  "license": "MIT",
+  "repository": "KazariEX/maestrale",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup-node",
+    "dev": "tsup-node --watch",
+    "prepack": "pnpm run build"
+  },
+  "devDependencies": {
+    "maestrale": "workspace:^"
+  }
 }
