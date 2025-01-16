@@ -271,9 +271,6 @@ if (process.argv.includes("--update")) {
         consola.error("Failed to fetch version");
         throw err;
     }
-
-    // 舰队科技
-    await updateTechnology();
 }
 else {
     await Promise.all(Object.entries(vvvip).map(([key, { folder, props }]) => pick(key, {
@@ -308,3 +305,6 @@ else {
         await writeFile(outputPath, JSON.stringify(data));
     }
 }
+
+// 舰队科技
+await updateTechnology();
