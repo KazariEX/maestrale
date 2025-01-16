@@ -9,7 +9,6 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.13.0",
-    "@ast-grep/napi": "^0.33.0",
     "@types/node": "^22.10.5",
     "@zinkawaii/eslint-config": "^0.1.9",
     "@zinkawaii/stylelint-config": "^0.2.2",
