@@ -230,7 +230,7 @@ if (process.argv.includes("--update")) {
             }
             const data = await res.text();
 
-            const path = resolveData(uri);
+            const path = resolveData("resources", uri);
             try {
                 const file = await readFile(path);
                 isDataChanged ||= file.toString() !== data;
@@ -287,8 +287,8 @@ else {
             return;
         }
 
-        const inputPath = resolveData(folder, filename + ".json");
-        const outputPath = resolveData("ShareCfg(VVVIP)", filename + ".json");
+        const inputPath = resolveData("resources", folder, filename + ".json");
+        const outputPath = resolveData("generated", filename + ".json");
 
         const file = await readFile(inputPath);
         const json = JSON.parse(file.toString());
