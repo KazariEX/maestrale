@@ -16,6 +16,7 @@ export namespace ShareCfg {
             loadData("commander_data_template"),
             loadData("equip_data_statistics"),
             loadData("equip_data_template"),
+            loadData("fleet_tech_attributes"),
             loadData("ship_data_blueprint"),
             loadData("ship_data_breakout"),
             loadData("ship_data_statistics"),
@@ -30,7 +31,6 @@ export namespace ShareCfg {
             loadData("ship_strengthen_meta"),
             loadData("spweapon_data_statistics"),
             loadData("spweapon_type"),
-            loadData("fleet_tech_attributes"),
             loadData("transform_data_template")
         ]);
         for (const [name, data] of datas) {

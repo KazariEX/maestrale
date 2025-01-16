@@ -1,7 +1,7 @@
 import { writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";
-import { type Attributes, createAttributes, type ShareCfg } from "../packages/core/src";
+import type { Attributes, ShareCfg } from "../packages/core/src";
 
 interface FleetTechShipTemplate {
     add_get_attr: number;
@@ -62,4 +62,20 @@ export async function updateTechnology() {
             attributes[type][name] = (attributes[type][name] ?? 0) + value;
         }
     }
+}
+
+function createAttributes(): Attributes {
+    return {
+        durability: 0,
+        cannon: 0,
+        torpedo: 0,
+        antiaircraft: 0,
+        air: 0,
+        reload: 0,
+        hit: 0,
+        dodge: 0,
+        speed: 0,
+        luck: 0,
+        antisub: 0
+    };
 }
