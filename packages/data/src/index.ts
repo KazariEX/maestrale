@@ -1,7 +1,7 @@
 import type { Armor, Attributes, EquipType, Nationality, ShipType } from "maestrale";
 
 async function loadData(name: string) {
-    const data = await import(`../ShareCfg(VVVIP)/${name}.json`);
+    const data = await import(`../generated/${name}.json`);
     return [
         name,
         data.default
