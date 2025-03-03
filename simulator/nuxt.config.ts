@@ -54,6 +54,9 @@ export default defineNuxtConfig({
             ripple: true
         }
     },
+    piniaPluginPersistedstate: {
+        storage: "localStorage"
+    },
     icon: {
         componentName: "iconify"
     }
