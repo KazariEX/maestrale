@@ -81,7 +81,7 @@ export class Commander {
     });
 
     // 天赋
-    abilities = shallowReactive<CommanderAbility[]>([]);
+    abilities = shallowReactive<(CommanderAbility | undefined)[]>([]);
 }
 
 export function createCommander(id: number) {
