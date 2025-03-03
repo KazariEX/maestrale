@@ -36,15 +36,24 @@ export const useSerializeStore = defineStore("serialize", () => {
     }
 
     function cleanup() {
-        const raw = storageKeys.map((key) => JSON.parse(localStorage.getItem(key) ?? ""));
+        const raw = storageKeys.map((key) => JSON.parse(localStorage.getItem(key) ?? "0"));
         serializer.cleanup(raw);
         mapping.value = serializer.mapping;
     }
 
+    function clear() {
+        for (const key of storageKeys) {
+            localStorage.removeItem(key);
+        }
+        mapping.value = {};
+    }
+
     return {
+        mapping,
         use,
         serialize,
         deserialize,
-        cleanup
+        cleanup,
+        clear
     };
 });
