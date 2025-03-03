@@ -229,6 +229,7 @@ export class Ship {
         const commanders = this.fleet.value?.commanders.value.filter(nonNullable) ?? [];
         const effects = commanders
             .flatMap((commander) => commander.abilities)
+            .filter(nonNullable)
             .flatMap((ability) => ability.effects)
             .filter((effect) => (
                 effect.type === 1 &&
