@@ -11,6 +11,12 @@
     const fleetStore = useFleetStore();
     const { currentShip: ship } = storeToRefs(fleetStore);
 
+    const colors = {
+        equips: "text-green-600",
+        tech: "text-orange-500",
+        commanders: "text-purple-500"
+    };
+
     const src = computed(() => {
         return `/assets/prefab/variantplatform/${icon ?? attr}.png`;
     });
@@ -37,6 +43,12 @@
             || 0;
     });
 
+    const additionalValue = computed(() => {
+        return fleetStore.attrMode === "equips" && equipValue.value
+            || fleetStore.attrMode === "tech" && techValue.value
+            || fleetStore.attrMode === "commanders" && commanderValue.value;
+    });
+
     function isGeneralAttr(attr: string | undefined): attr is keyof Attributes {
         return attr !== void 0 && !["ammo", "oil", "oxy_max"].includes(attr);
     }
@@ -60,17 +72,9 @@
         <span m="l-auto r-1">
             <span>{{ value }}</span>
             <span
-                v-if="fleetStore.attrMode === `equips` && equipValue > 0"
-                text="green-600"
-            >+{{ equipValue }}</span>
-            <span
-                v-else-if="fleetStore.attrMode === `tech` && techValue > 0"
-                text="orange-500"
-            >+{{ techValue }}</span>
-            <span
-                v-else-if="fleetStore.attrMode === `commanders` && commanderValue > 0"
-                text="purple-500"
-            >+{{ commanderValue }}</span>
+                v-if="additionalValue"
+                :class="colors[fleetStore.attrMode]"
+            >{{ (additionalValue > 0 ? "+" : "") + additionalValue }}</span>
         </span>
     </li>
 </template>
