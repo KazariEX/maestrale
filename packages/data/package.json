@@ -6,20 +6,18 @@
   "license": "MIT",
   "repository": "KazariEX/maestrale",
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
-    }
+    ".": "./dist/index.js"
   },
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "generated"
   ],
   "scripts": {
-    "build": "tsup-node",
-    "dev": "tsup-node --watch",
+    "build": "tsdown",
+    "dev": "tsdown -w",
     "prepack": "pnpm run build"
   },
   "devDependencies": {
