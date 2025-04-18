@@ -19,20 +19,23 @@ async function checkShip() {
         .filter((id) => !id.startsWith("900"))
     );
 
-    const icons = [];
+    const items = [];
     for (const id of ids) {
         const ship = createShip(Number(id), { technology });
         if (!ship) {
             continue;
         }
-        const icon = ship.painting.value;
+        const asset = ship.painting.value;
 
-        const path = join(baseDir, "squareicon", icon + ".png");
+        const path = join(baseDir, "squareicon", asset + ".png");
         if (!existsSync(path)) {
-            icons.push(icon);
+            items.push({
+                asset,
+                name: ship.name.value
+            });
         }
     }
-    consola.info(`Missing ships:\n${icons.join("\n")}`);
+    print("ships", items);
 }
 
 async function checkEquip() {
@@ -40,20 +43,23 @@ async function checkEquip() {
         .filter(([, item]) => item.prev === 0)
         .map(([id]) => id);
 
-    const icons = [];
+    const items = [];
     for (const id of ids) {
         const equip = createEquip(Number(id));
         if (!equip) {
             continue;
         }
-        const icon = equip.icon;
+        const asset = equip.icon;
 
-        const path = join(baseDir, "equips", icon + ".png");
+        const path = join(baseDir, "equips", asset + ".png");
         if (!existsSync(path)) {
-            icons.push(icon);
+            items.push({
+                asset,
+                name: equip.name
+            });
         }
     }
-    consola.info(`Missing equips:\n${icons.join("\n")}`);
+    print("equips", items);
 }
 
 async function checkSPWeapon() {
@@ -61,18 +67,32 @@ async function checkSPWeapon() {
         .filter(([, item]) => item.name)
         .map(([id]) => id);
 
-    const icons = [];
+    const items = [];
     for (const id of ids) {
         const weapon = createSPWeapon(Number(id));
         if (!weapon) {
             continue;
         }
-        const icon = weapon.icon;
+        const asset = weapon.icon;
 
-        const path = join(baseDir, "spweapon", icon + ".png");
+        const path = join(baseDir, "spweapon", asset + ".png");
         if (!existsSync(path)) {
-            icons.push(icon);
+            items.push({
+                asset,
+                name: weapon.name
+            });
         }
     }
-    consola.info(`Missing spweapons:\n${icons.join("\n")}`);
+    print("spweapons", items);
+}
+
+function print(name: string, items: {
+    asset: string;
+    name: string;
+}[]) {
+    if (!items.length) {
+        return;
+    }
+    consola.info(`Missing ${name}:`);
+    console.table(items);
 }
