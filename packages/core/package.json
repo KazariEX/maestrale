@@ -26,6 +26,6 @@
   },
   "dependencies": {
     "@maestrale/data": "workspace:^",
-    "@vue/reactivity": "^3.5.13"
+    "@vue/reactivity": "catalog:"
   }
 }
