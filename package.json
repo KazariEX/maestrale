@@ -12,6 +12,7 @@
     "@types/node": "^22.13.8",
     "@zinkawaii/eslint-config": "^0.2.0",
     "@zinkawaii/stylelint-config": "^0.3.0",
+    "@zinkawaii/tsconfig": "^0.0.1",
     "bumpp": "^10.0.3",
     "consola": "^3.4.0",
     "eslint": "^9.21.0",
