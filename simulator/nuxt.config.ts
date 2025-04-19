@@ -22,6 +22,9 @@ export default defineNuxtConfig({
         compatibilityVersion: 4
     },
     ssr: false,
+    unhead: {
+        legacy: true
+    },
     vite: {
         build: {
             target: "esnext"
@@ -45,7 +48,9 @@ export default defineNuxtConfig({
     ],
     primevue: {
         components: {
-            prefix: "Prime"
+            prefix: "Prime",
+            // https://github.com/primefaces/primevue/issues/7434
+            exclude: ["Form", "FormField"]
         },
         importTheme: {
             from: "~/themes/index.ts"
