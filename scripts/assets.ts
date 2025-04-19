@@ -3,6 +3,11 @@ import { join, resolve } from "node:path";
 import consola from "consola";
 import { createEquip, createShip, createSPWeapon, ShareCfg, useTechnology } from "../packages/core/src";
 
+interface Item {
+    asset: string;
+    name: string;
+}
+
 const baseDir = resolve(import.meta.dirname, "../simulator/public/assets/artresource/atlas");
 
 const technology = useTechnology();
@@ -19,7 +24,7 @@ async function checkShip() {
         .filter((id) => !id.startsWith("900"))
     );
 
-    const items = [];
+    const items: Item[] = [];
     for (const id of ids) {
         const ship = createShip(Number(id), { technology });
         if (!ship) {
@@ -43,7 +48,7 @@ async function checkEquip() {
         .filter(([, item]) => item.prev === 0)
         .map(([id]) => id);
 
-    const items = [];
+    const items: Item[] = [];
     for (const id of ids) {
         const equip = createEquip(Number(id));
         if (!equip) {
@@ -67,7 +72,7 @@ async function checkSPWeapon() {
         .filter(([, item]) => item.name)
         .map(([id]) => id);
 
-    const items = [];
+    const items: Item[] = [];
     for (const id of ids) {
         const weapon = createSPWeapon(Number(id));
         if (!weapon) {
@@ -86,10 +91,7 @@ async function checkSPWeapon() {
     print("spweapons", items);
 }
 
-function print(name: string, items: {
-    asset: string;
-    name: string;
-}[]) {
+function print(name: string, items: Item[]) {
     if (!items.length) {
         return;
     }

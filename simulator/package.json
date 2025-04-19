@@ -8,26 +8,26 @@
     "tscheck": "vue-tsc"
   },
   "dependencies": {
-    "@primevue/themes": "^4.3.1",
-    "@vueuse/core": "^12.7.0",
-    "pinia": "^3.0.1",
-    "pinia-plugin-persistedstate": "^4.2.0",
-    "primevue": "^4.3.1",
-    "vue": "^3.5.13",
-    "vue-draggable-plus": "^0.6.0",
-    "vue-router": "^4.5.0"
+    "@primevue/themes": "catalog:",
+    "@vueuse/core": "catalog:",
+    "pinia": "catalog:",
+    "pinia-plugin-persistedstate": "catalog:",
+    "primevue": "catalog:",
+    "vue": "catalog:",
+    "vue-draggable-plus": "catalog:",
+    "vue-router": "catalog:"
   },
   "devDependencies": {
-    "@nuxt/devtools": "^2.1.1",
-    "@nuxt/icon": "^1.10.3",
-    "@nuxt/image": "^1.9.0",
-    "@pinia/nuxt": "^0.10.1",
-    "@primevue/nuxt-module": "^4.3.1",
-    "@unocss/nuxt": "^66.0.0",
-    "@vueuse/nuxt": "^12.7.0",
-    "nuxt": "^3.15.4",
-    "sass": "^1.85.1",
-    "unocss": "^66.0.0",
-    "vue-tsc": "^2.2.8"
+    "@nuxt/devtools": "catalog:",
+    "@nuxt/icon": "catalog:",
+    "@nuxt/image": "catalog:",
+    "@pinia/nuxt": "catalog:",
+    "@primevue/nuxt-module": "catalog:",
+    "@unocss/nuxt": "catalog:",
+    "@vueuse/nuxt": "catalog:",
+    "nuxt": "catalog:",
+    "sass": "catalog:",
+    "unocss": "catalog:",
+    "vue-tsc": "catalog:"
   }
 }
