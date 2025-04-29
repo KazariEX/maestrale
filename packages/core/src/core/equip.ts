@@ -1,6 +1,5 @@
-import { ShareCfg } from "@maestrale/data";
+import { type Attributes, ShareCfg } from "@maestrale/data";
 import { computed, ref, type Ref } from "@vue/reactivity";
-import type { Attributes } from "./attributes";
 
 export class Equip {
     private data_statistics: ShareCfg.EquipDataStatistics[];

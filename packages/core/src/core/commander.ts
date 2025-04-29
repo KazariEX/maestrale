@@ -1,7 +1,7 @@
-import { ShareCfg } from "@maestrale/data";
+import { type Attributes, ShareCfg } from "@maestrale/data";
 import { computed, ref, type Ref, shallowReactive } from "@vue/reactivity";
 import { entries } from "../utils";
-import { type Attributes, createAttributes } from "./attributes";
+import { createAttributes } from "./attributes";
 
 export class Commander {
     private data_template: ShareCfg.CommanderDataTemplate;

@@ -1,8 +1,10 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@10.8.1",
+  "packageManager": "pnpm@10.10.0",
   "scripts": {
+    "build": "pnpm --filter maestrale... build",
+    "dev": "pnpm --filter maestrale... dev",
     "assets:check": "tsx scripts/assets.ts",
     "vvvip": "tsx scripts/vvvip.ts",
     "vvvip:update": "pnpm run vvvip --update"

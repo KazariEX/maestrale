@@ -1,7 +1,5 @@
-import { ShareCfg } from "@maestrale/data";
+import { type Attributes, ShareCfg, type ShipType } from "@maestrale/data";
 import { ref, type Ref } from "@vue/reactivity";
-import type { ShipType } from "../types";
-import type { Attributes } from "./attributes";
 
 export type TechnologyAttributes = Omit<Attributes, "speed" | "luck">;
 

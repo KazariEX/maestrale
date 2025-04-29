@@ -1,8 +1,8 @@
-import { ShareCfg } from "@maestrale/data";
+import { type Attributes, ShareCfg } from "@maestrale/data";
 import { computed, type ComputedRef, ref, type Ref, shallowRef, watch, type WritableComputedRef } from "@vue/reactivity";
 import { Favor, StrengthenType } from "../types";
 import { entries, nonNullable, ShipFleetKey } from "../utils";
-import { type Attributes, createAttributes } from "./attributes";
+import { createAttributes } from "./attributes";
 import { createEquip, type Equip } from "./equip";
 import { usePower } from "./power";
 import { createSPWeapon, type SPWeapon } from "./spweapon";

@@ -19,8 +19,5 @@
     "build": "tsdown",
     "dev": "tsdown -w",
     "prepack": "pnpm run build"
-  },
-  "devDependencies": {
-    "maestrale": "workspace:^"
   }
 }

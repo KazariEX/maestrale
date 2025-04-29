@@ -1,16 +1,4 @@
-export interface Attributes {
-    durability: number;
-    cannon: number;
-    torpedo: number;
-    antiaircraft: number;
-    air: number;
-    reload: number;
-    hit: number;
-    dodge: number;
-    speed: number;
-    luck: number;
-    antisub: number;
-}
+import type { Attributes } from "@maestrale/data";
 
 // 创建属性对象
 export function createAttributes(options: Partial<Attributes> = {}): Attributes {
