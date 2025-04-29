@@ -116,6 +116,9 @@ importers:
       '@zinkawaii/eslint-config':
         specifier: 'catalog:'
         version: 0.2.3
+      '@zinkawaii/scripts':
+        specifier: ^0.0.2
+        version: 0.0.2
       '@zinkawaii/stylelint-config':
         specifier: 'catalog:'
         version: 0.3.1(postcss-html@1.7.0)(postcss@8.5.3)(stylelint@16.19.1(typescript@5.8.3))
@@ -2138,6 +2141,10 @@ packages:
 
   '@zinkawaii/eslint-config@0.2.3':
     resolution: {integrity: sha512-T4qqClP+R8FsaEPdodVcefcaR79O6xR2caC51Wqnuxi/PtFocAloRN97GgBELaaD2lFLuZrr1YEqHEQWSVeoSg==}
+
+  '@zinkawaii/scripts@0.0.2':
+    resolution: {integrity: sha512-FdCEDBNS9XDPine0+DLiK5wY2VQZTvLAmWSEEbmUtJ1Io5aAfTSdS5xPFYNubWj+xQb4AXWgNZO0paPrXKZ/3A==}
+    hasBin: true
 
   '@zinkawaii/stylelint-config@0.3.1':
     resolution: {integrity: sha512-jl9s3iIxAFY/sWnrtZG5iGgX1d2kbN1HCYRZe42m43Vr7iXY9ExYGCyvdd411N373uaOoh4xwYbKVigk6Nmdbg==}
@@ -8458,6 +8465,11 @@ snapshots:
   '@xtuc/long@4.2.2': {}
 
   '@zinkawaii/eslint-config@0.2.3': {}
+
+  '@zinkawaii/scripts@0.0.2':
+    dependencies:
+      citty: 0.1.6
+      consola: 3.4.2
 
   '@zinkawaii/stylelint-config@0.3.1(postcss-html@1.7.0)(postcss@8.5.3)(stylelint@16.19.1(typescript@5.8.3))':
     dependencies:

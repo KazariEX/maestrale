@@ -5,6 +5,7 @@
   "scripts": {
     "build": "pnpm --filter maestrale... build",
     "dev": "pnpm --filter maestrale... --parallel dev",
+    "prepare": "zin link core",
     "assets:check": "tsx scripts/assets.ts",
     "vvvip": "tsx scripts/vvvip.ts",
     "vvvip:update": "pnpm run vvvip --update"
@@ -13,6 +14,7 @@
     "@antfu/eslint-config": "catalog:",
     "@types/node": "catalog:",
     "@zinkawaii/eslint-config": "catalog:",
+    "@zinkawaii/scripts": "catalog:",
     "@zinkawaii/stylelint-config": "catalog:",
     "@zinkawaii/tsconfig": "catalog:",
     "bumpp": "catalog:",
