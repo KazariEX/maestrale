@@ -5,10 +5,9 @@
   "scripts": {
     "build": "pnpm --filter maestrale... build",
     "dev": "pnpm --filter maestrale... --parallel dev",
-    "prepare": "zin link core",
-    "assets:check": "tsx scripts/assets.ts",
-    "vvvip": "tsx scripts/vvvip.ts",
-    "vvvip:update": "pnpm run vvvip --update"
+    "prepare": "zin link core && pnpm --filter @maestrale/data build",
+    "release": "bumpp -r --no-push -c \"release: v%s\"",
+    "assets:check": "tsx scripts/assets.ts"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:",
