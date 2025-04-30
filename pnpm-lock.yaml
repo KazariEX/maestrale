@@ -159,7 +159,14 @@ importers:
         specifier: 'catalog:'
         version: 3.5.13
 
-  packages/data: {}
+  packages/data:
+    devDependencies:
+      maestrale:
+        specifier: workspace:^
+        version: link:../core
+      undici:
+        specifier: 'catalog:'
+        version: 7.8.0
 
   simulator:
     dependencies:

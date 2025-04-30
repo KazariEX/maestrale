@@ -1,1 +1,3 @@
 generated/*.json
+resources/**/*.json
+scripts/index.js

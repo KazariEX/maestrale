@@ -1,7 +1,6 @@
-import { writeFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
-import { pathToFileURL } from "node:url";
-import type { Attributes, ShareCfg } from "../packages/core/src";
+import type { Attributes, ShareCfg } from "maestrale";
 
 interface FleetTechShipTemplate {
     add_get_attr: number;
@@ -41,13 +40,13 @@ export async function updateTechnology() {
         }
     }
 
-    const path = resolve(import.meta.dirname, "../packages/data/generated/fleet_tech_attributes.json");
+    const path = resolve(import.meta.dirname, "../generated/fleet_tech_attributes.json");
     await writeFile(path, JSON.stringify(attributes));
 
     async function loadData<T>(path: string) {
-        const data = (await import(pathToFileURL(
-            resolve(import.meta.dirname, "../packages/data/resources", path),
-        ).toString())).default as Record<string, T>;
+        path = resolve(import.meta.dirname, "../resources", path);
+        const file = await readFile(path, "utf-8");
+        const data = JSON.parse(file) as Record<string, T>;
         delete data.all;
         return data;
     }

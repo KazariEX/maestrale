@@ -1,16 +1,9 @@
-import { readFile, writeFile } from "node:fs/promises";
-import { resolve } from "node:path";
-import consola from "consola";
-import { updateTechnology } from "./technology";
-
-const resolveData = (...args: string[]) => resolve(import.meta.dirname, "../packages/data", ...args);
-
-interface VVVIP {
+export interface VVVIP {
     folder: string;
     props: string[];
 }
 
-const vvvip: Record<string, VVVIP> = {
+export const vvvip: Record<string, VVVIP> = {
     attribute_info_by_type: {
         folder: "ShareCfg",
         props: [
@@ -206,105 +199,3 @@ const vvvip: Record<string, VVVIP> = {
         ],
     },
 };
-
-if (process.argv.includes("--update")) {
-    try {
-        const { ProxyAgent, setGlobalDispatcher } = await import("undici");
-        const dispatcher = new ProxyAgent({ uri: new URL(process.env.HTTPS_PROXY!).toString() });
-        setGlobalDispatcher(dispatcher);
-    }
-    catch {}
-
-    const baseUrl = "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneData/refs/heads/main/";
-    let isDataChanged = false;
-
-    // 数据
-    await Promise.all(Object.entries(vvvip).map(async ([filename, { folder }]) => {
-        const uri = `${folder}/${filename}.json`;
-        const { href } = new URL(uri, baseUrl + "CN/");
-
-        try {
-            const res = await fetch(href);
-            if (res.status !== 200) {
-                throw 0;
-            }
-            const data = await res.text();
-
-            const path = resolveData("resources", uri);
-            try {
-                const file = await readFile(path);
-                isDataChanged ||= file.toString() !== data;
-            }
-            catch {
-                isDataChanged = true;
-            }
-
-            await writeFile(path, data);
-            consola.success(`Fetch "${uri}"`);
-        }
-        catch (err) {
-            consola.error(`Failed to fetch "${uri}"`);
-            throw err;
-        }
-    }));
-
-    if (!isDataChanged) {
-        process.exit(0);
-    }
-
-    // 版本号
-    try {
-        const uri = "versions/CN.txt";
-        const { href } = new URL(uri, baseUrl);
-        const res = await fetch(href);
-        if (res.status !== 200) {
-            throw 0;
-        }
-        const version = await res.text();
-
-        const path = resolveData("package.json");
-        const file = await readFile(path);
-        await writeFile(path, file.toString().replace(/"version": ".+"/, `"version": "${version}"`));
-        consola.success(`Fetch version "${version}"`);
-    }
-    catch (err) {
-        consola.error("Failed to fetch version");
-        throw err;
-    }
-}
-else {
-    await Promise.all(Object.entries(vvvip).map(([key, { folder, props }]) => pick(key, {
-        folder,
-        props,
-    })));
-
-    // 属性过滤
-    async function pick(filename: string, { folder, props }: VVVIP) {
-        if (!props.length) {
-            return;
-        }
-
-        const inputPath = resolveData("resources", folder, filename + ".json");
-        const outputPath = resolveData("generated", filename + ".json");
-
-        const file = await readFile(inputPath);
-        const json = JSON.parse(file.toString());
-
-        const data: Record<string, Record<string, unknown>> = {};
-        for (const id in json) {
-            if (id === "all") {
-                continue;
-            }
-            data[id] = {};
-            for (const key of props) {
-                if (key in json[id]) {
-                    data[id][key] = json[id][key];
-                }
-            }
-        }
-        await writeFile(outputPath, JSON.stringify(data));
-    }
-}
-
-// 舰队科技
-await updateTechnology();
