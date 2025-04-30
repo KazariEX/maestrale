@@ -96,5 +96,5 @@ function print(name: string, items: Item[]) {
         return;
     }
     consola.info(`Missing ${name}:`);
-    console.table(items);
+    console.table(items.toSorted((a, b) => a.asset.localeCompare(b.asset)));
 }
