@@ -1,6 +1,6 @@
 <script lang="ts" setup>
     useHead({
-        title: "关于"
+        title: "关于",
     });
 
     const serializeStore = useSerializeStore();

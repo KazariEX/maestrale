@@ -9,13 +9,13 @@
         .map(([id, { name, icon }]) => ({
             label: name,
             icon: `/assets/artresource/atlas/commandertalenticon/${icon}.png`,
-            value: Number(id)
+            value: Number(id),
         }));
 
     const desc = computed(() => {
         return ability.value?.desc.replaceAll(
             /<color=#\w+>(?<text>[^<]*)<\/color>/g,
-            (_, text) => `<mark>${text}</mark>`
+            (_, text) => `<mark>${text}</mark>`,
         );
     });
 

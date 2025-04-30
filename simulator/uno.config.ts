@@ -3,10 +3,10 @@ import { defineConfig, presetAttributify, presetUno, transformerDirectives } fro
 export default defineConfig({
     presets: [
         presetUno(),
-        presetAttributify()
+        presetAttributify(),
     ],
     transformers: [
-        transformerDirectives()
+        transformerDirectives(),
     ],
     theme: {
         colors: {
@@ -21,8 +21,8 @@ export default defineConfig({
                 700: "var(--p-primary-700)",
                 800: "var(--p-primary-800)",
                 900: "var(--p-primary-900)",
-                DEFAULT: "var(--p-primary-500)"
-            }
-        }
-    }
+                DEFAULT: "var(--p-primary-500)",
+            },
+        },
+    },
 });

@@ -20,7 +20,7 @@ export function useTechnology(): ITechnology {
 
     return {
         attrs,
-        get
+        get,
     };
 }
 
@@ -38,6 +38,6 @@ export function createTechnologyAttributes(): Record<ShipType, TechnologyAttribu
         },
         get 24() {
             return this[22];
-        }
+        },
     };
 }

@@ -19,7 +19,7 @@ export const shipTypeMap: Record<ShipType, string> = {
     21: "导驱(主力)",
     22: "风帆S",
     23: "风帆V",
-    24: "风帆M"
+    24: "风帆M",
 };
 
 export const shipTypeOptions = resolveConstraintOptions(shipTypeMap);

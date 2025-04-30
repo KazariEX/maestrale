@@ -15,7 +15,7 @@ export interface Attributes {
 export enum Armor {
     Light = 1,
     Medium = 2,
-    Heavy = 3
+    Heavy = 3,
 }
 
 export enum Nationality {
@@ -40,7 +40,7 @@ export enum Nationality {
     TheIdolmaster = 107,
     SSSS = 108,
     AtelierRyza = 109,
-    SenranKagura = 110
+    SenranKagura = 110,
 }
 
 export enum ShipType {
@@ -62,7 +62,7 @@ export enum ShipType {
     GuidedMissileDestroyerMain = 21,
     SailingFrigateSubmarine = 22,
     SailingFrigateVanguard = 23,
-    SailingFrigateMain = 24
+    SailingFrigateMain = 24,
 }
 
 export enum EquipType {
@@ -84,5 +84,5 @@ export enum EquipType {
     Helicopter = 17,
     Cargo = 18,
     GuidedMissile = 20,
-    AATimeFuzeGun = 21
+    AATimeFuzeGun = 21,
 }

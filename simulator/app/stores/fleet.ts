@@ -9,15 +9,15 @@ export const useFleetStore = defineStore("fleet", () => {
             main3: null,
             vanguard1: 60104,
             vanguard2: 60105,
-            vanguard3: null
-        }
+            vanguard3: null,
+        },
     });
     const submarine = useSerializableFleets<SubmarineFleet>("submarine", {
         schema: {
             submarine1: null,
             submarine2: null,
-            submarine3: null
-        }
+            submarine3: null,
+        },
     });
 
     const currentShip = shallowRef<Ship | null>(null);
@@ -42,7 +42,7 @@ export const useFleetStore = defineStore("fleet", () => {
         attrMode,
         infoMode,
         panelTab,
-        setCurrentShip
+        setCurrentShip,
     };
 });
 
@@ -56,12 +56,12 @@ interface UseSerializableFleetsOptions<T> {
 
 function useSerializableFleets<T extends Fleet>(
     type: "surface" | "submarine",
-    options: UseSerializableFleetsOptions<T>
+    options: UseSerializableFleetsOptions<T>,
 ) {
     const {
         initialName = "初始编队",
         defaultName,
-        schema
+        schema,
     } = options;
 
     const storageKey = `${type}-fleets` as const;
@@ -108,6 +108,6 @@ function useSerializableFleets<T extends Fleet>(
         currentIdx,
         currentFleet,
         add,
-        remove
+        remove,
     };
 }

@@ -7,7 +7,7 @@ export class SPWeapon {
     level: Ref<number>;
 
     constructor(
-        public id: number
+        public id: number,
     ) {
         this.data_statistics = [];
         for (let i = id; i !== 0;) {
@@ -25,7 +25,7 @@ export class SPWeapon {
     private curStat = computed(() => {
         return {
             ...this.data_statistics[0],
-            ...this.data_statistics[this.level.value]
+            ...this.data_statistics[this.level.value],
         };
     });
 

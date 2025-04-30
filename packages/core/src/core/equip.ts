@@ -8,7 +8,7 @@ export class Equip {
     level: Ref<number>;
 
     constructor(
-        public id: number
+        public id: number,
     ) {
         this.data_statistics = [];
         this.data_template = [];
@@ -27,7 +27,7 @@ export class Equip {
     private curStat = computed(() => {
         return {
             ...this.data_statistics[0],
-            ...this.data_statistics[this.level.value]
+            ...this.data_statistics[this.level.value],
         };
     });
 

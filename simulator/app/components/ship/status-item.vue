@@ -14,7 +14,7 @@
     const colors = {
         equips: "text-green-600",
         tech: "text-orange-500",
-        commanders: "text-purple-500"
+        commanders: "text-purple-500",
     };
 
     const src = computed(() => {

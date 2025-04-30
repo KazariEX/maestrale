@@ -47,6 +47,6 @@ export const useCommanderStore = defineStore("commander", () => {
         currentCommander,
         add,
         remove,
-        toggle
+        toggle,
     };
 });

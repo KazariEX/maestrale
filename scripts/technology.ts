@@ -46,7 +46,7 @@ export async function updateTechnology() {
 
     async function loadData<T>(path: string) {
         const data = (await import(pathToFileURL(
-            resolve(import.meta.dirname, "../packages/data/resources", path)
+            resolve(import.meta.dirname, "../packages/data/resources", path),
         ).toString())).default as Record<string, T>;
         delete data.all;
         return data;
@@ -76,6 +76,6 @@ function createAttributes(): Attributes {
         dodge: 0,
         speed: 0,
         luck: 0,
-        antisub: 0
+        antisub: 0,
     };
 }

@@ -8,9 +8,9 @@ export function requireConfirm(content: string) {
             onClose(val) {
                 close();
                 resolve(val);
-            }
+            },
         }), {
-            immediate: true
+            immediate: true,
         });
     });
 }
@@ -23,7 +23,7 @@ interface RequireInputOptions {
 export function requireInput(options: RequireInputOptions) {
     const {
         title,
-        defaultValue = ""
+        defaultValue = "",
     } = options;
 
     return new Promise<string | undefined>((resolve) => {
@@ -34,9 +34,9 @@ export function requireInput(options: RequireInputOptions) {
             onClose(val) {
                 close();
                 resolve(val);
-            }
+            },
         }), {
-            immediate: true
+            immediate: true,
         });
     });
 }

@@ -4,7 +4,7 @@ async function loadData(name: string) {
     const data = await import(`../generated/${name}.json`);
     return [
         name,
-        data.default
+        data.default,
     ] as const;
 }
 
@@ -31,14 +31,14 @@ export namespace ShareCfg {
             loadData("ship_strengthen_meta"),
             loadData("spweapon_data_statistics"),
             loadData("spweapon_type"),
-            loadData("transform_data_template")
+            loadData("transform_data_template"),
         ]);
         for (const [name, data] of datas) {
             Object.defineProperty(ShareCfg, name, {
                 value: data,
                 configurable: false,
                 enumerable: true,
-                writable: false
+                writable: false,
             });
         }
     }
@@ -75,7 +75,7 @@ export namespace ShareCfg {
             Nationality[],
             ShipType[],
             number,
-            number
+            number,
         ][];
         desc: string;
         icon: string;

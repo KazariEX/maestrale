@@ -7,7 +7,7 @@ export const favorMap: Record<Favor, string> = {
     3: "喜欢",
     4: "爱",
     5: "誓约",
-    6: "誓约+"
+    6: "誓约+",
 };
 
 export const favorOptions = resolveConstraintOptions(favorMap);

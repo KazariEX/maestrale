@@ -15,7 +15,7 @@
     const attrModeOptions = [
         { label: "装备", value: "equips" },
         { label: "科技", value: "tech" },
-        { label: "猫", value: "commanders" }
+        { label: "猫", value: "commanders" },
     ];
 </script>
 

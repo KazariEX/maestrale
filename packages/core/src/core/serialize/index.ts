@@ -24,11 +24,11 @@ register("surface-fleet", SurfaceFleet, {
         "main3",
         "vanguard1",
         "vanguard2",
-        "vanguard3"
+        "vanguard3",
     ],
     initialize(_, raw) {
         return createFleet("surface", raw.name);
-    }
+    },
 });
 
 register("submarine-fleet", SubmarineFleet, {
@@ -38,11 +38,11 @@ register("submarine-fleet", SubmarineFleet, {
         "commander2",
         "submarine1",
         "submarine2",
-        "submarine3"
+        "submarine3",
     ],
     initialize(_, raw) {
         return createFleet("submarine", raw.name);
-    }
+    },
 });
 
 register("ship", Ship, {
@@ -59,33 +59,33 @@ register("ship", Ship, {
         "equip3",
         "equip4",
         "equip5",
-        "spweapon"
+        "spweapon",
     ],
     initialize(options, raw) {
         return createShip(raw.id, {
-            technology: options.technology
+            technology: options.technology,
         });
-    }
+    },
 });
 
 register("equip", Equip, {
     paths: [
         "id",
-        "level"
+        "level",
     ],
     initialize(_, raw) {
         return createEquip(raw.id);
-    }
+    },
 });
 
 register("spweapon", SPWeapon, {
     paths: [
         "id",
-        "level"
+        "level",
     ],
     initialize(_, raw) {
         return createSPWeapon(raw.id);
-    }
+    },
 });
 
 register("commander", Commander, {
@@ -93,20 +93,20 @@ register("commander", Commander, {
         "id",
         "level",
         "name",
-        "abilities[]"
+        "abilities[]",
     ],
     initialize(_, raw) {
         return createCommander(raw.id);
-    }
+    },
 });
 
 register("commander-ability", CommanderAbility, {
     paths: [
-        "id"
+        "id",
     ],
     initialize(_, raw) {
         return createCommanderAbility(raw.id);
-    }
+    },
 });
 
 interface RegisterConstructOptions {
@@ -117,7 +117,7 @@ interface RegisterConstructOptions {
 function register(name: string, structure: any, options: RegisterConstructOptions) {
     const {
         paths,
-        initialize
+        initialize,
     } = options;
 
     const parsedPaths = paths.map((path) => path.split(/\.|(?=\[\])/));
@@ -187,12 +187,12 @@ function register(name: string, structure: any, options: RegisterConstructOption
         name,
         structure,
         serialize,
-        deserialize
+        deserialize,
     });
 
     return {
         serialize,
-        deserialize
+        deserialize,
     };
 }
 
@@ -247,13 +247,13 @@ export function createSerializer(options: CreateSerializerOptions) {
                 }
                 mapping[id] = raw;
                 return key;
-            }
+            },
         };
 
         const clone = createClone({
             handlers: registry.map(
-                (reg) => [reg.structure, (obj) => reg.serialize(ctx, obj)]
-            )
+                (reg) => [reg.structure, (obj) => reg.serialize(ctx, obj)],
+            ),
         });
 
         curId = Number(Object.keys(mapping).at(-1) ?? -1) + 1;
@@ -284,13 +284,13 @@ export function createSerializer(options: CreateSerializerOptions) {
                 internalKeys.set(source, key);
                 sources[id] = source;
                 return source;
-            }
+            },
         };
 
         const clone = createClone({
             handlers: [
-                [String, (raw) => ctx.resolve(raw)]
-            ]
+                [String, (raw) => ctx.resolve(raw)],
+            ],
         });
 
         return clone(raw);
@@ -334,7 +334,7 @@ export function createSerializer(options: CreateSerializerOptions) {
         mapping,
         serialize,
         deserialize,
-        cleanup
+        cleanup,
     };
 }
 
@@ -371,6 +371,6 @@ function parseInternalKey(key: string) {
     const { name, id } = match.groups!;
     return {
         name,
-        id: Number(id)
+        id: Number(id),
     };
 }

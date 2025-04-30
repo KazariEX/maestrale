@@ -3,23 +3,23 @@
         {
             title: "编队",
             icon: "fa6-solid:ship",
-            to: { name: "fleet" }
+            to: { name: "fleet" },
         },
         {
             title: "舰队科技",
             icon: "fa6-solid:sliders",
-            to: { name: "technology" }
+            to: { name: "technology" },
         },
         {
             title: "指挥喵",
             icon: "fa6-solid:n",
-            to: { name: "catlodge" }
+            to: { name: "catlodge" },
         },
         {
             title: "关于",
             icon: "fa6-solid:circle-info",
-            to: { name: "about" }
-        }
+            to: { name: "about" },
+        },
     ] as const;
 </script>
 

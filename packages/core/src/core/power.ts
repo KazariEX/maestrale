@@ -63,7 +63,7 @@ export function usePower(ship: Ship) {
         return Math.floor(
             attrsPower.value +
             equipPower.value +
-            transPower.value
+            transPower.value,
         );
     });
 

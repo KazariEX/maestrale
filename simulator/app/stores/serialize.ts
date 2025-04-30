@@ -6,13 +6,13 @@ export const useSerializeStore = defineStore("serialize", () => {
 
     const serializer = createSerializer({
         technology,
-        mapping: mapping.value
+        mapping: mapping.value,
     });
 
     const storageKeys = [
         "commanders",
         "surface-fleets",
-        "submarine-fleets"
+        "submarine-fleets",
     ] as const;
 
     function use(key: (typeof storageKeys)[number], source: object) {
@@ -20,7 +20,7 @@ export const useSerializeStore = defineStore("serialize", () => {
             serialize(key, value);
         }, {
             deep: true,
-            debounce: 1000
+            debounce: 1000,
         });
     }
 
@@ -54,6 +54,6 @@ export const useSerializeStore = defineStore("serialize", () => {
         serialize,
         deserialize,
         cleanup,
-        clear
+        clear,
     };
 });

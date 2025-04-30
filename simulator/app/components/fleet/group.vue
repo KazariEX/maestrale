@@ -13,7 +13,7 @@
         }[];
     }>();
     const fleet = defineModel<T>({
-        required: true
+        required: true,
     });
 
     const draggableItems = shallowRef(items);
@@ -21,7 +21,7 @@
     function change() {
         const entries = draggableItems.value.map(({ key }, i) => [
             items[i]!.key,
-            getShipRef(key).value
+            getShipRef(key).value,
         ] as const);
 
         for (const [key, ship] of entries) {

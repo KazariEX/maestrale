@@ -21,7 +21,7 @@ async function checkShip() {
     const ids = new Set(
         Object.keys(ShareCfg.ship_data_statistics)
         .map((id) => id.slice(0, -1))
-        .filter((id) => !id.startsWith("900"))
+        .filter((id) => !id.startsWith("900")),
     );
 
     const items: Item[] = [];
@@ -36,7 +36,7 @@ async function checkShip() {
         if (!existsSync(path)) {
             items.push({
                 asset,
-                name: ship.name.value
+                name: ship.name.value,
             });
         }
     }
@@ -60,7 +60,7 @@ async function checkEquip() {
         if (!existsSync(path)) {
             items.push({
                 asset,
-                name: equip.name
+                name: equip.name,
             });
         }
     }
@@ -84,7 +84,7 @@ async function checkSPWeapon() {
         if (!existsSync(path)) {
             items.push({
                 asset,
-                name: weapon.name
+                name: weapon.name,
             });
         }
     }

@@ -41,8 +41,8 @@
             .filter((selector) => "id" in selector)
             .map((selector) => ({
                 ...selector,
-                value: -1
-            }))
+                value: -1,
+            })),
     );
 
     const additionalSelector = ref({
@@ -50,9 +50,9 @@
             .filter((selector) => "exec" in selector)
             .map((selector) => ({
                 ...selector,
-                value: selector.label
+                value: selector.label,
             })),
-        value: ""
+        value: "",
     });
 
     function filterItem(item: T) {

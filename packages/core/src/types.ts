@@ -1,7 +1,7 @@
 export enum StrengthenType {
     General,
     Meta,
-    Blueprint
+    Blueprint,
 }
 
 export enum Favor {
@@ -11,5 +11,5 @@ export enum Favor {
     Like,
     Love,
     Pledge,
-    PledgePlus
+    PledgePlus,
 }

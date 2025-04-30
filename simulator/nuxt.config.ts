@@ -3,39 +3,39 @@ import { resolve } from "node:path";
 export default defineNuxtConfig({
     alias: {
         maestrale: resolve(__dirname, "../packages/core/src"),
-        "@maestrale/data": resolve(__dirname, "../packages/data/src")
+        "@maestrale/data": resolve(__dirname, "../packages/data/src"),
     },
     compatibilityDate: "2024-07-19",
     css: [
-        "~/assets/index.scss"
+        "~/assets/index.scss",
     ],
     devServer: {
-        port: 2243
+        port: 2243,
     },
     devtools: {
-        enabled: true
+        enabled: true,
     },
     experimental: {
-        typedPages: true
+        typedPages: true,
     },
     future: {
-        compatibilityVersion: 4
+        compatibilityVersion: 4,
     },
     ssr: false,
     unhead: {
-        legacy: true
+        legacy: true,
     },
     vite: {
         build: {
-            target: "esnext"
+            target: "esnext",
         },
         css: {
             preprocessorOptions: {
                 scss: {
-                    api: "modern-compiler"
-                }
-            }
-        }
+                    api: "modern-compiler",
+                },
+            },
+        },
     },
     modules: [
         "@nuxt/icon",
@@ -44,25 +44,25 @@ export default defineNuxtConfig({
         "@primevue/nuxt-module",
         "@unocss/nuxt",
         "@vueuse/nuxt",
-        "pinia-plugin-persistedstate/nuxt"
+        "pinia-plugin-persistedstate/nuxt",
     ],
     primevue: {
         components: {
             prefix: "Prime",
             // https://github.com/primefaces/primevue/issues/7434
-            exclude: ["Chart", "Editor", "Form", "FormField"]
+            exclude: ["Chart", "Editor", "Form", "FormField"],
         },
         importTheme: {
-            from: "~/themes/index.ts"
+            from: "~/themes/index.ts",
         },
         options: {
-            ripple: true
-        }
+            ripple: true,
+        },
     },
     piniaPluginPersistedstate: {
-        storage: "localStorage"
+        storage: "localStorage",
     },
     icon: {
-        componentName: "iconify"
-    }
+        componentName: "iconify",
+    },
 });

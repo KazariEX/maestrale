@@ -22,7 +22,7 @@ export const useModalStore = defineStore("modal", () => {
         const {
             duration = 400,
             immediate = false,
-            unique = false
+            unique = false,
         } = options;
 
         let ctx: ModalContext;
@@ -43,7 +43,7 @@ export const useModalStore = defineStore("modal", () => {
                 zIndex,
                 duration,
                 isOpening,
-                close: (component.props ??= {}).onClose ??= close
+                close: (component.props ??= {}).onClose ??= close,
             };
 
             modals.value.push(ctx);
@@ -68,12 +68,12 @@ export const useModalStore = defineStore("modal", () => {
 
         return {
             open,
-            close
+            close,
         };
     }
 
     return {
         modals,
-        use
+        use,
     };
 });

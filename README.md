@@ -34,7 +34,7 @@ const technology = useTechnology();
 import { createShip } from "maestrale";
 
 const ship = createShip(60104, {
-  technology
+  technology,
 });
 ```
 
@@ -52,9 +52,9 @@ const ship = createShip(60104, {
     createEquip(35340),
     null,
     2640,
-    2640
+    2640,
   ],
-  spweapon: createSPWeapon(10180)
+  spweapon: createSPWeapon(10180),
 });
 ```
 

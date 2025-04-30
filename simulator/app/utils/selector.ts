@@ -11,7 +11,7 @@ export function selectShip(fleetType: FleetType, canClear: boolean) {
     const ids = new Set(
         Object.keys(ShareCfg.ship_data_statistics)
         .map((id) => id.slice(0, -1))
-        .filter((id) => !id.startsWith("900"))
+        .filter((id) => !id.startsWith("900")),
     );
 
     const data = createSelectorData<ShareCfg.ShipDataStatistics>();
@@ -32,7 +32,7 @@ export function selectShip(fleetType: FleetType, canClear: boolean) {
             icon: `/assets/artresource/atlas/squareicon/${ShareCfg.ship_skin_template[`${id}0`]?.painting}.png`,
             rarity,
             type,
-            nationality
+            nationality,
         });
     }
 
@@ -44,16 +44,16 @@ export function selectShip(fleetType: FleetType, canClear: boolean) {
                 { label: "稀有度", id: "rarity", options: rarityOptions },
                 { label: "舰种", id: "type", options: shipTypeOptions },
                 { label: "阵营", id: "nationality", options: nationalityOptions },
-                { label: "可改造", exec: (item) => item.id in ShareCfg.ship_data_trans }
+                { label: "可改造", exec: (item) => item.id in ShareCfg.ship_data_trans },
             ],
             data,
             canClear,
             onClose(id) {
                 close();
                 resolve(id);
-            }
+            },
         }), {
-            immediate: true
+            immediate: true,
         });
     });
 }
@@ -82,7 +82,7 @@ export function selectEquip(allowTypes: EquipType[], shipType: ShipType, canClea
             icon: `/assets/artresource/atlas/equips/${icon}.png`,
             rarity,
             type,
-            nationality
+            nationality,
         });
     }
 
@@ -93,7 +93,7 @@ export function selectEquip(allowTypes: EquipType[], shipType: ShipType, canClea
             selectors: [
                 { label: "稀有度", id: "rarity", options: rarityOptions },
                 { label: "类型", id: "type", options: equipTypeOptions },
-                { label: "阵营", id: "nationality", options: nationalityOptions }
+                { label: "阵营", id: "nationality", options: nationalityOptions },
             ],
             data,
             canClear,
@@ -101,9 +101,9 @@ export function selectEquip(allowTypes: EquipType[], shipType: ShipType, canClea
             onClose(id) {
                 close();
                 resolve(id);
-            }
+            },
         }), {
-            immediate: true
+            immediate: true,
         });
     });
 }
@@ -132,7 +132,7 @@ export function selectSPWeapon(shipId: number, shipType: ShipType, canClear: boo
             id: Number(id),
             name,
             icon: `/assets/artresource/atlas/spweapon/${icon}.png`,
-            rarity
+            rarity,
         });
     }
 
@@ -141,7 +141,7 @@ export function selectSPWeapon(shipId: number, shipType: ShipType, canClear: boo
         const { close } = modalStore.use(() => h(DialogSelector, {
             title: "选择兵装",
             selectors: [
-                { label: "稀有度", id: "rarity", options: spweaponRarityOptions }
+                { label: "稀有度", id: "rarity", options: spweaponRarityOptions },
             ],
             data,
             canClear,
@@ -150,9 +150,9 @@ export function selectSPWeapon(shipId: number, shipType: ShipType, canClear: boo
             onClose(id) {
                 close();
                 resolve(id);
-            }
+            },
         }), {
-            immediate: true
+            immediate: true,
         });
     });
 }
@@ -173,7 +173,7 @@ export function selectCommander() {
             name,
             icon: `/assets/artresource/atlas/commandericon/${painting}.png`,
             rarity,
-            nationality
+            nationality,
         });
     }
 
@@ -183,16 +183,16 @@ export function selectCommander() {
             title: "选择指挥喵",
             selectors: [
                 { label: "稀有度", id: "rarity", options: rarityOptions },
-                { label: "阵营", id: "nationality", options: nationalityOptions }
+                { label: "阵营", id: "nationality", options: nationalityOptions },
             ],
             data,
             rarityMode: "commander",
             onClose(id) {
                 close();
                 resolve(id);
-            }
+            },
         }), {
-            immediate: true
+            immediate: true,
         });
     });
 }
@@ -213,7 +213,7 @@ export function selectNestCommander(current: Commander | null, party: Commander[
             id: i,
             name: name.value,
             icon: `/assets/artresource/atlas/commandericon/${painting}.png`,
-            rarity: rarity
+            rarity: rarity,
         });
     }
 
@@ -223,7 +223,7 @@ export function selectNestCommander(current: Commander | null, party: Commander[
             title: "选择指挥喵",
             selectors: [
                 { label: "稀有度", id: "rarity", options: rarityOptions },
-                { label: "阵营", id: "nationality", options: nationalityOptions }
+                { label: "阵营", id: "nationality", options: nationalityOptions },
             ],
             data,
             canClear: !!current,
@@ -231,9 +231,9 @@ export function selectNestCommander(current: Commander | null, party: Commander[
             onClose(i) {
                 close();
                 resolve(i);
-            }
+            },
         }), {
-            immediate: true
+            immediate: true,
         });
     });
 }

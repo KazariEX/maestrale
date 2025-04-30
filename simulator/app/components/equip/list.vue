@@ -2,7 +2,7 @@
     import type { Ship } from "maestrale";
 
     const ship = defineModel<Ship | null>({
-        required: true
+        required: true,
     });
 
     const equipStyle = `background-image: url("/assets/artresource/ui/shipinfoui/sucai_button.png")`;

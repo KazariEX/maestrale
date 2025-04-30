@@ -10,7 +10,7 @@
         order: number;
     }>();
     const ship = defineModel<Ship | null>({
-        required: true
+        required: true,
     });
 
     const fleetStore = useFleetStore();
@@ -29,7 +29,7 @@
         }
         else if (id) {
             ship.value = createShip(id, {
-                technology
+                technology,
             });
         }
         else return;
@@ -62,7 +62,7 @@
         b="~ solid slate op-40 rounded-1"
         outline="2 primary offset--1"
         :class="{
-            [`outline`]: ship && fleetStore.currentShip === ship
+            [`outline`]: ship && fleetStore.currentShip === ship,
         }"
     >
         <ship-icon

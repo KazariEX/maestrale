@@ -14,10 +14,10 @@ export const useTechnologyStore = defineStore("technology", () => {
     return {
         maxAttrs,
         attrs,
-        get
+        get,
     };
 }, {
-    persist: true
+    persist: true,
 });
 
 export function useTechnology() {
@@ -25,6 +25,6 @@ export function useTechnology() {
     return {
         maxAttrs: technologyStore.maxAttrs,
         attrs: storeToRefs(technologyStore).attrs,
-        get: technologyStore.get
+        get: technologyStore.get,
     };
 }

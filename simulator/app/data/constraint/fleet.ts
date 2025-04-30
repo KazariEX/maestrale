@@ -12,7 +12,7 @@ const table: Record<FleetType, ShipType[]> = {
         12,
         13,
         21,
-        24
+        24,
     ],
     vanguard: [
         1,
@@ -21,15 +21,15 @@ const table: Record<FleetType, ShipType[]> = {
         18,
         19,
         20,
-        23
+        23,
     ],
     submarine: [
         8,
         17,
-        22
-    ]
+        22,
+    ],
 };
 
 export const fleetTypeMap = Object.fromEntries(
-    Object.entries(table).flatMap(([fleet, types]) => types.map((type) => [type, fleet]))
+    Object.entries(table).flatMap(([fleet, types]) => types.map((type) => [type, fleet])),
 ) as Record<ShipType, FleetType>;

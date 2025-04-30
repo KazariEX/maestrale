@@ -2,7 +2,7 @@
     import type { TransformMatrixTemplate } from "maestrale";
 
     const templates = defineModel<TransformMatrixTemplate[]>({
-        required: true
+        required: true,
     });
 
     const template = computed(() => {
@@ -20,7 +20,7 @@
         b="~ solid slate op-40"
         cursor="pointer"
         :class="{
-            [`op-50`]: !template.enable.value
+            [`op-50`]: !template.enable.value,
         }"
         @click="template.enable.value = !template.enable.value"
     >

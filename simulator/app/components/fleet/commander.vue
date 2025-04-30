@@ -7,7 +7,7 @@
     }>();
 
     const commander = defineModel<Commander | null>({
-        required: true
+        required: true,
     });
 
     const commanderStore = useCommanderStore();
@@ -26,7 +26,7 @@
     async function select() {
         const i = await selectNestCommander(
             commander.value,
-            fleet.commanders.value.filter(nonNullable)
+            fleet.commanders.value.filter(nonNullable),
         );
         if (i === -1) {
             commander.value = null;
@@ -52,7 +52,7 @@
             text="3 slate-600 center truncate"
             :class="{
                 [`@hover:text-primary cursor-pointer`]: index !== -1,
-                [`op-40 select-none`]: index === -1
+                [`op-40 select-none`]: index === -1,
             }"
             @click="navigate"
         >{{ commander?.name }}</span>

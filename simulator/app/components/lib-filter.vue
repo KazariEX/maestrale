@@ -14,7 +14,7 @@
     const fullOptions = computed(() => {
         return [
             { label: "全部", value: -1 },
-            ...options
+            ...options,
         ];
     });
 </script>

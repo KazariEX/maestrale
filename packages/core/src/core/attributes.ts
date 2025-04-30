@@ -14,6 +14,6 @@ export function createAttributes(options: Partial<Attributes> = {}): Attributes 
         speed: 0,
         luck: 0,
         antisub: 0,
-        ...options
+        ...options,
     };
 }

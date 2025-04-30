@@ -5,7 +5,7 @@
     }>();
 
     const backgroundStyle = {
-        backgroundImage: `url("/assets/prefab/ui/worldui/star_bg.png")`
+        backgroundImage: `url("/assets/prefab/ui/worldui/star_bg.png")`,
     };
 </script>
 

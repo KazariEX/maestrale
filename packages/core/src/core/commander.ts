@@ -10,7 +10,7 @@ export class Commander {
     name: Ref<string>;
 
     constructor(
-        public id: number
+        public id: number,
     ) {
         this.data_template = ShareCfg.commander_data_template[id];
 
@@ -125,7 +125,7 @@ export class CommanderAbility {
     effects: CommanderAbilityEffect[];
 
     constructor(
-        public id: number
+        public id: number,
     ) {
         this.data_template = ShareCfg.commander_ability_template[id];
 
@@ -134,7 +134,7 @@ export class CommanderAbility {
             nationalities,
             shipTypes,
             key,
-            value
+            value,
         }));
     }
 

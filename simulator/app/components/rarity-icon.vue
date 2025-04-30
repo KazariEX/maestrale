@@ -14,7 +14,7 @@
         mode = "general",
         rarity,
         showFrame = true,
-        isMeta = false
+        isMeta = false,
     } = defineProps<RarityIconProps>();
 
     const order = computed(() => {
@@ -22,11 +22,11 @@
     });
 
     const backgroundStyle = computed(() => ({
-        backgroundImage: `url(/assets/artresource/atlas/weaponframes/bg${isMeta ? "1" : ""}${order.value}.png)`
+        backgroundImage: `url(/assets/artresource/atlas/weaponframes/bg${isMeta ? "1" : ""}${order.value}.png)`,
     }));
 
     const frameStyle = computed(() => ({
-        backgroundImage: `url(/assets/artresource/atlas/weaponframes/frame_${order.value}.png)`
+        backgroundImage: `url(/assets/artresource/atlas/weaponframes/frame_${order.value}.png)`,
     }));
 </script>
 
@@ -36,7 +36,7 @@
         position="relative"
         size="inherit"
         :class="{
-            [`p-1`]: padding
+            [`p-1`]: padding,
         }"
         :style="backgroundStyle"
     >

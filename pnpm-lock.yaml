@@ -43,14 +43,17 @@ catalogs:
       specifier: ^13.1.0
       version: 13.1.0
     '@zinkawaii/eslint-config':
-      specifier: ^0.2.3
-      version: 0.2.3
+      specifier: ^0.3.0
+      version: 0.3.0
+    '@zinkawaii/scripts':
+      specifier: ^0.0.2
+      version: 0.0.2
     '@zinkawaii/stylelint-config':
       specifier: ^0.3.1
       version: 0.3.1
     '@zinkawaii/tsconfig':
-      specifier: ^0.0.1
-      version: 0.0.1
+      specifier: ^0.0.2
+      version: 0.0.2
     bumpp:
       specifier: ^10.1.0
       version: 10.1.0
@@ -79,8 +82,8 @@ catalogs:
       specifier: ^16.19.1
       version: 16.19.1
     tsdown:
-      specifier: ^0.10.1
-      version: 0.10.1
+      specifier: ^0.10.2
+      version: 0.10.2
     tsx:
       specifier: ^4.19.4
       version: 4.19.4
@@ -115,16 +118,16 @@ importers:
         version: 22.15.3
       '@zinkawaii/eslint-config':
         specifier: 'catalog:'
-        version: 0.2.3
+        version: 0.3.0
       '@zinkawaii/scripts':
-        specifier: ^0.0.2
+        specifier: 'catalog:'
         version: 0.0.2
       '@zinkawaii/stylelint-config':
         specifier: 'catalog:'
         version: 0.3.1(postcss-html@1.7.0)(postcss@8.5.3)(stylelint@16.19.1(typescript@5.8.3))
       '@zinkawaii/tsconfig':
         specifier: 'catalog:'
-        version: 0.0.1
+        version: 0.0.2
       bumpp:
         specifier: 'catalog:'
         version: 10.1.0(magicast@0.3.5)
@@ -139,7 +142,7 @@ importers:
         version: 16.19.1(typescript@5.8.3)
       tsdown:
         specifier: 'catalog:'
-        version: 0.10.1(typescript@5.8.3)
+        version: 0.10.2(typescript@5.8.3)
       tsx:
         specifier: 'catalog:'
         version: 4.19.4
@@ -2139,8 +2142,8 @@ packages:
   '@xtuc/long@4.2.2':
     resolution: {integrity: sha512-NuHqBY1PB/D8xU6s/thBgOAiAP7HOYDQ32+BFZILJ8ivkUkAHQnWfn6WhL79Owj1qmUnoN/YPhktdIoucipkAQ==}
 
-  '@zinkawaii/eslint-config@0.2.3':
-    resolution: {integrity: sha512-T4qqClP+R8FsaEPdodVcefcaR79O6xR2caC51Wqnuxi/PtFocAloRN97GgBELaaD2lFLuZrr1YEqHEQWSVeoSg==}
+  '@zinkawaii/eslint-config@0.3.0':
+    resolution: {integrity: sha512-gwmqXUDZAnxMhSaZhEwAwGMLcij3IccB69n2zdIfA3JQVa9lS33m+etwgAVeGhNIAFZxKeVx8qQBLzY1rZf8pg==}
 
   '@zinkawaii/scripts@0.0.2':
     resolution: {integrity: sha512-FdCEDBNS9XDPine0+DLiK5wY2VQZTvLAmWSEEbmUtJ1Io5aAfTSdS5xPFYNubWj+xQb4AXWgNZO0paPrXKZ/3A==}
@@ -2149,8 +2152,8 @@ packages:
   '@zinkawaii/stylelint-config@0.3.1':
     resolution: {integrity: sha512-jl9s3iIxAFY/sWnrtZG5iGgX1d2kbN1HCYRZe42m43Vr7iXY9ExYGCyvdd411N373uaOoh4xwYbKVigk6Nmdbg==}
 
-  '@zinkawaii/tsconfig@0.0.1':
-    resolution: {integrity: sha512-uO40UtaaIMjc88J/NdKaF0O8mP3fm/jBhiCoMAHdCzSfincB4KJ5ddCf1yhzj8Inxl+MwjirXKAQ5e7QaLawGg==}
+  '@zinkawaii/tsconfig@0.0.2':
+    resolution: {integrity: sha512-SCK0SbJCikxJiMzg9sHjlw99yKMCUxYKzVBrHJmPnIqjRXqN5ieC9lWp9L7havbXbH4NniFL+wnNIvjYiEOhig==}
 
   abbrev@1.1.1:
     resolution: {integrity: sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==}
@@ -2591,8 +2594,8 @@ packages:
     resolution: {integrity: sha512-yCEafptTtb4bk7GLEQoM8KVJpxAfdBJYaXyzQEgQQQgYrZiDp8SJmGKlYza6CYjEDNstAdNdKA3UuoULlEbS6w==}
     engines: {node: '>=12.13'}
 
-  core-js-compat@3.41.0:
-    resolution: {integrity: sha512-RFsU9LySVue9RTwdDVX/T0e2Y6jRYWXERKElIjpuEOEnxaXffI0X7RUwVzfYLfzuLXSNJDYoRYUAmRUcyln20A==}
+  core-js-compat@3.42.0:
+    resolution: {integrity: sha512-bQasjMfyDGyaeWKBIu33lHh9qlSR0MFE/Nmc6nMjf/iU9b3rSMdAYz1Baxrv4lPdGUsTqZudHA4jIGSJy0SWZQ==}
 
   core-util-is@1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
@@ -2911,9 +2914,9 @@ packages:
   emoji-regex@9.2.2:
     resolution: {integrity: sha512-L18DaJsXSUk2+42pv8mLs5jJT2hqFkFE4j21wOmgbUqsZ2hL72NsUU785g9RXgo3s0ZNgVl42TiHp3ZtOv/Vyg==}
 
-  empathic@1.0.0:
-    resolution: {integrity: sha512-qtKgI1Mv8rTacvpaTkh28HM2Lbf+IOjXb7rhpt/42kZxRm8TBb/IVlo5iL2ztT19kc/EHAFN0fZ641avlXAgdg==}
-    engines: {node: '>=16'}
+  empathic@1.1.0:
+    resolution: {integrity: sha512-rsPft6CK3eHtrlp9Y5ALBb+hfK+DWnA4WFebbazxjWyx8vSm3rZeoM3z9irsjcqO3PYRzlfv27XIB4tz2DV7RA==}
+    engines: {node: '>=14'}
 
   enabled@2.0.0:
     resolution: {integrity: sha512-AKrN98kuwOzMIdAizXGI86UFBoo26CL21UM763y1h/GMSJ4/OHU9k2YlsmBpyScFo/wbLzWQJBMCW4+IO3/+OQ==}
@@ -3120,8 +3123,8 @@ packages:
       '@typescript-eslint/eslint-plugin':
         optional: true
 
-  eslint-plugin-vue@10.0.1:
-    resolution: {integrity: sha512-A5dRYc3eQ5i2rJFBW8J6F69ur/H7YfYg+5SCg6v829FU0BhM4fUTrRVR2d4MdZgzw0ioJEk6otYHEAnoGFqO4A==}
+  eslint-plugin-vue@10.1.0:
+    resolution: {integrity: sha512-/VTiJ1eSfNLw6lvG9ENySbGmcVvz6wZ9nA7ZqXlLBY2RkaF15iViYKxglWiIch12KiLAj0j1iXPYU6W4wTROFA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: ^8.57.0 || ^9.0.0
@@ -5096,8 +5099,8 @@ packages:
     deprecated: Rimraf versions prior to v4 are no longer supported
     hasBin: true
 
-  rolldown-plugin-dts@0.9.6:
-    resolution: {integrity: sha512-KmF3AU9rw98TY+T+oXucxkupj19ixN4UBXfDPtZGO70BfL14YWzzQ5XHoHIEhPJ8L/mK/hyt52IUvWiy6fHN/A==}
+  rolldown-plugin-dts@0.9.7:
+    resolution: {integrity: sha512-aAJhyvmlZx/siIDNQ2CahSyLp0Hvp8xAJkiXa8eZmkZ/SPEOdSjB0StGay2VcFetCa0NhUBxr+LkO2BSQgaU/Q==}
     engines: {node: '>=20.18.0'}
     peerDependencies:
       rolldown: ^1.0.0-beta.7
@@ -5585,8 +5588,8 @@ packages:
     peerDependencies:
       typescript: '>=4.8.4'
 
-  tsdown@0.10.1:
-    resolution: {integrity: sha512-NT1XSUDweBpgpiZb3Upfy3DBwAbn8W0aXo3Ecp4kHozTLewWa0UkWUP6nRTvSj2c0NcD/BLLuf0HthqMpbEdkA==}
+  tsdown@0.10.2:
+    resolution: {integrity: sha512-MhauwcNNVMeW3TTvpADDVPoAC3kfBfwPru3gtQ5pbVvGIF399VtbH3szUuXmw56P+DDlYjtQd0gKGJ8K5xRayQ==}
     engines: {node: '>=18.0.0'}
     hasBin: true
     peerDependencies:
@@ -6260,7 +6263,7 @@ snapshots:
       eslint-plugin-toml: 0.12.0(eslint@9.25.1(jiti@2.4.2))
       eslint-plugin-unicorn: 58.0.0(eslint@9.25.1(jiti@2.4.2))
       eslint-plugin-unused-imports: 4.1.4(@typescript-eslint/eslint-plugin@8.31.1(@typescript-eslint/parser@8.31.1(eslint@9.25.1(jiti@2.4.2))(typescript@5.8.3))(eslint@9.25.1(jiti@2.4.2))(typescript@5.8.3))(eslint@9.25.1(jiti@2.4.2))
-      eslint-plugin-vue: 10.0.1(eslint@9.25.1(jiti@2.4.2))(vue-eslint-parser@10.1.3(eslint@9.25.1(jiti@2.4.2)))
+      eslint-plugin-vue: 10.1.0(eslint@9.25.1(jiti@2.4.2))(vue-eslint-parser@10.1.3(eslint@9.25.1(jiti@2.4.2)))
       eslint-plugin-yml: 1.18.0(eslint@9.25.1(jiti@2.4.2))
       eslint-processor-vue-blocks: 2.0.0(@vue/compiler-sfc@3.5.13)(eslint@9.25.1(jiti@2.4.2))
       globals: 16.0.0
@@ -8464,7 +8467,7 @@ snapshots:
 
   '@xtuc/long@4.2.2': {}
 
-  '@zinkawaii/eslint-config@0.2.3': {}
+  '@zinkawaii/eslint-config@0.3.0': {}
 
   '@zinkawaii/scripts@0.0.2':
     dependencies:
@@ -8482,7 +8485,7 @@ snapshots:
       - postcss-html
       - stylelint
 
-  '@zinkawaii/tsconfig@0.0.1': {}
+  '@zinkawaii/tsconfig@0.0.2': {}
 
   abbrev@1.1.1: {}
 
@@ -8918,7 +8921,7 @@ snapshots:
     dependencies:
       is-what: 4.1.16
 
-  core-js-compat@3.41.0:
+  core-js-compat@3.42.0:
     dependencies:
       browserslist: 4.24.4
 
@@ -9216,7 +9219,7 @@ snapshots:
 
   emoji-regex@9.2.2: {}
 
-  empathic@1.0.0: {}
+  empathic@1.1.0: {}
 
   enabled@2.0.0: {}
 
@@ -9490,7 +9493,7 @@ snapshots:
       '@eslint/plugin-kit': 0.2.8
       ci-info: 4.2.0
       clean-regexp: 1.0.0
-      core-js-compat: 3.41.0
+      core-js-compat: 3.42.0
       eslint: 9.25.1(jiti@2.4.2)
       esquery: 1.6.0
       globals: 16.0.0
@@ -9510,7 +9513,7 @@ snapshots:
     optionalDependencies:
       '@typescript-eslint/eslint-plugin': 8.31.1(@typescript-eslint/parser@8.31.1(eslint@9.25.1(jiti@2.4.2))(typescript@5.8.3))(eslint@9.25.1(jiti@2.4.2))(typescript@5.8.3)
 
-  eslint-plugin-vue@10.0.1(eslint@9.25.1(jiti@2.4.2))(vue-eslint-parser@10.1.3(eslint@9.25.1(jiti@2.4.2))):
+  eslint-plugin-vue@10.1.0(eslint@9.25.1(jiti@2.4.2))(vue-eslint-parser@10.1.3(eslint@9.25.1(jiti@2.4.2))):
     dependencies:
       '@eslint-community/eslint-utils': 4.6.1(eslint@9.25.1(jiti@2.4.2))
       eslint: 9.25.1(jiti@2.4.2)
@@ -11889,7 +11892,7 @@ snapshots:
     dependencies:
       glob: 7.2.3
 
-  rolldown-plugin-dts@0.9.6(rolldown@1.0.0-beta.8-commit.852c603(typescript@5.8.3))(typescript@5.8.3):
+  rolldown-plugin-dts@0.9.7(rolldown@1.0.0-beta.8-commit.852c603(typescript@5.8.3))(typescript@5.8.3):
     dependencies:
       '@babel/generator': 7.27.0
       '@babel/parser': 7.27.0
@@ -12504,7 +12507,7 @@ snapshots:
     dependencies:
       typescript: 5.8.3
 
-  tsdown@0.10.1(typescript@5.8.3):
+  tsdown@0.10.2(typescript@5.8.3):
     dependencies:
       ansis: 3.17.0
       cac: 6.7.14
@@ -12512,11 +12515,11 @@ snapshots:
       consola: 3.4.2
       debug: 4.4.0
       diff: 7.0.0
-      empathic: 1.0.0
+      empathic: 1.1.0
       hookable: 5.5.3
       lightningcss: 1.29.3
       rolldown: 1.0.0-beta.8-commit.852c603(typescript@5.8.3)
-      rolldown-plugin-dts: 0.9.6(rolldown@1.0.0-beta.8-commit.852c603(typescript@5.8.3))(typescript@5.8.3)
+      rolldown-plugin-dts: 0.9.7(rolldown@1.0.0-beta.8-commit.852c603(typescript@5.8.3))(typescript@5.8.3)
       tinyexec: 1.0.1
       tinyglobby: 0.2.13
       unconfig: 7.3.2

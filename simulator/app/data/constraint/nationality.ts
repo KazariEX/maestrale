@@ -19,7 +19,7 @@ export const nationalityMap = {
     107: "偶像大师",
     108: "SSSS",
     109: "Atelier Ryza",
-    110: "闪乱神乐NL"
+    110: "闪乱神乐NL",
 };
 
 export const nationalityOptions = resolveConstraintOptions(nationalityMap);

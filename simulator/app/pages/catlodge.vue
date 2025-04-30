@@ -1,6 +1,6 @@
 <script lang="ts" setup>
     useHead({
-        title: "指挥喵"
+        title: "指挥喵",
     });
 </script>
 

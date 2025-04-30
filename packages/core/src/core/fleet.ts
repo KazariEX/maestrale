@@ -8,7 +8,7 @@ export abstract class Fleet {
     abstract ships: ComputedRef<(Ship | null)[]>;
 
     constructor(
-        name: string
+        name: string,
     ) {
         // 名称
         this.name = ref(name);
@@ -19,13 +19,13 @@ export abstract class Fleet {
     commander2 = shallowRef<Commander | null>(null);
     commanders = computed(() => [
         this.commander1.value,
-        this.commander2.value
+        this.commander2.value,
     ]);
 }
 
 export class SurfaceFleet extends Fleet {
     constructor(
-        name: string
+        name: string,
     ) {
         super(name);
         track(this);
@@ -37,7 +37,7 @@ export class SurfaceFleet extends Fleet {
         this.main3.value,
         this.vanguard1.value,
         this.vanguard2.value,
-        this.vanguard3.value
+        this.vanguard3.value,
     ]);
 
     // 主力
@@ -53,7 +53,7 @@ export class SurfaceFleet extends Fleet {
 
 export class SubmarineFleet extends Fleet {
     constructor(
-        name: string
+        name: string,
     ) {
         super(name);
         track(this);
@@ -62,7 +62,7 @@ export class SubmarineFleet extends Fleet {
     ships = computed(() => [
         this.submarine1.value,
         this.submarine2.value,
-        this.submarine3.value
+        this.submarine3.value,
     ]);
 
     // 潜艇

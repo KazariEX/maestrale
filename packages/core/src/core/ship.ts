@@ -38,7 +38,7 @@ export interface Transform {
     matrix: [
         TransformMatrixTemplate[],
         TransformMatrixTemplate[],
-        TransformMatrixTemplate[]
+        TransformMatrixTemplate[],
     ][];
     isModernized: Ref<boolean>;
     modernizedId: Ref<number>;
@@ -52,7 +52,7 @@ export class Ship {
 
     constructor(
         public id: number,
-        public technology: ITechnology
+        public technology: ITechnology,
     ) {
         // 最大可突破数
         this.maxBreakout = 0;
@@ -69,21 +69,21 @@ export class Ship {
             this.breakout = breakout;
             this.strengthen = {
                 type: StrengthenType.Blueprint,
-                ...strengthen
+                ...strengthen,
             };
         }
         else if (id in ShareCfg.ship_strengthen_meta) {
             this.breakout = ref(this.maxBreakout);
             this.strengthen = {
                 type: StrengthenType.Meta,
-                ...useStrengthenMeta(this)
+                ...useStrengthenMeta(this),
             };
         }
         else {
             this.breakout = ref(this.maxBreakout);
             this.strengthen = {
                 type: StrengthenType.General,
-                ...useStrengthenGeneral(this)
+                ...useStrengthenGeneral(this),
             };
         }
 
@@ -325,7 +325,7 @@ export class Ship {
             this.curTemp.equip_2,
             this.curTemp.equip_3,
             this.curTemp.equip_4,
-            this.curTemp.equip_5
+            this.curTemp.equip_5,
         ] as const;
     });
 
@@ -340,7 +340,7 @@ export class Ship {
         this.equip2.value,
         this.equip3.value,
         this.equip4.value,
-        this.equip5.value
+        this.equip5.value,
     ]);
 
     // 兵装
@@ -365,7 +365,7 @@ export function createShip(id: number, options: CreateShipOptions) {
     const {
         equips = [],
         spweapon = null,
-        technology
+        technology,
     } = options;
 
     // 舰船
@@ -398,7 +398,7 @@ function useStrengthenBlueprint(ship: Ship) {
     const data_blueprint = ShareCfg.ship_data_blueprint[ship.id];
     const data_strengthen = [
         ...data_blueprint.strengthen_effect,
-        ...data_blueprint.fate_strengthen
+        ...data_blueprint.fate_strengthen,
     ].map((i) => ShareCfg.ship_strengthen_blueprint[i]);
 
     // 最大蓝图数量（常规）
@@ -421,7 +421,7 @@ function useStrengthenBlueprint(ship: Ship) {
         },
         set: (value) => {
             blueprint.value = value;
-        }
+        },
     });
 
     // 蓝图数量（天运）
@@ -431,7 +431,7 @@ function useStrengthenBlueprint(ship: Ship) {
         },
         set: (value) => {
             blueprint.value = value + blueprintMax1;
-        }
+        },
     });
 
     // 蓝图等级
@@ -454,7 +454,7 @@ function useStrengthenBlueprint(ship: Ship) {
                 exp += data_strengthen[i].need_exp;
             }
             blueprint.value = exp / 10;
-        }
+        },
     });
 
     // 强化
@@ -491,9 +491,9 @@ function useStrengthenBlueprint(ship: Ship) {
                 1: 0,
                 2: 10,
                 3: 20,
-                4: 30
+                4: 30,
             }[value] ?? 0;
-        }
+        },
     });
 
     return {
@@ -504,7 +504,7 @@ function useStrengthenBlueprint(ship: Ship) {
         blueprint2,
         blueprintLevel,
         attrs,
-        breakout
+        breakout,
     };
 }
 
@@ -514,7 +514,7 @@ function useStrengthenMeta(ship: Ship) {
     const repair_effect = data_strengthen.repair_effect.map(([per, key]) => {
         return {
             per,
-            ...ShareCfg.ship_meta_repair_effect[key]
+            ...ShareCfg.ship_meta_repair_effect[key],
         };
     });
 
@@ -558,7 +558,7 @@ function useStrengthenMeta(ship: Ship) {
     return {
         maxAttrs,
         adjustAttrs,
-        attrs
+        attrs,
     };
 }
 
@@ -571,7 +571,7 @@ function useStrengthenGeneral(ship: Ship) {
         cannon: data_strengthen.durability[0],
         torpedo: data_strengthen.durability[1],
         air: data_strengthen.durability[3],
-        reload: data_strengthen.durability[4]
+        reload: data_strengthen.durability[4],
     });
 
     // 可调节强化值
@@ -583,7 +583,7 @@ function useStrengthenGeneral(ship: Ship) {
     return {
         maxAttrs,
         adjustAttrs,
-        attrs
+        attrs,
     };
 }
 
@@ -598,7 +598,7 @@ function useTransform(ship: Ship) {
             const template = {
                 ...ShareCfg.transform_data_template[id],
                 enable: ref(true),
-                next_id: []
+                next_id: [],
             };
             templates[id] = template;
             column[index - 2].push(template);
@@ -609,7 +609,7 @@ function useTransform(ship: Ship) {
     // 添加后继节点
     for (const [key, template] of entries(templates)) {
         const stack: [number, TransformMatrixTemplate][] = [
-            [Number(key), template]
+            [Number(key), template],
         ];
 
         while (stack.length) {
@@ -652,7 +652,7 @@ function useTransform(ship: Ship) {
                 modernizedId.value = value ? to : from;
             }
         }, {
-            immediate: true
+            immediate: true,
         });
     }
 
@@ -665,7 +665,7 @@ function useTransform(ship: Ship) {
     return {
         matrix,
         isModernized,
-        modernizedId
+        modernizedId,
     };
 }
 

@@ -1,17 +1,17 @@
 <script lang="ts" setup>
     definePageMeta({
-        alias: "/"
+        alias: "/",
     });
 
     useHead({
-        title: "编队"
+        title: "编队",
     });
 
     const fleetStore = useFleetStore();
 
     const infoModeOptions = [
         { label: "舰船详情", value: "details" },
-        { label: "装备列表", value: "equips" }
+        { label: "装备列表", value: "equips" },
     ];
 </script>
 

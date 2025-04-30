@@ -13,7 +13,7 @@
     function clickIcon() {
         commanderStore.toggle(index);
         window.scrollTo({
-            top: 0
+            top: 0,
         });
     }
 </script>
@@ -27,7 +27,7 @@
         b="rounded-1"
         cursor="pointer"
         :class="{
-            [`text-primary`]: currentCommander === commander
+            [`text-primary`]: currentCommander === commander,
         }"
         @click="clickIcon"
     >

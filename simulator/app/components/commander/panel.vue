@@ -2,7 +2,7 @@
     const commanderStore = useCommanderStore();
     const {
         currentCommander: commander,
-        currentIdx: index
+        currentIdx: index,
     } = storeToRefs(commanderStore);
 
     async function remove() {

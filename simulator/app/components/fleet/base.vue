@@ -7,20 +7,20 @@
         label: string;
     }>();
     const model = defineModel<UnwrapRef<SerializableFleets<T>>>({
-        required: true
+        required: true,
     });
 
     const options = computed(() => {
         return model.value.fleets.map(({ name }, i) => ({
             label: name,
-            value: i
+            value: i,
         }));
     });
 
     async function modifyName() {
         const newName = await requireInput({
             title: "修改名称",
-            defaultValue: model.value.currentFleet.name.value
+            defaultValue: model.value.currentFleet.name.value,
         });
         if (newName) {
             model.value.currentFleet.name.value = newName;

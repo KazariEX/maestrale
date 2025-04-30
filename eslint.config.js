@@ -2,7 +2,9 @@ import antfu from "@antfu/eslint-config";
 import zin from "@zinkawaii/eslint-config";
 
 export default antfu({
-    markdown: false,
+    ignores: [
+        "packages/data/{generated,resources}/**/*.json",
+    ],
     pnpm: true,
     rules: {
         ...zin.standard,
@@ -12,6 +14,6 @@ export default antfu({
         ...zin.patch,
         "no-useless-constructor": "off",
         "ts/no-namespace": "off",
-        "vue/prefer-import-from-vue": "off"
-    }
+        "vue/prefer-import-from-vue": "off",
+    },
 });

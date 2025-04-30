@@ -4,7 +4,7 @@
     import { shipTypeOptions } from "~/data/constraint/ship-type";
 
     useHead({
-        title: "舰队科技"
+        title: "舰队科技",
     });
 
     const technology = useTechnology();
@@ -14,7 +14,7 @@
         .map((option) => {
             return option.value === 22 ? {
                 label: "风帆",
-                value: 22
+                value: 22,
             } : option;
         });
 

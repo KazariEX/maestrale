@@ -14,8 +14,8 @@ const vvvip: Record<string, VVVIP> = {
     attribute_info_by_type: {
         folder: "ShareCfg",
         props: [
-            "name"
-        ]
+            "name",
+        ],
     },
     commander_ability_template: {
         folder: "ShareCfg",
@@ -24,8 +24,8 @@ const vvvip: Record<string, VVVIP> = {
             "desc",
             "icon",
             "name",
-            "worth"
-        ]
+            "worth",
+        ],
     },
     commander_data_template: {
         folder: "ShareCfg",
@@ -37,8 +37,8 @@ const vvvip: Record<string, VVVIP> = {
             "painting",
             "rarity",
             "support_value",
-            "tactic_value"
-        ]
+            "tactic_value",
+        ],
     },
     equip_data_statistics: {
         folder: "sharecfgdata",
@@ -55,37 +55,37 @@ const vvvip: Record<string, VVVIP> = {
             "value_1",
             "value_2",
             "value_3",
-            "weapon_id"
-        ]
+            "weapon_id",
+        ],
     },
     equip_data_template: {
         folder: "sharecfgdata",
         props: [
             "next",
             "prev",
-            "ship_type_forbidden"
-        ]
+            "ship_type_forbidden",
+        ],
     },
     fleet_tech_ship_template: {
         folder: "ShareCfg",
-        props: []
+        props: [],
     },
     fleet_tech_template: {
         folder: "ShareCfg",
-        props: []
+        props: [],
     },
     ship_data_blueprint: {
         folder: "ShareCfg",
         props: [
             "fate_strengthen",
-            "strengthen_effect"
-        ]
+            "strengthen_effect",
+        ],
     },
     ship_data_breakout: {
         folder: "sharecfgdata",
         props: [
-            "breakout_id"
-        ]
+            "breakout_id",
+        ],
     },
     ship_data_statistics: {
         folder: "sharecfgdata",
@@ -99,14 +99,14 @@ const vvvip: Record<string, VVVIP> = {
             "oxy_max",
             "rarity",
             "star",
-            "type"
-        ]
+            "type",
+        ],
     },
     ship_data_strengthen: {
         folder: "ShareCfg",
         props: [
-            "durability"
-        ]
+            "durability",
+        ],
     },
     ship_data_template: {
         folder: "sharecfgdata",
@@ -117,39 +117,39 @@ const vvvip: Record<string, VVVIP> = {
             "equip_4",
             "equip_5",
             "oil_at_end",
-            "oil_at_start"
-        ]
+            "oil_at_start",
+        ],
     },
     ship_data_trans: {
         folder: "ShareCfg",
         props: [
-            "transform_list"
-        ]
+            "transform_list",
+        ],
     },
     ship_meta_breakout: {
         folder: "ShareCfg",
         props: [
-            "breakout_id"
-        ]
+            "breakout_id",
+        ],
     },
     ship_meta_repair_effect: {
         folder: "ShareCfg",
         props: [
-            "effect_attr"
-        ]
+            "effect_attr",
+        ],
     },
     ship_meta_repair: {
         folder: "ShareCfg",
         props: [
-            "effect_attr"
-        ]
+            "effect_attr",
+        ],
     },
     ship_skin_template: {
         folder: "ShareCfg",
         props: [
             "name",
-            "painting"
-        ]
+            "painting",
+        ],
     },
     ship_strengthen_blueprint: {
         folder: "ShareCfg",
@@ -157,8 +157,8 @@ const vvvip: Record<string, VVVIP> = {
             "effect",
             "effect_attr",
             "lv",
-            "need_exp"
-        ]
+            "need_exp",
+        ],
     },
     ship_strengthen_meta: {
         folder: "ShareCfg",
@@ -167,8 +167,8 @@ const vvvip: Record<string, VVVIP> = {
             "repair_cannon",
             "repair_effect",
             "repair_reload",
-            "repair_torpedo"
-        ]
+            "repair_torpedo",
+        ],
     },
     spweapon_data_statistics: {
         folder: "sharecfgdata",
@@ -185,14 +185,14 @@ const vvvip: Record<string, VVVIP> = {
             "value_1",
             "value_1_random",
             "value_2",
-            "value_2_random"
-        ]
+            "value_2_random",
+        ],
     },
     spweapon_type: {
         folder: "ShareCfg",
         props: [
-            "ship_type"
-        ]
+            "ship_type",
+        ],
     },
     transform_data_template: {
         folder: "ShareCfg",
@@ -202,9 +202,9 @@ const vvvip: Record<string, VVVIP> = {
             "effect",
             "icon",
             "name",
-            "ship_id"
-        ]
-    }
+            "ship_id",
+        ],
+    },
 };
 
 if (process.argv.includes("--update")) {
@@ -275,7 +275,7 @@ if (process.argv.includes("--update")) {
 else {
     await Promise.all(Object.entries(vvvip).map(([key, { folder, props }]) => pick(key, {
         folder,
-        props
+        props,
     })));
 
     // 属性过滤

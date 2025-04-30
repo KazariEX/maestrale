@@ -10,18 +10,18 @@
                 {
                     key: `submarine2`,
                     role: `僚舰`,
-                    order: 2
+                    order: 2,
                 },
                 {
                     key: `submarine1`,
                     role: `旗舰`,
-                    order: 1
+                    order: 1,
                 },
                 {
                     key: `submarine3`,
                     role: `僚舰`,
-                    order: 3
-                }
+                    order: 3,
+                },
             ]"
             v-model="fleetStore.submarine.currentFleet"
         />
