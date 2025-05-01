@@ -17,9 +17,10 @@
 
     body {
         overflow-x: auto;
+        background-color: var(--p-content-background);
         font-size: 14px;
-        -webkit-font-smoothing: antialiased;
         text-size-adjust: 100%;
+        -webkit-font-smoothing: antialiased;
     }
 
     a {

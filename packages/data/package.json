@@ -12,9 +12,9 @@
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
+    "**/.gitkeep",
     "dist",
-    "scripts",
-    "**/.gitkeep"
+    "scripts"
   ],
   "publishConfig": {
     "exports": {

@@ -81,7 +81,7 @@
                 <iconify name="fa6-solid:xmark"/>
             </button>
             <span>{{ ability.name }}</span>
-            <p leading="6" text="3 slate-600 truncate" v-html="desc"></p>
+            <p leading="6" text="3 slate-600 truncate dark:slate-300" v-html="desc"></p>
         </div>
         <div
             v-else

@@ -49,7 +49,7 @@
     <li grid="~" w="16">
         <commander-icon h="14!" :icon @click="select"/>
         <span
-            text="3 slate-600 center truncate"
+            text="3 slate-600 center truncate dark:slate-300"
             :class="{
                 [`@hover:text-primary cursor-pointer`]: index !== -1,
                 [`op-40 select-none`]: index === -1,

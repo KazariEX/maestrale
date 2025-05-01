@@ -1,15 +1,18 @@
-import { defineConfig, presetAttributify, presetUno, transformerDirectives } from "unocss";
+import { defineConfig, presetAttributify, presetWind3, transformerDirectives } from "unocss";
 
 export default defineConfig({
     presets: [
-        presetUno(),
         presetAttributify(),
+        presetWind3({
+            dark: "media",
+        }),
     ],
     transformers: [
         transformerDirectives(),
     ],
     theme: {
         colors: {
+            background: "var(--p-content-background)",
             primary: {
                 50: "var(--p-primary-50)",
                 100: "var(--p-primary-100)",
@@ -21,7 +24,7 @@ export default defineConfig({
                 700: "var(--p-primary-700)",
                 800: "var(--p-primary-800)",
                 900: "var(--p-primary-900)",
-                DEFAULT: "var(--p-primary-500)",
+                DEFAULT: "var(--p-primary-400)",
             },
         },
     },

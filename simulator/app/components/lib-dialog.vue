@@ -24,10 +24,10 @@
             m="auto"
             p="x-6 y-4"
             b="rounded-xl"
-            bg="white"
+            bg="background"
         >
             <header grid="~ cols-[1fr_auto]">
-                <h2 text="4 slate-600">{{ title }}</h2>
+                <h2 text="4 slate-600 dark:slate-300">{{ title }}</h2>
                 <button
                     size="5"
                     text="5 slate @hover:primary"

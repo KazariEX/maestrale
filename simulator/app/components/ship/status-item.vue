@@ -58,13 +58,13 @@
     <li
         flex="~ gap-1"
         h="7"
-        bg="slate op-33"
+        bg="slate-500/20"
         leading="7"
     >
         <i
             grid="~ place-items-center"
             w="7"
-            bg="slate op-80"
+            bg="slate-500/40"
         >
             <nuxt-img w="6" max-h="7" :src/>
         </i>

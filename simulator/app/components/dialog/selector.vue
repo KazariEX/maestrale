@@ -55,6 +55,12 @@
         value: "",
     });
 
+    useEventListener("keyup", (event) => {
+        if (event.key === "Escape") {
+            emit("close", 0);
+        }
+    });
+
     function filterItem(item: T) {
         return (!filterWord.value || item.name.includes(filterWord.value))
             && localSelectors.value.every(({ id, value }) => {
@@ -77,13 +83,13 @@
             max-w="full"
             m="l-auto"
             p="t-4 l-4"
-            bg="white"
+            bg="background"
         >
             <header
                 grid="~ cols-[1fr_auto]"
                 p="r-4"
             >
-                <h2 text="4 slate-600">{{ title }}</h2>
+                <h2 text="4 slate-600 dark:slate-300">{{ title }}</h2>
                 <button
                     size="5"
                     text="5 slate @hover:primary"

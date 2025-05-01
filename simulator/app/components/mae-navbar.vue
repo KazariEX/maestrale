@@ -32,7 +32,7 @@
         w="lg:18"
         h="lt-lg:16"
         b="solid slate op-25 lg:r lt-lg:t"
-        bg="white"
+        bg="background"
     >
         <nuxt-link
             v-for="{ title, icon, to } in navs"
