@@ -1,3 +1,4 @@
+import { existsSync } from "node:fs";
 import { readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { updateTechnology } from "./technology";
@@ -23,13 +24,12 @@ if (res.status !== 200) {
 }
 version = await res.text();
 
-const path = resolve(import.meta.dirname, "../package.json");
-const file = await readFile(path, "utf-8");
-const json = JSON.parse(file);
-if (json.version !== version) {
+const path = resolve(import.meta.dirname, "../.version");
+const text = existsSync(path) && await readFile(path, "utf-8");
+if (text !== version) {
     console.info(`✔ Fetch version "${version}"`);
     await updateData();
-    await writeFile(path, file.replace(/"version": ".+"/, `"version": "${version}"`));
+    await writeFile(path, version);
 }
 
 // 数据生成
