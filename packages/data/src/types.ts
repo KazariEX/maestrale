@@ -29,6 +29,7 @@ export enum Nationality {
     NorthernParliament = 7,
     IrisLibre = 8,
     VichyaDominion = 9,
+    KindomOfTulipa = 11,
     Tempesta = 96,
     META = 97,
     Neptunia = 101,

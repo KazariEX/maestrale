@@ -1,21 +1,21 @@
 import { type Attributes, ShareCfg, type ShipType } from "@maestrale/data";
-import { ref, type Ref } from "@vue/reactivity";
+import { reactive } from "@vue/reactivity";
 
 export type TechnologyAttributes = Omit<Attributes, "speed" | "luck">;
 
 export interface ITechnology {
-    attrs: Ref<Record<ShipType, TechnologyAttributes>>;
+    attrs: Record<ShipType, TechnologyAttributes>;
     get: (type: ShipType, attr: keyof Attributes) => number;
 }
 
 export function useTechnology(): ITechnology {
-    const attrs = ref(createTechnologyAttributes());
+    const attrs = reactive(createTechnologyAttributes());
 
     function get(type: ShipType, attr: keyof Attributes) {
         if (attr === "speed" || attr === "luck") {
             return 0;
         }
-        return attrs.value[type]?.[attr] ?? 0;
+        return attrs[type][attr];
     }
 
     return {

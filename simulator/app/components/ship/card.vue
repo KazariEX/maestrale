@@ -14,7 +14,7 @@
     });
 
     const fleetStore = useFleetStore();
-    const technology = useTechnology();
+    const technology = useTechnologyStore();
 
     const limitedBreakoutOptions = computed(() => {
         return breakoutOptions.filter(({ value }) => {

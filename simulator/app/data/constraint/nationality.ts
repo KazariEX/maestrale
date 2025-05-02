@@ -1,4 +1,5 @@
 export const nationalityMap = {
+    0: "通用",
     1: "白鹰",
     2: "皇家",
     3: "重樱",
@@ -8,6 +9,7 @@ export const nationalityMap = {
     7: "北方联合",
     8: "自由鸢尾",
     9: "维希教廷",
+    11: "郁金王国",
     96: "飓风",
     97: "META",
     101: "海王星",

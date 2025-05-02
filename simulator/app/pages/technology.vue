@@ -1,42 +1,46 @@
 <script lang="ts" setup>
-    import type { ShipType } from "maestrale";
-    import { attributeMap } from "~/data/constraint/attribute";
-    import { shipTypeOptions } from "~/data/constraint/ship-type";
+    import { shipTypeTechOptions } from "~/data/constraint/ship-type";
 
     useHead({
         title: "舰队科技",
     });
 
-    const technology = useTechnology();
+    const technology = useTechnologyStore();
 
-    const options = shipTypeOptions
-        .filter(({ value }) => ![20, 21, 23, 24].includes(value))
-        .map((option) => {
-            return option.value === 22 ? {
-                label: "风帆",
-                value: 22,
-            } : option;
-        });
-
-    const currentShipType = ref<ShipType>(1);
+    const modeOptions = [
+        {
+            label: "控制器",
+            value: "controller",
+        },
+        {
+            label: "模拟器",
+            value: "simulator",
+        },
+    ];
 </script>
 
 <template>
-    <prime-select-button
-        flex="wrap justify-center gap-row-2"
-        size="small"
-        :options
-        option-label="label"
-        option-value="value"
-        :allow-empty="false"
-        v-model="currentShipType"
-    />
-    <ul grid="~ gap-4" m="t-8 x-auto" max-w="120">
-        <ship-strengthen-item
-            v-for="(_, attr) in technology.maxAttrs[1]"
-            :label="attributeMap[attr]"
-            :max="technology.maxAttrs[currentShipType]![attr]"
-            v-model="technology.attrs.value[currentShipType]![attr]"
+    <div flex="~ wrap justify-center gap-4">
+        <prime-select-button
+            size="small"
+            :options="modeOptions"
+            option-label="label"
+            option-value="value"
+            :allow-empty="false"
+            v-model="technology.mode"
         />
-    </ul>
+        <prime-select-button
+            flex="wrap justify-center gap-row-2"
+            size="small"
+            :options="shipTypeTechOptions"
+            option-label="label"
+            option-value="value"
+            :allow-empty="false"
+            v-model="technology.currentShipType"
+        />
+    </div>
+    <keep-alive>
+        <technology-controller v-if="technology.mode === `controller`"/>
+        <technology-simulator v-else/>
+    </keep-alive>
 </template>

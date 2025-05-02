@@ -3,7 +3,7 @@
     import { attributeMap } from "~/data/constraint/attribute";
 
     const { attr, label, icon } = defineProps<{
-        attr?: keyof typeof attributeMap;
+        attr?: keyof Attributes;
         label?: string;
         icon?: string;
     }>();

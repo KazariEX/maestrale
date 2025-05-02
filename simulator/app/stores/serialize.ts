@@ -1,7 +1,7 @@
 import { createSerializer } from "maestrale";
 
 export const useSerializeStore = defineStore("serialize", () => {
-    const technology = useTechnology();
+    const technology = useTechnologyStore();
     const mapping = useLocalStorage("mapping", {});
 
     const serializer = createSerializer({

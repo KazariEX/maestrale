@@ -17,6 +17,8 @@ export namespace ShareCfg {
             loadData("equip_data_statistics"),
             loadData("equip_data_template"),
             loadData("fleet_tech_attributes"),
+            loadData("fleet_tech_ship_class"),
+            loadData("fleet_tech_ship_template"),
             loadData("ship_data_blueprint"),
             loadData("ship_data_breakout"),
             loadData("ship_data_statistics"),
@@ -49,6 +51,8 @@ export namespace ShareCfg {
     export declare const equip_data_statistics: Record<string, EquipDataStatistics>;
     export declare const equip_data_template: Record<string, EquipDataTemplate>;
     export declare const fleet_tech_attributes: Record<ShipType, Attributes>;
+    export declare const fleet_tech_ship_class: Record<string, FleetTechShipClass>;
+    export declare const fleet_tech_ship_template: Record<string, FleetTechShipTemplate>;
     export declare const ship_data_blueprint: Record<string, ShipDataBlueprint>;
     export declare const ship_data_breakout: Record<string, ShipDataBreakout>;
     export declare const ship_data_statistics: Record<string, ShipDataStatistics>;
@@ -114,6 +118,26 @@ export namespace ShareCfg {
         next: number;
         prev: number;
         ship_type_forbidden: ShipType[];
+    }
+
+    export interface FleetTechShipClass {
+        name: string;
+        nation: Nationality;
+        shiptype: ShipType;
+        ships: number[];
+        t_level: number;
+    }
+
+    export interface FleetTechShipTemplate {
+        add_get_attr: number;
+        add_get_shiptype: ShipType[];
+        add_get_value: number;
+        add_level_attr: number;
+        add_level_shiptype: ShipType[];
+        add_level_value: number;
+        pt_get: number;
+        pt_level: number;
+        pt_upgrage: number;
     }
 
     export interface ShipDataBlueprint {

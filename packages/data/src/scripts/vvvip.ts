@@ -59,9 +59,29 @@ export const vvvip: Record<string, VVVIP> = {
             "ship_type_forbidden",
         ],
     },
+    fleet_tech_ship_class: {
+        folder: "ShareCfg",
+        props: [
+            "name",
+            "nation",
+            "shiptype",
+            "ships",
+            "t_level",
+        ],
+    },
     fleet_tech_ship_template: {
         folder: "ShareCfg",
-        props: [],
+        props: [
+            "add_get_attr",
+            "add_get_shiptype",
+            "add_get_value",
+            "add_level_attr",
+            "add_level_shiptype",
+            "add_level_value",
+            "pt_get",
+            "pt_level",
+            "pt_upgrage",
+        ],
     },
     fleet_tech_template: {
         folder: "ShareCfg",

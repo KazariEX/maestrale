@@ -1,30 +1,150 @@
-import { type Attributes, createTechnologyAttributes, type ShipType } from "maestrale";
+import { type Attributes, createAttributes, createTechnologyAttributes, ShareCfg, type ShipType, type TechnologyAttributes } from "maestrale";
+import { shipTypeTechMap } from "~/data/constraint/ship-type";
+import type { AchieveAdditional, AchieveItem, TechnologyMode } from "~/types/technology";
 
 export const useTechnologyStore = defineStore("technology", () => {
+    const mode = ref<TechnologyMode>("controller");
+    const currentShipType = ref<ShipType>(1);
+
+    const achieveItems = ref(createAchieveItems());
+    const achieveAdditionals = new WeakMap<object, AchieveAdditional>();
+
+    // 挂载附加数据至本地变量，防止写入本地存储
+    watchOnce(achieveItems, (items) => {
+        for (const item of items) {
+            if (achieveAdditionals.has(item)) {
+                continue;
+            }
+            const { id } = item;
+            const statistics = ShareCfg.ship_data_statistics[id + "1"]!;
+            achieveAdditionals.set(item, {
+                name: statistics.name,
+                icon: `/assets/artresource/atlas/squareicon/${ShareCfg.ship_skin_template[`${id}0`]?.painting}.png`,
+                rarity: statistics.rarity,
+                type: statistics.type,
+                template: ShareCfg.fleet_tech_ship_template[id]!,
+            });
+        }
+    }, {
+        flush: "sync",
+    });
+
     const maxAttrs = createTechnologyAttributes();
-    const attrs = ref(createTechnologyAttributes());
+    const controlledAttrs = reactive(createTechnologyAttributes());
+    const simulatedAttrs = useSimulatedAttrs(achieveItems, achieveAdditionals);
+
+    const attrs = computed(() => {
+        return mode.value === "controller" ? controlledAttrs : simulatedAttrs;
+    });
+
+    const point = computed(() => {
+        return achieveItems.value.reduce((res, item) => {
+            const { template } = achieveAdditionals.get(item)!;
+            let point = 0;
+            if (item.get) {
+                point += template.pt_get;
+            }
+            if (item.upgrage) {
+                point += template.pt_upgrage;
+            }
+            if (item.level) {
+                point += template.pt_level;
+            }
+            return res + point;
+        }, 0);
+    });
 
     function get(type: ShipType, attr: keyof Attributes) {
         if (attr === "speed" || attr === "luck") {
             return 0;
         }
-        return attrs.value[type]?.[attr] ?? 0;
+        return attrs.value[type][attr];
+    }
+
+    function getAdditional(item: AchieveItem) {
+        return achieveAdditionals.get(item);
     }
 
     return {
+        mode,
+        currentShipType,
+        achieveItems,
+        achieveAdditionals,
         maxAttrs,
+        controlledAttrs,
+        simulatedAttrs,
         attrs,
+        point,
         get,
+        getAdditional,
     };
 }, {
-    persist: true,
+    persist: {
+        pick: [
+            "mode",
+            "achieveItems",
+            "controlledAttrs",
+        ],
+    },
 });
 
-export function useTechnology() {
-    const technologyStore = useTechnologyStore();
-    return {
-        maxAttrs: technologyStore.maxAttrs,
-        attrs: storeToRefs(technologyStore).attrs,
-        get: technologyStore.get,
-    };
+function useSimulatedAttrs(items: Ref<AchieveItem[]>, additionals: WeakMap<object, AchieveAdditional>) {
+    const attrs = {
+        get 20() {
+            return this[1];
+        },
+        get 21() {
+            return this[1];
+        },
+        get 23() {
+            return this[22];
+        },
+        get 24() {
+            return this[22];
+        },
+    } as Record<ShipType, TechnologyAttributes>;
+
+    for (const type of Object.keys(shipTypeTechMap).map(Number)) {
+        const getter = computed(() => {
+            const attrs = createAttributes();
+            for (const item of items.value) {
+                const { template } = additionals.get(item)!;
+                if (template.add_get_shiptype.includes(type)) {
+                    if (item.get) {
+                        const key = ShareCfg.attribute_info_by_type[template.add_get_attr]!.name;
+                        attrs[key] += template.add_get_value;
+                    }
+                }
+                if (template.add_level_shiptype.includes(type)) {
+                    if (item.level) {
+                        const key = ShareCfg.attribute_info_by_type[template.add_level_attr]!.name;
+                        attrs[key] += template.add_level_value;
+                    }
+                }
+            }
+            return attrs;
+        });
+        Object.defineProperty(attrs, type, {
+            get() {
+                return getter.value;
+            },
+        });
+    }
+    return attrs;
+}
+
+function createAchieveItems(): AchieveItem[] {
+    const ids = getBaseShipIds();
+    for (const id of ids) {
+        if (id in ShareCfg.fleet_tech_ship_template) {
+            continue;
+        }
+        ids.delete(id);
+    }
+    return [...ids].map((id) => ({
+        id: Number(id),
+        get: true,
+        upgrage: true,
+        level: true,
+    }));
 }

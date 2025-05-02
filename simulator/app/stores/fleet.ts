@@ -67,7 +67,7 @@ function useSerializableFleets<T extends Fleet>(
     const storageKey = `${type}-fleets` as const;
 
     const serializeStore = useSerializeStore();
-    const technology = useTechnology();
+    const technology = useTechnologyStore();
 
     const fleets = shallowReactive<T[]>([]);
     const currentIdx = ref(0);
