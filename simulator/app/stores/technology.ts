@@ -9,6 +9,20 @@ export const useTechnologyStore = defineStore("technology", () => {
     const achieveItems = ref(createAchieveItems());
     const achieveAdditionals = new WeakMap<object, AchieveAdditional>();
 
+    // 在游戏数据更新时修补本地缓存
+    watchOnce(achieveItems, (storeItems, initialItems) => {
+        if (storeItems.length === initialItems.length) {
+            return;
+        }
+        for (let i = 0; i < initialItems.length; i++) {
+            const initialItem = initialItems[i]!;
+            const storeItem = storeItems[i];
+            if (initialItem.id !== storeItem?.id) {
+                achieveItems.value.splice(i, 0, initialItem);
+            }
+        }
+    });
+
     const maxAttrs = createTechnologyAttributes();
     const controlledAttrs = reactive(createTechnologyAttributes());
     const simulatedAttrs = useSimulatedAttrs(achieveItems, getAdditional);
