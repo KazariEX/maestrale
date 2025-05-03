@@ -9,26 +9,6 @@ export const useTechnologyStore = defineStore("technology", () => {
     const achieveItems = ref(createAchieveItems());
     const achieveAdditionals = new WeakMap<object, AchieveAdditional>();
 
-    // 挂载附加数据至本地变量，防止写入本地存储
-    watchOnce(achieveItems, (items) => {
-        for (const item of items) {
-            if (achieveAdditionals.has(item)) {
-                continue;
-            }
-            const { id } = item;
-            const statistics = ShareCfg.ship_data_statistics[id + "1"]!;
-            achieveAdditionals.set(item, {
-                name: statistics.name,
-                icon: `/assets/artresource/atlas/squareicon/${ShareCfg.ship_skin_template[`${id}0`]?.painting}.png`,
-                rarity: statistics.rarity,
-                type: statistics.type,
-                template: ShareCfg.fleet_tech_ship_template[id]!,
-            });
-        }
-    }, {
-        flush: "sync",
-    });
-
     const maxAttrs = createTechnologyAttributes();
     const controlledAttrs = reactive(createTechnologyAttributes());
     const simulatedAttrs = useSimulatedAttrs(achieveItems, achieveAdditionals);
@@ -39,7 +19,7 @@ export const useTechnologyStore = defineStore("technology", () => {
 
     const point = computed(() => {
         return achieveItems.value.reduce((res, item) => {
-            const { template } = achieveAdditionals.get(item)!;
+            const { template } = getAdditional(item);
             let point = 0;
             if (item.get) {
                 point += template.pt_get;
@@ -62,7 +42,19 @@ export const useTechnologyStore = defineStore("technology", () => {
     }
 
     function getAdditional(item: AchieveItem) {
-        return achieveAdditionals.get(item);
+        let additional = achieveAdditionals.get(item);
+        if (!additional) {
+            const { id } = item;
+            const statistics = ShareCfg.ship_data_statistics[id + "1"]!;
+            achieveAdditionals.set(item, additional = {
+                name: statistics.name,
+                icon: `/assets/artresource/atlas/squareicon/${ShareCfg.ship_skin_template[`${id}0`]?.painting}.png`,
+                rarity: statistics.rarity,
+                type: statistics.type,
+                template: ShareCfg.fleet_tech_ship_template[id]!,
+            });
+        }
+        return additional;
     }
 
     return {
