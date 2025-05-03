@@ -6,9 +6,10 @@
 
     const technology = useTechnologyStore();
 
-    interface ClassData extends ShareCfg.FleetTechShipClass {
+    interface ClassData extends Omit<ShareCfg.FleetTechShipClass, "ships"> {
         id: string;
         nationality: string;
+        ships: ShipData[];
     }
 
     interface ShipData {
@@ -16,23 +17,24 @@
         additional: AchieveAdditional;
     }
 
+    const selectedData = ref<ShipData[]>([]);
+    const extendedData = computed<ShipData[]>(() => {
+        return technology.achieveItems.map((item) => ({
+            item,
+            additional: technology.getAdditional(item)!,
+        }));
+    });
+
     const expendedClasses = ref<ClassData[]>([]);
     const filteredClasses = computed<ClassData[]>(() => {
         return Object.entries(ShareCfg.fleet_tech_ship_class)
             .filter(([, item]) => item.shiptype === technology.currentShipType)
             .map(([id, item]) => ({
-                id,
                 ...item,
+                id,
                 nationality: nationalityMap[item.nation],
+                ships: extendedData.value.filter(({ item: { id } }) => item.ships.includes(id)),
             }));
-    });
-
-    const selectedData = ref<ShipData[]>([]);
-    const expendedData = computed<ShipData[]>(() => {
-        return technology.achieveItems.map((item) => ({
-            item,
-            additional: technology.getAdditional(item)!,
-        }));
     });
 
     watch(() => technology.currentShipType, () => {
@@ -89,8 +91,11 @@
             :value="filteredClasses"
             data-key="id"
             scrollable
-            scroll-height="844px"
-            sort-mode="multiple"
+            scroll-height="838px"
+            sort-mode="single"
+            sort-field="t_level"
+            :sort-order="-1"
+            removable-sort
             v-model:expanded-rows="expendedClasses"
         >
             <prime-column expander header-style="width: 0;"/>
@@ -105,14 +110,23 @@
                 </template>
             </prime-column>
             <prime-column header="Tier" field="t_level" sortable>
-                <template #body="{ data }">
-                    T{{ data.t_level }}
+                <template #body="{ data }: { data: ClassData }">
+                    <div flex="~ justify-between items-center">
+                        <span>T{{ data.t_level }}</span>
+                        <prime-avatar-group>
+                            <prime-avatar
+                                v-for="{ additional } in data.ships.slice(0, 7)"
+                                :image="additional.icon"
+                                shape="circle"
+                            />
+                        </prime-avatar-group>
+                    </div>
                 </template>
             </prime-column>
             <template #expansion="props">
                 <prime-data-table
                     m="b-4"
-                    :value="expendedData.filter(({ item }) => props.data.ships.includes(item.id))"
+                    :value="props.data.ships"
                     data-key="item.id"
                     selection-mode="multiple"
                     v-model:selection="selectedData"

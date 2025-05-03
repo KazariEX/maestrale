@@ -83,7 +83,7 @@
                     </span>
                     <span>
                         <span>{{ ship.power }}</span>
-                        <span m="l-1.5" text="slate">战力</span>
+                        <span m="l-1" text="slate">战力</span>
                     </span>
                 </div>
                 <div flex="~ gap-2">

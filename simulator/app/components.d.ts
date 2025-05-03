@@ -8,6 +8,8 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    PrimeAvatar: typeof import('primevue/avatar')['default']
+    PrimeAvatarGroup: typeof import('primevue/avatargroup')['default']
     PrimeButton: typeof import('primevue/button')['default']
     PrimeCheckbox: typeof import('primevue/checkbox')['default']
     PrimeColumn: typeof import('primevue/column')['default']
