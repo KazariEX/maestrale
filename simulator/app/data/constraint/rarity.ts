@@ -6,4 +6,4 @@ export const rarityMap = {
     6: "海上传奇",
 };
 
-export const rarityOptions = resolveConstraintOptions(rarityMap);
+export const rarityOptions = createConstraintOptions(rarityMap);

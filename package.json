@@ -5,7 +5,7 @@
   "scripts": {
     "build": "pnpm --filter maestrale... build",
     "dev": "pnpm --filter maestrale... --parallel dev",
-    "prepare": "zin link core && pnpm --filter @maestrale/data build",
+    "prepare": "zin link core && pnpm run build",
     "release": "bumpp -r --no-push -c \"release: v%s\"",
     "assets:check": "tsx scripts/assets.ts"
   },

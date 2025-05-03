@@ -72,8 +72,8 @@
 </script>
 
 <template>
-    <div flex="~ items-start gap-8" m="t-4" p="x-2">
-        <ul grid="~ gap-4" m="t-3">
+    <div flex="~ items-start gap-4" m="t-4">
+        <ul grid="~ gap-4" m="2">
             <technology-numeric
                 p="b-4"
                 b-b="~ solid $p-datatable-border-color"

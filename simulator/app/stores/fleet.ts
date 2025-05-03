@@ -1,5 +1,6 @@
 import { createFleet, createShip, type Fleet, type Ship, type SubmarineFleet, type SurfaceFleet } from "maestrale";
 import type { ShallowRef } from "vue";
+import { FleetAttrFlag } from "~/types/fleet";
 
 export const useFleetStore = defineStore("fleet", () => {
     const surface = useSerializableFleets<SurfaceFleet>("surface", {
@@ -21,7 +22,7 @@ export const useFleetStore = defineStore("fleet", () => {
     });
 
     const currentShip = shallowRef<Ship | null>(null);
-    const attrMode = ref<"equips" | "tech" | "commanders">("equips");
+    const attrFlag = ref(FleetAttrFlag.Equip);
     const infoMode = ref<"details" | "equips">("details");
     const panelTab = ref<"strengthen" | "transform">("strengthen");
 
@@ -39,7 +40,7 @@ export const useFleetStore = defineStore("fleet", () => {
         surface,
         submarine,
         currentShip,
-        attrMode,
+        attrFlag,
         infoMode,
         panelTab,
         setCurrentShip,

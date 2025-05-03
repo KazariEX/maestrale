@@ -1,9 +1,10 @@
 <script lang="ts" setup>
     import type { Attributes } from "maestrale";
     import { attributeMap } from "~/data/constraint/attribute";
+    import { FleetAttrFlag } from "~/types/fleet";
 
     const { attr, label, icon } = defineProps<{
-        attr?: keyof Attributes;
+        attr?: keyof typeof attributeMap;
         label?: string;
         icon?: string;
     }>();
@@ -11,14 +12,17 @@
     const fleetStore = useFleetStore();
     const { currentShip: ship } = storeToRefs(fleetStore);
 
-    const colors = {
-        equips: "text-green-600",
-        tech: "text-orange-500",
-        commanders: "text-purple-500",
-    };
-
     const src = computed(() => {
         return `/assets/prefab/variantplatform/${icon ?? attr}.png`;
+    });
+
+    const color = computed(() => {
+        switch (fleetStore.attrFlag) {
+            case FleetAttrFlag.Equip: return "text-green-600";
+            case FleetAttrFlag.Tech: return "text-orange-500";
+            case FleetAttrFlag.Commander: return "text-purple-500";
+            default: return "text-red-500";
+        }
     });
 
     const value = computed(() => {
@@ -44,9 +48,17 @@
     });
 
     const additionalValue = computed(() => {
-        return fleetStore.attrMode === "equips" && equipValue.value
-            || fleetStore.attrMode === "tech" && techValue.value
-            || fleetStore.attrMode === "commanders" && commanderValue.value;
+        let value = 0;
+        if (fleetStore.attrFlag & FleetAttrFlag.Equip) {
+            value += equipValue.value;
+        }
+        if (fleetStore.attrFlag & FleetAttrFlag.Tech) {
+            value += techValue.value;
+        }
+        if (fleetStore.attrFlag & FleetAttrFlag.Commander) {
+            value += commanderValue.value;
+        }
+        return value;
     });
 
     function isGeneralAttr(attr: string | undefined): attr is keyof Attributes {
@@ -71,10 +83,9 @@
         <span>{{ label ?? (attr ? attributeMap[attr] : "") }}</span>
         <span m="l-auto r-1">
             <span>{{ value }}</span>
-            <span
-                v-if="additionalValue"
-                :class="colors[fleetStore.attrMode]"
-            >{{ (additionalValue > 0 ? "+" : "") + additionalValue }}</span>
+            <span v-if="additionalValue" :class="color">
+                {{ (additionalValue > 0 ? "+" : "") + additionalValue }}
+            </span>
         </span>
     </li>
 </template>

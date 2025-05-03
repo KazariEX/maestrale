@@ -1,5 +1,6 @@
 <script lang="ts" setup>
     import { armorMap } from "~/data/constraint/armor";
+    import { FleetAttrFlag } from "~/types/fleet";
 
     const fleetStore = useFleetStore();
     const { currentShip: ship } = storeToRefs(fleetStore);
@@ -12,10 +13,10 @@
         return ship.value ? [8, 17, 22].includes(ship.value.type.value) : false;
     });
 
-    const attrModeOptions = [
-        { label: "装备", value: "equips" },
-        { label: "科技", value: "tech" },
-        { label: "猫", value: "commanders" },
+    const attrFlagOptions = [
+        { label: "装备", value: FleetAttrFlag.Equip },
+        { label: "科技", value: FleetAttrFlag.Tech },
+        { label: "猫", value: FleetAttrFlag.Commander },
     ];
 </script>
 
@@ -40,17 +41,16 @@
         <ship-status-item attr="speed" icon="attr_speed"/>
         <ship-status-item grid="row-start-5" attr="luck"/>
         <ship-status-item grid="row-start-5" attr="oil" icon="expend"/>
-        <li grid="~ row-end-6 justify-end items-end">
-            <prime-select-button
-                m="t--1px"
-                leading="4"
-                size="small"
-                :options="attrModeOptions"
-                option-label="label"
-                option-value="value"
-                :allow-empty="false"
-                v-model="fleetStore.attrMode"
-            />
+        <li grid="row-end-6" flex="~ justify-end items-center gap-2.5">
+            <label v-for="{ label, value } in attrFlagOptions" cursor="pointer">
+                <prime-checkbox
+                    size="small"
+                    binary
+                    :model-value="!!(fleetStore.attrFlag & value)"
+                    @update:model-value="fleetStore.attrFlag ^= value"
+                />
+                <span p="l-1">{{ label }}</span>
+            </label>
         </li>
     </ul>
 </template>

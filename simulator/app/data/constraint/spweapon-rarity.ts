@@ -4,4 +4,4 @@ export const spweaponRarityMap = {
     4: "超稀有",
 };
 
-export const spweaponRarityOptions = resolveConstraintOptions(spweaponRarityMap);
+export const spweaponRarityOptions = createConstraintOptions(spweaponRarityMap);

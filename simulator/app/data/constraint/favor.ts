@@ -10,4 +10,4 @@ export const favorMap: Record<Favor, string> = {
     6: "誓约+",
 };
 
-export const favorOptions = resolveConstraintOptions(favorMap);
+export const favorOptions = createConstraintOptions(favorMap);

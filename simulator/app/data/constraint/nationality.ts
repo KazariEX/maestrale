@@ -24,4 +24,4 @@ export const nationalityMap = {
     110: "闪乱神乐NL",
 };
 
-export const nationalityOptions = resolveConstraintOptions(nationalityMap);
+export const nationalityOptions = createConstraintOptions(nationalityMap);
