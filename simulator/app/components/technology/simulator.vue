@@ -91,7 +91,7 @@
             :value="filteredClasses"
             data-key="id"
             scrollable
-            scroll-height="838px"
+            scroll-height="841px"
             sort-mode="single"
             sort-field="t_level"
             :sort-order="-1"
@@ -115,8 +115,15 @@
                         <span>T{{ data.t_level }}</span>
                         <prime-avatar-group>
                             <prime-avatar
-                                v-for="{ additional } in data.ships.slice(0, 7)"
+                                v-for="{ additional } in data.ships.slice(0, data.ships.length > 7 ? 6 : 7)"
                                 :image="additional.icon"
+                                shape="circle"
+                            />
+                            <prime-avatar
+                                v-if="data.ships.length > 7"
+                                p="r-1px"
+                                text="xs slate"
+                                :label="`+${data.ships.length - 6}`"
                                 shape="circle"
                             />
                         </prime-avatar-group>

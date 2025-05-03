@@ -11,7 +11,7 @@ export const useTechnologyStore = defineStore("technology", () => {
 
     const maxAttrs = createTechnologyAttributes();
     const controlledAttrs = reactive(createTechnologyAttributes());
-    const simulatedAttrs = useSimulatedAttrs(achieveItems, achieveAdditionals);
+    const simulatedAttrs = useSimulatedAttrs(achieveItems, getAdditional);
 
     const attrs = computed(() => {
         return mode.value === "controller" ? controlledAttrs : simulatedAttrs;
@@ -80,7 +80,7 @@ export const useTechnologyStore = defineStore("technology", () => {
     },
 });
 
-function useSimulatedAttrs(items: Ref<AchieveItem[]>, additionals: WeakMap<object, AchieveAdditional>) {
+function useSimulatedAttrs(items: Ref<AchieveItem[]>, getAdditional: (item: AchieveItem) => AchieveAdditional) {
     const attrs = {
         get 20() {
             return this[1];
@@ -100,7 +100,7 @@ function useSimulatedAttrs(items: Ref<AchieveItem[]>, additionals: WeakMap<objec
         const getter = computed(() => {
             const attrs = createAttributes();
             for (const item of items.value) {
-                const { template } = additionals.get(item)!;
+                const { template } = getAdditional(item);
                 if (template.add_get_shiptype.includes(type)) {
                     if (item.get) {
                         const key = ShareCfg.attribute_info_by_type[template.add_get_attr]!.name;
