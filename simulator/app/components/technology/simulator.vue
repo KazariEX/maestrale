@@ -90,8 +90,10 @@
             flex="1"
             :value="filteredClasses"
             data-key="id"
+            paginator
+            :rows="12"
             scrollable
-            scroll-height="841px"
+            scroll-height="727px"
             sort-mode="single"
             sort-field="t_level"
             :sort-order="-1"

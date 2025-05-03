@@ -53,6 +53,10 @@
     --p-tabs-tabpanel-padding: 1rem;
 }
 
+.p-datatable-table-container {
+    scrollbar-gutter: stable;
+}
+
 .p-select-label {
     --uno: "pr-0 text-truncate";
 }
