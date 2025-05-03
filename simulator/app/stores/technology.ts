@@ -62,7 +62,7 @@ export const useTechnologyStore = defineStore("technology", () => {
             const statistics = ShareCfg.ship_data_statistics[id + "1"]!;
             achieveAdditionals.set(item, additional = {
                 name: statistics.name,
-                icon: `/assets/artresource/atlas/squareicon/${ShareCfg.ship_skin_template[`${id}0`]?.painting}.png`,
+                icon: getSquareIconAtlas(ShareCfg.ship_skin_template[id + "0"]!.painting),
                 rarity: statistics.rarity,
                 type: statistics.type,
                 template: ShareCfg.fleet_tech_ship_template[id]!,

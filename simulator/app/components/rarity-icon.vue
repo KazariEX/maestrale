@@ -22,11 +22,11 @@
     });
 
     const backgroundStyle = computed(() => ({
-        backgroundImage: `url(/assets/artresource/atlas/weaponframes/bg${isMeta ? "1" : ""}${order.value}.png)`,
+        backgroundImage: `url(${getRarityBackgroundAtlas(order.value, isMeta)})`,
     }));
 
     const frameStyle = computed(() => ({
-        backgroundImage: `url(/assets/artresource/atlas/weaponframes/frame_${order.value}.png)`,
+        backgroundImage: `url(${getRarityFrameAtlas(order.value)})`,
     }));
 </script>
 

@@ -29,7 +29,7 @@ export function selectShip(fleetType: FleetType, canClear: boolean) {
         data.push({
             id: Number(id),
             name,
-            icon: `/assets/artresource/atlas/squareicon/${ShareCfg.ship_skin_template[`${id}0`]?.painting}.png`,
+            icon: getSquareIconAtlas(ShareCfg.ship_skin_template[id + "0"]!.painting),
             rarity,
             type,
             nationality,
@@ -75,7 +75,7 @@ export function selectEquip(allowTypes: EquipType[], shipType: ShipType, canClea
         data.push({
             id: Number(id),
             name,
-            icon: `/assets/artresource/atlas/equips/${icon}.png`,
+            icon: getEquipIconAtlas(icon),
             rarity,
             type,
             nationality,
@@ -123,7 +123,7 @@ export function selectSPWeapon(shipId: number, shipType: ShipType, canClear: boo
         data.push({
             id: Number(id),
             name,
-            icon: `/assets/artresource/atlas/spweapon/${icon}.png`,
+            icon: getSPWeaponIconAtlas(icon),
             rarity,
         });
     }
@@ -159,7 +159,7 @@ export function selectCommander() {
         data.push({
             id: Number(id),
             name,
-            icon: `/assets/artresource/atlas/commandericon/${painting}.png`,
+            icon: getCommanderIconAtlas(painting),
             rarity,
             nationality,
         });
@@ -200,7 +200,7 @@ export function selectNestCommander(current: Commander | null, party: Commander[
         data.push({
             id: i,
             name: name.value,
-            icon: `/assets/artresource/atlas/commandericon/${painting}.png`,
+            icon: getCommanderIconAtlas(painting),
             rarity: rarity,
         });
     }

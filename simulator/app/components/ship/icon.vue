@@ -11,7 +11,7 @@
 
     const squareicon = computed(() => {
         return ship.value?.painting.value
-            ? `/assets/artresource/atlas/squareicon/${ship.value.painting.value}.png`
+            ? getSquareIconAtlas(ship.value.painting.value)
             : "/assets/artresource/ui/levelfleetselectview/blank_icon_light.png";
     });
 </script>

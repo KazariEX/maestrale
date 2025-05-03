@@ -14,9 +14,7 @@
     const { commanders } = storeToRefs(commanderStore);
 
     const icon = computed(() => {
-        return commander.value
-            ? `/assets/artresource/atlas/commandericon/${commander.value.painting}.png`
-            : void 0;
+        return commander.value ? getCommanderIconAtlas(commander.value.painting) : void 0;
     });
 
     const index = computed(() => {

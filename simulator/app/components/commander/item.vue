@@ -31,7 +31,7 @@
         }"
         @click="clickIcon"
     >
-        <commander-icon :icon="`/assets/artresource/atlas/commandericon/${commander.painting}.png`"/>
+        <commander-icon :icon="getCommanderIconAtlas(commander.painting)"/>
         <span text="center truncate">{{ commander.name }}</span>
     </li>
 </template>
