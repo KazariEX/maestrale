@@ -25,7 +25,7 @@
         }));
     });
 
-    const expendedClasses = ref<ClassData[]>([]);
+    const expandedClasses = ref<ClassData[]>([]);
     const filteredClasses = computed<ClassData[]>(() => {
         return Object.entries(ShareCfg.fleet_tech_ship_class)
             .filter(([, item]) => item.shiptype === technology.currentShipType)
@@ -39,6 +39,13 @@
 
     watch(() => technology.currentShipType, () => {
        selectedData.value = [];
+    });
+
+    const rootEl = useTemplateRef("root");
+    const { height } = useElementSize(rootEl);
+
+    const rows = computed(() => {
+        return Math.max(Math.floor((height.value - 100) / 57), 0);
     });
 
     function toggle(id: number, phase: AchievePhase) {
@@ -72,33 +79,31 @@
 </script>
 
 <template>
-    <div flex="~ items-start gap-4" m="t-4">
-        <ul grid="~ gap-4" m="2">
+    <div ref="root" contain="strict" grid="~ cols-[151px_1fr] items-start gap-4" m="t-4">
+        <ul grid="~ gap-4" p="x-4">
             <technology-numeric
-                p="b-4"
+                p="y-3"
                 b-b="~ solid $p-datatable-border-color"
                 label="科技"
-                :model-value="technology.point"
+                :value="technology.point"
             />
             <technology-numeric
                 v-for="(_, attr) in technology.maxAttrs[1]"
                 :label="attributeMap[attr]"
-                v-model="technology.simulatedAttrs[technology.currentShipType][attr]"
+                :value="technology.simulatedAttrs[technology.currentShipType][attr]"
             />
         </ul>
         <prime-data-table
-            flex="1"
             :value="filteredClasses"
             data-key="id"
             paginator
-            :rows="12"
+            :rows
             scrollable
-            scroll-height="727px"
-            sort-mode="single"
+            scroll-height="flex"
             sort-field="t_level"
             :sort-order="-1"
             removable-sort
-            v-model:expanded-rows="expendedClasses"
+            v-model:expanded-rows="expandedClasses"
         >
             <prime-column expander header-style="width: 0;"/>
             <prime-column header="舰级" header-style="width: 25%;" field="name" sortable>

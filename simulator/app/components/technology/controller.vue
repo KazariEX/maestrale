@@ -5,7 +5,7 @@
 </script>
 
 <template>
-    <ul grid="~ gap-4" m="t-8 x-auto" max-w="120">
+    <ul grid="~ gap-4" m="t-8 x-auto" w="full" max-w="120">
         <ship-strengthen-item
             v-for="(_, attr) in technology.maxAttrs[1]"
             :label="attributeMap[attr]"
