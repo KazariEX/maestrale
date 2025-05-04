@@ -21,7 +21,6 @@
     "eslint": "catalog:",
     "stylelint": "catalog:",
     "tsdown": "catalog:",
-    "tsx": "catalog:",
-    "undici": "catalog:"
+    "tsx": "catalog:"
   }
 }

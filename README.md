@@ -64,9 +64,6 @@ const ship = createShip(60104, {
 # 安装依赖
 pnpm i
 
-# 修剪游戏数据
-pnpm vvvip
-
 # 启动开发服务器
 pnpm -C simulator dev
 ```

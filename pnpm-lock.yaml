@@ -146,9 +146,6 @@ importers:
       tsx:
         specifier: 'catalog:'
         version: 4.19.4
-      undici:
-        specifier: 'catalog:'
-        version: 7.8.0
 
   packages/core:
     dependencies:
