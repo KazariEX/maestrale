@@ -8,17 +8,41 @@ import { shipTypeOptions } from "~/data/constants/ship-type";
 import { spweaponRarityOptions } from "~/data/constants/spweapon-rarity";
 
 export function getBaseShipIds() {
-    return new Set(
-        Object.keys(ShareCfg.ship_data_statistics)
-        .filter((id) => !id.startsWith("900") && id.endsWith("1"))
-        .map((id) => id.slice(0, -1)),
-    );
+    const ids: number[] = [];
+    for (const id in ShareCfg.ship_data_statistics) {
+        if (id.endsWith("1") && !id.startsWith("900")) {
+            ids.push(Number(id.slice(0, -1)));
+        }
+    }
+    return ids;
+}
+
+function getBaseEquipIds() {
+    const ids: number[] = [];
+    for (const id in ShareCfg.equip_data_template) {
+        const template = ShareCfg.equip_data_template[id]!;
+        if (template.prev === 0) {
+            ids.push(Number(id));
+        }
+    }
+    return ids;
+}
+
+function getBaseSPWeaponIds() {
+    const ids: number[] = [];
+    for (const id in ShareCfg.spweapon_data_statistics) {
+        const statistics = ShareCfg.spweapon_data_statistics[id]!;
+        if ("name" in statistics) {
+            ids.push(Number(id));
+        }
+    }
+    return ids;
 }
 
 export function selectShip(fleetType: FleetType, canClear: boolean) {
     const ids = getBaseShipIds();
-
     const data = createSelectorData<ShareCfg.ShipDataStatistics>();
+
     for (const id of ids) {
         const statistics = ShareCfg.ship_data_statistics[id + "1"]!;
         const { rarity, type, nationality, name } = statistics;
@@ -27,7 +51,7 @@ export function selectShip(fleetType: FleetType, canClear: boolean) {
         }
 
         data.push({
-            id: Number(id),
+            id,
             name,
             icon: getSquareIconAtlas(ShareCfg.ship_skin_template[id + "0"]!.painting),
             rarity,
@@ -59,11 +83,9 @@ export function selectShip(fleetType: FleetType, canClear: boolean) {
 }
 
 export function selectEquip(allowTypes: EquipType[], shipType: ShipType, canClear: boolean) {
-    const ids = Object.entries(ShareCfg.equip_data_template)
-        .filter(([, item]) => item.prev === 0)
-        .map(([id]) => id);
-
+    const ids = getBaseEquipIds();
     const data = createSelectorData<ShareCfg.EquipDataStatistics>();
+
     for (const id of ids) {
         const statistics = ShareCfg.equip_data_statistics[id]!;
         const template = ShareCfg.equip_data_template[id]!;
@@ -73,7 +95,7 @@ export function selectEquip(allowTypes: EquipType[], shipType: ShipType, canClea
         }
 
         data.push({
-            id: Number(id),
+            id,
             name,
             icon: getEquipIconAtlas(icon),
             rarity,
@@ -105,11 +127,9 @@ export function selectEquip(allowTypes: EquipType[], shipType: ShipType, canClea
 }
 
 export function selectSPWeapon(shipId: number, shipType: ShipType, canClear: boolean) {
-    const ids = Object.entries(ShareCfg.spweapon_data_statistics)
-        .filter(([, item]) => item.name)
-        .map(([id]) => id);
-
+    const ids = getBaseSPWeaponIds();
     const data = createSelectorData<ShareCfg.SPWeaponDataStatistics>();
+
     for (const id of ids) {
         const statistics = ShareCfg.spweapon_data_statistics[id]!;
         const { name, icon, rarity, type, unique } = statistics;
@@ -121,7 +141,7 @@ export function selectSPWeapon(shipId: number, shipType: ShipType, canClear: boo
         }
 
         data.push({
-            id: Number(id),
+            id,
             name,
             icon: getSPWeaponIconAtlas(icon),
             rarity,

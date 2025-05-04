@@ -140,15 +140,14 @@ function useSimulatedAttrs(items: Ref<AchieveItem[]>, getAdditional: (item: Achi
 }
 
 function createAchieveItems(): AchieveItem[] {
-    const ids = getBaseShipIds();
-    for (const id of ids) {
+    const ids: number[] = [];
+    for (const id of getBaseShipIds()) {
         if (id in ShareCfg.fleet_tech_ship_template) {
-            continue;
+            ids.push(id);
         }
-        ids.delete(id);
     }
-    return [...ids].map((id) => ({
-        id: Number(id),
+    return ids.map((id) => ({
+        id,
         get: true,
         upgrage: true,
         level: true,
