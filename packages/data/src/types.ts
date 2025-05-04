@@ -29,6 +29,7 @@ export enum Nationality {
     NorthernParliament = 7,
     IrisLibre = 8,
     VichyaDominion = 9,
+    IrisOrthodoxy = 10,
     KindomOfTulipa = 11,
     Tempesta = 96,
     META = 97,
@@ -42,6 +43,7 @@ export enum Nationality {
     SSSS = 108,
     AtelierRyza = 109,
     SenranKagura = 110,
+    ToLoveRu = 111,
 }
 
 export enum ShipType {

@@ -11,6 +11,7 @@ export const nationalityMap: Record<Nationality, string> = {
     7: "北方联合",
     8: "自由鸢尾",
     9: "维希教廷",
+    10: "鸢尾教国",
     11: "郁金王国",
     96: "飓风",
     97: "META",
@@ -24,6 +25,7 @@ export const nationalityMap: Record<Nationality, string> = {
     108: "SSSS",
     109: "Atelier Ryza",
     110: "闪乱神乐NL",
+    111: "To LOVE-Ru",
 };
 
 export const nationalityOptions = createSelectorOptions(nationalityMap);
