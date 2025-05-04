@@ -6,8 +6,14 @@
 </script>
 
 <template>
-    <li grid="~ cols-2" text="center">
-        <span>{{ label }}：</span>
-        <span>{{ value }}</span>
+    <li flex="~ items-center gap-4">
+        <span>{{ label }}</span>
+        <prime-input-number
+            input-class="w-23 text-center"
+            size="small"
+            readonly
+            :use-grouping="false"
+            :model-value="value"
+        />
     </li>
 </template>

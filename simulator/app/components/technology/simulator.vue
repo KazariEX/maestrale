@@ -79,10 +79,10 @@
 </script>
 
 <template>
-    <div ref="root" contain="strict" grid="~ cols-[151px_1fr] items-start gap-4" m="t-4">
-        <ul grid="~ gap-4" p="x-4">
+    <div ref="root" contain="strict" flex="~ items-start gap-4" m="t-4">
+        <ul grid="~ gap-4" p="2">
             <technology-numeric
-                p="y-3"
+                p="b-4"
                 b-b="~ solid $p-datatable-border-color"
                 label="科技"
                 :value="technology.point"
@@ -94,6 +94,7 @@
             />
         </ul>
         <prime-data-table
+            flex="1"
             :value="filteredClasses"
             data-key="id"
             paginator
