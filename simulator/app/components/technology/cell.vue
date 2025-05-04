@@ -1,8 +1,8 @@
 <script lang="ts" setup>
     import { ShareCfg } from "maestrale";
     import { nonNullable } from "maestrale/utils";
-    import { attributeMap } from "~/data/constraint/attribute";
-    import { shipTypeTechMap } from "~/data/constraint/ship-type";
+    import { attributeMap } from "~/data/constants/attribute";
+    import { shipTypeTechMap } from "~/data/constants/ship-type";
     import type { AchieveAdditional, AchieveItem, AchievePhase } from "~/types/technology";
 
     const { phase, additional } = defineProps<{

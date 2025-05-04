@@ -1,5 +1,5 @@
 import { type Attributes, createAttributes, createTechnologyAttributes, ShareCfg, type ShipType, type TechnologyAttributes } from "maestrale";
-import { shipTypeTechMap } from "~/data/constraint/ship-type";
+import { shipTypeTechMap } from "~/data/constants/ship-type";
 import type { AchieveAdditional, AchieveItem, TechnologyMode } from "~/types/technology";
 
 export const useTechnologyStore = defineStore("technology", () => {

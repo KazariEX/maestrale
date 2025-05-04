@@ -2,7 +2,7 @@
     import { VueDraggable } from "vue-draggable-plus";
     import type { Fleet, Ship } from "maestrale";
     import type { ShallowRef } from "vue";
-    import type { FleetType } from "~/data/constraint/fleet";
+    import type { FleetType } from "~/data/constants/fleet";
 
     const { items } = defineProps<{
         type: FleetType;

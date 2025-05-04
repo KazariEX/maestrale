@@ -5,4 +5,4 @@ export const breakoutMap = {
     4: "满破",
 };
 
-export const breakoutOptions = createConstraintOptions(breakoutMap);
+export const breakoutOptions = createSelectorOptions(breakoutMap);

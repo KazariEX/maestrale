@@ -1,6 +1,6 @@
 <script lang="ts" setup>
     import type { Attributes } from "maestrale";
-    import { attributeMap } from "~/data/constraint/attribute";
+    import { attributeMap } from "~/data/constants/attribute";
 
     const { value } = defineProps<{
         attr: keyof Attributes;

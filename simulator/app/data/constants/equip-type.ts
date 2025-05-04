@@ -20,4 +20,4 @@ export const equipTypeMap = {
     21: "防空炮(定时引信)",
 };
 
-export const equipTypeOptions = createConstraintOptions(equipTypeMap);
+export const equipTypeOptions = createSelectorOptions(equipTypeMap);

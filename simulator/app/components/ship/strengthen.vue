@@ -1,6 +1,6 @@
 <script lang="ts" setup>
     import { StrengthenType } from "maestrale";
-    import { attributeMap } from "~/data/constraint/attribute";
+    import { attributeMap } from "~/data/constants/attribute";
 
     const fleetStore = useFleetStore();
     const { currentShip: ship } = storeToRefs(fleetStore);

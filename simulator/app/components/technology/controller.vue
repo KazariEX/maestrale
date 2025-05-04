@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-    import { attributeMap } from "~/data/constraint/attribute";
+    import { attributeMap } from "~/data/constants/attribute";
 
     const technology = useTechnologyStore();
 </script>

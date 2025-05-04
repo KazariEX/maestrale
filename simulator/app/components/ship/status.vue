@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-    import { armorMap } from "~/data/constraint/armor";
+    import { armorMap } from "~/data/constants/armor";
     import { FleetAttrFlag } from "~/types/fleet";
 
     const fleetStore = useFleetStore();

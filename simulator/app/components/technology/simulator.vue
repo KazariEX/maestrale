@@ -1,7 +1,7 @@
 <script lang="ts" setup>
     import { ShareCfg } from "maestrale";
-    import { attributeMap } from "~/data/constraint/attribute";
-    import { nationalityMap } from "~/data/constraint/nationality";
+    import { attributeMap } from "~/data/constants/attribute";
+    import { nationalityMap } from "~/data/constants/nationality";
     import type { AchieveAdditional, AchieveItem, AchievePhase } from "~/types/technology";
 
     const technology = useTechnologyStore();

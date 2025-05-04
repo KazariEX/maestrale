@@ -1,6 +1,6 @@
 <script lang="ts" setup>
     import { Nationality, type Ship } from "maestrale";
-    import { favorMap } from "~/data/constraint/favor";
+    import { favorMap } from "~/data/constants/favor";
 
     defineProps<{
         order: number;

@@ -1,11 +1,11 @@
 import { type Commander, type EquipType, ShareCfg, type ShipType } from "maestrale";
 import { DialogSelector } from "#components";
-import { equipTypeOptions } from "~/data/constraint/equip-type";
-import { type FleetType, fleetTypeMap } from "~/data/constraint/fleet";
-import { nationalityOptions } from "~/data/constraint/nationality";
-import { rarityOptions } from "~/data/constraint/rarity";
-import { shipTypeOptions } from "~/data/constraint/ship-type";
-import { spweaponRarityOptions } from "~/data/constraint/spweapon-rarity";
+import { equipTypeOptions } from "~/data/constants/equip-type";
+import { type FleetType, fleetTypeMap } from "~/data/constants/fleet";
+import { nationalityOptions } from "~/data/constants/nationality";
+import { rarityOptions } from "~/data/constants/rarity";
+import { shipTypeOptions } from "~/data/constants/ship-type";
+import { spweaponRarityOptions } from "~/data/constants/spweapon-rarity";
 
 export function getBaseShipIds() {
     return new Set(

@@ -1,4 +1,6 @@
-export const nationalityMap = {
+import type { Nationality } from "maestrale";
+
+export const nationalityMap: Record<Nationality, string> = {
     0: "通用",
     1: "白鹰",
     2: "皇家",
@@ -24,4 +26,4 @@ export const nationalityMap = {
     110: "闪乱神乐NL",
 };
 
-export const nationalityOptions = createConstraintOptions(nationalityMap);
+export const nationalityOptions = createSelectorOptions(nationalityMap);

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
     import type { Attributes } from "maestrale";
-    import { attributeMap } from "~/data/constraint/attribute";
+    import { attributeMap } from "~/data/constants/attribute";
     import { FleetAttrFlag } from "~/types/fleet";
 
     const { attr, label, icon } = defineProps<{

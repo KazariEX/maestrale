@@ -1,8 +1,8 @@
 <script lang="ts" setup>
     import { createShip, type Ship } from "maestrale";
-    import { breakoutOptions } from "~/data/constraint/breakout";
-    import { favorOptions } from "~/data/constraint/favor";
-    import type { FleetType } from "~/data/constraint/fleet";
+    import { breakoutOptions } from "~/data/constants/breakout";
+    import { favorOptions } from "~/data/constants/favor";
+    import type { FleetType } from "~/data/constants/fleet";
 
     const { fleetType } = defineProps<{
         fleetType: FleetType;

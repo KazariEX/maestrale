@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-    import { shipTypeTechOptions } from "~/data/constraint/ship-type";
+    import { shipTypeTechOptions } from "~/data/constants/ship-type";
 
     useHead({
         title: "舰队科技",
