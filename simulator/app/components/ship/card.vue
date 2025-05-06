@@ -14,6 +14,7 @@
     });
 
     const fleetStore = useFleetStore();
+    const settingStore = useSettingStore();
     const technology = useTechnologyStore();
 
     const limitedBreakoutOptions = computed(() => {
@@ -30,6 +31,7 @@
         else if (id) {
             ship.value = createShip(id, {
                 technology,
+                ...settingStore.defaults,
             });
         }
         else return;

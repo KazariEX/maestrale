@@ -2,8 +2,8 @@ import { resolve } from "node:path";
 
 export default defineNuxtConfig({
     alias: {
-        maestrale: resolve(__dirname, "../packages/core/src"),
-        "@maestrale/data": resolve(__dirname, "../packages/data/src"),
+        maestrale: resolve(import.meta.dirname, "../packages/core/src"),
+        "@maestrale/data": resolve(import.meta.dirname, "../packages/data/src"),
     },
     compatibilityDate: "2024-07-19",
     css: [

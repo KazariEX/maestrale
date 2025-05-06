@@ -352,6 +352,9 @@ export class Ship {
 }
 
 export interface CreateShipOptions {
+    level?: number;
+    breakout?: number;
+    favor?: Favor;
     equips?: (Equip | number | null)[];
     spweapon?: SPWeapon | number | null;
     technology: ITechnology;
@@ -363,6 +366,9 @@ export function createShip(id: number, options: CreateShipOptions) {
     }
 
     const {
+        level,
+        breakout,
+        favor,
         equips = [],
         spweapon = null,
         technology,
@@ -370,6 +376,21 @@ export function createShip(id: number, options: CreateShipOptions) {
 
     // 舰船
     const ship = new Ship(id, technology);
+
+    // 等级
+    if (level !== void 0) {
+        ship.level.value = level;
+    }
+
+    // 突破
+    if (breakout !== void 0) {
+        ship.breakout.value = Math.min(breakout, ship.maxBreakout);
+    }
+
+    // 好感
+    if (favor !== void 0) {
+        ship.favor.value = favor;
+    }
 
     // 装备
     equips.push(...Array.from({ length: 5 - equips.length }, () => null));

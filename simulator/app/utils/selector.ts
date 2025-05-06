@@ -7,6 +7,16 @@ import { rarityOptions } from "~/data/constants/rarity";
 import { shipTypeOptions } from "~/data/constants/ship-type";
 import { spweaponRarityOptions } from "~/data/constants/spweapon-rarity";
 
+export function createSelectorOptions<K extends number, V>(table: Record<K, V>) {
+    return Object.entries(table).map(([key, value]) => ({
+        label: value,
+        value: Number(key),
+    } as {
+        label: V;
+        value: K;
+    }));
+}
+
 export function getBaseShipIds() {
     const ids: number[] = [];
     for (const id in ShareCfg.ship_data_statistics) {
