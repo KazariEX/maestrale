@@ -15,7 +15,7 @@
 
     const attrFlagOptions = [
         { label: "装备", value: FleetAttrFlag.Equip },
-        { label: "科技", value: FleetAttrFlag.Tech },
+        { label: "科技", value: FleetAttrFlag.Technology },
         { label: "猫", value: FleetAttrFlag.Commander },
     ];
 </script>
@@ -41,15 +41,18 @@
         <ship-status-item attr="speed" icon="attr_speed"/>
         <ship-status-item grid="row-start-5" attr="luck"/>
         <ship-status-item grid="row-start-5" attr="oil" icon="expend"/>
-        <li grid="row-end-6" flex="~ justify-end items-center gap-2.5">
-            <label v-for="{ label, value } in attrFlagOptions" cursor="pointer">
+        <li grid="row-end-6" flex="~ justify-end gap-2.5">
+            <label
+                v-for="{ label, value } in attrFlagOptions"
+                flex="~ items-center gap-1"
+            >
                 <prime-checkbox
                     size="small"
                     binary
                     :model-value="!!(fleetStore.attrFlag & value)"
                     @update:model-value="fleetStore.attrFlag ^= value"
                 />
-                <span p="l-1">{{ label }}</span>
+                <span>{{ label }}</span>
             </label>
         </li>
     </ul>

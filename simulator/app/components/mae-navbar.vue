@@ -1,5 +1,11 @@
 <script lang="ts" setup>
-    const navs = [
+    import type { RouteLocationRaw } from "vue-router";
+
+    const navs: {
+        title: string;
+        icon: string;
+        to: RouteLocationRaw;
+    }[] = [
         {
             title: "编队",
             icon: "fa6-solid:ship",
@@ -16,11 +22,11 @@
             to: { name: "catlodge" },
         },
         {
-            title: "关于",
-            icon: "fa6-solid:circle-info",
-            to: { name: "about" },
+            title: "设置",
+            icon: "fa6-solid:gear",
+            to: { name: "settings" },
         },
-    ] as const;
+    ];
 </script>
 
 <template>

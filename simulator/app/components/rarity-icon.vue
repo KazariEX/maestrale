@@ -3,18 +3,18 @@
         mode?: "general" | "spweapon";
         rarity?: number;
         icon: string;
+        frame?: boolean;
+        meta?: boolean;
         padding?: boolean;
-        showFrame?: boolean;
         star?: number;
         maxStar?: number;
-        isMeta?: boolean;
     }
 
     const {
         mode = "general",
         rarity,
-        showFrame = true,
-        isMeta = false,
+        frame = true,
+        meta,
     } = defineProps<RarityIconProps>();
 
     const order = computed(() => {
@@ -22,7 +22,7 @@
     });
 
     const backgroundStyle = computed(() => ({
-        backgroundImage: `url(${getRarityBackgroundAtlas(order.value, isMeta)})`,
+        backgroundImage: `url(${getRarityBackgroundAtlas(order.value, meta)})`,
     }));
 
     const frameStyle = computed(() => ({
@@ -47,7 +47,7 @@
             loading="lazy"
         />
         <div
-            v-if="showFrame"
+            v-if="frame"
             position="absolute inset-0"
             :style="frameStyle"
         ></div>

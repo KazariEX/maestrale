@@ -62,11 +62,7 @@
                 @update:model-value="update"
             >
                 <template #option="{ option }">
-                    <nuxt-img
-                        size="8"
-                        m="r-1"
-                        :src="option.icon"
-                    />
+                    <nuxt-img size="8" m="r-1" :src="option.icon"/>
                     <span>{{ option.label }}</span>
                 </template>
             </prime-select>
@@ -81,12 +77,12 @@
                 <iconify name="fa6-solid:xmark"/>
             </button>
             <span>{{ ability.name }}</span>
-            <p leading="6" text="3 slate-600 truncate dark:slate-300" v-html="desc"></p>
+            <p leading="relaxed" text="3 slate-600 truncate dark:slate-300" v-html="desc"></p>
         </div>
         <div
             v-else
             flex="1"
-            b="2 dashed slate op-40 rounded-2"
+            b="2 dashed slate op-40 rounded-lg"
         ></div>
     </li>
 </template>

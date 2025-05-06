@@ -35,7 +35,7 @@
             <commander-ability-item v-for="i in 5" v-model="commander.abilities[i - 1]"/>
         </ul>
         <prime-fieldset m="t--4.5" legend="能力加成">
-            <ul flex="~ justify-between" p="x-1 b-1" leading="8">
+            <ul flex="~ justify-between" p="x-1 b-1" leading="loose">
                 <commander-status-item label="后勤" :value="commander.support.value"/>
                 <commander-status-item label="指挥" :value="commander.command.value"/>
                 <commander-status-item label="战术" :value="commander.tactic.value"/>

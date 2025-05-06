@@ -26,11 +26,11 @@
             class="ship-icon"
             :rarity="ship?.rarity.value"
             :icon="squareicon"
+            :meta="ship?.nationality.value === Nationality.META"
             :star="ship?.star.value"
             :max-star="ship?.maxStar.value"
-            :is-meta="ship?.nationality.value === Nationality.META"
         />
-        <template v-if="ship && fleetStore.infoMode === `equips`">
+        <template v-if="ship && fleetStore.displayMode === `equips`">
             <span
                 class="ship-level"
                 position="absolute bottom-4 left-1px"

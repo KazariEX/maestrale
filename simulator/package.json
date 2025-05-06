@@ -9,7 +9,7 @@
     "tscheck": "vue-tsc"
   },
   "dependencies": {
-    "@primevue/themes": "catalog:",
+    "@primeuix/themes": "catalog:",
     "@vueuse/core": "catalog:",
     "pinia": "catalog:",
     "pinia-plugin-persistedstate": "catalog:",

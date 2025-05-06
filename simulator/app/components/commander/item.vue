@@ -24,7 +24,7 @@
         grid="~ gap-0.5"
         position="relative"
         p="y-1"
-        b="rounded-1"
+        b="rounded"
         cursor="pointer"
         :class="{
             [`text-primary`]: currentCommander === commander,

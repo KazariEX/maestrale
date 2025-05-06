@@ -9,22 +9,21 @@
 
     const fleetStore = useFleetStore();
 
-    const infoModeOptions = [
+    const displayModeOptions = [
         { label: "舰船详情", value: "details" },
         { label: "装备列表", value: "equips" },
     ];
 </script>
 
 <template>
-    <div grid="~ gap-8">
+    <div grid="~ justify-items-center gap-8">
         <prime-select-button
-            m="x-auto"
             size="small"
-            :options="infoModeOptions"
+            :options="displayModeOptions"
             option-label="label"
             option-value="value"
             :allow-empty="false"
-            v-model="fleetStore.infoMode"
+            v-model="fleetStore.displayMode"
         />
         <div flex="~ gap-8 lt-lg:col">
             <div grid="~ gap-8" w="121.5">

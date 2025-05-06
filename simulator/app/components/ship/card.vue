@@ -39,7 +39,7 @@
     }
 
     function clickIcon() {
-        if (ship.value === null || fleetStore.infoMode === "equips" && ship.value === fleetStore.currentShip) {
+        if (ship.value === null || fleetStore.displayMode === "equips" && ship.value === fleetStore.currentShip) {
             select();
         }
         else {
@@ -59,7 +59,7 @@
     <li
         grid="~ cols-[auto_1fr] gap-2"
         p="2"
-        b="~ solid slate op-40 rounded-1"
+        b="~ solid slate op-40 rounded"
         outline="2 primary offset--1"
         :class="{
             [`outline`]: ship && fleetStore.currentShip === ship,
@@ -73,7 +73,7 @@
         />
         <template v-if="ship">
             <div
-                v-if="fleetStore.infoMode === `details`"
+                v-if="fleetStore.displayMode === `details`"
                 grid="~ content-between"
             >
                 <div flex="~ justify-between items-center" h="6.5">

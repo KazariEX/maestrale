@@ -42,13 +42,17 @@
 <template>
     <div flex="~ items-center" leading="normal" text="3">
         <div position="relative" grid="~ justify-items-center" m="x-1">
-            <prime-checkbox binary :model-value="item[phase]" @update:model-value="$emit(`toggle`, item.id, phase)"/>
+            <prime-checkbox
+                binary
+                :model-value="item[phase]"
+                @update:model-value="$emit(`toggle`, item.id, phase)"
+            />
             <span position="absolute top-5.5" text="slate">{{ additional.template[`pt_${phase}`] }}</span>
         </div>
-        <p grid="~">
+        <span>
             <template v-for="type in shipTypes">
                 【{{ type }}】{{ attr }} +{{ value }}<br />
             </template>
-        </p>
+        </span>
     </div>
 </template>

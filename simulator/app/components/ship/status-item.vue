@@ -19,7 +19,7 @@
     const color = computed(() => {
         switch (fleetStore.attrFlag) {
             case FleetAttrFlag.Equip: return "text-green-600";
-            case FleetAttrFlag.Tech: return "text-orange-500";
+            case FleetAttrFlag.Technology: return "text-orange-500";
             case FleetAttrFlag.Commander: return "text-purple-500";
             default: return "text-red-500";
         }
@@ -35,7 +35,7 @@
             || 0;
     });
 
-    const techValue = computed(() => {
+    const technologyValue = computed(() => {
         return isGeneralAttr(attr)
             && ship.value?.techAttrs.value[attr]
             || 0;
@@ -52,8 +52,8 @@
         if (fleetStore.attrFlag & FleetAttrFlag.Equip) {
             value += equipValue.value;
         }
-        if (fleetStore.attrFlag & FleetAttrFlag.Tech) {
-            value += techValue.value;
+        if (fleetStore.attrFlag & FleetAttrFlag.Technology) {
+            value += technologyValue.value;
         }
         if (fleetStore.attrFlag & FleetAttrFlag.Commander) {
             value += commanderValue.value;
@@ -71,7 +71,7 @@
         flex="~ gap-1"
         h="7"
         bg="slate-500/20"
-        leading="7"
+        leading="loose"
     >
         <i
             grid="~ place-items-center"

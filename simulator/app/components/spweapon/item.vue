@@ -40,7 +40,7 @@
                 mode="spweapon"
                 :rarity="spweapon.rarity"
                 :icon="getSPWeaponIconAtlas(spweapon.icon)"
-                :show-frame="false"
+                :frame="false"
                 padding
             />
             <label

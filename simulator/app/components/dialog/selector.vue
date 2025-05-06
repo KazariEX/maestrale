@@ -152,8 +152,8 @@
                         :mode="rarityMode"
                         :rarity="item.rarity"
                         :icon="item.icon"
+                        :meta="item.nationality === Nationality.META"
                         :padding="iconPadding"
-                        :is-meta="item.nationality === Nationality.META"
                     />
                     <span text="3 center truncate">{{ item.name }}</span>
                 </li>

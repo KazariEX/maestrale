@@ -5,7 +5,7 @@
 </script>
 
 <template>
-    <div flex="~ gap-8 lt-md:col">
+    <div flex="~ justify-center gap-8 lt-md:col">
         <commander-panel />
         <commander-nest />
     </div>

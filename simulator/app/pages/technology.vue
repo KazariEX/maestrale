@@ -25,6 +25,8 @@
             [`h-[calc(100vh-4rem)] lt-lg:h-[calc(100vh-8rem)]`]: technology.mode === `simulator`,
         }"
         grid="~ rows-[auto_1fr]"
+        w="fit"
+        m="x-auto"
     >
         <div flex="~ gap-4" text="nowrap">
             <prime-select-button

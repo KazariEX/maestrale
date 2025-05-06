@@ -48,6 +48,7 @@
                 p="l-1"
                 bg="black op-50"
                 font="mono bold"
+                tracking="-1px"
                 text="3 white"
                 @click.stop
             >+
@@ -74,6 +75,5 @@
                 calc(100% - 7px) 100%,
                 0 100%
             );
-        letter-spacing: -1px;
     }
 </style>

@@ -221,7 +221,7 @@ export function selectNestCommander(current: Commander | null, party: Commander[
             id: i,
             name: name.value,
             icon: getCommanderIconAtlas(painting),
-            rarity: rarity,
+            rarity,
         });
     }
 

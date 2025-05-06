@@ -23,7 +23,7 @@ export const useFleetStore = defineStore("fleet", () => {
 
     const currentShip = shallowRef<Ship | null>(null);
     const attrFlag = ref(FleetAttrFlag.Equip);
-    const infoMode = ref<"details" | "equips">("details");
+    const displayMode = ref<"details" | "equips">("details");
     const panelTab = ref<"strengthen" | "transform">("strengthen");
 
     function setCurrentShip(ship: Ship | null) {
@@ -41,7 +41,7 @@ export const useFleetStore = defineStore("fleet", () => {
         submarine,
         currentShip,
         attrFlag,
-        infoMode,
+        displayMode,
         panelTab,
         setCurrentShip,
     };
