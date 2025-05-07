@@ -34,10 +34,10 @@
         position="fixed"
         lg:position="inset-y-0 left-0"
         lt-lg:position="inset-x-0 bottom-0"
-        flex="~ col justify-center lt-lg:row"
+        flex="~ justify-center lg:col"
         w="lg:18"
         h="lt-lg:16"
-        b="solid slate op-25 lg:r lt-lg:t"
+        b="solid border lg:r lt-lg:t"
         bg="background"
     >
         <nuxt-link
@@ -45,7 +45,7 @@
             v-ripple
             flex="~ col justify-center items-center gap-1 lt-lg:1"
             p="lg:y-6"
-            class="[&.router-link-active]-text-primary"
+            class="[&.router-link-active]:text-primary"
             :to
         >
             <iconify text="4.5" :name="icon"/>

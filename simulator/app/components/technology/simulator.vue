@@ -83,7 +83,7 @@
         <ul grid="~ gap-4" p="2">
             <technology-numeric
                 p="b-4"
-                b-b="~ solid $p-datatable-border-color"
+                b-b="~ solid border"
                 label="科技"
                 :value="technology.point"
             />

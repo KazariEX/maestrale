@@ -30,7 +30,7 @@
         position="relative"
         h="16"
         p="2"
-        b="~ solid slate op-40 rounded-md"
+        b="~ solid border rounded-md"
     >
         <a
             position="relative"
@@ -45,8 +45,8 @@
             <div
                 v-else
                 grid="~ place-items-center"
-                b="2 dashed slate op-40 rounded-md"
-                text="5 slate op-40"
+                b="2 dashed border rounded-md"
+                text="5 slate/40"
             >
                 <iconify name="fa6-solid:plus"/>
             </div>
@@ -82,7 +82,7 @@
         <div
             v-else
             flex="1"
-            b="2 dashed slate op-40 rounded-lg"
+            b="2 dashed border rounded-lg"
         ></div>
     </li>
 </template>

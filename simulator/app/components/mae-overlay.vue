@@ -13,7 +13,7 @@
             :key="zIndex"
             class="mae-overlay"
             position="fixed inset-0"
-            bg="black op-50"
+            bg="black/50"
             :style="{ zIndex: zIndex - 1 }"
             @click="close()"
         ></div>

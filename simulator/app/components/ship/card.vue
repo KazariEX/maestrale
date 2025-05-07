@@ -61,7 +61,7 @@
     <li
         grid="~ cols-[auto_1fr] gap-2"
         p="2"
-        b="~ solid slate op-40 rounded"
+        b="~ solid border rounded"
         outline="2 primary offset--1"
         :class="{
             [`outline`]: ship && fleetStore.currentShip === ship,
@@ -128,7 +128,7 @@
         <div v-else flex="1" grid="~ place-items-center">
             <span
                 font="mono bold"
-                text="12 slate op-40"
+                text="12 slate/40"
                 select="none"
             >NO SHIP</span>
         </div>

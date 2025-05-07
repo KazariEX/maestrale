@@ -1,4 +1,4 @@
-import { defineConfig, presetAttributify, presetWind3, transformerDirectives } from "unocss";
+import { defineConfig, presetAttributify, presetWind3, transformerDirectives, transformerVariantGroup } from "unocss";
 
 export default defineConfig({
     presets: [
@@ -9,10 +9,12 @@ export default defineConfig({
     ],
     transformers: [
         transformerDirectives(),
+        transformerVariantGroup(),
     ],
     theme: {
         colors: {
             background: "var(--p-content-background)",
+            border: "var(--p-content-border-color)",
             primary: {
                 50: "var(--p-primary-50)",
                 100: "var(--p-primary-100)",

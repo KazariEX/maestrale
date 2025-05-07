@@ -17,7 +17,7 @@
         flex="~ items-center gap-2"
         h="8"
         p="1"
-        b-b="~ solid slate op-25"
+        b-b="~ solid border"
     >
         <nuxt-img w="6" :src="`/assets/prefab/variantplatform/${attr}.png`"/>
         <span>{{ attributeMap[attr] }}</span>

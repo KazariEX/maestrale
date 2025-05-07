@@ -9,7 +9,7 @@
     <li
         flex="~ items-center gap-4"
         h="16"
-        b-b="~ solid $p-content-border-color"
+        b-b="~ solid border"
     >
         <div m="r-auto">
             <span leading="normal">{{ title }}</span>

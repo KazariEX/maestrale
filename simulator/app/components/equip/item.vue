@@ -46,7 +46,7 @@
                 flex="~ gap-1.5px"
                 position="absolute bottom-1 left-1px"
                 p="l-1"
-                bg="black op-50"
+                bg="black/50"
                 font="mono bold"
                 tracking="-1px"
                 text="3 white"

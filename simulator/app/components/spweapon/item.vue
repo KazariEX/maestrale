@@ -47,13 +47,13 @@
                 flex="~ gap-1.5px"
                 position="absolute bottom-0 left-0"
                 b="rounded-full"
-                bg="black op-50"
+                bg="black/50"
                 font="mono bold"
                 text="3 white"
                 @click.stop
             >
                 <prime-input-number
-                    input-class="size-5 outline-none bg-transparent text-inherit text-center"
+                    input-class="size-5 outline-none bg-transparent text-(inherit center)"
                     unstyled
                     :min="0"
                     :max="spweapon.maxLevel"

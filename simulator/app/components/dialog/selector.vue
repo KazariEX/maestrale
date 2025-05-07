@@ -129,11 +129,11 @@
                     v-if="canClear"
                     grid="~ place-items-center"
                     size="16"
-                    b="2 dashed slate op-40 rounded-md"
+                    b="2 dashed border rounded-md"
                     cursor="pointer"
                     @click="emit(`close`, -1)"
                 >
-                    <iconify text="8 slate op-60" name="fa6-solid:trash-can"/>
+                    <iconify text="8 slate/50" name="fa6-solid:trash-can"/>
                 </li>
                 <li
                     v-for="item in sortedData"

@@ -35,7 +35,7 @@
                 class="ship-level"
                 position="absolute bottom-4 left-1px"
                 p="l-1 r-2"
-                bg="black op-50"
+                bg="black/50"
                 font="mono bold"
                 pointer-events="none"
             >{{ ship.level }}</span>
@@ -45,7 +45,7 @@
                 position="absolute right-1px bottom-1px"
                 p="r-0.5"
                 size="5"
-                bg="black op-50"
+                bg="black/50"
                 font="mono bold"
                 pointer-events="none"
             >{{ order }}</span>

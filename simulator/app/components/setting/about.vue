@@ -12,11 +12,11 @@
 
 <style lang="scss" scoped>
     p {
-        --uno: "mt-2 mb-4 leading-loose";
+        --uno: "m-(t-2 b-4) leading-loose";
     }
 
     a {
-        --uno: "underline underline-slate underline-op-40 underline-dashed underline-offset-4";
+        --uno: "underline-(~ slate/40 dashed offset-4)";
 
         &:hover {
             --uno: "text-primary";
