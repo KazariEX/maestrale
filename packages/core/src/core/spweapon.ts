@@ -2,17 +2,17 @@ import { type Attributes, ShareCfg } from "@maestrale/data";
 import { computed, ref, type Ref } from "@vue/reactivity";
 
 export class SPWeapon {
-    private data_statistics: ShareCfg.SPWeaponDataStatistics[];
+    private statistics: ShareCfg.SPWeaponDataStatistics[];
 
     level: Ref<number>;
 
     constructor(
         public id: number,
     ) {
-        this.data_statistics = [];
+        this.statistics = [];
         for (let i = id; i !== 0;) {
             const stat = ShareCfg.spweapon_data_statistics[i];
-            this.data_statistics.push(stat);
+            this.statistics.push(stat);
 
             if (stat.next - i > 1) break;
             i = stat.next;
@@ -24,29 +24,29 @@ export class SPWeapon {
 
     private curStat = computed(() => {
         return {
-            ...this.data_statistics[0],
-            ...this.data_statistics[this.level.value],
+            ...this.statistics[0],
+            ...this.statistics[this.level.value],
         };
     });
 
     // 名称
     get name() {
-        return this.data_statistics[0].name;
+        return this.statistics[0].name;
     }
 
     // 图标
     get icon() {
-        return this.data_statistics[0].icon;
+        return this.statistics[0].icon;
     }
 
     // 稀有度
     get rarity() {
-        return this.data_statistics[0].rarity;
+        return this.statistics[0].rarity;
     }
 
     // 最高等级
     get maxLevel() {
-        return this.data_statistics.length - 1;
+        return this.statistics.length - 1;
     }
 
     // 属性

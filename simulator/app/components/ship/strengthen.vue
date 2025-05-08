@@ -15,7 +15,7 @@
                 v-for="attr in attrs"
                 :label="attributeMap[attr]"
                 :max="ship.strengthen.maxAttrs[attr]"
-                v-model="ship.strengthen.adjustAttrs.value[attr]"
+                v-model="ship.strengthen.adjustedAttrs.value[attr]"
             />
         </template>
         <template v-else-if="ship?.strengthen.type === StrengthenType.Blueprint">

@@ -2,21 +2,21 @@ import { type Attributes, ShareCfg } from "@maestrale/data";
 import { computed, ref, type Ref } from "@vue/reactivity";
 
 export class Equip {
-    private data_statistics: ShareCfg.EquipDataStatistics[];
-    private data_template: ShareCfg.EquipDataTemplate[];
+    private statistics: ShareCfg.EquipDataStatistics[];
+    private templates: ShareCfg.EquipDataTemplate[];
 
     level: Ref<number>;
 
     constructor(
         public id: number,
     ) {
-        this.data_statistics = [];
-        this.data_template = [];
+        this.statistics = [];
+        this.templates = [];
         for (let i = id; i !== 0;) {
             const stat = ShareCfg.equip_data_statistics[i];
             const temp = ShareCfg.equip_data_template[i];
-            this.data_statistics.push(stat);
-            this.data_template.push(temp);
+            this.statistics.push(stat);
+            this.templates.push(temp);
             i = temp.next;
         }
 
@@ -26,39 +26,39 @@ export class Equip {
 
     private curStat = computed(() => {
         return {
-            ...this.data_statistics[0],
-            ...this.data_statistics[this.level.value],
+            ...this.statistics[0],
+            ...this.statistics[this.level.value],
         };
     });
 
     // 名称
     get name() {
-        return this.data_statistics[0].name;
+        return this.statistics[0].name;
     }
 
     // 图标
     get icon() {
-        return this.data_statistics[0].icon;
+        return this.statistics[0].icon;
     }
 
     // 阵营
     get nationality() {
-        return this.data_statistics[0].nationality;
+        return this.statistics[0].nationality;
     }
 
     // 稀有度
     get rarity() {
-        return this.data_statistics[0].rarity;
+        return this.statistics[0].rarity;
     }
 
     // 类型
     get type() {
-        return this.data_statistics[0].type;
+        return this.statistics[0].type;
     }
 
     // 最高等级
     get maxLevel() {
-        return this.data_statistics.length - 1;
+        return this.statistics.length - 1;
     }
 
     // 属性

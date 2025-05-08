@@ -4,7 +4,7 @@ import { entries } from "../utils";
 import { createAttributes } from "./attributes";
 
 export class Commander {
-    private data_template: ShareCfg.CommanderDataTemplate;
+    private template: ShareCfg.CommanderDataTemplate;
 
     level: Ref<number>;
     name: Ref<string>;
@@ -12,7 +12,7 @@ export class Commander {
     constructor(
         public id: number,
     ) {
-        this.data_template = ShareCfg.commander_data_template[id];
+        this.template = ShareCfg.commander_data_template[id];
 
         // 等级
         this.level = ref(this.maxLevel);
@@ -23,27 +23,27 @@ export class Commander {
 
     // 原始名称
     get originalName() {
-        return this.data_template.name;
+        return this.template.name;
     }
 
     // 阵营
     get nationality() {
-        return this.data_template.nationality;
+        return this.template.nationality;
     }
 
     // 稀有度
     get rarity() {
-        return this.data_template.rarity;
+        return this.template.rarity;
     }
 
     // 素材
     get painting() {
-        return this.data_template.painting;
+        return this.template.painting;
     }
 
     // 最高等级
     get maxLevel() {
-        return this.data_template.max_level;
+        return this.template.max_level;
     }
 
     private getAbility(baseVal: number) {
@@ -52,17 +52,17 @@ export class Commander {
 
     // 后勤
     support = computed(() => {
-        return this.getAbility(this.data_template.support_value);
+        return this.getAbility(this.template.support_value);
     });
 
     // 指挥
     command = computed(() => {
-        return this.getAbility(this.data_template.command_value);
+        return this.getAbility(this.template.command_value);
     });
 
     // 战术
     tactic = computed(() => {
-        return this.getAbility(this.data_template.tactic_value);
+        return this.getAbility(this.template.tactic_value);
     });
 
     // 百分比加成
@@ -120,16 +120,16 @@ export interface CommanderAbilityEffect {
 }
 
 export class CommanderAbility {
-    private data_template: ShareCfg.CommanderAbilityTemplate;
+    private template: ShareCfg.CommanderAbilityTemplate;
 
     effects: CommanderAbilityEffect[];
 
     constructor(
         public id: number,
     ) {
-        this.data_template = ShareCfg.commander_ability_template[id];
+        this.template = ShareCfg.commander_ability_template[id];
 
-        this.effects = this.data_template.add.map(([type, nationalities, shipTypes, key, value]) => ({
+        this.effects = this.template.add.map(([type, nationalities, shipTypes, key, value]) => ({
             type,
             nationalities,
             shipTypes,
@@ -140,22 +140,22 @@ export class CommanderAbility {
 
     // 名称
     get name() {
-        return this.data_template.name;
+        return this.template.name;
     }
 
     // 描述
     get desc() {
-        return this.data_template.desc;
+        return this.template.desc;
     }
 
     // 图标
     get icon() {
-        return this.data_template.icon;
+        return this.template.icon;
     }
 
     // 权重
     get worth() {
-        return this.data_template.worth;
+        return this.template.worth;
     }
 }
 

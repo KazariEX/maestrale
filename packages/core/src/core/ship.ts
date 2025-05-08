@@ -15,7 +15,7 @@ interface Strengthen {
 
 interface StrengthenGeneral extends Strengthen {
     type: StrengthenType.General | StrengthenType.Meta;
-    adjustAttrs: Ref<Attributes>;
+    adjustedAttrs: Ref<Attributes>;
     maxAttrs: Attributes;
 }
 
@@ -29,16 +29,17 @@ interface StrengthenBlueprint extends Strengthen {
     blueprintLevel: WritableComputedRef<number>;
 }
 
-export interface TransformMatrixTemplate extends ShareCfg.TransformDataTemplate {
-    enable: Ref<boolean>;
-    next_id: number[];
+export interface TransformMatrixItem {
+    template: ShareCfg.TransformDataTemplate;
+    isEnabled: Ref<boolean>;
+    nextIds: number[];
 }
 
 export interface Transform {
     matrix: [
-        TransformMatrixTemplate[],
-        TransformMatrixTemplate[],
-        TransformMatrixTemplate[],
+        TransformMatrixItem[],
+        TransformMatrixItem[],
+        TransformMatrixItem[],
     ][];
     isModernized: Ref<boolean>;
     modernizedId: Ref<number>;
@@ -58,10 +59,12 @@ export class Ship {
         this.maxBreakout = 0;
 
         const baseId = id * 10 + 1;
-        const data_breakout = (baseId in ShareCfg.ship_meta_breakout) ? ShareCfg.ship_meta_breakout : ShareCfg.ship_data_breakout;
+        const breakoutConfig = baseId in ShareCfg.ship_meta_breakout
+            ? ShareCfg.ship_meta_breakout
+            : ShareCfg.ship_data_breakout;
         for (let i = baseId; i !== 0;) {
             this.maxBreakout++;
-            i = data_breakout[i].breakout_id;
+            i = breakoutConfig[i].breakout_id;
         }
 
         if (id in ShareCfg.ship_data_blueprint) {
@@ -182,10 +185,10 @@ export class Ship {
     transAttrs = computed(() => {
         const attrs = createAttributes();
 
-        const templates = this.transform?.matrix.flat(2) ?? [];
-        for (const template of templates) {
-            if (template.enable.value) {
-                for (const effect of template.effect) {
+        const items = this.transform?.matrix.flat(2) ?? [];
+        for (const item of items) {
+            if (item.isEnabled.value) {
+                for (const effect of item.template.effect) {
                     for (const [attr, val] of entries(effect)) {
                         attrs[attr] += val;
                     }
@@ -416,19 +419,19 @@ function normalizeSPWeapon(spweapon: SPWeapon | number | null) {
 
 // 强化：蓝图
 function useStrengthenBlueprint(ship: Ship) {
-    const data_blueprint = ShareCfg.ship_data_blueprint[ship.id];
-    const data_strengthen = [
-        ...data_blueprint.strengthen_effect,
-        ...data_blueprint.fate_strengthen,
+    const blueprintConfig = ShareCfg.ship_data_blueprint[ship.id];
+    const strengthenConfigs = [
+        ...blueprintConfig.strengthen_effect,
+        ...blueprintConfig.fate_strengthen,
     ].map((i) => ShareCfg.ship_strengthen_blueprint[i]);
 
     // 最大蓝图数量（常规）
-    const blueprintMax1 = data_strengthen.slice(0, 30).reduce((res, item) => {
+    const blueprintMax1 = strengthenConfigs.slice(0, 30).reduce((res, item) => {
         return res + item.need_exp;
     }, 0) / 10;
 
     // 最大蓝图数量（天运）
-    const blueprintMax2 = data_strengthen.slice(30).reduce((res, item) => {
+    const blueprintMax2 = strengthenConfigs.slice(30).reduce((res, item) => {
         return res + item.need_exp;
     }, 0) / 10;
 
@@ -460,7 +463,7 @@ function useStrengthenBlueprint(ship: Ship) {
         get: () => {
             let level = 0;
             let exp = 0;
-            for (const item of data_strengthen) {
+            for (const item of strengthenConfigs) {
                 exp += item.need_exp;
                 if (blueprint.value >= exp / 10) {
                     level++;
@@ -472,7 +475,7 @@ function useStrengthenBlueprint(ship: Ship) {
         set: (level) => {
             let exp = 0;
             for (let i = 0; i < level; i++) {
-                exp += data_strengthen[i].need_exp;
+                exp += strengthenConfigs[i].need_exp;
             }
             blueprint.value = exp / 10;
         },
@@ -483,7 +486,7 @@ function useStrengthenBlueprint(ship: Ship) {
         const res = createAttributes();
 
         for (let i = 0; i < blueprintLevel.value; i++) {
-            const item = data_strengthen[i];
+            const item = strengthenConfigs[i];
 
             for (const attr of item.effect_attr) {
                 res[attr[0]] += attr[1];
@@ -531,8 +534,8 @@ function useStrengthenBlueprint(ship: Ship) {
 
 // 强化：Meta
 function useStrengthenMeta(ship: Ship) {
-    const data_strengthen = ShareCfg.ship_strengthen_meta[ship.id];
-    const repair_effect = data_strengthen.repair_effect.map(([per, key]) => {
+    const strengthenConfig = ShareCfg.ship_strengthen_meta[ship.id];
+    const repairEffects = strengthenConfig.repair_effect.map(([per, key]) => {
         return {
             per,
             ...ShareCfg.ship_meta_repair_effect[key],
@@ -542,7 +545,7 @@ function useStrengthenMeta(ship: Ship) {
     // 满强化值
     const maxAttrs = createAttributes();
     for (const attr of ["cannon", "torpedo", "air", "reload"] as const) {
-        const repairList = data_strengthen[`repair_${attr}`];
+        const repairList = strengthenConfig[`repair_${attr}`];
 
         for (const key of repairList) {
             const [attr, value] = ShareCfg.ship_meta_repair[key].effect_attr;
@@ -551,11 +554,11 @@ function useStrengthenMeta(ship: Ship) {
     }
 
     // 可调节强化值
-    const adjustAttrs = ref({ ...maxAttrs });
+    const adjustedAttrs = ref({ ...maxAttrs });
 
     // 最终强化值
     const attrs = computed(() => {
-        const res = createAttributes(adjustAttrs.value);
+        const res = createAttributes(adjustedAttrs.value);
 
         let acc = 0;
         let total = 0;
@@ -565,7 +568,7 @@ function useStrengthenMeta(ship: Ship) {
         }
         const rate = acc / total * 100;
 
-        for (const effect of repair_effect) {
+        for (const effect of repairEffects) {
             if (rate >= effect.per) {
                 for (const [attr, value] of effect.effect_attr) {
                     res[attr] += value;
@@ -578,70 +581,70 @@ function useStrengthenMeta(ship: Ship) {
 
     return {
         maxAttrs,
-        adjustAttrs,
+        adjustedAttrs,
         attrs,
     };
 }
 
 // 强化：常规
 function useStrengthenGeneral(ship: Ship) {
-    const data_strengthen = ShareCfg.ship_data_strengthen[ship.id];
+    const strengthenConfig = ShareCfg.ship_data_strengthen[ship.id];
 
     // 满强化值
     const maxAttrs = createAttributes({
-        cannon: data_strengthen.durability[0],
-        torpedo: data_strengthen.durability[1],
-        air: data_strengthen.durability[3],
-        reload: data_strengthen.durability[4],
+        cannon: strengthenConfig.durability[0],
+        torpedo: strengthenConfig.durability[1],
+        air: strengthenConfig.durability[3],
+        reload: strengthenConfig.durability[4],
     });
 
     // 可调节强化值
-    const adjustAttrs = ref({ ...maxAttrs });
+    const adjustedAttrs = ref({ ...maxAttrs });
 
     // 最终强化值
-    const attrs = computed(() => adjustAttrs.value);
+    const attrs = computed(() => adjustedAttrs.value);
 
     return {
         maxAttrs,
-        adjustAttrs,
+        adjustedAttrs,
         attrs,
     };
 }
 
 // 改造
 function useTransform(ship: Ship) {
-    const templates: Record<string, TransformMatrixTemplate> = {};
+    const items: Record<string, TransformMatrixItem> = {};
 
-    const matrix = ShareCfg.ship_data_trans[ship.id].transform_list.map((item) => {
+    const matrix = ShareCfg.ship_data_trans[ship.id].transform_list.map((transform) => {
         const column: Transform["matrix"][number] = [[], [], []];
 
-        for (const [index, id] of item) {
-            const template = {
-                ...ShareCfg.transform_data_template[id],
-                enable: ref(true),
-                next_id: [],
+        for (const [index, id] of transform) {
+            const item: TransformMatrixItem = {
+                template: ShareCfg.transform_data_template[id],
+                isEnabled: ref(true),
+                nextIds: [],
             };
-            templates[id] = template;
-            column[index - 2].push(template);
+            items[id] = item;
+            column[index - 2].push(item);
         }
         return column;
     });
 
     // 添加后继节点
-    for (const [key, template] of entries(templates)) {
-        const stack: [number, TransformMatrixTemplate][] = [
-            [Number(key), template],
+    for (const [key, item] of Object.entries(items)) {
+        const stack: [number, TransformMatrixItem][] = [
+            [Number(key), item],
         ];
 
         while (stack.length) {
-            const [id, { condition_id }] = stack.pop()!;
-            for (const prevId of condition_id) {
-                const prev = templates[prevId];
-                if (prev.edit_trans.includes(id)) {
+            const [id, { template }] = stack.pop()!;
+            for (const prevId of template.condition_id) {
+                const prev = items[prevId];
+                if (prev.template.edit_trans.includes(id)) {
                     stack.push([id, prev]);
                 }
                 else {
-                    prev.next_id.push(id);
+                    prev.nextIds.push(id);
                 }
             }
         }
@@ -651,16 +654,16 @@ function useTransform(ship: Ship) {
     const modernizedId = ref<number>(null!);
 
     // 链式监听
-    for (const [, template] of entries(templates)) {
-        watch(template.enable, (value) => {
+    for (const { template, isEnabled, nextIds } of Object.values(items)) {
+        watch(isEnabled, (value) => {
             if (value) {
                 updateTemplates(template.condition_id, true);
                 updateTemplates(template.edit_trans, false);
             }
             else if (!template.edit_trans.length) {
-                updateTemplates(template.next_id, false);
+                updateTemplates(nextIds, false);
             }
-            else if (template.condition_id.every((id) => templates[id].enable.value)) {
+            else if (template.condition_id.every((id) => items[id].isEnabled.value)) {
                 updateTemplates(template.edit_trans, true);
             }
 
@@ -679,7 +682,7 @@ function useTransform(ship: Ship) {
 
     function updateTemplates(ids: number[], value: boolean) {
         for (const id of ids) {
-            templates[id].enable.value = value;
+            items[id].isEnabled.value = value;
         }
     }
 

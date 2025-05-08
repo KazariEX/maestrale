@@ -46,9 +46,9 @@ export function usePower(ship: Ship) {
         let res = 0;
         if (ship.transform) {
             for (let i = 0; i < 6; i++) {
-                for (const templates of ship.transform.matrix[i]) {
-                    for (const { enable } of templates) {
-                        if (enable.value) {
+                for (const items of ship.transform.matrix[i]) {
+                    for (const { isEnabled } of items) {
+                        if (isEnabled.value) {
                             res += getTransPower(i)!;
                         }
                     }
