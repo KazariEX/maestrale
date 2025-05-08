@@ -98,7 +98,7 @@
                     <iconify name="fa6-solid:xmark"/>
                 </button>
             </header>
-            <div grid="~ gap-row-8 gap-col-4 rows-2 cols-3" p="t-6 r-8">
+            <div grid="~ gap-row-8 gap-col-4 rows-2 cols-3" p="t-6 r-4">
                 <lib-filter
                     v-for="{ label, id, options }, i in localSelectors"
                     :key="id"
@@ -119,45 +119,45 @@
                     v-model="additionalSelector.value"
                 />
             </div>
-            <ul
-                class="[scrollbar-gutter:stable]"
-                grid="~ cols-[repeat(auto-fill,minmax(64px,1fr))] gap-4"
-                overflow="y-auto"
-                p="r-4 b-4"
-            >
-                <li
-                    v-if="canClear"
-                    grid="~ place-items-center"
-                    size="16"
-                    b="2 dashed border rounded-md"
-                    cursor="pointer"
-                    @click="emit(`close`, -1)"
+            <prime-scroll-panel flex="1" h="0">
+                <ul
+                    grid="~ cols-[repeat(auto-fill,minmax(64px,1fr))] gap-4"
+                    p="r-4 b-4"
                 >
-                    <iconify text="8 slate/50" name="fa6-solid:trash-can"/>
-                </li>
-                <li
-                    v-for="item in sortedData"
-                    v-show="filterItem(item)"
-                    :key="item.id"
-                    grid="~ justify-center gap-0.5"
-                    w="16"
-                    cursor="pointer"
-                    :title="item.name"
-                    @click="emit(`close`, item.id)"
-                >
-                    <commander-icon v-if="rarityMode === `commander`" :icon="item.icon"/>
-                    <rarity-icon
-                        v-else
+                    <li
+                        v-if="canClear"
+                        grid="~ place-items-center"
                         size="16"
-                        :mode="rarityMode"
-                        :rarity="item.rarity"
-                        :icon="item.icon"
-                        :meta="item.nationality === Nationality.META"
-                        :padding="iconPadding"
-                    />
-                    <span text="3 center truncate">{{ item.name }}</span>
-                </li>
-            </ul>
+                        b="2 dashed border rounded-md"
+                        cursor="pointer"
+                        @click="emit(`close`, -1)"
+                    >
+                        <iconify text="8 slate/50" name="fa6-solid:trash-can"/>
+                    </li>
+                    <li
+                        v-for="item in sortedData"
+                        v-show="filterItem(item)"
+                        :key="item.id"
+                        grid="~ justify-center gap-0.5"
+                        w="16"
+                        cursor="pointer"
+                        :title="item.name"
+                        @click="emit(`close`, item.id)"
+                    >
+                        <commander-icon v-if="rarityMode === `commander`" :icon="item.icon"/>
+                        <rarity-icon
+                            v-else
+                            size="16"
+                            :mode="rarityMode"
+                            :rarity="item.rarity"
+                            :icon="item.icon"
+                            :meta="item.nationality === Nationality.META"
+                            :padding="iconPadding"
+                        />
+                        <span text="3 center truncate">{{ item.name }}</span>
+                    </li>
+                </ul>
+            </prime-scroll-panel>
         </div>
     </transition>
 </template>

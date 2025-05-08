@@ -18,6 +18,7 @@ declare module 'vue' {
     PrimeFloatLabel: typeof import('primevue/floatlabel')['default']
     PrimeInputNumber: typeof import('primevue/inputnumber')['default']
     PrimeInputText: typeof import('primevue/inputtext')['default']
+    PrimeScrollPanel: typeof import('primevue/scrollpanel')['default']
     PrimeSelect: typeof import('primevue/select')['default']
     PrimeSelectButton: typeof import('primevue/selectbutton')['default']
     PrimeSlider: typeof import('primevue/slider')['default']
