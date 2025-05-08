@@ -136,12 +136,13 @@ function register(name: string, structure: any, options: RegisterConstructOption
                 const key = path[i];
                 const nextKey = path[i + 1];
 
+                if (!(key in srcObj)) {
+                    break;
+                }
+
                 srcObj = srcObj[key];
                 if (nextKey !== void 0) {
                     rawObj = rawObj[key] ??= {};
-                }
-                else if (srcObj === void 0) {
-                    break;
                 }
                 else {
                     const val = toRaw(toValue(srcObj));
@@ -165,6 +166,10 @@ function register(name: string, structure: any, options: RegisterConstructOption
             for (let i = 0; i < path.length; i++) {
                 const key = path[i];
                 const nextKey = path[i + 1];
+
+                if (!(key in rawObj)) {
+                    break;
+                }
 
                 rawObj = rawObj[key];
                 if (nextKey === void 0) {
