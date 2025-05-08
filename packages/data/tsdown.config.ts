@@ -5,9 +5,9 @@ export default defineConfig([{
         "./src/index.ts",
     ],
 }, {
-    entry: [
-        "./src/scripts/index.ts",
-    ],
+    entry: {
+        postinstall: "./src/scripts/index.ts",
+    },
     outDir: "./scripts",
     dts: false,
     external: [
