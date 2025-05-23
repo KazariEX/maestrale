@@ -4,6 +4,7 @@ export default defineNuxtConfig({
     alias: {
         maestrale: resolve(import.meta.dirname, "../packages/core/src"),
         "@maestrale/data": resolve(import.meta.dirname, "../packages/data/src"),
+        "@maestrale/excalc": resolve(import.meta.dirname, "../packages/excalc/dist/excalc.js"),
     },
     compatibilityDate: "2024-07-19",
     css: [

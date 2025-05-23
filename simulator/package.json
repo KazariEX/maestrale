@@ -4,6 +4,7 @@
   "scripts": {
     "build": "nuxi build",
     "dev": "nuxi dev --no-qr",
+    "prebuild": "pnpm --filter @maestrale/excalc build",
     "prepare": "nuxi prepare",
     "preview": "nuxi preview",
     "tscheck": "vue-tsc"

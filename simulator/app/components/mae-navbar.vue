@@ -22,6 +22,11 @@
             to: { name: "catlodge" },
         },
         {
+            title: "斩杀率",
+            icon: "i-simple-icons:battledotnet",
+            to: { name: "excalc" },
+        },
+        {
             title: "设置",
             icon: "fa6-solid:gear",
             to: { name: "settings" },
