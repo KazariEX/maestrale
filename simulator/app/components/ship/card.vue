@@ -63,6 +63,7 @@
         p="2"
         b="~ solid border rounded"
         outline="2 primary offset--1"
+        bg="background"
         :class="{
             [`outline`]: ship && fleetStore.currentShip === ship,
         }"
