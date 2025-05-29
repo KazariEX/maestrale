@@ -9,12 +9,12 @@
     <ul>
         <setting-item title="默认等级" desc="创建新舰船时的初始等级">
             <prime-input-number
-                flex="1"
-                max-w="36"
-                input-class="w-0 text-center"
+                w="36"
+                input-class="text-center"
                 size="small"
                 :min="1"
                 :max="125"
+                fluid
                 show-buttons
                 button-layout="horizontal"
                 v-model="settingStore.defaults.level"

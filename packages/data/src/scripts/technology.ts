@@ -2,22 +2,13 @@ import { readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import type { Attributes, ShareCfg } from "maestrale";
 
-interface FleetTechShipTemplate {
-    add_get_attr: number;
-    add_get_shiptype: number[];
-    add_get_value: number;
-    add_level_attr: number;
-    add_level_shiptype: number[];
-    add_level_value: number;
-}
-
 interface FleetTechTemplate {
     add: [number[], number, number][];
 }
 
 export async function updateTechnology() {
     const attribute_info_by_type = await loadData<ShareCfg.AttributeInfoByType>("ShareCfg/attribute_info_by_type.json");
-    const fleet_tech_ship_template = await loadData<FleetTechShipTemplate>("ShareCfg/fleet_tech_ship_template.json");
+    const fleet_tech_ship_template = await loadData<ShareCfg.FleetTechShipTemplate>("ShareCfg/fleet_tech_ship_template.json");
     const fleet_tech_template = await loadData<FleetTechTemplate>("ShareCfg/fleet_tech_template.json");
 
     const attributes: Record<string, Attributes> = {};

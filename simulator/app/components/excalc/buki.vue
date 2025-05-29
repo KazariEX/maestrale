@@ -102,7 +102,7 @@
         </prime-data-table>
         <prime-button
             w="full"
-            m="t-2"
+            m="y-2"
             bg="@hover:slate/5"
             un-text="border"
             size="small"
