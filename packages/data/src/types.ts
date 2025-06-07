@@ -44,6 +44,7 @@ export enum Nationality {
     AtelierRyza = 109,
     SenranKagura = 110,
     ToLoveRu = 111,
+    BlackRockShooter = 112,
 }
 
 export enum ShipType {
