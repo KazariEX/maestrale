@@ -8,6 +8,13 @@ import { createClone } from "./clone";
 import { normalizePath, parsePath } from "./utils";
 import type { ITechnology } from "../core/technology";
 
+type ConstructRegistration = {
+    name: string;
+    structure: any;
+} & ReturnType<typeof register>;
+
+const registry: ConstructRegistration[] = [];
+
 register("surface-fleet", SurfaceFleet, {
     paths: [
         "name",
@@ -102,13 +109,6 @@ register("commander-ability", CommanderAbility, {
         return createCommanderAbility(raw.id);
     },
 });
-
-type ConstructRegistration = {
-    name: string;
-    structure: any;
-} & ReturnType<typeof register>;
-
-const registry: ConstructRegistration[] = [];
 
 interface RegisterConstructOptions {
     paths: string[];
