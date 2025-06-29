@@ -7,6 +7,7 @@
     "dev": "pnpm --filter maestrale... --parallel dev",
     "prepare": "zin link core && pnpm run build",
     "release": "bumpp -r --no-push -c \"release: v%s\"",
+    "test": "pnpm -r test",
     "assets:check": "tsx scripts/assets.ts"
   },
   "devDependencies": {
@@ -21,6 +22,7 @@
     "eslint": "catalog:",
     "stylelint": "catalog:",
     "tsdown": "catalog:",
-    "tsx": "catalog:"
+    "tsx": "catalog:",
+    "vitest": "catalog:"
   }
 }
