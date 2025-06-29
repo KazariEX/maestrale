@@ -1,18 +1,12 @@
 import { isRef, toRaw, toValue } from "@vue/reactivity";
-import { Commander, CommanderAbility, createCommander, createCommanderAbility } from "../commander";
-import { createEquip, Equip } from "../equip";
-import { createFleet, SubmarineFleet, SurfaceFleet } from "../fleet";
-import { createShip, Ship } from "../ship";
-import { createSPWeapon, SPWeapon } from "../spweapon";
+import { Commander, CommanderAbility, createCommander, createCommanderAbility } from "../core/commander";
+import { createEquip, Equip } from "../core/equip";
+import { createFleet, SubmarineFleet, SurfaceFleet } from "../core/fleet";
+import { createShip, Ship } from "../core/ship";
+import { createSPWeapon, SPWeapon } from "../core/spweapon";
 import { createClone } from "./clone";
-import type { ITechnology } from "../technology";
-
-type ConstructRegistration = {
-    name: string;
-    structure: any;
-} & ReturnType<typeof register>;
-
-const registry: ConstructRegistration[] = [];
+import { normalizePath, parsePath } from "./utils";
+import type { ITechnology } from "../core/technology";
 
 register("surface-fleet", SurfaceFleet, {
     paths: [
@@ -109,6 +103,13 @@ register("commander-ability", CommanderAbility, {
     },
 });
 
+type ConstructRegistration = {
+    name: string;
+    structure: any;
+} & ReturnType<typeof register>;
+
+const registry: ConstructRegistration[] = [];
+
 interface RegisterConstructOptions {
     paths: string[];
     initialize: (options: CreateSerializerOptions, raw: Record<string, any>) => any;
@@ -120,7 +121,7 @@ function register(name: string, structure: any, options: RegisterConstructOption
         initialize,
     } = options;
 
-    const parsedPaths = paths.map((path) => path.split(/\.|(?=\[\])/));
+    const parsedPaths = paths.map(parsePath);
 
     function serialize(ctx: SerializeContext, source: object) {
         const normalizedPaths = parsedPaths.flatMap((path) => [...normalizePath(source, path)]);
@@ -341,27 +342,6 @@ export function createSerializer(options: CreateSerializerOptions) {
         deserialize,
         cleanup,
     };
-}
-
-function* normalizePath(obj: any, path: string[]): Generator<string[]> {
-    const key = path[0];
-    if (obj === void 0 || !path.length) {
-        if (key !== "[]") {
-            yield [];
-        }
-    }
-    else if (key === "[]") {
-        for (const [key, value] of Object.entries(obj)) {
-            for (const res of normalizePath(value, path.slice(1))) {
-                yield [key, ...res];
-            }
-        }
-    }
-    else {
-        for (const res of normalizePath(obj[key], path.slice(1))) {
-            yield [key, ...res];
-        }
-    }
 }
 
 function resolveInternalKey(id: number, name: string) {
