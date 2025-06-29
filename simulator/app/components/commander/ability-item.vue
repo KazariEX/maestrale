@@ -12,7 +12,7 @@
             value: Number(id),
         }));
 
-    const desc = computed(() => {
+    const description = computed(() => {
         return ability.value?.desc.replaceAll(
             /<color=#\w+>(?<text>[^<]*)<\/color>/g,
             (_, text) => `<mark>${text}</mark>`,
@@ -77,7 +77,7 @@
                 <iconify name="fa6-solid:xmark"/>
             </button>
             <span>{{ ability.name }}</span>
-            <p leading="relaxed" text="3 slate-600 truncate dark:slate-300" v-html="desc"></p>
+            <p leading="relaxed" text="3 slate-600 truncate dark:slate-300" v-html="description"></p>
         </div>
         <div
             v-else

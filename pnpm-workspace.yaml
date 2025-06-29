@@ -8,38 +8,38 @@ overrides:
   "@rolldown/pluginutils": 1.0.0-beta.10
 
 catalog:
-  "@antfu/eslint-config": ^4.14.1
-  "@nuxt/devtools": ^2.5.0
-  "@nuxt/icon": ^1.13.0
+  "@antfu/eslint-config": ^4.16.1
+  "@nuxt/devtools": ^2.6.0
+  "@nuxt/icon": ^1.15.0
   "@nuxt/image": ^1.10.0
   "@pinia/nuxt": ^0.11.1
-  "@primeuix/themes": ^1.1.1
+  "@primeuix/themes": ^1.1.2
   "@primevue/nuxt-module": ^4.3.5
-  "@types/node": ^24.0.1
-  "@unocss/nuxt": ^66.2.0
-  "@vue/reactivity": ^3.5.16
-  "@vueuse/core": ^13.3.0
-  "@vueuse/nuxt": ^13.3.0
+  "@types/node": ^24.0.7
+  "@unocss/nuxt": ^66.3.2
+  "@vue/reactivity": ^3.5.17
+  "@vueuse/core": ^13.4.0
+  "@vueuse/nuxt": ^13.4.0
   "@zinkawaii/eslint-config": ^0.3.0
   "@zinkawaii/scripts": ^0.0.2
-  "@zinkawaii/stylelint-config": ^0.3.1
+  "@zinkawaii/stylelint-config": ^0.3.2
   "@zinkawaii/tsconfig": ^0.0.2
   assemblyscript: 0.27.36
-  bumpp: ^10.1.1
+  bumpp: ^10.2.0
   consola: ^3.4.2
-  eslint: ^9.28.0
+  eslint: ^9.30.0
   nuxt: ^3.17.5
   pinia: ^3.0.3
-  pinia-plugin-persistedstate: ^4.3.0
+  pinia-plugin-persistedstate: ^4.4.0
   primevue: ^4.3.5
   sass: ^1.89.2
-  stylelint: ^16.20.0
-  tsdown: ^0.12.7
+  stylelint: ^16.21.0
+  tsdown: ^0.12.9
   tsx: ^4.20.3
-  undici: ^7.10.0
-  unocss: ^66.2.0
+  undici: ^7.11.0
+  unocss: ^66.3.2
   vitest: ^3.2.4
-  vue: ^3.5.16
+  vue: ^3.5.17
   vue-draggable-plus: ^0.6.0
   vue-router: ^4.5.1
   vue-tsc: ^2.2.10

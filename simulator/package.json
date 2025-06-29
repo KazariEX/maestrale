@@ -2,11 +2,11 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "nuxi build",
-    "dev": "nuxi dev --no-qr",
+    "build": "nuxt build",
+    "dev": "nuxt dev --no-qr",
     "prebuild": "pnpm --filter @maestrale/excalc build",
-    "prepare": "nuxi prepare",
-    "preview": "nuxi preview",
+    "prepare": "nuxt prepare",
+    "preview": "nuxt preview",
     "tscheck": "vue-tsc"
   },
   "dependencies": {

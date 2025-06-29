@@ -17,7 +17,7 @@ checkShip();
 checkEquip();
 checkSPWeapon();
 
-async function checkShip() {
+function checkShip() {
     const ids = new Set(
         Object.keys(ShareCfg.ship_data_statistics)
         .map((id) => id.slice(0, -1))
@@ -43,7 +43,7 @@ async function checkShip() {
     print("ships", items);
 }
 
-async function checkEquip() {
+function checkEquip() {
     const ids = Object.entries(ShareCfg.equip_data_template)
         .filter(([, item]) => item.prev === 0)
         .map(([id]) => id);
@@ -67,7 +67,7 @@ async function checkEquip() {
     print("equips", items);
 }
 
-async function checkSPWeapon() {
+function checkSPWeapon() {
     const ids = Object.entries(ShareCfg.spweapon_data_statistics)
         .filter(([, item]) => item.name)
         .map(([id]) => id);

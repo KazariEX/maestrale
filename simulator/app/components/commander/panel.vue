@@ -5,6 +5,15 @@
         currentIdx: index,
     } = storeToRefs(commanderStore);
 
+    const commanderAttrs = [
+        "durability",
+        "cannon",
+        "torpedo",
+        "antiaircraft",
+        "air",
+        "antisub",
+    ] as const;
+
     async function remove() {
         if (await requireConfirm(`是否删除指挥喵：${commander.value!.name.value}？`)) {
             commanderStore.remove(index.value!);
@@ -41,12 +50,11 @@
                 <commander-status-item label="战术" :value="commander.tactic.value"/>
             </ul>
             <ul grid="~ gap-1">
-                <commander-attribute-item attr="durability" :value="commander.attrRates.value.durability"/>
-                <commander-attribute-item attr="cannon" :value="commander.attrRates.value.cannon"/>
-                <commander-attribute-item attr="torpedo" :value="commander.attrRates.value.torpedo"/>
-                <commander-attribute-item attr="antiaircraft" :value="commander.attrRates.value.antiaircraft"/>
-                <commander-attribute-item attr="air" :value="commander.attrRates.value.air"/>
-                <commander-attribute-item attr="antisub" :value="commander.attrRates.value.antisub"/>
+                <commander-attribute-item
+                    v-for="attr in commanderAttrs"
+                    :attr
+                    :value="commander.attrRates.value[attr]"
+                />
             </ul>
         </prime-fieldset>
         <prime-button
