@@ -1,7 +1,8 @@
 import { existsSync } from "node:fs";
 import { readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
-import { updateTechnology } from "./technology";
+import { generateTechnology } from "./technology";
+import { generateTransform } from "./transform";
 import { vvvip, type VVVIP } from "./vvvip";
 
 try {
@@ -90,4 +91,7 @@ async function pick(filename: string, { folder, props }: VVVIP) {
 }
 
 // 舰队科技
-await updateTechnology();
+await generateTechnology();
+
+// 改造列表
+await generateTransform();

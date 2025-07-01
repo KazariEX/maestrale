@@ -51,12 +51,20 @@ function getBaseSPWeaponIds() {
 
 export function selectShip(fleetType: FleetType, canClear: boolean) {
     const ids = getBaseShipIds();
-    const data = createSelectorData<ShareCfg.ShipDataStatistics>();
+    const data = createSelectorData<ShareCfg.ShipDataStatistics & {
+        types: ShipType[];
+    }>();
 
     for (const id of ids) {
         const statistics = ShareCfg.ship_data_statistics[id + "1"]!;
         const { rarity, type, nationality, name } = statistics;
-        if (fleetTypeMap[type] !== fleetType) {
+
+        const types = [
+            type,
+            ...ShareCfg.ship_data_trans[id]?.ship_id?.map((id) => ShareCfg.ship_data_statistics[id]!.type) ?? []
+        ].filter((type) => fleetTypeMap[type] === fleetType);
+
+        if (!types.length) {
             continue;
         }
 
@@ -65,7 +73,7 @@ export function selectShip(fleetType: FleetType, canClear: boolean) {
             name,
             icon: getSquareIconAtlas(ShareCfg.ship_skin_template[id + "0"]!.painting),
             rarity,
-            type,
+            types,
             nationality,
         });
     }
@@ -76,7 +84,7 @@ export function selectShip(fleetType: FleetType, canClear: boolean) {
             title: "选择舰船",
             selectors: [
                 { label: "稀有度", id: "rarity", options: rarityOptions },
-                { label: "舰种", id: "type", options: shipTypeOptions },
+                { label: "舰种", id: "types", options: shipTypeOptions },
                 { label: "阵营", id: "nationality", options: nationalityOptions },
                 { label: "可改造", exec: (item) => item.id in ShareCfg.ship_data_trans },
             ],
@@ -181,8 +189,8 @@ export function selectSPWeapon(shipId: number, shipType: ShipType, canClear: boo
 
 export function selectCommander() {
     const ids = Object.keys(ShareCfg.commander_data_template);
-
     const data = createSelectorData<ShareCfg.CommanderDataTemplate>();
+
     for (const id of ids) {
         const template = ShareCfg.commander_data_template[id]!;
         const { name, painting, rarity, nationality } = template;

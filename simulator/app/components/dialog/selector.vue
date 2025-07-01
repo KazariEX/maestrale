@@ -64,11 +64,15 @@
     function filterItem(item: T) {
         return (!filterWord.value || item.name.includes(filterWord.value))
             && localSelectors.value.every(({ id, value }) => {
-                return value === -1 || value === item[id];
+                return value === -1 || match(item[id], value);
             })
             && additionalSelector.value.options.every(({ exec, value }) => {
                 return value !== additionalSelector.value.value || exec(item);
             });
+    }
+
+    function match(input: unknown, expected: unknown) {
+        return Array.isArray(input) ? input.includes(expected) : input === expected;
     }
 </script>
 

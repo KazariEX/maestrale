@@ -1,12 +1,13 @@
-import { readFile, writeFile } from "node:fs/promises";
+import { writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import type { Attributes, ShareCfg } from "maestrale";
+import { loadData } from "./utils";
 
 interface FleetTechTemplate {
     add: [number[], number, number][];
 }
 
-export async function updateTechnology() {
+export async function generateTechnology() {
     const attribute_info_by_type = await loadData<ShareCfg.AttributeInfoByType>("ShareCfg/attribute_info_by_type.json");
     const fleet_tech_ship_template = await loadData<ShareCfg.FleetTechShipTemplate>("ShareCfg/fleet_tech_ship_template.json");
     const fleet_tech_template = await loadData<FleetTechTemplate>("ShareCfg/fleet_tech_template.json");
@@ -15,8 +16,8 @@ export async function updateTechnology() {
     const skipShipTypes = new Set([20, 21, 23, 24]);
 
     for (const item of Object.values(fleet_tech_ship_template)) {
-        update(item.add_get_shiptype, item.add_get_attr, item.add_get_value);
-        update(item.add_level_shiptype, item.add_level_attr, item.add_level_value);
+        increase(item.add_get_shiptype, item.add_get_attr, item.add_get_value);
+        increase(item.add_level_shiptype, item.add_level_attr, item.add_level_value);
     }
 
     const keys = Object.keys(fleet_tech_template);
@@ -27,22 +28,14 @@ export async function updateTechnology() {
             continue;
         }
         for (const [types, attr, value] of fleet_tech_template[key].add) {
-            update(types, attr, value);
+            increase(types, attr, value);
         }
     }
 
     const path = resolve(import.meta.dirname, "../generated/fleet_tech_attributes.json");
     await writeFile(path, JSON.stringify(attributes));
 
-    async function loadData<T>(path: string) {
-        path = resolve(import.meta.dirname, "../resources", path);
-        const file = await readFile(path, "utf-8");
-        const data = JSON.parse(file) as Record<string, T>;
-        delete data.all;
-        return data;
-    }
-
-    function update(types: number[], attr: number, value: number) {
+    function increase(types: number[], attr: number, value: number) {
         for (const type of types) {
             if (skipShipTypes.has(type)) {
                 continue;

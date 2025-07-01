@@ -178,6 +178,7 @@ export namespace ShareCfg {
 
     export interface ShipDataTrans {
         transform_list: number[][][];
+        ship_id?: number[];
     }
 
     export interface ShipMetaBreakout {
