@@ -27,6 +27,7 @@ export const nationalityMap: Record<Nationality, string> = {
     110: "闪乱神乐NL",
     111: "To LOVE-Ru",
     112: "黑岩射手",
+    113: "Atelier Yumia",
 };
 
 export const nationalityOptions = createSelectorOptions(nationalityMap);
