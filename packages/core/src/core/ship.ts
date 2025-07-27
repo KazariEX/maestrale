@@ -164,7 +164,7 @@ export class Ship {
 
     // 最高星级
     maxStar = computed(() => {
-        return Math.max(4, this.rarity.value);
+        return Math.ceil(this.rarity.value / 2) + 3;
     });
 
     // 获取属性白值
