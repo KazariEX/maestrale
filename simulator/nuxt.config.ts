@@ -19,9 +19,6 @@ export default defineNuxtConfig({
     experimental: {
         typedPages: true,
     },
-    future: {
-        compatibilityVersion: 4,
-    },
     ssr: false,
     unhead: {
         legacy: true,
@@ -29,13 +26,6 @@ export default defineNuxtConfig({
     vite: {
         build: {
             target: "esnext",
-        },
-        css: {
-            preprocessorOptions: {
-                scss: {
-                    api: "modern-compiler",
-                },
-            },
         },
     },
     modules: [
