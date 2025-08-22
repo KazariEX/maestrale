@@ -47,9 +47,6 @@ function updateData() {
 
         try {
             const res = await fetch(href);
-            if (res.status !== 200) {
-                throw 0;
-            }
             const data = await res.text();
             const path = resolve(import.meta.dirname, "../resources", uri);
 

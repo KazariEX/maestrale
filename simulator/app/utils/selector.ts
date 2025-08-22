@@ -61,7 +61,7 @@ export function selectShip(fleetType: FleetType, canClear: boolean) {
 
         const types = [
             type,
-            ...ShareCfg.ship_data_trans[id]?.ship_id?.map((id) => ShareCfg.ship_data_statistics[id]!.type) ?? []
+            ...ShareCfg.ship_data_trans[id]?.ship_id?.map((id) => ShareCfg.ship_data_statistics[id]!.type) ?? [],
         ].filter((type) => fleetTypeMap[type] === fleetType);
 
         if (!types.length) {

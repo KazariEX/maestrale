@@ -351,7 +351,7 @@ function resolveInternalKey(id: number, name: string) {
 function parseInternalKey(key: string) {
     const match = key.match(/^id\((?<name>[-\w]+)\):(?<id>\d+)$/);
     if (!match) {
-        throw 0;
+        throw new Error("Invalid internal key.");
     }
     const { name, id } = match.groups!;
     return {
