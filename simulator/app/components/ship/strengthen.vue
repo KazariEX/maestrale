@@ -6,6 +6,13 @@
     const { currentShip: ship } = storeToRefs(fleetStore);
 
     const attrs = ["cannon", "torpedo", "air", "reload"] as const;
+
+    const rate = computed(() => {
+        if (ship.value?.strengthen.type === StrengthenType.General) {
+            return Math.min(ship.value.level.value / 100, 1) * 0.7 + 0.3;
+        }
+        return 1;
+    });
 </script>
 
 <template>
@@ -15,6 +22,7 @@
                 v-for="attr in attrs"
                 :label="attributeMap[attr]"
                 :max="ship.strengthen.maxAttrs[attr]"
+                :rate
                 v-model="ship.strengthen.adjustedAttrs.value[attr]"
             />
         </template>

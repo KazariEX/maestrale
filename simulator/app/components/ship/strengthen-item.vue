@@ -1,12 +1,33 @@
 <script lang="ts" setup>
-    const { max } = defineProps<{
+    const { max, rate = 1 } = defineProps<{
         label: string;
         max: number;
+        rate?: number;
     }>();
-    const modelValue = defineModel<number>();
+    const modelValue = defineModel<number>({
+        required: true,
+    });
 
     const disabled = computed(() => {
         return max === 0;
+    });
+
+    const limit = computed(() => {
+        return Math.floor(max * rate);
+    });
+
+    const range = computed(() => {
+        return limit.value / max * 100 + "%";
+    });
+
+    const displayValue = ref(modelValue.value);
+    watch([modelValue, displayValue, limit], (newVal, oldVal) => {
+        if (newVal[0] !== oldVal[0]) {
+            displayValue.value = modelValue.value;
+        }
+        else {
+            modelValue.value = Math.min(...newVal.slice(1));
+        }
     });
 </script>
 
@@ -18,13 +39,13 @@
             :min="0"
             :max="max || 1"
             :disabled
-            v-model="modelValue"
+            v-model="displayValue"
         />
         <prime-input-number
             input-class="w-18 text-center"
             size="small"
             :min="0"
-            :max
+            :max="limit"
             :allow-empty="false"
             :disabled
             show-buttons
@@ -33,3 +54,9 @@
         />
     </li>
 </template>
+
+<style lang="scss" scoped>
+    :deep(.p-slider-range) {
+        max-width: v-bind(range);
+    }
+</style>
