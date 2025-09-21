@@ -6,11 +6,11 @@
   "license": "MIT",
   "repository": "KazariEX/maestrale",
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/index.ts",
+    "./package.json": "./package.json"
   },
   "main": "./dist/index.js",
   "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
   "files": [
     "**/.gitkeep",
     "dist",
@@ -18,7 +18,8 @@
   ],
   "publishConfig": {
     "exports": {
-      ".": "./dist/index.js"
+      ".": "./dist/index.js",
+      "./package.json": "./package.json"
     }
   },
   "scripts": {
