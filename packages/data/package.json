@@ -9,8 +9,9 @@
     ".": "./src/index.ts",
     "./package.json": "./package.json"
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
   "files": [
     "**/.gitkeep",
     "dist",
@@ -18,14 +19,14 @@
   ],
   "publishConfig": {
     "exports": {
-      ".": "./dist/index.js",
+      ".": "./dist/index.mjs",
       "./package.json": "./package.json"
     }
   },
   "scripts": {
     "build": "tsdown",
     "dev": "tsdown -w",
-    "postinstall": "node scripts/postinstall.js",
+    "postinstall": "node scripts/postinstall.mjs",
     "prepack": "pnpm run build"
   },
   "devDependencies": {

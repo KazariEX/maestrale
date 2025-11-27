@@ -1,4 +1,4 @@
 generated/*.json
 resources/**/*.json
-scripts/postinstall.js
+scripts/postinstall.mjs
 .version
