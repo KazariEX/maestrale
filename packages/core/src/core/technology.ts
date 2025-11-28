@@ -1,7 +1,5 @@
-import { type Attributes, ShareCfg, type ShipType } from "@maestrale/data";
+import { type Attributes, ShareCfg, type ShipType, type TechnologyAttributes } from "@maestrale/data";
 import { reactive } from "@vue/reactivity";
-
-export type TechnologyAttributes = Omit<Attributes, "speed" | "luck">;
 
 export interface ITechnology {
     attrs: Record<ShipType, TechnologyAttributes>;

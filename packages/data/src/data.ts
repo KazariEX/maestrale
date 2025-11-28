@@ -1,4 +1,4 @@
-import type { Armor, Attributes, EquipType, Nationality, ShipType } from "./types";
+import type { Armor, Attributes, EquipType, Nationality, ShipType, TechnologyAttributes } from "./types";
 
 async function loadData(name: keyof typeof ShareCfg & `${string}_${string}`) {
     const data = await import(`../generated/${name}.json`);
@@ -50,7 +50,7 @@ export namespace ShareCfg {
     export declare const commander_data_template: Record<string, CommanderDataTemplate>;
     export declare const equip_data_statistics: Record<string, EquipDataStatistics>;
     export declare const equip_data_template: Record<string, EquipDataTemplate>;
-    export declare const fleet_tech_attributes: Record<ShipType, Attributes>;
+    export declare const fleet_tech_attributes: Record<ShipType, TechnologyAttributes>;
     export declare const fleet_tech_ship_class: Record<string, FleetTechShipClass>;
     export declare const fleet_tech_ship_template: Record<string, FleetTechShipTemplate>;
     export declare const ship_data_blueprint: Record<string, ShipDataBlueprint>;

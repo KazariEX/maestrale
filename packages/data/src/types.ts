@@ -12,6 +12,8 @@ export interface Attributes {
     antisub: number;
 }
 
+export type TechnologyAttributes = Omit<Attributes, "speed" | "luck">;
+
 export enum Armor {
     Light = 1,
     Medium = 2,
