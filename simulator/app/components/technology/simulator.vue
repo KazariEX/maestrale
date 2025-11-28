@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-    import { ShareCfg, type TechnologyAttributes } from "maestrale";
+    import { ShareCfg, type ShipType, type TechnologyAttributes } from "maestrale";
     import { attributeMap } from "~/data/constants/attribute";
     import { nationalityMap } from "~/data/constants/nationality";
     import type { AchieveAdditional, AchieveItem, AchievePhase } from "~/types/technology";
@@ -61,8 +61,12 @@
 
     const expandedClasses = ref<ClassData[]>([]);
     const filteredClasses = computed(() => {
-        return totalClasses.filter((item) => (
-            item.ships.value.length && item.shiptype === technology.currentShipType
+        const isShipTypeMatched: (type: ShipType) => boolean = technology.currentShipType === 22
+            ? (type) => type === 22 || type === 23 || type === 24
+            : (type) => type === technology.currentShipType;
+
+        return totalClasses.filter((data) => (
+            data.ships.value.length && isShipTypeMatched(data.shiptype)
         ));
     });
 
