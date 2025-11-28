@@ -1,6 +1,6 @@
 import type { Armor, Attributes, EquipType, Nationality, ShipType } from "./types";
 
-async function loadData(name: string) {
+async function loadData(name: keyof typeof ShareCfg & `${string}_${string}`) {
     const data = await import(`../generated/${name}.json`);
     return [
         name,
