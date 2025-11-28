@@ -30,21 +30,15 @@
     });
 
     const equipValue = computed(() => {
-        return isGeneralAttr(attr)
-            && ship.value?.equipAttrs.value[attr]
-            || 0;
+        return ship.value?.equipAttrs.value[attr as keyof Attributes] ?? 0;
     });
 
     const technologyValue = computed(() => {
-        return isGeneralAttr(attr)
-            && ship.value?.techAttrs.value[attr]
-            || 0;
+        return ship.value?.techAttrs.value[attr as keyof Attributes] ?? 0;
     });
 
     const commanderValue = computed(() => {
-        return isGeneralAttr(attr)
-            && ship.value?.commanderAttrs.value[attr]
-            || 0;
+        return ship.value?.commanderAttrs.value[attr as keyof Attributes] ?? 0;
     });
 
     const additionalValue = computed(() => {
@@ -60,10 +54,6 @@
         }
         return value;
     });
-
-    function isGeneralAttr(attr: string | undefined): attr is keyof Attributes {
-        return attr !== void 0 && !["ammo", "oil", "oxy_max"].includes(attr);
-    }
 </script>
 
 <template>
