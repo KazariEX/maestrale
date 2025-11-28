@@ -3,7 +3,7 @@
     const { dialogs } = storeToRefs(dialogStore);
 
     const filteredDialogs = computed(() => {
-        return dialogs.value.filter((ctx) => ctx.isOpening);
+        return dialogs.value.filter((ctx) => ctx.isOpening.value);
     });
 </script>
 

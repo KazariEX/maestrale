@@ -12,6 +12,7 @@
   "dependencies": {
     "@primeuix/themes": "catalog:",
     "@vueuse/core": "catalog:",
+    "animejs": "catalog:",
     "pinia": "catalog:",
     "pinia-plugin-persistedstate": "catalog:",
     "primevue": "catalog:",

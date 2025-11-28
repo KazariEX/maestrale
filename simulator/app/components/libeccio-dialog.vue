@@ -15,10 +15,9 @@
 </script>
 
 <template>
-    <transition>
+    <transition-scale>
         <div
             v-if="isOpening"
-            class="libeccio-dialog"
             position="fixed inset-0"
             size="fit"
             m="auto"
@@ -38,18 +37,5 @@
             </header>
             <slot></slot>
         </div>
-    </transition>
+    </transition-scale>
 </template>
-
-<style lang="scss">
-    .libeccio-dialog {
-        &:where(.v-enter-active, .v-leave-active) {
-            transition: all 0.4s;
-        }
-
-        &:where(.v-enter-from, .v-leave-to) {
-            opacity: 0;
-            scale: 0.66;
-        }
-    }
-</style>
