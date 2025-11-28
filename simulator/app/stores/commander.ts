@@ -5,15 +5,9 @@ export const useCommanderStore = defineStore("commander", () => {
 
     const serializeStore = useSerializeStore();
 
-    serializeStore.use("commanders", commanders);
-
-    try {
-        const localCommanders = serializeStore.deserialize("commanders") as Commander[];
-        for (const commander of localCommanders) {
-            commanders.push(commander);
-        }
-    }
-    catch {}
+    serializeStore.use("commanders", commanders, (storeValue) => {
+        commanders.push(...storeValue);
+    });
 
     const currentIdx = ref<number>();
     const currentCommander = computed(() => {

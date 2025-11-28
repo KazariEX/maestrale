@@ -74,15 +74,11 @@ function useSerializableFleets<T extends Fleet>(
     const currentIdx = ref(0);
     const currentFleet = computed(() => fleets[currentIdx.value]!);
 
-    serializeStore.use(storageKey, fleets);
-
-    try {
-        const localFleets = serializeStore.deserialize(storageKey) as T[];
-        fleets.push(...localFleets);
-    }
-    catch {
+    serializeStore.use(storageKey, fleets, (storeValue) => {
+        fleets.push(...storeValue);
+    }, () => {
         add(initialName, schema);
-    }
+    });
 
     function add(name = defaultName, schema: typeof options.schema = {}) {
         const fleet = createFleet(type, name);

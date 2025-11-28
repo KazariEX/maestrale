@@ -15,24 +15,33 @@ export const useSerializeStore = defineStore("serialize", () => {
         "submarine-fleets",
     ] as const;
 
-    function use(key: (typeof storageKeys)[number], source: object) {
+    function use<T extends object>(
+        key: typeof storageKeys[number],
+        source: T,
+        initialize: (storeValue: T) => void,
+        fallback?: () => void,
+    ) {
+        const data = localStorage.getItem(key);
+        if (data === null) {
+            fallback?.();
+        }
+        // eslint-disable-next-line curly
+        else try {
+            const storeValue = serializer.deserialize(JSON.parse(data)) as T;
+            initialize?.(storeValue as T);
+        }
+        catch {
+            fallback?.();
+        }
+
         watchDebounced(source, (value) => {
-            serialize(key, value);
+            const raw = serializer.serialize(value);
+            mapping.value = serializer.mapping;
+            localStorage.setItem(key, JSON.stringify(raw));
         }, {
             deep: true,
             debounce: 1000,
         });
-    }
-
-    function serialize(key: string, source: object) {
-        const raw = serializer.serialize(source);
-        mapping.value = serializer.mapping;
-        localStorage.setItem(key, JSON.stringify(raw));
-    }
-
-    function deserialize(key: string) {
-        const data = localStorage.getItem(key);
-        return data && serializer.deserialize(JSON.parse(data));
     }
 
     function cleanup() {
@@ -51,8 +60,6 @@ export const useSerializeStore = defineStore("serialize", () => {
     return {
         mapping,
         use,
-        serialize,
-        deserialize,
         cleanup,
         clear,
     };
