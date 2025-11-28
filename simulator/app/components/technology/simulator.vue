@@ -1,21 +1,21 @@
 <script lang="ts" setup>
-    import { ShareCfg } from "maestrale";
+    import { ShareCfg, type TechnologyAttributes } from "maestrale";
     import { attributeMap } from "~/data/constants/attribute";
     import { nationalityMap } from "~/data/constants/nationality";
     import type { AchieveAdditional, AchieveItem, AchievePhase } from "~/types/technology";
 
-    const technology = useTechnologyStore();
-
     interface ClassData extends Omit<ShareCfg.FleetTechShipClass, "ships"> {
         id: string;
         nationality: string;
-        ships: ShipData[];
+        ships: ComputedRef<ShipData[]>;
     }
 
     interface ShipData {
         item: AchieveItem;
         additional: AchieveAdditional;
     }
+
+    const technology = useTechnologyStore();
 
     const selectedData = ref<ShipData[]>([]);
     const extendedData = computed<ShipData[]>(() => {
@@ -25,33 +25,61 @@
         }));
     });
 
-    const expandedClasses = ref<ClassData[]>([]);
-    const filteredClasses = computed<ClassData[]>(() => {
-        return Object.entries(ShareCfg.fleet_tech_ship_class)
-            .filter(([, item]) => item.shiptype === technology.currentShipType)
-            .map(([id, item]) => ({
+    const selectedAttr = ref<keyof TechnologyAttributes>();
+    function selectAttr(attr: keyof TechnologyAttributes) {
+        if (selectedAttr.value === attr) {
+            selectedAttr.value = void 0;
+        }
+        else {
+            selectedAttr.value = attr;
+        }
+    }
+
+    const totalClasses = Object.entries(ShareCfg.fleet_tech_ship_class)
+        .map<ClassData>(([id, item]) => {
+            const totalShips = computed(() => {
+                return extendedData.value.filter((data) => item.ships.includes(data.item.id));
+            });
+
+            const filteredShips = computed(() => {
+                const attr = selectedAttr.value;
+                return attr !== void 0
+                    ? totalShips.value.filter(({ additional }) => (
+                        attr === ShareCfg.attribute_info_by_type[additional.template.add_get_attr]!.name ||
+                        attr === ShareCfg.attribute_info_by_type[additional.template.add_level_attr]!.name
+                    ))
+                    : totalShips.value;
+            });
+
+            return {
                 ...item,
                 id,
                 nationality: nationalityMap[item.nation],
-                ships: extendedData.value.filter(({ item: { id } }) => item.ships.includes(id)),
-            }));
+                ships: filteredShips,
+            };
+        });
+
+    const expandedClasses = ref<ClassData[]>([]);
+    const filteredClasses = computed(() => {
+        return totalClasses.filter((item) => (
+            item.ships.value.length && item.shiptype === technology.currentShipType
+        ));
     });
 
     watch(() => technology.currentShipType, () => {
-       selectedData.value = [];
+        selectedData.value = [];
+        selectedAttr.value = void 0;
     });
 
     const rootEl = useTemplateRef("root");
     const { height } = useElementSize(rootEl);
 
     const rows = computed(() => {
-        return Math.max(Math.floor((height.value - 100) / 57), 0);
+        return Math.max(Math.floor((height.value - 102) / 57), 0);
     });
 
     function toggle(id: number, phase: AchievePhase) {
-        const item = technology.achieveItems.find((item) => {
-            return item.id === id;
-        })!;
+        const item = technology.achieveItems.find((item) => item.id === id)!;
         const value = item[phase];
 
         if (selectedData.value.some((data) => data.item === item)) {
@@ -91,6 +119,9 @@
                 v-for="(_, attr) in technology.maxAttrs[1]"
                 :label="attributeMap[attr]"
                 :value="technology.simulatedAttrs[technology.currentShipType][attr]"
+                :selector="!!technology.maxAttrs[technology.currentShipType][attr]"
+                :selected="selectedAttr === attr"
+                @select="selectAttr(attr)"
             />
         </ul>
         <prime-data-table
@@ -106,7 +137,7 @@
             removable-sort
             v-model:expanded-rows="expandedClasses"
         >
-            <prime-column expander header-style="width: 0;"/>
+            <prime-column header-style="width: 0;" expander/>
             <prime-column header="舰级" header-style="width: 25%;" field="name" sortable>
                 <template #body="{ data }">
                     {{ data.name }}
@@ -118,20 +149,20 @@
                 </template>
             </prime-column>
             <prime-column header="Tier" field="t_level" sortable>
-                <template #body="{ data }: { data: ClassData }">
+                <template #body="{ data: { t_level, ships } }: { data: ClassData }">
                     <div flex="~ justify-between items-center">
-                        <span>T{{ data.t_level }}</span>
+                        <span>T{{ t_level }}</span>
                         <prime-avatar-group>
                             <prime-avatar
-                                v-for="{ additional } in data.ships.slice(0, data.ships.length > 7 ? 6 : 7)"
+                                v-for="{ additional } in ships.value.slice(0, ships.value.length > 7 ? 6 : 7)"
                                 :image="additional.icon"
                                 shape="circle"
                             />
                             <prime-avatar
-                                v-if="data.ships.length > 7"
+                                v-if="ships.value.length > 7"
                                 p="r-1px"
                                 text="xs slate"
-                                :label="`+${data.ships.length - 6}`"
+                                :label="`+${ships.value.length - 6}`"
                                 shape="circle"
                             />
                         </prime-avatar-group>
@@ -141,7 +172,7 @@
             <template #expansion="props">
                 <prime-data-table
                     m="b-4"
-                    :value="props.data.ships"
+                    :value="props.data.ships.value"
                     data-key="item.id"
                     selection-mode="multiple"
                     v-model:selection="selectedData"

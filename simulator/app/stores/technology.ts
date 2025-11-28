@@ -11,7 +11,7 @@ export const useTechnologyStore = defineStore("technology", () => {
 
     // 在游戏数据更新时修补本地缓存
     watchOnce(achieveItems, (storeItems, initialItems) => {
-        if (storeItems.length === initialItems.length) {
+        if (!initialItems?.length || storeItems.length === initialItems.length) {
             return;
         }
         for (let i = 0; i < initialItems.length; i++) {
