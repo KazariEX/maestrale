@@ -1,15 +1,16 @@
 <script lang="ts" setup>
-    const modalStore = useModalStore();
+    const dialogStore = useDialogStore();
+    const { dialogs } = storeToRefs(dialogStore);
 
-    const displayModals = computed(() => {
-        return modalStore.modals.filter((ctx) => ctx.isOpening);
+    const filteredDialogs = computed(() => {
+        return dialogs.value.filter((ctx) => ctx.isOpening);
     });
 </script>
 
 <template>
     <transition-group>
         <div
-            v-for="{ zIndex, close } in displayModals"
+            v-for="{ zIndex, close } in filteredDialogs"
             :key="zIndex"
             class="mae-overlay"
             position="fixed inset-0"

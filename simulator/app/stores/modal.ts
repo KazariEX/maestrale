@@ -1,55 +1,56 @@
 import { promiseTimeout } from "@vueuse/core";
-import type { Raw } from "vue";
 
-interface ModalContext {
-    component: VNode;
+interface DialogContext {
+    vnode: VNode;
     zIndex: number;
     duration: number;
     isOpening: Ref<boolean>;
     close: () => any;
 }
 
-interface UseModalOptions {
+interface UseDialogOptions {
     duration?: number;
     immediate?: boolean;
     unique?: boolean;
 }
 
-export const useModalStore = defineStore("modal", () => {
-    const modals = ref<Raw<ModalContext>[]>([]);
+export const useDialogStore = defineStore("dialog", () => {
+    const dialogs = shallowReactive<DialogContext[]>([]);
 
-    function use(render: () => VNode, options: UseModalOptions = {}) {
+    function use(render: () => VNode, options: UseDialogOptions = {}) {
         const {
             duration = 400,
             immediate = false,
             unique = false,
         } = options;
 
-        let ctx: ModalContext;
+        let ctx: DialogContext;
 
         const isOpening = ref(false);
 
         immediate && open();
 
         function open() {
-            if (unique && indexOf() !== -1) return;
+            if (unique && indexOf() !== -1) {
+                return;
+            }
 
-            const component = render();
-            const last = modals.value.at(-1);
+            const vnode = render();
+            const last = dialogs.at(-1);
             const zIndex = (last?.zIndex ?? 510) + 2;
 
             ctx = {
-                component,
+                vnode,
                 zIndex,
                 duration,
                 isOpening,
-                close: (component.props ??= {}).onClose ??= close,
+                close: (vnode.props ??= {}).onClose ??= close,
             };
 
-            modals.value.push(ctx);
-            nextTick(() => {
+            dialogs.push(ctx);
+            vnode.props.onVnodeMounted = () => {
                 isOpening.value = true;
-            });
+            };
         }
 
         async function close() {
@@ -58,12 +59,12 @@ export const useModalStore = defineStore("modal", () => {
 
             const i = indexOf();
             if (i !== -1) {
-                modals.value.splice(i, 1);
+                dialogs.splice(i, 1);
             }
         }
 
         function indexOf() {
-            return modals.value.indexOf(ctx);
+            return dialogs.indexOf(ctx);
         }
 
         return {
@@ -73,7 +74,7 @@ export const useModalStore = defineStore("modal", () => {
     }
 
     return {
-        modals,
+        dialogs,
         use,
     };
 });

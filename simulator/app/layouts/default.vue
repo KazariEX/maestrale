@@ -8,5 +8,5 @@
     </main>
     <mae-navbar />
     <mae-overlay />
-    <mae-modal />
+    <mae-dialog />
 </template>

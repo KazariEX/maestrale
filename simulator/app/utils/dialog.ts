@@ -2,8 +2,8 @@ import { DialogConfirm, DialogInput } from "#components";
 
 export function requireConfirm(content: string) {
     return new Promise<boolean | undefined>((resolve) => {
-        const modalStore = useModalStore();
-        const { close } = modalStore.use(() => h(DialogConfirm, {
+        const dialogStore = useDialogStore();
+        const { close } = dialogStore.use(() => h(DialogConfirm, {
             content,
             onClose(val) {
                 close();
@@ -27,8 +27,8 @@ export function requireInput(options: RequireInputOptions) {
     } = options;
 
     return new Promise<string | undefined>((resolve) => {
-        const modalStore = useModalStore();
-        const { close } = modalStore.use(() => h(DialogInput, {
+        const dialogStore = useDialogStore();
+        const { close } = dialogStore.use(() => h(DialogInput, {
             title,
             defaultValue,
             onClose(val) {
