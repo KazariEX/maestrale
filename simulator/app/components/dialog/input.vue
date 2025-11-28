@@ -11,7 +11,7 @@
 </script>
 
 <template>
-    <lib-dialog :title @close="emit(`close`)">
+    <libeccio-dialog :title @close="emit(`close`)">
         <prime-input-text
             m="y-4"
             w="64"
@@ -34,5 +34,5 @@
                 @click="emit(`close`, text)"
             >确定</prime-button>
         </footer>
-    </lib-dialog>
+    </libeccio-dialog>
 </template>

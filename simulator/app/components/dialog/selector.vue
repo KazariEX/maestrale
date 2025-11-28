@@ -9,7 +9,7 @@
     setup
 >
     import { Nationality } from "maestrale";
-    import type { Filter } from "~/components/lib-filter.vue";
+    import type { Filter } from "~/components/libeccio-filter.vue";
     import type { RarityIconProps } from "~/components/rarity-icon.vue";
 
     interface SpecialFilter {
@@ -80,7 +80,7 @@
     <transition>
         <div
             v-if="isOpening"
-            class="lib-selector"
+            class="libeccio-selector"
             flex="~ col gap-4"
             position="fixed inset-0"
             w="128"
@@ -103,7 +103,7 @@
                 </button>
             </header>
             <div grid="~ gap-row-8 gap-col-4 rows-2 cols-3" p="t-6 r-4">
-                <lib-filter
+                <libeccio-filter
                     v-for="{ label, id, options }, i in localSelectors"
                     :key="id"
                     :id
@@ -115,7 +115,7 @@
                     <prime-input-text w="full" size="small" v-model.trim="filterWord"/>
                     <label>名称</label>
                 </prime-float-label>
-                <lib-filter
+                <libeccio-filter
                     id="additional"
                     grid="row-start-2"
                     label="附加索引"
@@ -167,7 +167,7 @@
 </template>
 
 <style lang="scss">
-    .lib-selector {
+    .libeccio-selector {
         &:where(.v-enter-active, .v-leave-active) {
             transition: all 0.4s;
         }

@@ -6,7 +6,7 @@
     >
         <slot></slot>
     </main>
-    <mae-navbar />
-    <mae-overlay />
-    <mae-dialog />
+    <maestrale-navbar />
+    <maestrale-overlay />
+    <maestrale-dialog />
 </template>

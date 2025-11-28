@@ -12,7 +12,7 @@
         <div
             v-for="{ zIndex, close } in filteredDialogs"
             :key="zIndex"
-            class="mae-overlay"
+            class="maestrale-overlay"
             position="fixed inset-0"
             bg="black/50"
             :style="{ zIndex: zIndex - 1 }"
@@ -22,7 +22,7 @@
 </template>
 
 <style lang="scss">
-    .mae-overlay {
+    .maestrale-overlay {
         &:where(.v-enter-active, .v-leave-active) {
             transition: opacity 0.4s;
         }

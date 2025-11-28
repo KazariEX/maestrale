@@ -18,7 +18,7 @@
     <transition>
         <div
             v-if="isOpening"
-            class="lib-dialog"
+            class="libeccio-dialog"
             position="fixed inset-0"
             size="fit"
             m="auto"
@@ -42,7 +42,7 @@
 </template>
 
 <style lang="scss">
-    .lib-dialog {
+    .libeccio-dialog {
         &:where(.v-enter-active, .v-leave-active) {
             transition: all 0.4s;
         }

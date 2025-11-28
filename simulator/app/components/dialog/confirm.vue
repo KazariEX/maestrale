@@ -8,7 +8,7 @@
 </script>
 
 <template>
-    <lib-dialog title="确认" @close="emit(`close`, false)">
+    <libeccio-dialog title="确认" @close="emit(`close`, false)">
         <p
             m="t-3 b-5"
             w="64"
@@ -29,5 +29,5 @@
                 @click="emit(`close`, true)"
             >确定</prime-button>
         </footer>
-    </lib-dialog>
+    </libeccio-dialog>
 </template>
