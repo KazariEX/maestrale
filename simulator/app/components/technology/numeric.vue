@@ -18,6 +18,10 @@
             :use-grouping="false"
             :model-value="value"
         />
-        <prime-checkbox v-if="attr !== void 0" :value="attr" :disabled/>
+        <prime-checkbox v-if="attr !== void 0" :value="attr" :disabled>
+            <template #icon="{ checked, ...props }">
+                <iconify v-if="checked" :class="props.class" name="prime:filter"/>
+            </template>
+        </prime-checkbox>
     </li>
 </template>
