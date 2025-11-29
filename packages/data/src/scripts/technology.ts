@@ -3,14 +3,10 @@ import { resolve } from "node:path";
 import type { ShareCfg, TechnologyAttributes } from "maestrale";
 import { loadData } from "./utils";
 
-interface FleetTechTemplate {
-    add: [number[], number, number][];
-}
-
 export async function generateTechnology() {
     const attribute_info_by_type = await loadData<ShareCfg.AttributeInfoByType>("ShareCfg/attribute_info_by_type.json");
     const fleet_tech_ship_template = await loadData<ShareCfg.FleetTechShipTemplate>("ShareCfg/fleet_tech_ship_template.json");
-    const fleet_tech_template = await loadData<FleetTechTemplate>("ShareCfg/fleet_tech_template.json");
+    const fleet_tech_template = await loadData<ShareCfg.FleetTechTemplate>("ShareCfg/fleet_tech_template.json");
 
     const attributes: Record<string, TechnologyAttributes> = {};
     const skippedShipTypes = new Set([20, 21, 23, 24]);

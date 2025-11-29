@@ -8,7 +8,7 @@
 </script>
 
 <template>
-    <li flex="~ items-center gap-3" w="34">
+    <div flex="~ items-center gap-3">
         <span text="nowrap">{{ label }}</span>
         <prime-input-number
             input-class="text-center"
@@ -23,5 +23,5 @@
                 <iconify v-if="checked" :class="props.class" name="prime:filter"/>
             </template>
         </prime-checkbox>
-    </li>
+    </div>
 </template>

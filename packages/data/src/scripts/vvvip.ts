@@ -85,7 +85,10 @@ export const vvvip: Record<string, VVVIP> = {
     },
     fleet_tech_template: {
         folder: "ShareCfg",
-        props: [],
+        props: [
+            "add",
+            "groupid",
+        ],
     },
     ship_data_blueprint: {
         folder: "ShareCfg",

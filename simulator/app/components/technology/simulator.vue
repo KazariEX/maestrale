@@ -1,5 +1,6 @@
 <script lang="ts" setup>
     import { type Attributes, ShareCfg, type ShipType } from "maestrale";
+    import { TechnologyNationality } from "#components";
     import { attributeMap } from "~/data/constants/attribute";
     import { nationalityMap } from "~/data/constants/nationality";
     import type { AchieveAdditional, AchieveItem, AchievePhase } from "~/types/technology";
@@ -15,7 +16,10 @@
         additional: AchieveAdditional;
     }
 
+    const dialogStore = useDialogStore();
     const technology = useTechnologyStore();
+
+    const { open: openNationalityPanel } = dialogStore.use(() => h(TechnologyNationality));
 
     const selectedData = ref<ShipData[]>([]);
     const extendedData = computed<ShipData[]>(() => {
@@ -102,8 +106,8 @@
 </script>
 
 <template>
-    <div ref="root" contain="strict" flex="~ items-start gap-4" m="t-4">
-        <prime-checkbox-group grid="~ gap-4" p="2" v-model="selectedAttrs">
+    <div ref="root" contain="strict" flex="~ items-start gap-6" m="t-4">
+        <prime-checkbox-group grid="~ gap-4" w="40" p="2" v-model="selectedAttrs">
             <technology-numeric
                 p="b-4"
                 b-b="~ solid border"
@@ -117,6 +121,12 @@
                 :attr
                 :disabled="!technology.maxAttrs[technology.currentShipType][attr]"
             />
+            <prime-button
+                size="small"
+                severity="help"
+                variant="outlined"
+                @click="openNationalityPanel"
+            >阵营科技</prime-button>
         </prime-checkbox-group>
         <prime-data-table
             flex="1"
@@ -132,17 +142,17 @@
             v-model:expanded-rows="expandedClasses"
         >
             <prime-column header-style="width: 0;" expander/>
-            <prime-column header="舰级" header-style="width: 25%;" field="name" sortable>
+            <prime-column field="name" header="舰级" header-style="width: 25%;" sortable>
                 <template #body="{ data }">
                     {{ data.name }}
                 </template>
             </prime-column>
-            <prime-column header="阵营" header-style="width: 20%" field="nation" sortable>
+            <prime-column field="nation" header="阵营" header-style="width: 20%" sortable>
                 <template #body="{ data }">
                     {{ data.nationality }}
                 </template>
             </prime-column>
-            <prime-column header="Tier" field="t_level" sortable>
+            <prime-column field="t_level" header="Tier" sortable>
                 <template #body="{ data: { t_level, ships } }: { data: ClassData }">
                     <div flex="~ justify-between items-center">
                         <span>T{{ t_level }}</span>
@@ -171,17 +181,26 @@
                     selection-mode="multiple"
                     v-model:selection="selectedData"
                 >
-                    <prime-column header="舰船">
+                    <prime-column header-class="w-0" body-class="pr-0">
                         <template #body="{ data }">
-                            <technology-ship v-bind="data"/>
+                            <rarity-icon
+                                size="14"
+                                :icon="data.additional.icon"
+                                :rarity="data.additional.rarity"
+                            />
                         </template>
                     </prime-column>
-                    <prime-column header="获得" header-style="width: 25%;">
+                    <prime-column header="舰船" header-style="width: 33%">
+                        <template #body="{ data }">
+                            <span>{{ data.additional.name }}</span>
+                        </template>
+                    </prime-column>
+                    <prime-column header="获得">
                         <template #body="{ data }">
                             <technology-cell phase="get" v-bind="data" @toggle="toggle"/>
                         </template>
                     </prime-column>
-                    <prime-column header="LV.120" header-style="width: 25%;">
+                    <prime-column header="LV.120">
                         <template #body="{ data }">
                             <technology-cell phase="level" v-bind="data" @toggle="toggle"/>
                         </template>

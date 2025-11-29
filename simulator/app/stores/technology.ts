@@ -1,4 +1,4 @@
-import { type Attributes, createAttributes, createTechnologyAttributes, ShareCfg, type ShipType, type TechnologyAttributes } from "maestrale";
+import { type Attributes, createAttributes, createTechnologyAttributes, type Nationality, ShareCfg, type ShipType, type TechnologyAttributes } from "maestrale";
 import { shipTypeTechMap } from "~/data/constants/ship-type";
 import type { AchieveAdditional, AchieveItem, TechnologyMode } from "~/types/technology";
 
@@ -23,9 +23,16 @@ export const useTechnologyStore = defineStore("technology", () => {
         }
     });
 
+    const nationalityMaxLevels = Object.values(ShareCfg.fleet_tech_template).reduce((res, { groupid }) => {
+        res[groupid] ??= 0;
+        res[groupid]++;
+        return res;
+    }, {} as Record<Nationality, number>);
+    const nationalityLevels = ref({ ...nationalityMaxLevels });
+
     const maxAttrs = createTechnologyAttributes();
     const controlledAttrs = reactive(createTechnologyAttributes());
-    const simulatedAttrs = useSimulatedAttrs(achieveItems, getAdditional);
+    const simulatedAttrs = useSimulatedAttrs();
 
     const attrs = computed(() => {
         return mode.value === "controller" ? controlledAttrs : simulatedAttrs;
@@ -76,6 +83,8 @@ export const useTechnologyStore = defineStore("technology", () => {
         currentShipType,
         achieveItems,
         achieveAdditionals,
+        nationalityMaxLevels,
+        nationalityLevels,
         maxAttrs,
         controlledAttrs,
         simulatedAttrs,
@@ -84,60 +93,96 @@ export const useTechnologyStore = defineStore("technology", () => {
         get,
         getAdditional,
     };
+
+    function useSimulatedAttrs() {
+        const attrs = {
+            get 20() {
+                return this[1];
+            },
+            get 21() {
+                return this[1];
+            },
+            get 23() {
+                return this[22];
+            },
+            get 24() {
+                return this[22];
+            },
+        } as Record<ShipType, TechnologyAttributes>;
+
+        const fleetAdds = computed(() => {
+            const result: ShareCfg.FleetTechTemplate["add"] = [];
+            for (const [nationality, level] of Object.entries(nationalityLevels.value)) {
+                const key = Number(nationality) * 1000 + level;
+                const template = ShareCfg.fleet_tech_template[key];
+                if (template) {
+                    result.push(...template.add);
+                }
+            }
+            return result;
+        });
+
+        for (const type of Object.keys(shipTypeTechMap).map<ShipType>(Number)) {
+            const nationalityAttrs = computed(() => {
+                const attrs = createAttributes();
+                for (const [types, attr, value] of fleetAdds.value) {
+                    if (types.includes(type)) {
+                        const key = ShareCfg.attribute_info_by_type[attr]!.name;
+                        attrs[key] += value;
+                    }
+                }
+                return attrs;
+            });
+
+            const archivedAttrs = computed(() => {
+                const attrs = createAttributes();
+                for (const item of achieveItems.value) {
+                    const { template } = getAdditional(item);
+                    if (template.add_get_shiptype.includes(type)) {
+                        if (item.get) {
+                            const key = ShareCfg.attribute_info_by_type[template.add_get_attr]!.name;
+                            attrs[key] += template.add_get_value;
+                        }
+                    }
+                    if (template.add_level_shiptype.includes(type)) {
+                        if (item.level) {
+                            const key = ShareCfg.attribute_info_by_type[template.add_level_attr]!.name;
+                            attrs[key] += template.add_level_value;
+                        }
+                    }
+                }
+                return attrs;
+            });
+
+            const simulatedAttrs = computed(() => {
+                const attrs = {
+                    ...nationalityAttrs.value,
+                };
+                for (const key in attrs) {
+                    // @ts-expect-error 类型收缩
+                    attrs[key] += archivedAttrs.value[key];
+                }
+                return attrs;
+            });
+
+            Object.defineProperty(attrs, type, {
+                get() {
+                    return simulatedAttrs.value;
+                },
+            });
+        }
+        return attrs;
+    }
 }, {
     persist: {
         pick: [
             "mode",
             "achieveItems",
+            "nationalityLevels",
             "controlledAttrs",
         ],
     },
 });
-
-function useSimulatedAttrs(items: Ref<AchieveItem[]>, getAdditional: (item: AchieveItem) => AchieveAdditional) {
-    const attrs = {
-        get 20() {
-            return this[1];
-        },
-        get 21() {
-            return this[1];
-        },
-        get 23() {
-            return this[22];
-        },
-        get 24() {
-            return this[22];
-        },
-    } as Record<ShipType, TechnologyAttributes>;
-
-    for (const type of Object.keys(shipTypeTechMap).map(Number)) {
-        const getter = computed(() => {
-            const attrs = createAttributes();
-            for (const item of items.value) {
-                const { template } = getAdditional(item);
-                if (template.add_get_shiptype.includes(type)) {
-                    if (item.get) {
-                        const key = ShareCfg.attribute_info_by_type[template.add_get_attr]!.name;
-                        attrs[key] += template.add_get_value;
-                    }
-                }
-                if (template.add_level_shiptype.includes(type)) {
-                    if (item.level) {
-                        const key = ShareCfg.attribute_info_by_type[template.add_level_attr]!.name;
-                        attrs[key] += template.add_level_value;
-                    }
-                }
-            }
-            return attrs;
-        });
-        Object.defineProperty(attrs, type, {
-            get() {
-                return getter.value;
-            },
-        });
-    }
-    return attrs;
-}
 
 function createAchieveItems(): AchieveItem[] {
     const ids: number[] = [];

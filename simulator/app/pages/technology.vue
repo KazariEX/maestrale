@@ -28,8 +28,10 @@
         w="fit"
         m="x-auto"
     >
-        <div flex="~ gap-4" text="nowrap">
+        <div flex="~ gap-6" text="nowrap">
             <prime-select-button
+                grid="~ cols-2"
+                w="40"
                 size="small"
                 :options="modeOptions"
                 option-label="label"
@@ -39,7 +41,11 @@
             />
             <prime-tabs v-model:value="technology.currentShipType">
                 <prime-tab-list>
-                    <prime-tab v-for="{ label, value } in shipTypeTechOptions" :value>{{ label }}</prime-tab>
+                    <prime-tab
+                        v-for="{ label, value } in shipTypeTechOptions"
+                        p="x-4"
+                        :value
+                    >{{ label }}</prime-tab>
                 </prime-tab-list>
             </prime-tabs>
         </div>
