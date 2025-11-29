@@ -31,6 +31,8 @@
 
     const selectedAttrs = ref<(keyof Attributes)[]>([]);
     const totalClasses = Object.entries(ShareCfg.fleet_tech_ship_class)
+        .reverse()
+        .sort(([, a], [, b]) => b.t_level - a.t_level || b.t_level_1 - a.t_level_1)
         .map<ClassData>(([id, item]) => {
             const totalShips = computed(() => {
                 return extendedData.value.filter((data) => item.ships.includes(data.item.id));

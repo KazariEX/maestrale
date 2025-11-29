@@ -128,6 +128,7 @@ export namespace ShareCfg {
         shiptype: ShipType;
         ships: number[];
         t_level: number;
+        t_level_1: number;
     }
 
     export interface FleetTechShipTemplate {

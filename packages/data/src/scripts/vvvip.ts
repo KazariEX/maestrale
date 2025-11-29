@@ -67,6 +67,7 @@ export const vvvip: Record<string, VVVIP> = {
             "shiptype",
             "ships",
             "t_level",
+            "t_level_1",
         ],
     },
     fleet_tech_ship_template: {
