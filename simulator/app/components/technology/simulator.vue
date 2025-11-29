@@ -1,14 +1,16 @@
 <script lang="ts" setup>
-    import { type Attributes, ShareCfg, type ShipType } from "maestrale";
+    import { type Attributes, Nationality, ShareCfg, type ShipType } from "maestrale";
     import { TechnologyNationality } from "#components";
     import { attributeMap } from "~/data/constants/attribute";
     import { nationalityMap } from "~/data/constants/nationality";
     import type { AchieveAdditional, AchieveItem, AchievePhase } from "~/types/technology";
 
-    interface ClassData extends Omit<ShareCfg.FleetTechShipClass, "ships"> {
+    interface ClassData {
         id: string;
+        name: string;
         nationality: string;
         ships: ComputedRef<ShipData[]>;
+        tier?: number;
     }
 
     interface ShipData {
@@ -21,8 +23,8 @@
 
     const { open: openNationalityPanel } = dialogStore.use(() => h(TechnologyNationality));
 
-    const selectedData = ref<ShipData[]>([]);
-    const extendedData = computed<ShipData[]>(() => {
+    const selectedShips = ref<ShipData[]>([]);
+    const extendedShips = computed<ShipData[]>(() => {
         return technology.achieveItems.map((item) => ({
             item,
             additional: technology.getAdditional(item)!,
@@ -30,45 +32,66 @@
     });
 
     const selectedAttrs = ref<(keyof Attributes)[]>([]);
-    const totalClasses = Object.entries(ShareCfg.fleet_tech_ship_class)
-        .reverse()
-        .sort(([, a], [, b]) => b.t_level - a.t_level || b.t_level_1 - a.t_level_1)
-        .map<ClassData>(([id, item]) => {
-            const totalShips = computed(() => {
-                return extendedData.value.filter((data) => item.ships.includes(data.item.id));
-            });
 
-            const filteredShips = computed(() => {
-                const attrs = selectedAttrs.value;
-                return attrs.length !== 0
-                    ? totalShips.value.filter(({ additional }) => (
-                        attrs.includes(ShareCfg.attribute_info_by_type[additional.template.add_get_attr]!.name) ||
-                        attrs.includes(ShareCfg.attribute_info_by_type[additional.template.add_level_attr]!.name)
-                    ))
-                    : totalShips.value;
-            });
+    function isShipTypeMatched(type: ShipType) {
+        return technology.currentShipType === 22
+            ? type === 22 || type === 23 || type === 24
+            : type === technology.currentShipType;
+    }
 
-            return {
-                ...item,
-                id,
-                nationality: nationalityMap[item.nation],
-                ships: filteredShips,
-            };
+    function useFilteredShips(ships: number[], shipType?: boolean) {
+        const totalShips = computed(() => {
+            return extendedShips.value.filter((data) => ships.includes(data.item.id));
         });
 
-    const expandedClasses = ref<ClassData[]>([]);
-    const filteredClasses = computed(() => {
-        const isShipTypeMatched: (type: ShipType) => boolean = technology.currentShipType === 22
-            ? (type) => type === 22 || type === 23 || type === 24
-            : (type) => type === technology.currentShipType;
+        const filteredShips = computed(() => {
+            const attrs = selectedAttrs.value;
+            return totalShips.value.filter(({ additional }) => {
+                if (
+                    attrs.length && !(
+                    attrs.includes(ShareCfg.attribute_info_by_type[additional.template.add_get_attr]!.name) ||
+                    attrs.includes(ShareCfg.attribute_info_by_type[additional.template.add_level_attr]!.name)
+                )) {
+                    return false;
+                }
+                if (shipType && !isShipTypeMatched(additional.type)) {
+                    return false;
+                }
+                return true;
+            });
+        });
 
-        return totalClasses.filter((data) => (
-            data.ships.value.length && isShipTypeMatched(data.shiptype)
-        ));
-    });
+        return filteredShips;
+    }
+
+    const generalClasses = Object.entries(ShareCfg.fleet_tech_ship_class)
+        .filter(([, { nation }]) => nation !== Nationality.META && nation !== Nationality.Tempesta)
+        .sort(([, a], [, b]) => b.t_level - a.t_level || b.t_level_1 - a.t_level_1)
+        .map(([id, data]) => ({
+            id,
+            name: data.name,
+            nationality: nationalityMap[data.nation],
+            ships: useFilteredShips(data.ships),
+            shipType: data.shiptype,
+            tier: data.t_level,
+        }));
+
+    const specialClasses = Object.entries(ShareCfg.fleet_tech_meta_class)
+        .map(([id, data]) => ({
+            id,
+            name: data.name,
+            nationality: nationalityMap[data.nation],
+            ships: useFilteredShips(data.ships, true),
+        }));
+
+    const expandedClasses = ref<ClassData[]>([]);
+    const filteredClasses = computed<ClassData[]>(() => [
+        ...generalClasses.filter((data) => isShipTypeMatched(data.shipType) && data.ships.value.length),
+        ...specialClasses.filter((data) => data.ships.value.length),
+    ]);
 
     watch(() => technology.currentShipType, () => {
-        selectedData.value = [];
+        selectedShips.value = [];
         selectedAttrs.value = [];
     });
 
@@ -79,12 +102,11 @@
         return Math.max(Math.floor((height.value - 102) / 57), 0);
     });
 
-    function toggle(id: number, phase: AchievePhase) {
-        const item = technology.achieveItems.find((item) => item.id === id)!;
+    function toggle(item: AchieveItem, phase: AchievePhase) {
         const value = item[phase];
 
-        if (selectedData.value.some((data) => data.item === item)) {
-            for (const { item } of selectedData.value) {
+        if (selectedShips.value.some((data) => data.item === item)) {
+            for (const { item } of selectedShips.value) {
                 update(item);
             }
         }
@@ -138,8 +160,6 @@
             :rows
             scrollable
             scroll-height="flex"
-            sort-field="t_level"
-            :sort-order="-1"
             removable-sort
             v-model:expanded-rows="expandedClasses"
         >
@@ -154,11 +174,11 @@
                     {{ data.nationality }}
                 </template>
             </prime-column>
-            <prime-column field="t_level" header="Tier" sortable>
-                <template #body="{ data: { t_level, ships } }: { data: ClassData }">
-                    <div flex="~ justify-between items-center">
-                        <span>T{{ t_level }}</span>
-                        <prime-avatar-group>
+            <prime-column field="tier" header="Tier" sortable>
+                <template #body="{ data: { tier, ships } }: { data: ClassData }">
+                    <div flex="~ items-center">
+                        <span v-if="tier">T{{ tier }}</span>
+                        <prime-avatar-group m="l-auto">
                             <prime-avatar
                                 v-for="{ additional } in ships.value.slice(0, ships.value.length > 7 ? 6 : 7)"
                                 :image="additional.icon"
@@ -181,7 +201,7 @@
                     :value="props.data.ships.value"
                     data-key="item.id"
                     selection-mode="multiple"
-                    v-model:selection="selectedData"
+                    v-model:selection="selectedShips"
                 >
                     <prime-column header-class="w-0" body-class="pr-0">
                         <template #body="{ data }">

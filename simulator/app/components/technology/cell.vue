@@ -11,7 +11,7 @@
         additional: AchieveAdditional;
     }>();
     defineEmits<{
-        toggle: [id: number, phase: AchievePhase];
+        toggle: [item: AchieveItem, phase: AchievePhase];
     }>();
 
     const shipTypes = computed(() => {
@@ -45,7 +45,7 @@
             <prime-checkbox
                 binary
                 :model-value="item[phase]"
-                @update:model-value="$emit(`toggle`, item.id, phase)"
+                @update:model-value="$emit(`toggle`, item, phase)"
             />
             <span position="absolute top-5.5" text="slate">{{ additional.template[`pt_${phase}`] }}</span>
         </div>

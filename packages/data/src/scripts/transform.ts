@@ -4,8 +4,13 @@ import type { ShareCfg } from "maestrale";
 import { loadData } from "./utils";
 
 export async function generateTransform() {
-    const ship_data_trans = await loadData<ShareCfg.ShipDataTrans>("ship_data_trans.json", true);
-    const transform_data_template = await loadData<ShareCfg.TransformDataTemplate>("ShareCfg/transform_data_template.json");
+    const [
+        ship_data_trans,
+        transform_data_template,
+    ] = await Promise.all([
+        loadData<ShareCfg.ShipDataTrans>("ship_data_trans.json", true),
+        loadData<ShareCfg.TransformDataTemplate>("ShareCfg/transform_data_template.json"),
+    ]);
 
     for (const [id, { transform_list }] of Object.entries(ship_data_trans)) {
         const ids = transform_list
