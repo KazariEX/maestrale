@@ -3,7 +3,7 @@ import zin from "@zinkawaii/eslint-config";
 export default zin({
     ignores: [
         "packages/data/{generated,resources}/**/*.json",
-        "packages/data/scripts/*.js",
+        "packages/data/scripts/*.mjs",
     ],
     rules: {
         "no-useless-constructor": "off",

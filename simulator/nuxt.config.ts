@@ -13,11 +13,12 @@ export default defineNuxtConfig({
     devServer: {
         port: 2243,
     },
-    devtools: {
-        enabled: true,
-    },
     experimental: {
         typedPages: true,
+        typescriptPlugin: true,
+    },
+    future: {
+        compatibilityVersion: 5,
     },
     ssr: false,
     unhead: {
