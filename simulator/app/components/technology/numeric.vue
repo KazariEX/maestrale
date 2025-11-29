@@ -2,37 +2,22 @@
     defineProps<{
         label: string;
         value: number;
-        selector?: boolean;
-        selected?: boolean;
-    }>();
-    defineEmits<{
-        select: [];
+        attr?: string;
+        disabled?: boolean;
     }>();
 </script>
 
 <template>
-    <li flex="~ items-center">
-        <span :class="{ [`text-primary`]: selected }">{{ label }}</span>
+    <li flex="~ items-center gap-3" w="34">
+        <span text="nowrap">{{ label }}</span>
         <prime-input-number
-            input-class="w-23 text-center"
-            m="l-4 r-2"
+            input-class="text-center"
             size="small"
+            fluid
             readonly
             :use-grouping="false"
             :model-value="value"
         />
-        <span
-            v-if="selector"
-            v-ripple
-            :class="{ [`op-25`]: !selected }"
-            grid="~ place-items-center"
-            size="8"
-            rounded="full"
-            text="5 "
-            cursor="pointer"
-            @click="$emit(`select`)"
-        >
-            <iconify name="lsicon:filter-filled"/>
-        </span>
+        <prime-checkbox v-if="attr !== void 0" :value="attr" :disabled/>
     </li>
 </template>

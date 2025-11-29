@@ -12,6 +12,7 @@ declare module 'vue' {
     PrimeAvatarGroup: typeof import('primevue/avatargroup')['default']
     PrimeButton: typeof import('primevue/button')['default']
     PrimeCheckbox: typeof import('primevue/checkbox')['default']
+    PrimeCheckboxGroup: typeof import('primevue/checkboxgroup')['default']
     PrimeColumn: typeof import('primevue/column')['default']
     PrimeDataTable: typeof import('primevue/datatable')['default']
     PrimeFieldset: typeof import('primevue/fieldset')['default']

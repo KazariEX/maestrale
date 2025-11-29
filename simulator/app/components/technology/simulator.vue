@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-    import { ShareCfg, type ShipType, type TechnologyAttributes } from "maestrale";
+    import { type Attributes, ShareCfg, type ShipType } from "maestrale";
     import { attributeMap } from "~/data/constants/attribute";
     import { nationalityMap } from "~/data/constants/nationality";
     import type { AchieveAdditional, AchieveItem, AchievePhase } from "~/types/technology";
@@ -25,16 +25,7 @@
         }));
     });
 
-    const selectedAttr = ref<keyof TechnologyAttributes>();
-    function selectAttr(attr: keyof TechnologyAttributes) {
-        if (selectedAttr.value === attr) {
-            selectedAttr.value = void 0;
-        }
-        else {
-            selectedAttr.value = attr;
-        }
-    }
-
+    const selectedAttrs = ref<(keyof Attributes)[]>([]);
     const totalClasses = Object.entries(ShareCfg.fleet_tech_ship_class)
         .map<ClassData>(([id, item]) => {
             const totalShips = computed(() => {
@@ -42,11 +33,11 @@
             });
 
             const filteredShips = computed(() => {
-                const attr = selectedAttr.value;
-                return attr !== void 0
+                const attrs = selectedAttrs.value;
+                return attrs.length !== 0
                     ? totalShips.value.filter(({ additional }) => (
-                        attr === ShareCfg.attribute_info_by_type[additional.template.add_get_attr]!.name ||
-                        attr === ShareCfg.attribute_info_by_type[additional.template.add_level_attr]!.name
+                        attrs.includes(ShareCfg.attribute_info_by_type[additional.template.add_get_attr]!.name) ||
+                        attrs.includes(ShareCfg.attribute_info_by_type[additional.template.add_level_attr]!.name)
                     ))
                     : totalShips.value;
             });
@@ -72,7 +63,7 @@
 
     watch(() => technology.currentShipType, () => {
         selectedData.value = [];
-        selectedAttr.value = void 0;
+        selectedAttrs.value = [];
     });
 
     const rootEl = useTemplateRef("root");
@@ -112,7 +103,7 @@
 
 <template>
     <div ref="root" contain="strict" flex="~ items-start gap-4" m="t-4">
-        <ul grid="~ gap-4" p="2">
+        <prime-checkbox-group grid="~ gap-4" p="2" v-model="selectedAttrs">
             <technology-numeric
                 p="b-4"
                 b-b="~ solid border"
@@ -123,11 +114,10 @@
                 v-for="(_, attr) in technology.maxAttrs[1]"
                 :label="attributeMap[attr]"
                 :value="technology.simulatedAttrs[technology.currentShipType][attr]"
-                :selector="!!technology.maxAttrs[technology.currentShipType][attr]"
-                :selected="selectedAttr === attr"
-                @select="selectAttr(attr)"
+                :attr
+                :disabled="!technology.maxAttrs[technology.currentShipType][attr]"
             />
-        </ul>
+        </prime-checkbox-group>
         <prime-data-table
             flex="1"
             :value="filteredClasses"
