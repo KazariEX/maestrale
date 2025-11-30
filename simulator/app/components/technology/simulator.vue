@@ -8,7 +8,7 @@
     interface ClassData {
         id: string;
         name: string;
-        nationality: string;
+        nationality: Nationality;
         ships: ComputedRef<ShipData[]>;
         tier?: number;
     }
@@ -70,7 +70,7 @@
         .map(([id, data]) => ({
             id,
             name: data.name,
-            nationality: nationalityMap[data.nation],
+            nationality: data.nation,
             ships: useFilteredShips(data.ships),
             shipType: data.shiptype,
             tier: data.t_level,
@@ -80,7 +80,7 @@
         .map(([id, data]) => ({
             id,
             name: data.name,
-            nationality: nationalityMap[data.nation],
+            nationality: data.nation,
             ships: useFilteredShips(data.ships, true),
         }));
 
@@ -169,9 +169,9 @@
                 {{ data.name }}
             </template>
         </prime-column>
-        <prime-column field="nation" header="阵营" header-style="width: 20%" sortable>
-            <template #body="{ data }">
-                {{ data.nationality }}
+        <prime-column field="nationality" header="阵营" header-style="width: 20%" sortable>
+            <template #body="{ data }: { data: ClassData }">
+                {{ nationalityMap[data.nationality] }}
             </template>
         </prime-column>
         <prime-column field="tier" header="Tier" sortable>
