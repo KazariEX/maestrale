@@ -95,8 +95,8 @@
         selectedAttrs.value = [];
     });
 
-    const rootEl = useTemplateRef("root");
-    const { height } = useElementSize(rootEl);
+    const tableComp = useTemplateRef("table");
+    const { height } = useElementSize(tableComp as any);
 
     const rows = computed(() => {
         return Math.max(Math.floor((height.value - 102) / 57), 0);
@@ -130,110 +130,109 @@
 </script>
 
 <template>
-    <div ref="root" contain="strict" flex="~ items-start gap-6" m="t-4">
-        <prime-checkbox-group grid="~ gap-4" w="40" p="2" v-model="selectedAttrs">
-            <technology-numeric
-                p="b-4"
-                b-b="~ solid border"
-                label="科技"
-                :value="technology.point"
-            />
-            <technology-numeric
-                v-for="(_, attr) in technology.maxAttrs[1]"
-                :label="attributeMap[attr]"
-                :value="technology.simulatedAttrs[technology.currentShipType][attr]"
-                :attr
-                :disabled="!technology.maxAttrs[technology.currentShipType][attr]"
-            />
-            <prime-button
-                size="small"
-                severity="help"
-                variant="outlined"
-                @click="openNationalityPanel"
-            >阵营科技</prime-button>
-        </prime-checkbox-group>
-        <prime-data-table
-            flex="1"
-            :value="filteredClasses"
-            data-key="id"
-            paginator
-            :rows
-            scrollable
-            scroll-height="flex"
-            removable-sort
-            v-model:expanded-rows="expandedClasses"
-        >
-            <prime-column header-style="width: 0;" expander/>
-            <prime-column field="name" header="舰级" header-style="width: 25%;" sortable>
-                <template #body="{ data }">
-                    {{ data.name }}
-                </template>
-            </prime-column>
-            <prime-column field="nation" header="阵营" header-style="width: 20%" sortable>
-                <template #body="{ data }">
-                    {{ data.nationality }}
-                </template>
-            </prime-column>
-            <prime-column field="tier" header="Tier" sortable>
-                <template #body="{ data: { tier, ships } }: { data: ClassData }">
-                    <div flex="~ items-center">
-                        <span v-if="tier">T{{ tier }}</span>
-                        <prime-avatar-group m="l-auto">
-                            <prime-avatar
-                                v-for="{ additional } in ships.value.slice(0, ships.value.length > 7 ? 6 : 7)"
-                                :image="additional.icon"
-                                shape="circle"
-                            />
-                            <prime-avatar
-                                v-if="ships.value.length > 7"
-                                p="r-1px"
-                                text="xs slate"
-                                :label="`+${ships.value.length - 6}`"
-                                shape="circle"
-                            />
-                        </prime-avatar-group>
-                    </div>
-                </template>
-            </prime-column>
-            <template #expansion="props">
-                <prime-data-table
-                    m="b-4"
-                    :value="props.data.ships.value"
-                    data-key="item.id"
-                    selection-mode="multiple"
-                    v-model:selection="selectedShips"
-                >
-                    <prime-column header-class="w-0" body-class="pr-0">
-                        <template #body="{ data }">
-                            <rarity-icon
-                                size="14"
-                                :icon="data.additional.icon"
-                                :rarity="data.additional.rarity"
-                            />
-                        </template>
-                    </prime-column>
-                    <prime-column header="舰船" header-style="width: 33%">
-                        <template #body="{ data }">
-                            <span>{{ data.additional.name }}</span>
-                        </template>
-                    </prime-column>
-                    <prime-column header="获得">
-                        <template #body="{ data }">
-                            <technology-cell phase="get" v-bind="data" @toggle="toggle"/>
-                        </template>
-                    </prime-column>
-                    <prime-column header="LV.120">
-                        <template #body="{ data }">
-                            <technology-cell phase="level" v-bind="data" @toggle="toggle"/>
-                        </template>
-                    </prime-column>
-                    <prime-column header="满星" header-style="width: 10%;">
-                        <template #body="{ data }">
-                            <technology-cell phase="upgrage" v-bind="data" @toggle="toggle"/>
-                        </template>
-                    </prime-column>
-                </prime-data-table>
+    <prime-checkbox-group grid="~ self-start gap-4" w="40" p="2" v-model="selectedAttrs">
+        <technology-numeric
+            p="b-4"
+            b-b="~ solid border"
+            label="科技"
+            :value="technology.point"
+        />
+        <technology-numeric
+            v-for="(_, attr) in technology.maxAttrs[1]"
+            :label="attributeMap[attr]"
+            :value="technology.simulatedAttrs[technology.currentShipType][attr]"
+            :attr
+            :disabled="!technology.maxAttrs[technology.currentShipType][attr]"
+        />
+        <prime-button
+            size="small"
+            severity="help"
+            variant="outlined"
+            @click="openNationalityPanel"
+        >阵营科技</prime-button>
+    </prime-checkbox-group>
+    <prime-data-table
+        ref="table"
+        contain="strict"
+        :value="filteredClasses"
+        data-key="id"
+        paginator
+        :rows
+        scrollable
+        scroll-height="flex"
+        removable-sort
+        v-model:expanded-rows="expandedClasses"
+    >
+        <prime-column header-style="width: 0;" expander/>
+        <prime-column field="name" header="舰级" header-style="width: 25%;" sortable>
+            <template #body="{ data }">
+                {{ data.name }}
             </template>
-        </prime-data-table>
-    </div>
+        </prime-column>
+        <prime-column field="nation" header="阵营" header-style="width: 20%" sortable>
+            <template #body="{ data }">
+                {{ data.nationality }}
+            </template>
+        </prime-column>
+        <prime-column field="tier" header="Tier" sortable>
+            <template #body="{ data: { tier, ships } }: { data: ClassData }">
+                <div flex="~ items-center">
+                    <span v-if="tier">T{{ tier }}</span>
+                    <prime-avatar-group m="l-auto">
+                        <prime-avatar
+                            v-for="{ additional } in ships.value.slice(0, ships.value.length > 7 ? 6 : 7)"
+                            :image="additional.icon"
+                            shape="circle"
+                        />
+                        <prime-avatar
+                            v-if="ships.value.length > 7"
+                            p="r-1px"
+                            text="xs slate"
+                            :label="`+${ships.value.length - 6}`"
+                            shape="circle"
+                        />
+                    </prime-avatar-group>
+                </div>
+            </template>
+        </prime-column>
+        <template #expansion="props">
+            <prime-data-table
+                m="b-4"
+                :value="props.data.ships.value"
+                data-key="item.id"
+                selection-mode="multiple"
+                v-model:selection="selectedShips"
+            >
+                <prime-column header-class="w-0" body-class="pr-0">
+                    <template #body="{ data }">
+                        <rarity-icon
+                            size="14"
+                            :icon="data.additional.icon"
+                            :rarity="data.additional.rarity"
+                        />
+                    </template>
+                </prime-column>
+                <prime-column header="舰船" header-style="width: 33%">
+                    <template #body="{ data }">
+                        <span>{{ data.additional.name }}</span>
+                    </template>
+                </prime-column>
+                <prime-column header="获得">
+                    <template #body="{ data }">
+                        <technology-cell phase="get" v-bind="data" @toggle="toggle"/>
+                    </template>
+                </prime-column>
+                <prime-column header="LV.120">
+                    <template #body="{ data }">
+                        <technology-cell phase="level" v-bind="data" @toggle="toggle"/>
+                    </template>
+                </prime-column>
+                <prime-column header="满星" header-style="width: 10%;">
+                    <template #body="{ data }">
+                        <technology-cell phase="upgrage" v-bind="data" @toggle="toggle"/>
+                    </template>
+                </prime-column>
+            </prime-data-table>
+        </template>
+    </prime-data-table>
 </template>
