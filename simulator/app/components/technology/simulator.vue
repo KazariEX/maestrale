@@ -209,6 +209,7 @@
                             size="14"
                             :icon="data.additional.icon"
                             :rarity="data.additional.rarity"
+                            :meta="props.data.nationality === Nationality.META"
                         />
                     </template>
                 </prime-column>
