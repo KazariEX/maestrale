@@ -45,8 +45,8 @@ export const useTechnologyStore = defineStore("technology", () => {
             if (item.get) {
                 point += template.pt_get;
             }
-            if (item.upgrage) {
-                point += template.pt_upgrage;
+            if (item.upgrade) {
+                point += template.pt_upgrade;
             }
             if (item.level) {
                 point += template.pt_level;
@@ -194,7 +194,7 @@ function createAchieveItems(): AchieveItem[] {
     return ids.map((id) => ({
         id,
         get: true,
-        upgrage: true,
+        upgrade: true,
         level: true,
     }));
 }

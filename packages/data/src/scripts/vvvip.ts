@@ -1,6 +1,7 @@
 export interface VVVIP {
     folder: string;
     props: string[];
+    typofix?: Record<string, string>;
 }
 
 export const vvvip: Record<string, VVVIP> = {
@@ -83,6 +84,9 @@ export const vvvip: Record<string, VVVIP> = {
             "pt_level",
             "pt_upgrage",
         ],
+        typofix: {
+            pt_upgrage: "pt_upgrade",
+        },
     },
     fleet_tech_template: {
         folder: "ShareCfg",

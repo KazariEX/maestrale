@@ -2,12 +2,12 @@ import type { ShareCfg, ShipType } from "maestrale";
 
 export type TechnologyMode = "controller" | "simulator";
 
-export type AchievePhase = "get" | "upgrage" | "level";
+export type AchievePhase = "get" | "upgrade" | "level";
 
 export interface AchieveItem {
     id: number;
     get: boolean;
-    upgrage: boolean;
+    upgrade: boolean;
     level: boolean;
 }
 

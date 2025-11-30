@@ -34,10 +34,7 @@ if (text !== version) {
 }
 
 // 数据生成
-await Promise.all(Object.entries(vvvip).map(([key, { folder, props }]) => pick(key, {
-    folder,
-    props,
-})));
+await Promise.all(Object.entries(vvvip).map(([key, vvvip]) => pick(key, vvvip)));
 
 // 数据更新
 function updateData() {
@@ -61,7 +58,7 @@ function updateData() {
 }
 
 // 属性过滤
-async function pick(filename: string, { folder, props }: VVVIP) {
+async function pick(filename: string, { folder, props, typofix }: VVVIP) {
     if (!props.length) {
         return;
     }
@@ -80,7 +77,8 @@ async function pick(filename: string, { folder, props }: VVVIP) {
         data[id] = {};
         for (const key of props) {
             if (key in json[id]) {
-                data[id][key] = json[id][key];
+                const fixedKey = typofix?.[key] ?? key;
+                data[id][fixedKey] = json[id][key];
             }
         }
     }

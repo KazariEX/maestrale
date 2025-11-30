@@ -15,7 +15,7 @@
     }>();
 
     const shipTypes = computed(() => {
-        if (phase === "upgrage") {
+        if (phase === "upgrade") {
             return [];
         }
         return additional.template[`add_${phase}_shiptype`]
@@ -24,7 +24,7 @@
     });
 
     const attr = computed(() => {
-        if (phase === "upgrage") {
+        if (phase === "upgrade") {
             return;
         }
         const { name } = ShareCfg.attribute_info_by_type[additional.template[`add_${phase}_attr`]]!;
@@ -32,7 +32,7 @@
     });
 
     const value = computed(() => {
-        if (phase === "upgrage") {
+        if (phase === "upgrade") {
             return;
         }
         return additional.template[`add_${phase}_value`];

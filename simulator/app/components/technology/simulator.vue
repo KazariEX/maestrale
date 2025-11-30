@@ -118,7 +118,7 @@
             item[phase] = !value;
             if (phase === "get") {
                 if (value) {
-                    item.upgrage = false;
+                    item.upgrade = false;
                     item.level = false;
                 }
             }
@@ -229,7 +229,7 @@
                 </prime-column>
                 <prime-column header="满星" header-style="width: 10%;">
                     <template #body="{ data }">
-                        <technology-cell phase="upgrage" v-bind="data" @toggle="toggle"/>
+                        <technology-cell phase="upgrade" v-bind="data" @toggle="toggle"/>
                     </template>
                 </prime-column>
             </prime-data-table>
