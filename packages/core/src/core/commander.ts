@@ -1,6 +1,6 @@
 import { type Attributes, ShareCfg } from "@maestrale/data";
 import { computed, ref, type Ref, shallowReactive } from "@vue/reactivity";
-import { entries } from "../utils";
+import { objectKeys } from "../utils";
 import { createAttributes } from "./attributes";
 
 export class Commander {
@@ -68,7 +68,7 @@ export class Commander {
     // 百分比加成
     attrRates = computed(() => {
         const attrs = createAttributes();
-        for (const [key] of entries(attrs)) {
+        for (const key of objectKeys(attrs)) {
             const coefficient = getCoefficient(key);
             const efficiency =
                 this.support.value * coefficient[0] +

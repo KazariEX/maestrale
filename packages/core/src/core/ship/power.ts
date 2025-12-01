@@ -1,14 +1,14 @@
 import { computed } from "@vue/reactivity";
-import { entries } from "../utils";
-import { createAttributes } from "./attributes";
-import type { Ship } from "./ship";
+import { objectKeys } from "../../utils";
+import { createAttributes } from "../attributes";
+import type { Ship } from "./index";
 
 export function usePower(ship: Ship) {
     // 合计属性战力
     const attrsPower = computed(() => {
         const attrs = createAttributes();
 
-        for (const [key] of entries(attrs)) {
+        for (const key of objectKeys(attrs)) {
             const baseAttr = Math.floor(ship[key].value);
             const equipAttr = ship.equipAttrs.value[key];
             const techAttr = ship.techAttrs.value[key];
@@ -60,11 +60,7 @@ export function usePower(ship: Ship) {
 
     // 综合战力
     const power = computed(() => {
-        return Math.floor(
-            attrsPower.value +
-            equipPower.value +
-            transPower.value,
-        );
+        return Math.floor(attrsPower.value + equipPower.value + transPower.value);
     });
 
     return power;
