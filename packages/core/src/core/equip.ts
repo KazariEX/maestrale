@@ -69,7 +69,7 @@ export class Equip {
             const valueKey = `value_${i}` as const;
             if (attrKey in this.curStat.value) {
                 const attr = this.curStat.value[attrKey];
-                const value = Number(this.curStat.value[valueKey]);
+                const value = this.curStat.value[valueKey];
                 res[attr] = value;
             }
         }

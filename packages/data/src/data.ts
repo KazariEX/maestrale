@@ -112,7 +112,7 @@ export namespace ShareCfg {
         rarity: number;
         tech: number;
         type: EquipType;
-        value_1: string;
+        value_1: number;
         value_2: number;
         value_3: number;
         weapon_id: number[];

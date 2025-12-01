@@ -2,6 +2,7 @@ export interface VVVIP {
     folder: string;
     props: string[];
     typofix?: Record<string, string>;
+    transform?: Record<string, (value: any) => any>;
 }
 
 export const vvvip: Record<string, VVVIP> = {
@@ -51,6 +52,9 @@ export const vvvip: Record<string, VVVIP> = {
             "value_3",
             "weapon_id",
         ],
+        transform: {
+            value_1: Number,
+        },
     },
     equip_data_template: {
         folder: "sharecfgdata",

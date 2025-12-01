@@ -58,7 +58,7 @@ function updateData() {
 }
 
 // 属性过滤
-async function pick(filename: string, { folder, props, typofix }: VVVIP) {
+async function pick(filename: string, { folder, props, typofix, transform }: VVVIP) {
     if (!props.length) {
         return;
     }
@@ -78,7 +78,8 @@ async function pick(filename: string, { folder, props, typofix }: VVVIP) {
         for (const key of props) {
             if (key in json[id]) {
                 const fixedKey = typofix?.[key] ?? key;
-                data[id][fixedKey] = json[id][key];
+                const value = json[id][key];
+                data[id][fixedKey] = transform?.[key]?.(value) ?? value;
             }
         }
     }
