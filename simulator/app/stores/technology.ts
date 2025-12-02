@@ -185,14 +185,8 @@ export const useTechnologyStore = defineStore("technology", () => {
 });
 
 function createAchieveItems(): AchieveItem[] {
-    const ids: number[] = [];
-    for (const id of getBaseShipIds()) {
-        if (id in ShareCfg.fleet_tech_ship_template) {
-            ids.push(id);
-        }
-    }
-    return ids.map((id) => ({
-        id,
+    return Object.keys(ShareCfg.fleet_tech_ship_template).map((id) => ({
+        id: Number(id),
         get: true,
         upgrade: true,
         level: true,

@@ -1,5 +1,6 @@
 export * from "./core/attributes";
 export * from "./core/commander";
+export * from "./core/commander/ability";
 export * from "./core/equip";
 export * from "./core/factory";
 export * from "./core/fleet";

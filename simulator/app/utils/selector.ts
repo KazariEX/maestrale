@@ -1,4 +1,4 @@
-import { type Commander, type EquipType, ShareCfg, type ShipType } from "maestrale";
+import { Commander, Equip, type EquipType, ShareCfg, Ship, type ShipType, SPWeapon } from "maestrale";
 import { DialogSelector } from "#components";
 import { equipTypeOptions } from "~/data/constants/equip-type";
 import { type FleetType, fleetTypeMap } from "~/data/constants/fleet";
@@ -17,45 +17,12 @@ export function createSelectorOptions<K extends number, V>(table: Record<K, V>) 
     }));
 }
 
-export function getBaseShipIds() {
-    const ids: number[] = [];
-    for (const id in ShareCfg.ship_data_statistics) {
-        if (id.endsWith("1") && !id.startsWith("900")) {
-            ids.push(Number(id.slice(0, -1)));
-        }
-    }
-    return ids;
-}
-
-function getBaseEquipIds() {
-    const ids: number[] = [];
-    for (const id in ShareCfg.equip_data_template) {
-        const template = ShareCfg.equip_data_template[id]!;
-        if (template.prev === 0) {
-            ids.push(Number(id));
-        }
-    }
-    return ids;
-}
-
-function getBaseSPWeaponIds() {
-    const ids: number[] = [];
-    for (const id in ShareCfg.spweapon_data_statistics) {
-        const statistics = ShareCfg.spweapon_data_statistics[id]!;
-        if ("name" in statistics) {
-            ids.push(Number(id));
-        }
-    }
-    return ids;
-}
-
 export function selectShip(fleetType: FleetType, canClear: boolean) {
-    const ids = getBaseShipIds();
     const data = createSelectorData<ShareCfg.ShipDataStatistics & {
         types: ShipType[];
     }>();
 
-    for (const id of ids) {
+    for (const id of Ship.ids) {
         const statistics = ShareCfg.ship_data_statistics[id + "1"]!;
         const { rarity, type, nationality, name } = statistics;
 
@@ -101,10 +68,9 @@ export function selectShip(fleetType: FleetType, canClear: boolean) {
 }
 
 export function selectEquip(allowTypes: EquipType[], shipType: ShipType, canClear: boolean) {
-    const ids = getBaseEquipIds();
     const data = createSelectorData<ShareCfg.EquipDataStatistics>();
 
-    for (const id of ids) {
+    for (const id of Equip.ids) {
         const statistics = ShareCfg.equip_data_statistics[id]!;
         const template = ShareCfg.equip_data_template[id]!;
         const { name, icon, rarity, type, nationality } = statistics;
@@ -145,10 +111,9 @@ export function selectEquip(allowTypes: EquipType[], shipType: ShipType, canClea
 }
 
 export function selectSPWeapon(shipId: number, shipType: ShipType, canClear: boolean) {
-    const ids = getBaseSPWeaponIds();
     const data = createSelectorData<ShareCfg.SPWeaponDataStatistics>();
 
-    for (const id of ids) {
+    for (const id of SPWeapon.ids) {
         const statistics = ShareCfg.spweapon_data_statistics[id]!;
         const { name, icon, rarity, type, unique } = statistics;
         if (
@@ -188,10 +153,9 @@ export function selectSPWeapon(shipId: number, shipType: ShipType, canClear: boo
 }
 
 export function selectCommander() {
-    const ids = Object.keys(ShareCfg.commander_data_template);
     const data = createSelectorData<ShareCfg.CommanderDataTemplate>();
 
-    for (const id of ids) {
+    for (const id of Commander.ids) {
         const template = ShareCfg.commander_data_template[id]!;
         const { name, painting, rarity, nationality } = template;
         data.push({

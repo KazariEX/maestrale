@@ -1,7 +1,7 @@
 import { existsSync } from "node:fs";
 import { join, resolve } from "node:path";
 import consola from "consola";
-import { createEquip, createShip, createSPWeapon, ShareCfg, useTechnology } from "../packages/core/src";
+import { createEquip, createShip, createSPWeapon, Equip, ShareCfg, Ship, SPWeapon, useTechnology } from "../packages/core/src";
 
 interface Item {
     asset: string;
@@ -18,15 +18,9 @@ checkEquip();
 checkSPWeapon();
 
 function checkShip() {
-    const ids = new Set(
-        Object.keys(ShareCfg.ship_data_statistics)
-        .map((id) => id.slice(0, -1))
-        .filter((id) => !id.startsWith("900")),
-    );
-
     const items: Item[] = [];
-    for (const id of ids) {
-        const ship = createShip(Number(id), { technology });
+    for (const id of Ship.ids) {
+        const ship = createShip(id, { technology });
         if (!ship) {
             continue;
         }
@@ -44,13 +38,9 @@ function checkShip() {
 }
 
 function checkEquip() {
-    const ids = Object.entries(ShareCfg.equip_data_template)
-        .filter(([, item]) => item.prev === 0)
-        .map(([id]) => id);
-
     const items: Item[] = [];
-    for (const id of ids) {
-        const equip = createEquip(Number(id));
+    for (const id of Equip.ids) {
+        const equip = createEquip(id);
         if (!equip) {
             continue;
         }
@@ -68,13 +58,9 @@ function checkEquip() {
 }
 
 function checkSPWeapon() {
-    const ids = Object.entries(ShareCfg.spweapon_data_statistics)
-        .filter(([, item]) => item.name)
-        .map(([id]) => id);
-
     const items: Item[] = [];
-    for (const id of ids) {
-        const weapon = createSPWeapon(Number(id));
+    for (const id of SPWeapon.ids) {
+        const weapon = createSPWeapon(id);
         if (!weapon) {
             continue;
         }

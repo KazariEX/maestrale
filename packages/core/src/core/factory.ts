@@ -7,32 +7,44 @@ import { SPWeapon } from "./spweapon";
 import type { Favor } from "../types";
 import type { ITechnology } from "./technology";
 
-export function createCommander(id: number) {
-    if (!(id in ShareCfg.commander_data_template)) {
-        return null;
+declare module "maestrale" {
+    namespace Ship {
+        const ids: number[];
     }
-    return new Commander(id);
+    namespace Equip {
+        const ids: number[];
+    }
+    namespace SPWeapon {
+        const ids: number[];
+    }
+    namespace Commander {
+        const ids: number[];
+    }
 }
 
-export function createCommanderAbility(id: number) {
-    if (!(id in ShareCfg.commander_ability_template)) {
-        return null;
-    }
-    return new CommanderAbility(id);
-}
+defineIds(Ship, () => (
+    Object.keys(ShareCfg.ship_data_statistics)
+        .filter((id) => id.endsWith("1") && !id.startsWith("900"))
+        .map((id) => Number(id.slice(0, -1)))
+));
 
-export function createEquip(id: number) {
-    if (id % 10 !== 0 || !(id in ShareCfg.equip_data_template)) {
-        return null;
-    }
-    return new Equip(id);
-}
+defineIds(Equip, () => (
+    Object.keys(ShareCfg.equip_data_template).map(Number).filter((id) => id % 20 === 0)
+));
 
-export function createSPWeapon(id: number) {
-    if (id % 20 !== 0 || !(id in ShareCfg.spweapon_data_statistics)) {
-        return null;
-    }
-    return new SPWeapon(id);
+defineIds(SPWeapon, () => (
+    Object.keys(ShareCfg.spweapon_data_statistics).map(Number).filter((id) => id % 20 === 0)
+));
+
+defineIds(Commander, () => (
+    Object.keys(ShareCfg.commander_data_template).map(Number)
+));
+
+function defineIds(ctor: object, getter: () => number[]) {
+    let cache: number[];
+    Object.defineProperty(ctor, "ids", {
+        get: () => cache ??= getter(),
+    });
 }
 
 export interface CreateShipOptions {
@@ -85,6 +97,34 @@ export function createShip(id: number, options: CreateShipOptions) {
     ship.spweapon.value = normalizeSPWeapon(spweapon);
 
     return ship;
+}
+
+export function createEquip(id: number) {
+    if (id % 20 !== 0 || !(id in ShareCfg.equip_data_template)) {
+        return null;
+    }
+    return new Equip(id);
+}
+
+export function createSPWeapon(id: number) {
+    if (id % 20 !== 0 || !(id in ShareCfg.spweapon_data_statistics)) {
+        return null;
+    }
+    return new SPWeapon(id);
+}
+
+export function createCommander(id: number) {
+    if (!(id in ShareCfg.commander_data_template)) {
+        return null;
+    }
+    return new Commander(id);
+}
+
+export function createCommanderAbility(id: number) {
+    if (!(id in ShareCfg.commander_ability_template)) {
+        return null;
+    }
+    return new CommanderAbility(id);
 }
 
 function normalizeEquip(equip: Equip | number | null) {
