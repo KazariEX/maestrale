@@ -29,7 +29,7 @@
 <template>
     <div
         position="relative"
-        size="13"
+        size="full"
         cursor="pointer"
         @click="select"
         @wheel="adjustLevel"

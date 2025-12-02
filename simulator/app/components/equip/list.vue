@@ -31,8 +31,9 @@
         </li>
         <li
             size="16"
-            m="l-17px"
+            m="l-4"
             p="1.5"
+            bg="center no-repeat contain"
             :style="spweaponStyle"
         >
             <spweapon-item
