@@ -7,20 +7,19 @@ import type { CommanderAbility } from "./ability";
 export class Commander {
     private template: ShareCfg.CommanderDataTemplate;
 
-    level: Ref<number>;
-    name: Ref<string>;
-
     constructor(
         public id: number,
     ) {
         this.template = ShareCfg.commander_data_template[id];
-
-        // 等级
         this.level = ref(this.maxLevel);
-
-        // 名称
         this.name = ref(this.originalName);
     }
+
+    // 等级
+    level: Ref<number>;
+
+    // 名称
+    name: Ref<string>;
 
     // 原始名称
     get originalName() {
@@ -69,14 +68,14 @@ export class Commander {
     // 百分比加成
     attrRates = computed(() => {
         const attrs = createAttributes();
-        for (const key of objectKeys(attrs)) {
-            const coefficient = getCoefficient(key);
+        for (const attr of objectKeys(attrs)) {
+            const coefficient = getCoefficient(attr);
             const efficiency =
                 this.support.value * coefficient[0] +
                 this.command.value * coefficient[1] +
                 this.tactic.value * coefficient[2];
             const percent = 6 * efficiency / (250 + efficiency) / 100;
-            attrs[key] = Math.round(percent * 1000) / 1000;
+            attrs[attr] = Math.round(percent * 1000) / 1000;
         }
         return attrs;
     });
@@ -86,8 +85,8 @@ export class Commander {
 }
 
 // 获取加成系数
-function getCoefficient(attr: keyof Attributes) {
-    switch (attr) {
+function getCoefficient(name: keyof Attributes) {
+    switch (name) {
         case "durability":
             return [0.9, 0, 0];
         case "cannon":

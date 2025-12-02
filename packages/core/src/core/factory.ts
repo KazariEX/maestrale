@@ -68,7 +68,7 @@ export function createShip(id: number, options: CreateShipOptions) {
 
     // 突破
     if (breakout !== void 0) {
-        ship.breakout.value = Math.min(breakout, ship.maxBreakout);
+        ship.breakout.value = Math.min(breakout, ship.breakoutLimit);
     }
 
     // 好感

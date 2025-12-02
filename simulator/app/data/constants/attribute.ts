@@ -10,7 +10,7 @@ export const attributeMap = {
     speed: "航速",
     luck: "幸运",
     antisub: "反潜",
-    oxy_max: "氧气",
+    oxy: "氧气",
     ammo: "弹药量",
     oil: "消耗",
 };

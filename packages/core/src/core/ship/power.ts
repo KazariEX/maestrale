@@ -8,12 +8,8 @@ export function usePower(ship: Ship) {
     const attrsPower = computed(() => {
         const attrs = createAttributes();
 
-        for (const key of objectKeys(attrs)) {
-            const baseAttr = Math.floor(ship[key].value);
-            const equipAttr = ship.equipAttrs.value[key];
-            const techAttr = ship.techAttrs.value[key];
-
-            attrs[key] = baseAttr + equipAttr + techAttr;
+        for (const attr of objectKeys(attrs)) {
+            attrs[attr] = Math.floor(ship[attr].value) + ship.equipAttrs.value[attr] + ship.techAttrs.value[attr];
         }
 
         return (

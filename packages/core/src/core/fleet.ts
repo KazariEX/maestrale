@@ -4,15 +4,15 @@ import type { Commander } from "./commander";
 import type { Ship } from "./ship";
 
 export abstract class Fleet {
-    name: Ref<string>;
-    abstract ships: ComputedRef<(Ship | null)[]>;
-
-    constructor(
-        name: string,
-    ) {
-        // 名称
+    constructor(name: string) {
         this.name = ref(name);
     }
+
+    // 名称
+    name: Ref<string>;
+
+    // 舰船
+    abstract ships: ComputedRef<(Ship | null)[]>;
 
     // 指挥喵
     commander1 = shallowRef<Commander | null>(null);
@@ -24,9 +24,7 @@ export abstract class Fleet {
 }
 
 export class SurfaceFleet extends Fleet {
-    constructor(
-        name: string,
-    ) {
+    constructor(name: string) {
         super(name);
         track(this);
     }
@@ -40,21 +38,23 @@ export class SurfaceFleet extends Fleet {
         this.vanguard3.value,
     ]);
 
-    // 主力
+    // 主力：旗舰
     main1 = shallowRef<Ship | null>(null);
+    // 主力：僚舰
     main2 = shallowRef<Ship | null>(null);
+    // 主力：僚舰
     main3 = shallowRef<Ship | null>(null);
 
-    // 先锋
+    // 先锋：领舰
     vanguard1 = shallowRef<Ship | null>(null);
+    // 先锋：中位
     vanguard2 = shallowRef<Ship | null>(null);
+    // 先锋：尾舰
     vanguard3 = shallowRef<Ship | null>(null);
 }
 
 export class SubmarineFleet extends Fleet {
-    constructor(
-        name: string,
-    ) {
+    constructor(name: string) {
         super(name);
         track(this);
     }
@@ -65,9 +65,11 @@ export class SubmarineFleet extends Fleet {
         this.submarine3.value,
     ]);
 
-    // 潜艇
+    // 潜艇：旗舰
     submarine1 = shallowRef<Ship | null>(null);
+    // 潜艇：僚舰
     submarine2 = shallowRef<Ship | null>(null);
+    // 潜艇：僚舰
     submarine3 = shallowRef<Ship | null>(null);
 }
 

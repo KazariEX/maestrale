@@ -153,9 +153,7 @@ export function useStrengthenMeta(ship: Ship) {
     // 满强化值
     const maxAttrs = createAttributes();
     for (const attr of ["cannon", "torpedo", "air", "reload"] as const) {
-        const repairList = strengthenConfig[`repair_${attr}`];
-
-        for (const key of repairList) {
+        for (const key of strengthenConfig[`repair_${attr}`]) {
             const [attr, value] = ShareCfg.ship_meta_repair[key].effect_attr;
             maxAttrs[attr] += value;
         }

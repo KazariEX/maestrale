@@ -17,7 +17,6 @@ export interface Transform {
     modernizedId: Ref<number>;
 }
 
-// 改造
 export function useTransform(ship: Ship) {
     const items: Record<string, TransformMatrixItem> = {};
 

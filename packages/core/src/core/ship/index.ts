@@ -12,24 +12,16 @@ import type { SPWeapon } from "../spweapon";
 import type { ITechnology } from "../technology";
 
 export class Ship {
-    breakout: Ref<number>;
-    maxBreakout: number;
-    strengthen: StrengthenGeneral | StrengthenBlueprint;
-    transform?: Transform;
-
     constructor(
         public id: number,
         public technology: ITechnology,
     ) {
-        // 最大可突破数
-        this.maxBreakout = 0;
-
         const baseId = id * 10 + 1;
         const breakoutConfig = baseId in ShareCfg.ship_meta_breakout
             ? ShareCfg.ship_meta_breakout
             : ShareCfg.ship_data_breakout;
         for (let i = baseId; i !== 0;) {
-            this.maxBreakout++;
+            this.breakoutLimit++;
             i = breakoutConfig[i].breakout_id;
         }
 
@@ -42,14 +34,14 @@ export class Ship {
             };
         }
         else if (id in ShareCfg.ship_strengthen_meta) {
-            this.breakout = ref(this.maxBreakout);
+            this.breakout = ref(this.breakoutLimit);
             this.strengthen = {
                 type: StrengthenType.Meta,
                 ...useStrengthenMeta(this),
             };
         }
         else {
-            this.breakout = ref(this.maxBreakout);
+            this.breakout = ref(this.breakoutLimit);
             this.strengthen = {
                 type: StrengthenType.General,
                 ...useStrengthenGeneral(this),
@@ -73,12 +65,23 @@ export class Ship {
         return ShareCfg.ship_skin_template[this.id * 10 + (this.transform?.isModernized.value ? 9 : 0)];
     }
 
-    // 当前 ID
     private curId = computed(() => {
         return this.transform?.isModernized.value
             && this.transform?.modernizedId.value
             || this.id * 10 + this.breakout.value;
     });
+
+    // 突破等级
+    breakout: Ref<number>;
+
+    // 突破上限
+    breakoutLimit = 0;
+
+    // 强化
+    strengthen: StrengthenGeneral | StrengthenBlueprint;
+
+    // 改造
+    transform?: Transform;
 
     // 等级
     level = ref(125);
@@ -92,7 +95,7 @@ export class Ship {
         if (this.transform?.isModernized.value) {
             const suffixes = [".改", "·改"];
             return (
-                name.endsWith(suffixes[0]) || name.endsWith(suffixes[1]) ? name.slice(0, -2) : name
+                suffixes.includes(name.slice(-2)) ? name.slice(0, -2) : name
             ) + suffixes[0];
         }
         else return name;
@@ -125,7 +128,7 @@ export class Ship {
 
     // 星级
     star = computed(() => {
-        return this.maxStar.value - this.maxBreakout + this.breakout.value;
+        return this.maxStar.value - this.breakoutLimit + this.breakout.value;
     });
 
     // 最高星级
@@ -133,21 +136,7 @@ export class Ship {
         return Math.ceil(this.rarity.value / 2) + 3;
     });
 
-    // 获取属性白值
-    private getAttr(index: number, attrName: keyof Attributes) {
-        const favorRate = 1 + (
-            ["speed", "luck"].includes(attrName) ? 0 : getFavorRate(this.favor.value)
-        );
-
-        return (
-            this.curStat.attrs[index] +
-            this.curStat.attrs_growth[index] * (this.level.value - 1) / 1000 +
-            this.strengthen.attrs.value[attrName]
-        ) * favorRate +
-            this.transAttrs.value[attrName];
-    }
-
-    // 获取改造总属性
+    // 改造总属性
     transAttrs = computed(() => {
         const attrs = createAttributes();
 
@@ -164,34 +153,33 @@ export class Ship {
         return attrs;
     });
 
-    // 获取装备总属性（含兵装）
+    // 装备属性
     equipAttrs = computed(() => {
         const attrs = createAttributes();
 
         for (const equip of [...this.equips.value, this.spweapon.value]) {
-            if (equip === null) {
-                continue;
-            }
-            for (const attr of objectKeys(equip.attrs.value)) {
-                attrs[attr] += equip.attrs.value[attr]!;
+            if (equip !== null) {
+                for (const attr of objectKeys(equip.attrs.value)) {
+                    attrs[attr] += equip.attrs.value[attr]!;
+                }
             }
         }
         return attrs;
     });
 
-    // 获取科技总属性
+    // 科技属性
     techAttrs = computed(() => {
         const attrs = createAttributes();
 
-        if (this.breakout.value === this.maxBreakout) {
-            for (const key of objectKeys(attrs)) {
-                attrs[key] += this.technology.get(this.type.value, key);
+        if (this.breakout.value === this.breakoutLimit) {
+            for (const attr of objectKeys(attrs)) {
+                attrs[attr] += this.technology.get(this.type.value, attr);
             }
         }
         return attrs;
     });
 
-    // 获取指挥喵总属性
+    // 指挥喵属性
     commanderAttrs = computed(() => {
         const attrs = createAttributes();
 
@@ -207,11 +195,24 @@ export class Ship {
             ));
 
         for (const effect of effects) {
-            const key = ShareCfg.attribute_info_by_type[effect.key].name;
-            attrs[key] += effect.value;
+            const attr = ShareCfg.attribute_info_by_type[effect.key].name;
+            attrs[attr] += effect.value;
         }
         return attrs;
     });
+
+    private getAttr(index: number, attrName: keyof Attributes) {
+        const favorRate = 1 + (
+            ["speed", "luck"].includes(attrName) ? 0 : getFavorRate(this.favor.value)
+        );
+
+        return (
+            this.curStat.attrs[index] +
+            this.curStat.attrs_growth[index] * (this.level.value - 1) / 1000 +
+            this.strengthen.attrs.value[attrName]
+        ) * favorRate +
+            this.transAttrs.value[attrName];
+    }
 
     // 耐久
     durability = computed(() => {
@@ -269,7 +270,7 @@ export class Ship {
     });
 
     // 氧气
-    oxy_max = computed(() => {
+    oxy = computed(() => {
         return this.curStat.oxy_max;
     });
 
@@ -288,14 +289,14 @@ export class Ship {
     power = usePower(this);
 
     // 可携带装备类型
-    equipSlotTypes = computed(() => {
+    equipTypes = computed(() => {
         return [
             this.curTemp.equip_1,
             this.curTemp.equip_2,
             this.curTemp.equip_3,
             this.curTemp.equip_4,
             this.curTemp.equip_5,
-        ] as const;
+        ];
     });
 
     // 装备

@@ -2,23 +2,19 @@ import { type Attributes, ShareCfg } from "@maestrale/data";
 import { computed, ref, type Ref } from "@vue/reactivity";
 
 export class SPWeapon {
-    private statistics: ShareCfg.SPWeaponDataStatistics[];
-
-    level: Ref<number>;
+    private statistics: ShareCfg.SPWeaponDataStatistics[] = [];
 
     constructor(
         public id: number,
     ) {
-        this.statistics = [];
         for (let i = id; i !== 0;) {
             const stat = ShareCfg.spweapon_data_statistics[i];
             this.statistics.push(stat);
-
-            if (stat.next - i > 1) break;
-            i = stat.next;
+            if (stat.next - i === 1) {
+                i = stat.next;
+            }
+            else break;
         }
-
-        // 等级
         this.level = ref(this.maxLevel);
     }
 
@@ -28,6 +24,9 @@ export class SPWeapon {
             ...this.statistics[this.level.value],
         };
     });
+
+    // 等级
+    level: Ref<number>;
 
     // 名称
     get name() {

@@ -32,7 +32,7 @@
         <ship-status-item attr="air"/>
         <ship-status-item attr="hit"/>
         <template v-if="isSubmarine">
-            <ship-status-item attr="oxy_max"/>
+            <ship-status-item attr="oxy" icon="oxy_max"/>
             <ship-status-item attr="ammo"/>
         </template>
         <template v-else>

@@ -2,16 +2,12 @@ import { type Attributes, ShareCfg } from "@maestrale/data";
 import { computed, ref, type Ref } from "@vue/reactivity";
 
 export class Equip {
-    private statistics: ShareCfg.EquipDataStatistics[];
-    private templates: ShareCfg.EquipDataTemplate[];
-
-    level: Ref<number>;
+    private statistics: ShareCfg.EquipDataStatistics[] = [];
+    private templates: ShareCfg.EquipDataTemplate[] = [];
 
     constructor(
         public id: number,
     ) {
-        this.statistics = [];
-        this.templates = [];
         for (let i = id; i !== 0;) {
             const stat = ShareCfg.equip_data_statistics[i];
             const temp = ShareCfg.equip_data_template[i];
@@ -19,8 +15,6 @@ export class Equip {
             this.templates.push(temp);
             i = temp.next;
         }
-
-        // 等级
         this.level = ref(this.maxLevel);
     }
 
@@ -30,6 +24,9 @@ export class Equip {
             ...this.statistics[this.level.value],
         };
     });
+
+    // 等级
+    level: Ref<number>;
 
     // 名称
     get name() {

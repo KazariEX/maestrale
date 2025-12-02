@@ -125,10 +125,10 @@ export const useTechnologyStore = defineStore("technology", () => {
         for (const type of Object.keys(shipTypeTechMap).map<ShipType>(Number)) {
             const nationalityAttrs = computed(() => {
                 const attrs = createAttributes();
-                for (const [types, attr, value] of fleetAdds.value) {
+                for (const [types, key, value] of fleetAdds.value) {
                     if (types.includes(type)) {
-                        const key = ShareCfg.attribute_info_by_type[attr]!.name;
-                        attrs[key] += value;
+                        const attr = ShareCfg.attribute_info_by_type[key]!.name;
+                        attrs[attr] += value;
                     }
                 }
                 return attrs;
@@ -140,14 +140,14 @@ export const useTechnologyStore = defineStore("technology", () => {
                     const { template } = getAdditional(item);
                     if (template.add_get_shiptype.includes(type)) {
                         if (item.get) {
-                            const key = ShareCfg.attribute_info_by_type[template.add_get_attr]!.name;
-                            attrs[key] += template.add_get_value;
+                            const attr = ShareCfg.attribute_info_by_type[template.add_get_attr]!.name;
+                            attrs[attr] += template.add_get_value;
                         }
                     }
                     if (template.add_level_shiptype.includes(type)) {
                         if (item.level) {
-                            const key = ShareCfg.attribute_info_by_type[template.add_level_attr]!.name;
-                            attrs[key] += template.add_level_value;
+                            const attr = ShareCfg.attribute_info_by_type[template.add_level_attr]!.name;
+                            attrs[attr] += template.add_level_value;
                         }
                     }
                 }
@@ -158,9 +158,9 @@ export const useTechnologyStore = defineStore("technology", () => {
                 const attrs = {
                     ...nationalityAttrs.value,
                 };
-                for (const key in attrs) {
+                for (const attr in attrs) {
                     // @ts-expect-error 类型收缩
-                    attrs[key] += archivedAttrs.value[key];
+                    attrs[attr] += archivedAttrs.value[attr];
                 }
                 return attrs;
             });
