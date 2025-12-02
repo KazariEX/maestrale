@@ -1,7 +1,8 @@
 import { type Attributes, ShareCfg } from "@maestrale/data";
 import { computed, ref, type Ref, shallowReactive } from "@vue/reactivity";
-import { objectKeys } from "../utils";
-import { createAttributes } from "./attributes";
+import { objectKeys } from "../../utils";
+import { createAttributes } from "../attributes";
+import type { CommanderAbility } from "./ability";
 
 export class Commander {
     private template: ShareCfg.CommanderDataTemplate;
@@ -84,13 +85,6 @@ export class Commander {
     abilities = shallowReactive<(CommanderAbility | undefined)[]>([]);
 }
 
-export function createCommander(id: number) {
-    if (!(id in ShareCfg.commander_data_template)) {
-        return null;
-    }
-    return new Commander(id);
-}
-
 // 获取加成系数
 function getCoefficient(attr: keyof Attributes) {
     switch (attr) {
@@ -109,59 +103,4 @@ function getCoefficient(attr: keyof Attributes) {
         default:
             return [0, 0, 0];
     }
-}
-
-export interface CommanderAbilityEffect {
-    type: number;
-    nationalities: number[];
-    shipTypes: number[];
-    key: number;
-    value: number;
-}
-
-export class CommanderAbility {
-    private template: ShareCfg.CommanderAbilityTemplate;
-
-    effects: CommanderAbilityEffect[];
-
-    constructor(
-        public id: number,
-    ) {
-        this.template = ShareCfg.commander_ability_template[id];
-
-        this.effects = this.template.add.map(([type, nationalities, shipTypes, key, value]) => ({
-            type,
-            nationalities,
-            shipTypes,
-            key,
-            value,
-        }));
-    }
-
-    // 名称
-    get name() {
-        return this.template.name;
-    }
-
-    // 描述
-    get desc() {
-        return this.template.desc;
-    }
-
-    // 图标
-    get icon() {
-        return this.template.icon;
-    }
-
-    // 权重
-    get worth() {
-        return this.template.worth;
-    }
-}
-
-export function createCommanderAbility(id: number) {
-    if (!(id in ShareCfg.commander_ability_template)) {
-        return null;
-    }
-    return new CommanderAbility(id);
 }

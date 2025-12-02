@@ -66,10 +66,3 @@ export class SPWeapon {
         return res;
     });
 }
-
-export function createSPWeapon(id: number) {
-    if (id % 10 !== 0 || !(id in ShareCfg.spweapon_data_statistics)) {
-        return null;
-    }
-    return new SPWeapon(id);
-}

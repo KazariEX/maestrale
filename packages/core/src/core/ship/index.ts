@@ -3,12 +3,12 @@ import { computed, ref, type Ref, shallowRef } from "@vue/reactivity";
 import { Favor, StrengthenType } from "../../types";
 import { notNullish, objectKeys, ShipFleetKey } from "../../utils";
 import { createAttributes } from "../attributes";
-import { createEquip, type Equip } from "../equip";
-import { createSPWeapon, type SPWeapon } from "../spweapon";
 import { usePower } from "./power";
 import { type StrengthenBlueprint, type StrengthenGeneral, useStrengthenBlueprint, useStrengthenGeneral, useStrengthenMeta } from "./strengthen";
 import { type Transform, useTransform } from "./transform";
+import type { Equip } from "../equip";
 import type { Fleet } from "../fleet";
+import type { SPWeapon } from "../spweapon";
 import type { ITechnology } from "../technology";
 
 export class Ship {
@@ -318,66 +318,6 @@ export class Ship {
     // 所在编队
     [ShipFleetKey] = shallowRef<Fleet | null>(null);
     fleet = computed(() => this[ShipFleetKey].value);
-}
-
-export interface CreateShipOptions {
-    level?: number;
-    breakout?: number;
-    favor?: Favor;
-    equips?: (Equip | number | null)[];
-    spweapon?: SPWeapon | number | null;
-    technology: ITechnology;
-}
-
-export function createShip(id: number, options: CreateShipOptions) {
-    if (!(id + "1" in ShareCfg.ship_data_statistics)) {
-        return null;
-    }
-
-    const {
-        level,
-        breakout,
-        favor,
-        equips = [],
-        spweapon = null,
-        technology,
-    } = options;
-
-    // 舰船
-    const ship = new Ship(id, technology);
-
-    // 等级
-    if (level !== void 0) {
-        ship.level.value = level;
-    }
-
-    // 突破
-    if (breakout !== void 0) {
-        ship.breakout.value = Math.min(breakout, ship.maxBreakout);
-    }
-
-    // 好感
-    if (favor !== void 0) {
-        ship.favor.value = favor;
-    }
-
-    // 装备
-    for (const i of [1, 2, 3, 4, 5] as const) {
-        ship[`equip${i}`].value = normalizeEquip(equips[i] ?? null);
-    }
-
-    // 兵装
-    ship.spweapon.value = normalizeSPWeapon(spweapon);
-
-    return ship;
-}
-
-function normalizeEquip(equip: Equip | number | null) {
-    return typeof equip === "number" ? createEquip(equip) : equip;
-}
-
-function normalizeSPWeapon(spweapon: SPWeapon | number | null) {
-    return typeof spweapon === "number" ? createSPWeapon(spweapon) : spweapon;
 }
 
 // 获取好感加成

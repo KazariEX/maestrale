@@ -1,9 +1,11 @@
 import { isRef, toRaw, toValue } from "@vue/reactivity";
-import { Commander, CommanderAbility, createCommander, createCommanderAbility } from "../core/commander";
-import { createEquip, Equip } from "../core/equip";
+import { Commander } from "../core/commander";
+import { CommanderAbility } from "../core/commander/ability";
+import { Equip } from "../core/equip";
+import { createCommander, createCommanderAbility, createEquip, createShip, createSPWeapon } from "../core/factory";
 import { createFleet, SubmarineFleet, SurfaceFleet } from "../core/fleet";
-import { createShip, Ship } from "../core/ship";
-import { createSPWeapon, SPWeapon } from "../core/spweapon";
+import { Ship } from "../core/ship";
+import { SPWeapon } from "../core/spweapon";
 import { createClone } from "./clone";
 import { normalizePath, parsePath } from "./utils";
 import type { ITechnology } from "../core/technology";
