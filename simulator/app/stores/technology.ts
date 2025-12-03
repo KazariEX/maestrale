@@ -1,10 +1,10 @@
-import { type Attributes, createAttributes, createTechnologyAttributes, type Nationality, ShareCfg, type ShipType, type TechnologyAttributes } from "maestrale";
-import { shipTypeTechMap } from "~/data/constants/ship-type";
+import { type Attributes, createAttributes, createTechnologyAttributes, type Nationality, ShareCfg, ShipType } from "maestrale";
+import { objectKeys } from "maestrale/utils";
 import type { AchieveAdditional, AchieveItem, TechnologyMode } from "~/types/technology";
 
 export const useTechnologyStore = defineStore("technology", () => {
     const mode = ref<TechnologyMode>("controller");
-    const currentShipType = ref<ShipType>(1);
+    const currentShipType = ref(ShipType.Destroyer);
 
     const achieveItems = ref(createAchieveItems());
     const achieveAdditionals = new WeakMap<object, AchieveAdditional>();
@@ -82,7 +82,6 @@ export const useTechnologyStore = defineStore("technology", () => {
         mode,
         currentShipType,
         achieveItems,
-        achieveAdditionals,
         nationalityMaxLevels,
         nationalityLevels,
         maxAttrs,
@@ -95,20 +94,7 @@ export const useTechnologyStore = defineStore("technology", () => {
     };
 
     function useSimulatedAttrs() {
-        const attrs = {
-            get 20() {
-                return this[1];
-            },
-            get 21() {
-                return this[1];
-            },
-            get 23() {
-                return this[22];
-            },
-            get 24() {
-                return this[22];
-            },
-        } as Record<ShipType, TechnologyAttributes>;
+        const attrs = createTechnologyAttributes();
 
         const fleetAdds = computed(() => {
             const result: ShareCfg.FleetTechTemplate["add"] = [];
@@ -122,7 +108,11 @@ export const useTechnologyStore = defineStore("technology", () => {
             return result;
         });
 
-        for (const type of Object.keys(shipTypeTechMap).map<ShipType>(Number)) {
+        for (const type of objectKeys(attrs).map<ShipType>(Number)) {
+            if (Object.getOwnPropertyDescriptor(attrs, type)?.get) {
+                continue;
+            }
+
             const nationalityAttrs = computed(() => {
                 const attrs = createAttributes();
                 for (const [types, key, value] of fleetAdds.value) {
@@ -158,8 +148,7 @@ export const useTechnologyStore = defineStore("technology", () => {
                 const attrs = {
                     ...nationalityAttrs.value,
                 };
-                for (const attr in attrs) {
-                    // @ts-expect-error 类型收缩
+                for (const attr of objectKeys(attrs)) {
                     attrs[attr] += archivedAttrs.value[attr];
                 }
                 return attrs;
