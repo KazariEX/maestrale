@@ -2,15 +2,12 @@ import type { Armor, Attributes, EquipType, Nationality, ShipType, TechnologyAtt
 
 async function loadData(name: keyof typeof ShareCfg & `${string}_${string}`) {
     const data = await import(`../generated/${name}.json`);
-    return [
-        name,
-        data.default,
-    ] as const;
+    return [name, data.default] as const;
 }
 
 export namespace ShareCfg {
     export async function load() {
-        const datas = await Promise.all([
+        const dataset = await Promise.all([
             loadData("attribute_info_by_type"),
             loadData("commander_ability_template"),
             loadData("commander_data_template"),
@@ -37,12 +34,10 @@ export namespace ShareCfg {
             loadData("spweapon_type"),
             loadData("transform_data_template"),
         ]);
-        for (const [name, data] of datas) {
+        for (const [name, data] of dataset) {
             Object.defineProperty(ShareCfg, name, {
                 value: data,
-                configurable: false,
                 enumerable: true,
-                writable: false,
             });
         }
     }

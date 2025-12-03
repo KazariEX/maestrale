@@ -23,9 +23,9 @@ await ShareCfg.load();
 初始化舰队科技对象：
 
 ```ts
-import { useTechnology } from "maestrale";
+import { createTechnology } from "maestrale";
 
-const technology = useTechnology();
+const technology = createTechnology();
 ```
 
 现在可以创建我们的第一艘舰船了：

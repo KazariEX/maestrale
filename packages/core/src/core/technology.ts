@@ -6,7 +6,7 @@ export interface ITechnology {
     get: (type: ShipType, attr: keyof Attributes) => number;
 }
 
-export function useTechnology(): ITechnology {
+export function createTechnology(): ITechnology {
     const attrs = reactive(createTechnologyAttributes());
 
     function get(type: ShipType, attr: keyof Attributes) {

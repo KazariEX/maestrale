@@ -1,7 +1,7 @@
 import { existsSync } from "node:fs";
 import { join, resolve } from "node:path";
 import consola from "consola";
-import { Commander, createCommander, createEquip, createShip, createSPWeapon, Equip, ShareCfg, Ship, SPWeapon, useTechnology } from "../packages/core/src";
+import { Commander, createCommander, createEquip, createShip, createSPWeapon, createTechnology, Equip, ShareCfg, Ship, SPWeapon } from "../packages/core/src";
 
 interface Item {
     asset: string;
@@ -9,7 +9,7 @@ interface Item {
 }
 
 const baseDir = resolve(import.meta.dirname, "../simulator/public/assets/artresource/atlas");
-const technology = useTechnology();
+const technology = createTechnology();
 await ShareCfg.load();
 
 check("ship", "squareicon", () => Ship.ids.map((id) => {
