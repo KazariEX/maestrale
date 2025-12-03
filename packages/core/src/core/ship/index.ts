@@ -173,7 +173,10 @@ export class Ship {
 
         if (this.breakout.value === this.breakoutLimit) {
             for (const attr of objectKeys(attrs)) {
-                attrs[attr] += this.technology.get(this.type.value, attr);
+                if (isStaticAttr(attr)) {
+                    continue;
+                }
+                attrs[attr] += this.technology.attrs[this.type.value][attr];
             }
         }
         return attrs;
@@ -201,17 +204,17 @@ export class Ship {
         return attrs;
     });
 
-    private getAttr(index: number, attrName: keyof Attributes) {
+    private getAttr(index: number, attr: keyof Attributes) {
         const favorRate = 1 + (
-            ["speed", "luck"].includes(attrName) ? 0 : getFavorRate(this.favor.value)
+            isStaticAttr(attr) ? 0 : getFavorRate(this.favor.value)
         );
 
         return (
             this.curStat.attrs[index] +
             this.curStat.attrs_growth[index] * (this.level.value - 1) / 1000 +
-            this.strengthen.attrs.value[attrName]
+            this.strengthen.attrs.value[attr]
         ) * favorRate +
-            this.transAttrs.value[attrName];
+            this.transAttrs.value[attr];
     }
 
     // 耐久
@@ -331,4 +334,9 @@ function getFavorRate(favor: number) {
         case 6: return 0.12;
         default: return 0;
     }
+}
+
+// 是否为静态属性
+function isStaticAttr(attr: keyof Attributes): attr is "speed" | "luck" {
+    return attr === "speed" || attr === "luck";
 }

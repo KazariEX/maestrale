@@ -85,8 +85,8 @@ export class Commander {
 }
 
 // 获取加成系数
-function getCoefficient(name: keyof Attributes) {
-    switch (name) {
+function getCoefficient(attr: keyof Attributes) {
+    switch (attr) {
         case "durability":
             return [0.9, 0, 0];
         case "cannon":

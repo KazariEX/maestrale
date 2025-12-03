@@ -1,4 +1,4 @@
-import { type Attributes, createAttributes, createTechnologyAttributes, type Nationality, ShareCfg, ShipType } from "maestrale";
+import { createAttributes, createTechnologyAttributes, type Nationality, ShareCfg, ShipType } from "maestrale";
 import { objectKeys } from "maestrale/utils";
 import type { AchieveAdditional, AchieveItem, TechnologyMode } from "~/types/technology";
 
@@ -55,13 +55,6 @@ export const useTechnologyStore = defineStore("technology", () => {
         }, 0);
     });
 
-    function get(type: ShipType, attr: keyof Attributes) {
-        if (attr === "speed" || attr === "luck") {
-            return 0;
-        }
-        return attrs.value[type][attr];
-    }
-
     function getAdditional(item: AchieveItem) {
         let additional = achieveAdditionals.get(item);
         if (!additional) {
@@ -89,7 +82,6 @@ export const useTechnologyStore = defineStore("technology", () => {
         simulatedAttrs,
         attrs,
         point,
-        get,
         getAdditional,
     };
 
