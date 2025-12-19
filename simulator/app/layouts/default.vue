@@ -3,6 +3,22 @@
         <slot></slot>
     </main>
     <maestrale-navbar />
-    <maestrale-overlay />
-    <maestrale-dialog />
+    <bikariya-modals />
 </template>
+
+<style lang="scss">
+    .bikariya-overlay {
+        position: fixed;
+        opacity: 0.5;
+        inset: 0;
+        background-color: black;
+
+        &:where(.v-enter-active, .v-leave-active) {
+            transition: opacity 0.4s;
+        }
+
+        &:where(.v-enter-from, .v-leave-to) {
+            opacity: 0;
+        }
+    }
+</style>

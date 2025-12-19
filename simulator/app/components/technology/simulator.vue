@@ -18,10 +18,10 @@
         additional: AchieveAdditional;
     }
 
-    const dialogStore = useDialogStore();
+    const modalStore = useModalStore();
     const technology = useTechnologyStore();
 
-    const { open: openNationalityPanel } = dialogStore.use(() => h(TechnologyNationality));
+    const { open: openNationalityPanel } = modalStore.use(() => h(TechnologyNationality));
 
     const selectedShips = ref<ShipData[]>([]);
     const extendedShips = computed<ShipData[]>(() => {

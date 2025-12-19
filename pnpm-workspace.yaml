@@ -5,6 +5,7 @@ packages:
   - simulator
 
 catalog:
+  "@bikariya/modals": ^0.0.2
   "@nuxt/devtools": ^3.1.1
   "@nuxt/icon": ^2.1.1
   "@nuxt/image": ^2.0.0

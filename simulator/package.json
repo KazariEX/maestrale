@@ -21,6 +21,7 @@
     "vue-router": "catalog:"
   },
   "devDependencies": {
+    "@bikariya/modals": "catalog:",
     "@nuxt/devtools": "catalog:",
     "@nuxt/icon": "catalog:",
     "@nuxt/image": "catalog:",

@@ -46,8 +46,8 @@ export function selectShip(fleetType: FleetType, canClear: boolean) {
     }
 
     return new Promise<number>((resolve) => {
-        const dialogStore = useDialogStore();
-        const { close } = dialogStore.use(() => h(DialogSelector, {
+        const modalStore = useModalStore();
+        const { close } = modalStore.use(() => h(DialogSelector, {
             title: "选择舰船",
             selectors: [
                 { label: "稀有度", id: "rarity", options: rarityOptions },
@@ -89,8 +89,8 @@ export function selectEquip(allowedTypes: EquipType[], shipType: ShipType, canCl
     }
 
     return new Promise<number>((resolve) => {
-        const dialogStore = useDialogStore();
-        const { close } = dialogStore.use(() => h(DialogSelector, {
+        const modalStore = useModalStore();
+        const { close } = modalStore.use(() => h(DialogSelector, {
             title: "选择装备",
             selectors: [
                 { label: "稀有度", id: "rarity", options: rarityOptions },
@@ -132,8 +132,8 @@ export function selectSPWeapon(shipId: number, shipType: ShipType, canClear: boo
     }
 
     return new Promise<number>((resolve) => {
-        const dialogStore = useDialogStore();
-        const { close } = dialogStore.use(() => h(DialogSelector, {
+        const modalStore = useModalStore();
+        const { close } = modalStore.use(() => h(DialogSelector, {
             title: "选择兵装",
             selectors: [
                 { label: "稀有度", id: "rarity", options: spweaponRarityOptions },
@@ -168,8 +168,8 @@ export function selectCommander() {
     }
 
     return new Promise<number>((resolve) => {
-        const dialogStore = useDialogStore();
-        const { close } = dialogStore.use(() => h(DialogSelector, {
+        const modalStore = useModalStore();
+        const { close } = modalStore.use(() => h(DialogSelector, {
             title: "选择指挥喵",
             selectors: [
                 { label: "稀有度", id: "rarity", options: rarityOptions },
@@ -208,8 +208,8 @@ export function selectNestCommander(current: Commander | null, party: Commander[
     }
 
     return new Promise<number>((resolve) => {
-        const dialogStore = useDialogStore();
-        const { close } = dialogStore.use(() => h(DialogSelector, {
+        const modalStore = useModalStore();
+        const { close } = modalStore.use(() => h(DialogSelector, {
             title: "选择指挥喵",
             selectors: [
                 { label: "稀有度", id: "rarity", options: rarityOptions },

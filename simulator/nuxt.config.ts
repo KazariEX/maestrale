@@ -30,6 +30,7 @@ export default defineNuxtConfig({
         },
     },
     modules: [
+        "@bikariya/modals",
         "@nuxt/icon",
         "@nuxt/image",
         "@pinia/nuxt",
