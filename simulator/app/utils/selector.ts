@@ -67,14 +67,14 @@ export function selectShip(fleetType: FleetType, canClear: boolean) {
     });
 }
 
-export function selectEquip(allowTypes: EquipType[], shipType: ShipType, canClear: boolean) {
+export function selectEquip(allowedTypes: EquipType[], shipType: ShipType, canClear: boolean) {
     const data = createSelectorData<ShareCfg.EquipDataStatistics>();
 
     for (const id of Equip.ids) {
         const statistics = ShareCfg.equip_data_statistics[id]!;
         const template = ShareCfg.equip_data_template[id]!;
         const { name, icon, rarity, type, nationality } = statistics;
-        if (!allowTypes.includes(type) || template.ship_type_forbidden.includes(shipType)) {
+        if (!allowedTypes.includes(type) || template.ship_type_forbidden.includes(shipType)) {
             continue;
         }
 

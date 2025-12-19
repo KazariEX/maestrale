@@ -24,7 +24,7 @@
         >
             <equip-item
                 v-if="ship"
-                :allow-types="ship.equipTypes.value[i - 1]!"
+                :allowed-types="ship.equipTypes.value[i - 1]!"
                 :ship-type="ship.type.value"
                 v-model="ship[`equip${i as 1 | 2 | 3 | 4 | 5}`].value"
             />

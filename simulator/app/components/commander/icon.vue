@@ -10,12 +10,9 @@
 
 <template>
     <nuxt-img
-        :class="{
-            [`h-16`]: icon,
-            [`size-14 p-2 my-1`]: !icon,
-        }"
         m="x-auto"
         cursor="pointer"
+        :class="icon ? `h-16` : `size-14 p-2 my-1`"
         :src
     />
 </template>

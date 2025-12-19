@@ -47,11 +47,9 @@
     <li grid="~" w="16">
         <commander-icon h="14!" :icon @click="select"/>
         <span
-            text="3 slate-600 center truncate dark:slate-300"
-            :class="{
-                [`@hover:text-primary cursor-pointer`]: index !== -1,
-                [`op-40 select-none`]: index === -1,
-            }"
+            text="3 slate-600 center truncate dark:slate-300 @hover:primary"
+            cursor="pointer"
+            :class="{ [`op-40 pointer-events-none select-none`]: index === -1 }"
             @click="navigate"
         >{{ commander?.name }}</span>
     </li>

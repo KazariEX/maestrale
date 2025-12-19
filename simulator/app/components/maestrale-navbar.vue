@@ -36,9 +36,7 @@
 
 <template>
     <nav
-        position="fixed"
-        lg:position="inset-y-0 left-0"
-        lt-lg:position="inset-x-0 bottom-0"
+        position="fixed lg:(inset-y-0 left-0) lt-lg:(inset-x-0 bottom-0)"
         flex="~ justify-center lg:col"
         w="lg:18"
         h="lt-lg:16"

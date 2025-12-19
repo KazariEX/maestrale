@@ -1,8 +1,8 @@
 <script lang="ts" setup>
     import { createEquip, type Equip, type EquipType, type ShipType } from "maestrale";
 
-    const { allowTypes, shipType } = defineProps<{
-        allowTypes: EquipType[];
+    const { allowedTypes, shipType } = defineProps<{
+        allowedTypes: EquipType[];
         shipType: ShipType;
     }>();
     const equip = defineModel<Equip | null>();
@@ -16,7 +16,7 @@
     }
 
     async function select() {
-        const id = await selectEquip(allowTypes, shipType, !!equip.value);
+        const id = await selectEquip(allowedTypes, shipType, !!equip.value);
         if (id === -1) {
             equip.value = null;
         }

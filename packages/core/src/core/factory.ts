@@ -1,4 +1,5 @@
 import { ShareCfg } from "@maestrale/data";
+import { defineLazyProperty } from "../utils";
 import { Commander } from "./commander";
 import { CommanderAbility } from "./commander/ability";
 import { Equip } from "./equip";
@@ -22,30 +23,23 @@ declare module "maestrale" {
     }
 }
 
-defineIds(Ship, () => (
+defineLazyProperty(Ship, "ids", () => (
     Object.keys(ShareCfg.ship_data_statistics)
         .filter((id) => id.endsWith("1") && !id.startsWith("900"))
         .map((id) => Number(id.slice(0, -1)))
 ));
 
-defineIds(Equip, () => (
+defineLazyProperty(Equip, "ids", () => (
     Object.keys(ShareCfg.equip_data_template).map(Number).filter((id) => id % 20 === 0)
 ));
 
-defineIds(SPWeapon, () => (
+defineLazyProperty(SPWeapon, "ids", () => (
     Object.keys(ShareCfg.spweapon_data_statistics).map(Number).filter((id) => id % 20 === 0)
 ));
 
-defineIds(Commander, () => (
+defineLazyProperty(Commander, "ids", () => (
     Object.keys(ShareCfg.commander_data_template).map(Number)
 ));
-
-function defineIds(ctor: object, getter: () => number[]) {
-    let cache: number[];
-    Object.defineProperty(ctor, "ids", {
-        get: () => cache ??= getter(),
-    });
-}
 
 export interface CreateShipOptions {
     level?: number;
